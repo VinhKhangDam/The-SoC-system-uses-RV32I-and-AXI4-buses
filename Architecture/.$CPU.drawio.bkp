@@ -1,0 +1,1088 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="Page-1" id="NtWUX91uDDEcySALCd_E">
+    <mxGraphModel dx="5774" dy="3503" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-19" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-30" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1920" y="600" as="sourcePoint" />
+            <mxPoint x="1920" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Instruction Fetch&lt;/font&gt;" vertex="1">
+          <mxGeometry height="31" width="300" x="-590" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Decode&lt;/font&gt;" vertex="1">
+          <mxGeometry height="31" width="60" x="410" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Execution&lt;/font&gt;" vertex="1">
+          <mxGeometry height="31" width="60" x="1000" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Memory&lt;/font&gt;" vertex="1">
+          <mxGeometry height="31" width="60" x="1590" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Write back&lt;/font&gt;" vertex="1">
+          <mxGeometry height="31" width="140" x="2080" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;IF - ID&lt;/font&gt;" vertex="1">
+          <mxGeometry height="440" width="120" x="-120" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;EX - MEM&lt;/font&gt;" vertex="1">
+          <mxGeometry height="760" width="120" x="1270" y="-200" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;MEM - WB&lt;/font&gt;" vertex="1">
+          <mxGeometry height="760" width="120" x="1860" y="-200" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;HAZARD UNIT&lt;/font&gt;" vertex="1">
+          <mxGeometry height="300" width="3000" x="-700" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;INSTRUCTION MEM&lt;/font&gt;" vertex="1">
+          <mxGeometry height="200" width="220" x="-600" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-2" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=24;" target="pG60k6R3ljW6bCbVKGIV-26" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-360" y="500" as="sourcePoint" />
+            <mxPoint x="-260" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-3" connectable="0" parent="PxbgF3LIqnQxMvPvJgis-2" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Instr[31:0]&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Buffer&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-830" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-7" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-6" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-560" y="260" as="sourcePoint" />
+            <mxPoint x="-460" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-8" connectable="0" parent="PxbgF3LIqnQxMvPvJgis-7" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;PC&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="pG60k6R3ljW6bCbVKGIV-26" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-700" y="340" />
+              <mxPoint x="-700" y="450" />
+            </Array>
+            <mxPoint x="-680" y="340" as="sourcePoint" />
+            <mxPoint x="-480" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-11" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="-500" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-17" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-11" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-700" y="500" />
+            </Array>
+            <mxPoint x="-700" y="450" as="sourcePoint" />
+            <mxPoint x="-160" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-18" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-19" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.833;exitY=0.333;exitDx=0;exitDy=0;exitPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-11" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="-600" y="590" as="sourcePoint" />
+            <mxPoint x="-830" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;4&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-620" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-20" parent="1" style="shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.abstract.mux2;whiteSpace=wrap;direction=west;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Mux&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="80" x="-780" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-21" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-20" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=-5;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-6" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-890" y="85" />
+              <mxPoint x="-890" y="325" />
+            </Array>
+            <mxPoint x="-730" y="200" as="sourcePoint" />
+            <mxPoint x="-630" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-22" connectable="0" parent="PxbgF3LIqnQxMvPvJgis-21" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="PC" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-23" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=-0.015;entryY=0.929;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-26" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-410" y="529.6" as="sourcePoint" />
+            <mxPoint x="-310" y="529.6" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-24" connectable="0" parent="PxbgF3LIqnQxMvPvJgis-23" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="PC+4" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-25" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.21666666666666667;entryDx=0;entryDy=3;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-20" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-320" y="111" />
+            </Array>
+            <mxPoint x="-320" y="530" as="sourcePoint" />
+            <mxPoint x="-230" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-26" parent="1" style="triangle;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="-830" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Clock&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-1080" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-28" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-27" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-530" y="430" as="sourcePoint" />
+            <mxPoint x="-480" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-29" parent="1" style="triangle;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="50" width="30" x="-75" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-30" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-60.12" y="70" />
+            </Array>
+            <mxPoint x="-60.12" y="40" as="sourcePoint" />
+            <mxPoint x="-60.11999999999977" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Clock" vertex="1">
+          <mxGeometry height="30" width="60" x="-90" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;+&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-470" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-33" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Register File&lt;/font&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="160" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-34" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-26" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="220" y="380" as="sourcePoint" />
+            <mxPoint x="50" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-35" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-64" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="50" y="680" as="sourcePoint" />
+            <mxPoint x="50" y="-40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-37" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.546;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-77" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="-30.46" />
+            </Array>
+            <mxPoint x="50" y="-30.46" as="sourcePoint" />
+            <mxPoint x="180" y="-30.499999999999964" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-38" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-77" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="50" y="20" as="sourcePoint" />
+            <mxPoint x="185.27999999999975" y="20.12000000000012" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-39" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.957;entryY=1.024;entryDx=0;entryDy=0;entryPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-77" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="50" y="70" as="sourcePoint" />
+            <mxPoint x="197.57359312881135" y="68.99494936610722" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Opcode (Intr[6:0])" vertex="1">
+          <mxGeometry height="30" width="60" x="70" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Funct3&lt;div&gt;(Instr[14:12])&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="70" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Funct7&lt;div&gt;(Instr[30])&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="70" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-43" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=-0.002;entryY=0.105;entryDx=0;entryDy=0;entryPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-33" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="50" y="260" as="sourcePoint" />
+            <mxPoint x="410" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-44" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.305;entryDx=0;entryDy=0;entryPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-33" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="50" y="300" as="sourcePoint" />
+            <mxPoint x="250" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rs1&lt;div&gt;(Instr[19:15])&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="60" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rs2&lt;div&gt;(Instr[24:20])&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="60" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="WRITE DATA" vertex="1">
+          <mxGeometry height="30" width="90" x="160" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RS1" vertex="1">
+          <mxGeometry height="30" width="60" x="150" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-49" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RS2" vertex="1">
+          <mxGeometry height="30" width="60" x="150" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RD" vertex="1">
+          <mxGeometry height="30" width="60" x="160" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-51" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RD1" vertex="1">
+          <mxGeometry height="30" width="60" x="300" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RD2" vertex="1">
+          <mxGeometry height="30" width="60" x="300" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-53" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-51" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.003;entryY=0.329;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="310" as="sourcePoint" />
+            <mxPoint x="510" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-54" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-52" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.42;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="490" y="310" as="sourcePoint" />
+            <mxPoint x="540" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-57" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.004;entryY=0.887;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="50" y="511" as="sourcePoint" />
+            <mxPoint x="663.8400000000006" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-58" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.002;entryY=0.747;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="450" />
+              <mxPoint x="300" y="449" />
+            </Array>
+            <mxPoint x="140" y="260" as="sourcePoint" />
+            <mxPoint x="658.6800000000003" y="448.9199999999996" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-59" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="470" />
+            </Array>
+            <mxPoint x="130" y="300" as="sourcePoint" />
+            <mxPoint x="660" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Sign-Extend" vertex="1">
+          <mxGeometry height="40" width="110" x="220" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-63" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-62" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="50" y="630" as="sourcePoint" />
+            <mxPoint x="340" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Immediate&lt;div&gt;(Instr[31:7])&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-10" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-65" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-62" style="endArrow=classic;html=1;rounded=0;entryX=0.012;entryY=0.977;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" target="pG60k6R3ljW6bCbVKGIV-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="630" />
+              <mxPoint x="490" y="550" />
+            </Array>
+            <mxPoint x="290" y="670" as="sourcePoint" />
+            <mxPoint x="340" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ExtImm" vertex="1">
+          <mxGeometry height="30" width="60" x="520" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-68" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ImmSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ALUSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-71" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ALUControl" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-72" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Branch" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-73" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Jump" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="-70" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-74" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="MemWrite" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="-100" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ResultSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-76" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RegWrite" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-77" parent="1" style="rounded=1;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="71.25" width="242.5" x="103.13" y="-76.87" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-78" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-68" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-62" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="65" />
+              <mxPoint x="440" y="580" />
+              <mxPoint x="275" y="580" />
+            </Array>
+            <mxPoint x="200" y="350" as="sourcePoint" />
+            <mxPoint x="250" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-83" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="719.88" y="-250" />
+            </Array>
+            <mxPoint x="719.88" y="-280" as="sourcePoint" />
+            <mxPoint x="719.8800000000002" y="-200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-84" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Clock" vertex="1">
+          <mxGeometry height="30" width="60" x="690" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-86" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="760" width="120" x="660" y="-200" as="geometry" />
+        </mxCell>
+        <mxCell id="pG60k6R3ljW6bCbVKGIV-28" parent="PxbgF3LIqnQxMvPvJgis-86" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;ID - EX&lt;/font&gt;" vertex="1">
+          <mxGeometry height="440" width="120" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-82" parent="PxbgF3LIqnQxMvPvJgis-86" style="rounded=1;whiteSpace=wrap;html=1;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];" value="" vertex="1">
+          <mxGeometry height="320" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-87" parent="PxbgF3LIqnQxMvPvJgis-86" style="triangle;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="50" width="30" x="45" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-88" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-76" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="280" y="20" as="sourcePoint" />
+            <mxPoint x="660" y="-145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-89" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="320" y="-115.32" as="sourcePoint" />
+            <mxPoint x="660" y="-115.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-90" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="320" y="-85.32" as="sourcePoint" />
+            <mxPoint x="660" y="-85.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-91" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="320" y="-55.32" as="sourcePoint" />
+            <mxPoint x="660" y="-55.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-92" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="320" y="-25.32" as="sourcePoint" />
+            <mxPoint x="660" y="-25.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-93" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="320" y="4.68" as="sourcePoint" />
+            <mxPoint x="660" y="4.68" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-94" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="320" y="34.68" as="sourcePoint" />
+            <mxPoint x="660" y="34.68" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-98" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.988;exitY=0.933;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.932;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-0.44000000000005457" y="490.4400000000002" as="sourcePoint" />
+            <mxPoint x="660.0000000000005" y="489.99999999999994" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-115" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ALUSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-116" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ALUControl" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-117" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Branch" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-118" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Jump" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="-70" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-119" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="MemWrite" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="-100" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-120" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ResultSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-121" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RegWrite" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-122" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-121" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.021;entryY=0.07;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="800" y="20" as="sourcePoint" />
+            <mxPoint x="1180" y="-145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-123" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.012;entryY=0.11;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="840" y="-115.32" as="sourcePoint" />
+            <mxPoint x="1180" y="-115.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-124" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.151;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="840" y="-85.32" as="sourcePoint" />
+            <mxPoint x="1180" y="-85.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-129" parent="1" style="shape=or;whiteSpace=wrap;html=1;rotation=-180;" value="" vertex="1">
+          <mxGeometry height="80" width="60" x="860" y="-480" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-130" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-117" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-129" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="890" y="-110" as="sourcePoint" />
+            <mxPoint x="940" y="-160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-131" parent="1" style="shape=xor;whiteSpace=wrap;html=1;rotation=-181;" value="" vertex="1">
+          <mxGeometry height="80" width="60" x="730" y="-450" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-133" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-118" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.175;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-131" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="-55" />
+              <mxPoint x="880" y="-390" />
+            </Array>
+            <mxPoint x="890" y="-110" as="sourcePoint" />
+            <mxPoint x="940" y="-160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-134" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-129" style="endArrow=classic;html=1;rounded=0;entryX=0.157;entryY=0.859;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-131" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="890" y="-110" as="sourcePoint" />
+            <mxPoint x="940" y="-160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-135" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-131" style="endArrow=classic;html=1;rounded=0;entryX=0.375;entryY=1;entryDx=10;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-20" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-340" y="-410" />
+              <mxPoint x="-340" y="-10" />
+              <mxPoint x="-740" y="-10" />
+            </Array>
+            <mxPoint x="30" y="-90" as="sourcePoint" />
+            <mxPoint x="80" y="-140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-136" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PCSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="450" y="-440" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-137" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="30" width="80" x="850" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-138" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="30" width="80" x="850" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-139" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.983;exitY=0.336;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.66;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="780.0000000000005" y="229.7099999999999" as="sourcePoint" />
+            <mxPoint x="877.04" y="229.66999999999993" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-140" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.983;exitY=0.336;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.127;entryY=1.011;entryDx=0;entryDy=0;entryPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-138" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="780" y="310" as="sourcePoint" />
+            <mxPoint x="870" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-141" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="1050" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-142" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-137" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-141" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="940" y="350" as="sourcePoint" />
+            <mxPoint x="990" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-143" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-138" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-144" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="340" />
+              <mxPoint x="920" y="298" />
+            </Array>
+            <mxPoint x="940" y="350" as="sourcePoint" />
+            <mxPoint x="930" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-144" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="15" width="60" x="960" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-145" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="pG60k6R3ljW6bCbVKGIV-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="370" />
+            </Array>
+            <mxPoint x="920" y="340" as="sourcePoint" />
+            <mxPoint x="990" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-146" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PC+4" vertex="1">
+          <mxGeometry height="30" width="60" x="-10" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-147" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rd" vertex="1">
+          <mxGeometry height="30" width="60" x="10" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-148" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="40" width="70" x="1090" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-149" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-158" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="519" />
+              <mxPoint x="950" y="440" />
+            </Array>
+            <mxPoint x="780" y="519" as="sourcePoint" />
+            <mxPoint x="1094.16" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-150" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-144" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="328" />
+            </Array>
+            <mxPoint x="950" y="510" as="sourcePoint" />
+            <mxPoint x="950" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-151" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.987;exitY=0.918;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.008;entryY=0.917;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-0.5999999999999455" y="530.1400000000001" as="sourcePoint" />
+            <mxPoint x="660" y="529.7" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-153" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PC" vertex="1">
+          <mxGeometry height="30" width="60" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-155" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-28" style="endArrow=classic;html=1;rounded=0;exitX=1.003;exitY=0.934;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-148" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="531" />
+              <mxPoint x="880" y="408" />
+            </Array>
+            <mxPoint x="790" y="550" as="sourcePoint" />
+            <mxPoint x="840" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-156" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-144" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.929;entryY=1.015;entryDx=0;entryDy=0;entryPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-141" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="860" y="390" as="sourcePoint" />
+            <mxPoint x="1060" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-157" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-148" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.65;entryDx=0;entryDy=3;edgeStyle=orthogonalEdgeStyle;entryPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-20" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1170" y="425" />
+              <mxPoint x="1170" y="720" />
+              <mxPoint x="-670" y="720" />
+              <mxPoint x="-670" y="59" />
+            </Array>
+            <mxPoint x="580" y="310" as="sourcePoint" />
+            <mxPoint x="630" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-158" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="+" vertex="1">
+          <mxGeometry height="30" width="60" x="1090" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-159" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ALU" vertex="1">
+          <mxGeometry height="30" width="60" x="1080" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-160" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-159" style="endArrow=classic;html=1;rounded=0;entryX=0.012;entryY=0.61;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="pG60k6R3ljW6bCbVKGIV-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="730" y="430" as="sourcePoint" />
+            <mxPoint x="780" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-161" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-141" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.327;exitY=0.006;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-129" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="239" />
+              <mxPoint x="1180" y="-460" />
+            </Array>
+            <mxPoint x="900" y="70" as="sourcePoint" />
+            <mxPoint x="1020" y="-330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-162" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="240" width="120" x="1630" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-163" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Data Memory" vertex="1">
+          <mxGeometry height="30" width="80" x="1650" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-164" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.006;exitY=0.607;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1510" y="260.32" />
+              <mxPoint x="1510" y="209.32" />
+              <mxPoint x="1630" y="209.32" />
+            </Array>
+            <mxPoint x="1390.7200000000003" y="260.64000000000016" as="sourcePoint" />
+            <mxPoint x="1630" y="209.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-165" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=-0.016;entryY=0.42;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1510" y="120" />
+              <mxPoint x="1850" y="120" />
+            </Array>
+            <mxPoint x="1510" y="210" as="sourcePoint" />
+            <mxPoint x="1850" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-166" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-29" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-162" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1100" y="430" as="sourcePoint" />
+            <mxPoint x="1150" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-167" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Write Data" vertex="1">
+          <mxGeometry height="30" width="60" x="1630" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-168" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ALUResult" vertex="1">
+          <mxGeometry height="30" width="60" x="1630" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-169" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Read Data" vertex="1">
+          <mxGeometry height="30" width="60" x="1690" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-170" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-169" style="endArrow=classic;html=1;rounded=0;entryX=-0.002;entryY=0.639;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="pG60k6R3ljW6bCbVKGIV-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1240" y="330" as="sourcePoint" />
+            <mxPoint x="1290" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-171" parent="1" style="triangle;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="50" width="30" x="1315" y="-210" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-172" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1329.88" y="-250" />
+            </Array>
+            <mxPoint x="1329.88" y="-280" as="sourcePoint" />
+            <mxPoint x="1329.88" y="-200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-173" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Clock" vertex="1">
+          <mxGeometry height="30" width="60" x="1300" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-174" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1919.88" y="-250" />
+            </Array>
+            <mxPoint x="1919.88" y="-280" as="sourcePoint" />
+            <mxPoint x="1919.88" y="-200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-175" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Clock" vertex="1">
+          <mxGeometry height="30" width="60" x="1890" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-176" parent="1" style="triangle;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="50" width="30" x="1905" y="-210" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-177" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-116" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-141" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1160" y="160" as="sourcePoint" />
+            <mxPoint x="1210" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-179" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-115" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-144" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="90" />
+              <mxPoint x="960" y="90" />
+              <mxPoint x="960" y="270" />
+              <mxPoint x="992" y="270" />
+            </Array>
+            <mxPoint x="1160" y="160" as="sourcePoint" />
+            <mxPoint x="1210" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-180" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="MemWrite" vertex="1">
+          <mxGeometry height="30" width="60" x="1390" y="-101.25" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-181" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ResultSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="1390" y="-131.25" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-182" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RegWrite" vertex="1">
+          <mxGeometry height="30" width="60" x="1390" y="-161.25" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-183" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-182" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.071;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1350" y="-50" as="sourcePoint" />
+            <mxPoint x="1400" y="-100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-184" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.071;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1450" y="-115.43" as="sourcePoint" />
+            <mxPoint x="1860" y="-115.43" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-186" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-162" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-180" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1300" y="160" as="sourcePoint" />
+            <mxPoint x="1350" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-187" parent="1" style="triangle;whiteSpace=wrap;html=1;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="30" width="20" x="1680" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-188" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-187" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1690" y="430" as="sourcePoint" />
+            <mxPoint x="1350" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-189" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Clock" vertex="1">
+          <mxGeometry height="30" width="60" x="1680" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-190" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="2090" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-191" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-30" style="endArrow=none;html=1;rounded=0;exitX=0.992;exitY=0.417;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1790" y="160" as="sourcePoint" />
+            <mxPoint x="2120" y="182" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-192" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-30" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1.006;exitY=0.637;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-190" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1840" y="290" as="sourcePoint" />
+            <mxPoint x="1890" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-193" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-30" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.115;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-190" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="2150" y="-113" />
+            </Array>
+            <mxPoint x="1630" y="40" as="sourcePoint" />
+            <mxPoint x="1680" y="-10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-194" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-33" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.999;entryY=0.073;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="120" />
+              <mxPoint x="480" y="120" />
+              <mxPoint x="480" y="-300" />
+              <mxPoint x="300" y="-300" />
+              <mxPoint x="300" y="-600" />
+              <mxPoint x="2040" y="-600" />
+              <mxPoint x="2040" y="-370" />
+              <mxPoint x="2040" y="-145" />
+            </Array>
+            <mxPoint x="1230" y="120" as="sourcePoint" />
+            <mxPoint x="1280" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-195" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-190" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-47" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="2280" y="220" />
+              <mxPoint x="2280" y="670" />
+              <mxPoint x="120" y="670" />
+              <mxPoint x="120" y="425" />
+            </Array>
+            <mxPoint x="1260" y="160" as="sourcePoint" />
+            <mxPoint x="1310" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-196" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-190" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="2080" y="524" />
+              <mxPoint x="2080" y="250" />
+            </Array>
+            <mxPoint x="1980" y="524" as="sourcePoint" />
+            <mxPoint x="1010" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-198" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-28" style="endArrow=none;html=1;rounded=0;entryX=-0.005;entryY=0.893;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.015;exitY=0.818;exitDx=0;exitDy=0;exitPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="860" y="490" as="sourcePoint" />
+            <mxPoint x="910" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-199" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.007;entryY=0.921;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.015;exitY=0.818;exitDx=0;exitDy=0;exitPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="780" y="501" as="sourcePoint" />
+            <mxPoint x="1267" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-200" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rd" vertex="1">
+          <mxGeometry height="30" width="60" x="1220" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-201" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PC+4" vertex="1">
+          <mxGeometry height="30" width="60" x="1220" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-202" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.894;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1391" y="480" as="sourcePoint" />
+            <mxPoint x="1540" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-203" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.92;entryDx=0;entryDy=0;entryPerimeter=0;" target="pG60k6R3ljW6bCbVKGIV-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1390" y="500" as="sourcePoint" />
+            <mxPoint x="1856" y="499" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-204" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rd" vertex="1">
+          <mxGeometry height="30" width="60" x="1390" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-205" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PC+4" vertex="1">
+          <mxGeometry height="30" width="60" x="1390" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-206" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;PC+4&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="2080" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-208" edge="1" parent="1" source="PxbgF3LIqnQxMvPvJgis-33" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.897;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" target="pG60k6R3ljW6bCbVKGIV-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="390" />
+              <mxPoint x="90" y="700" />
+              <mxPoint x="1070" y="700" />
+              <mxPoint x="2040" y="700" />
+              <mxPoint x="2040" y="640" />
+              <mxPoint x="2040" y="482" />
+            </Array>
+            <mxPoint x="940" y="420" as="sourcePoint" />
+            <mxPoint x="990" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-210" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Instr[31:0]&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="10" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-212" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SrcA" vertex="1">
+          <mxGeometry height="30" width="60" x="1010" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-213" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SrcB" vertex="1">
+          <mxGeometry height="30" width="60" x="1020" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-216" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="280" />
+            </Array>
+            <mxPoint x="820" y="700" as="sourcePoint" />
+            <mxPoint x="875" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-217" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="250" />
+              <mxPoint x="840" y="635" />
+              <mxPoint x="1440" y="635" />
+            </Array>
+            <mxPoint x="875" y="250" as="sourcePoint" />
+            <mxPoint x="1440" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-218" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-138" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="820" y="360" as="sourcePoint" />
+            <mxPoint x="1000" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-220" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="WriteData" vertex="1">
+          <mxGeometry height="30" width="60" x="1090" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-221" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Zero" vertex="1">
+          <mxGeometry height="30" width="60" x="1060" y="-490" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-222" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ExtImm" vertex="1">
+          <mxGeometry height="30" width="60" x="910" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-223" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PC" vertex="1">
+          <mxGeometry height="30" width="60" x="1030" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-224" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RD1" vertex="1">
+          <mxGeometry height="30" width="60" x="770" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-225" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RD2" vertex="1">
+          <mxGeometry height="30" width="60" x="770" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-226" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ALUResult" vertex="1">
+          <mxGeometry height="30" width="60" x="1410" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-227" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="WriteData" vertex="1">
+          <mxGeometry height="30" width="60" x="1440" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-228" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RegWrite" vertex="1">
+          <mxGeometry height="30" width="60" x="1980" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-229" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="ResultSrc" vertex="1">
+          <mxGeometry height="30" width="60" x="1980" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-230" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ReadData&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="1980" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-231" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Result&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="2290" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-232" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="WriteEnable" vertex="1">
+          <mxGeometry height="30" width="60" x="230" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-234" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Control&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Unit&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="194.38" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-235" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="WE" vertex="1">
+          <mxGeometry height="30" width="60" x="1660" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-237" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.979;exitY=-0.005;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="2237" y="920" />
+              <mxPoint x="2410" y="920" />
+              <mxPoint x="2410" y="-146" />
+            </Array>
+            <mxPoint x="2237" y="995.7500000000005" as="sourcePoint" />
+            <mxPoint x="2040" y="-145.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-238" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.847;exitY=-0.003;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2260" y="400" as="sourcePoint" />
+            <mxPoint x="1840" y="-150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-239" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.833;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2060" y="500" as="sourcePoint" />
+            <mxPoint x="1800" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-240" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rd" vertex="1">
+          <mxGeometry height="30" width="60" x="1980" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-241" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.913;exitY=-0.013;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1820" y="680" as="sourcePoint" />
+            <mxPoint x="2040" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-242" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.277;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="130" y="680" as="sourcePoint" />
+            <mxPoint x="130" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-243" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.28;exitY=-0.01;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="130" y="680" as="sourcePoint" />
+            <mxPoint x="140" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-244" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.511;exitY=0.002;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="pG60k6R3ljW6bCbVKGIV-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="833" y="420" />
+              <mxPoint x="780" y="420" />
+            </Array>
+            <mxPoint x="550" y="560" as="sourcePoint" />
+            <mxPoint x="600" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-245" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="RS1" vertex="1">
+          <mxGeometry height="30" width="60" x="770" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-246" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rs2" vertex="1">
+          <mxGeometry height="30" width="60" x="770" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-247" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-28" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="pG60k6R3ljW6bCbVKGIV-33" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="800" y="480" as="sourcePoint" />
+            <mxPoint x="850" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-248" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.633;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1119" y="1000" as="sourcePoint" />
+            <mxPoint x="1120" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-249" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.642;exitY=0.011;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1170" y="300" as="sourcePoint" />
+            <mxPoint x="1220" y="-150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-250" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1200" y="1000" as="sourcePoint" />
+            <mxPoint x="1200" y="-120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-251" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.553;exitY=0.006;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="PxbgF3LIqnQxMvPvJgis-137" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="959" y="648" />
+              <mxPoint x="910" y="648" />
+              <mxPoint x="910" y="285" />
+            </Array>
+            <mxPoint x="1020" y="560" as="sourcePoint" />
+            <mxPoint x="1070" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-252" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.53;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="PxbgF3LIqnQxMvPvJgis-138" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1040" y="450" as="sourcePoint" />
+            <mxPoint x="1090" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-253" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;rotation=-90;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ForwardA&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="950" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-254" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;rotation=-90;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ForwardB&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="870" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-255" edge="1" parent="1" source="pG60k6R3ljW6bCbVKGIV-33" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.627;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="950" y="460" as="sourcePoint" />
+            <mxPoint x="1180" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-256" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="PxbgF3LIqnQxMvPvJgis-138" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="840" y="340" as="sourcePoint" />
+            <mxPoint x="1020" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-258" parent="1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="2080" width="3680" x="-1160" y="-720" as="geometry" />
+        </mxCell>
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-259" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 50px;&quot;&gt;CPU&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-1110" y="1300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
