@@ -26,8 +26,8 @@ module ALU (
             XOR : ALUResult = OpA ^ OpB;
             ADD : ALUResult = OpA + OpB;
             SUB : ALUResult = OpA - OpB;
-            SLT : ALUResult = ($signed(OpA) > ($signed(OpB))) ? 32'd0 : 32'd1;
-            SLL : ALUResult = OpA << (OpB[4:0]);
+            SLT : ALUResult = ($signed(OpA) < $signed(OpB)) ? 32'd1 : 32'd0;
+            SLL : ALUResult = OpA << OpB[4:0];
             SRL : ALUResult = OpA >> (OpB[4:0]);
             SRA : ALUResult = $signed(OpA) >>> (OpB[4:0]);
             default: ALUResult = 32'd0;

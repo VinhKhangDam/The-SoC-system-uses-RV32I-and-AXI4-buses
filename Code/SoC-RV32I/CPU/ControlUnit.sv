@@ -1,13 +1,13 @@
 module ControlUnit (
     input  logic [6:0] Opcode,
     input  logic [2:0] funct3,
-    input  logic       funct7,        // Instr[30]
+    input  logic       funct7,        
     output logic       RegWrite,
-    output logic       ResultSrc,
+    output logic [1:0] ResultSrc,
     output logic       MemWrite,
     output logic       Jump,
     output logic       Branch,
-    output logic [3:0] ALUControl,    // Đã nâng lên 4 bit
+    output logic [3:0] ALUControl,    
     output logic       ALUSrc,
     output logic [2:0] ImmSrc
 );
@@ -22,17 +22,17 @@ module ControlUnit (
         .MemWrite(MemWrite),
         .Jump(Jump),
         .Branch(Branch),
-        .ALUOp(ALUOp_wire),          // Đã sửa: Nối vào dây ALUOp
+        .ALUOp(ALUOp_wire),          
         .ALUSrc(ALUSrc),
         .ImmSrc(ImmSrc)
     );
 
     // 2. Khối điều khiển ALU (ALU Control)
     ALUControl a1 (
-        .ALUOp(ALUOp_wire),          // Nhận tín hiệu từ MainDecoder
+        .ALUOp(ALUOp_wire),          
         .funct3(funct3),
-        .funct7b(funct7),            // Tên port phải khớp với module ALUControl bạn viết
-        .ALUControl(ALUControl)      // Xuất ra mã lệnh 4-bit cho ALU
+        .funct7b(funct7),            
+        .ALUControl(ALUControl)      
     );
     
 endmodule

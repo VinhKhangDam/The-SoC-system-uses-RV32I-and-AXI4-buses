@@ -16,14 +16,15 @@ module RegFile (
                 reg_internal[i] <= '0;
             end
         end
-        else begin
-            if (write_enable && (!rd == 5'd0)) begin
-                reg_internal[rd] <= WriteData;
-            end
+        else if (write_enable && (rd != 5'd0)) begin
+            reg_internal[rd] <= WriteData;
         end
     end
 
     // Read logic
-    assign rd1 = (rs1 != 5'd0) ? (reg_internal[rs1]) : 32'd0;
-    assign rd2 = (rs2 != 5'd0) ? (reg_internal[rs2]) : 32'd0;
+    assign rd1 = (rs1 == 5'd0) ? 32'd0 : 
+                 ((rs1 == rd) && write_enable) ? WriteData : reg_internal[rs1];
+                 
+    assign rd2 = (rs2 == 5'd0) ? 32'd0 : 
+                 ((rs2 == rd) && write_enable) ? WriteData : reg_internal[rs2];
 endmodule

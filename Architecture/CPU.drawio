@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
   <diagram name="Page-1" id="NtWUX91uDDEcySALCd_E">
-    <mxGraphModel dx="5868" dy="3604" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3189" dy="1994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -543,8 +543,8 @@
         <mxCell id="PxbgF3LIqnQxMvPvJgis-146" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PC+4" vertex="1">
           <mxGeometry height="30" width="60" x="-10" y="460" as="geometry" />
         </mxCell>
-        <mxCell id="PxbgF3LIqnQxMvPvJgis-147" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rd" vertex="1">
-          <mxGeometry height="30" width="60" x="10" y="490" as="geometry" />
+        <mxCell id="PxbgF3LIqnQxMvPvJgis-147" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rd&lt;div&gt;(Instr[11:7)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" y="490" as="geometry" />
         </mxCell>
         <mxCell id="PxbgF3LIqnQxMvPvJgis-148" parent="1" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" value="" vertex="1">
           <mxGeometry height="40" width="70" x="1090" y="405" as="geometry" />
@@ -891,7 +891,7 @@
             <Array as="points">
               <mxPoint x="820" y="280" />
             </Array>
-            <mxPoint x="820" y="700" as="sourcePoint" />
+            <mxPoint x="820" y="670" as="sourcePoint" />
             <mxPoint x="875" y="280" as="targetPoint" />
           </mxGeometry>
         </mxCell>

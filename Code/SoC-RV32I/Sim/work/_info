@@ -1,0 +1,549 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s12c _opt1
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/khang/Documents/SystemVerilog/SoC-RV32I/Sim
+T_opt
+!s110 1773820899
+Vma<B8Ud]MgE=Q43Y[LlWV2
+04 6 4 work CPU_tb fast 0
+=1-000c29bd25aa-69ba5be3-b5f74-c60f6
+R1
+Z3 !s12f OEM100
+Z4 !s12b OEM100
+Z5 !s124 OEM100
+Z6 o-quiet -auto_acc_if_foreign -work work
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2024.1;79
+T_opt1
+!s110 1773816820
+V0@79i]8ejT1;>Fmi@zA9:2
+04 7 4 work RegFile fast 0
+=1-000c29bd25aa-69ba4bf4-6cbe2-af250
+R1
+R3
+R4
+R5
+R6
+R7
+n@_opt1
+R8
+R2
+vALU
+Z9 2../CPU/ALU.sv|../CPU/ALUControl.sv|../CPU/CPU.sv|../CPU/ControlUnit.sv|../CPU/EX_MEM.sv|../CPU/HazardUnit.sv|../CPU/ID_EX.sv|../CPU/IF_ID.sv|../CPU/MEM_WB.sv|../CPU/MainDecoder.sv|../CPU/RegFile.sv|../CPU/data_mem.sv|../CPU/instr_mem.sv|../CPU/pc.sv|../CPU/signExtend.sv
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z11 !s110 1773820898
+!i10b 1
+!s100 a[=LR:@;a9hAZLcX2`0Kn1
+Ig^IYh@`FNFeg5[N?JN9o^1
+S1
+R2
+w1773820424
+8../CPU/ALU.sv
+F../CPU/ALU.sv
+!i122 114
+Z12 L0 1 38
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2024.1;79
+r1
+!s85 0
+31
+Z15 !s108 1773820898.000000
+Z16 !s107 ../CPU/signExtend.sv|../CPU/pc.sv|../CPU/instr_mem.sv|../CPU/data_mem.sv|../CPU/RegFile.sv|../CPU/MainDecoder.sv|../CPU/MEM_WB.sv|../CPU/IF_ID.sv|../CPU/ID_EX.sv|../CPU/HazardUnit.sv|../CPU/EX_MEM.sv|../CPU/ControlUnit.sv|../CPU/CPU.sv|../CPU/ALUControl.sv|../CPU/ALU.sv|
+Z17 !s90 -sv|../CPU/ALU.sv|../CPU/ALUControl.sv|../CPU/CPU.sv|../CPU/ControlUnit.sv|../CPU/EX_MEM.sv|../CPU/HazardUnit.sv|../CPU/ID_EX.sv|../CPU/IF_ID.sv|../CPU/MEM_WB.sv|../CPU/MainDecoder.sv|../CPU/RegFile.sv|../CPU/data_mem.sv|../CPU/instr_mem.sv|../CPU/pc.sv|../CPU/signExtend.sv|
+!i113 0
+Z18 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
+n@a@l@u
+vALUControl
+R9
+R10
+R11
+!i10b 1
+!s100 BG?CbI:z`EP]d]3`8i7LQ1
+IEA6f03M`>k5=mY?jG^MHB1
+S1
+R2
+w1773743541
+8../CPU/ALUControl.sv
+F../CPU/ALUControl.sv
+!i122 114
+L0 1 40
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@a@l@u@control
+vControlUnit
+R9
+R10
+R11
+!i10b 1
+!s100 V9;Xg6=6S;cB]h?7JX>HR1
+IR5Q5JU`<XCn98`0fg8l>]0
+S1
+R2
+w1773815318
+8../CPU/ControlUnit.sv
+F../CPU/ControlUnit.sv
+!i122 114
+R12
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@control@unit
+vCPU
+R9
+R10
+R11
+!i10b 1
+!s100 Tke?PSXdJ[_2KX5U7heWG0
+IfSYPOkQ2BR^j:bHoDQcX30
+S1
+R2
+w1773815888
+8../CPU/CPU.sv
+F../CPU/CPU.sv
+!i122 114
+L0 1 283
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@c@p@u
+vCPU_tb
+2./CPU_tb.sv
+R10
+R11
+!i10b 1
+!s100 i>TV`VI4MFP@DEIf:e]:M0
+I3No1RBoj>Bb0ITafjPd1V2
+S1
+R2
+w1773820804
+8./CPU_tb.sv
+F./CPU_tb.sv
+!i122 115
+L0 3 132
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 ./CPU_tb.sv|
+!s90 -sv|./CPU_tb.sv|
+!i113 0
+R18
+R7
+n@c@p@u_tb
+vdata_mem
+R9
+R10
+R11
+!i10b 1
+!s100 8odHeS1jALPULE2KjEU_E1
+I_WWEDO8majS@OdLN:SMR=1
+S1
+R2
+w1773745193
+8../CPU/data_mem.sv
+F../CPU/data_mem.sv
+!i122 114
+L0 1 24
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+vEX_MEM
+R9
+R10
+R11
+!i10b 1
+!s100 hG6Ue5hJSImdNXI7V;5Jc0
+I066i@HAU69]KL_g@fSa<W2
+S1
+R2
+w1773815353
+8../CPU/EX_MEM.sv
+F../CPU/EX_MEM.sv
+!i122 114
+Z19 L0 1 41
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@e@x_@m@e@m
+vHazardUnit
+R9
+R10
+R11
+!i10b 1
+!s100 1VjJL;>f[E]kbf@zJ[5fk2
+IbBokj^9ZAo7oz;hF8c>iE0
+S1
+R2
+w1773745842
+8../CPU/HazardUnit.sv
+F../CPU/HazardUnit.sv
+!i122 114
+R19
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@hazard@unit
+vID_EX
+R9
+R10
+R11
+!i10b 1
+!s100 7GXb_i[4;5_V1_?;ZXT4W0
+I_n^J4nCd1S8=^7b08i<_X0
+S1
+R2
+w1773820294
+8../CPU/ID_EX.sv
+F../CPU/ID_EX.sv
+!i122 114
+L0 1 96
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@i@d_@e@x
+vIF_ID
+R9
+R10
+R11
+!i10b 1
+!s100 GW8bzCP8i0=IV1<^2Mg^E0
+I?0fd4fnzWb7VL2aV0LkW40
+S1
+R2
+w1773807539
+8../CPU/IF_ID.sv
+F../CPU/IF_ID.sv
+!i122 114
+L0 1 31
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@i@f_@i@d
+vinstr_mem
+R9
+R10
+R11
+!i10b 1
+!s100 n;mDcC^La]bb>QGSYaUef3
+I=BRFf8BBm6]O1hVZ=TWSk1
+S1
+R2
+w1773817260
+8../CPU/instr_mem.sv
+F../CPU/instr_mem.sv
+!i122 114
+L0 1 23
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+vMainDecoder
+R9
+R10
+R11
+!i10b 1
+!s100 2JGSB]L<@2M7?mzDQFa^c2
+Iza<0]X^^RnmL66L^aDQOn2
+S1
+R2
+w1773819749
+8../CPU/MainDecoder.sv
+F../CPU/MainDecoder.sv
+!i122 114
+L0 1 72
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@main@decoder
+vMEM_WB
+R9
+R10
+R11
+!i10b 1
+!s100 jB6XR1GdY@2kWg4ALP0oE3
+IcG_VmHU:Sg^f1U_Cd5gOL2
+S1
+R2
+w1773815395
+8../CPU/MEM_WB.sv
+F../CPU/MEM_WB.sv
+!i122 114
+L0 1 37
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@m@e@m_@w@b
+vpc_reg
+R9
+R10
+R11
+!i10b 1
+!s100 GF`h2a<389Z6bG2NLzB^X2
+I2SY:Hoc0h=Ud7GXn]7nQW1
+S1
+R2
+w1773797424
+8../CPU/pc.sv
+F../CPU/pc.sv
+!i122 114
+L0 1 18
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+vRegFile
+R9
+R10
+R11
+!i10b 1
+!s100 LlO3coO3zHRb_hbPoi36H1
+I6V]J>:T^I9T1;^_<JfT580
+S1
+R2
+w1773816758
+8../CPU/RegFile.sv
+F../CPU/RegFile.sv
+!i122 114
+L0 1 30
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+n@reg@file
+vsignExtend
+R9
+R10
+R11
+!i10b 1
+!s100 NgemfXVUCoL>89ld4eB8_3
+IV4o;;M4L35nNFd8Lk6^a62
+S1
+R2
+w1773808032
+8../CPU/signExtend.sv
+F../CPU/signExtend.sv
+!i122 114
+L0 1 28
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R7
+nsign@extend
