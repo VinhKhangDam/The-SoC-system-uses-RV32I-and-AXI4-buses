@@ -1,0 +1,364 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Mar 25 20:54:48 2026
+# Process ID         : 127874
+# Current directory  : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc/soc.runs/synth_1
+# Command line       : vivado -log AXI_Master.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AXI_Master.tcl
+# Log file           : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc/soc.runs/synth_1/AXI_Master.vds
+# Journal file       : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc/soc.runs/synth_1/vivado.jou
+# Running On         : VirtMach
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700F
+# CPU Frequency      : 2111.999 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 20
+# Host memory        : 50466 MB
+# Swap memory        : 127999 MB
+# Total Virtual      : 178466 MB
+# Available Virtual  : 165290 MB
+#-----------------------------------------------------------
+source AXI_Master.tcl -notrace
+Command: synth_design -top AXI_Master -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 127902
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1748.641 ; gain = 342.852 ; free physical = 5792 ; free virtual = 156636
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'mem_funct3_o', assumed default net type 'wire' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv:260]
+INFO: [Synth 8-11241] undeclared symbol 'StallD', assumed default net type 'wire' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv:301]
+INFO: [Synth 8-11241] undeclared symbol 'FlushD', assumed default net type 'wire' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv:303]
+INFO: [Synth 8-6157] synthesizing module 'AXI_Master' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/AXI_Master.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'CPU' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/pc.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/pc.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'instr_mem' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/instr_mem.sv:1]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'instr.mem'; please make sure the file is added to project and has read permission, ignoring [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/instr_mem.sv:10]
+INFO: [Synth 8-251] --- SUCCESS: Da nap chuong trinh vao Instruction Memory --- [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/instr_mem.sv:16]
+INFO: [Synth 8-6155] done synthesizing module 'instr_mem' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/instr_mem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/IF_ID.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/IF_ID.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'MainDecoder' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/MainDecoder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'MainDecoder' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/MainDecoder.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ALUControl' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ALUControl.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ALUControl.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/RegFile.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/RegFile.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'signExtend' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/signExtend.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'signExtend' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/signExtend.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ID_EX.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ID_EX.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ALU.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ALU.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/EX_MEM.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/EX_MEM.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/MEM_WB.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/MEM_WB.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/HazardUnit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/HazardUnit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'CPU' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'LSU' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/LSU.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/LSU.sv:66]
+INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/LSU.sv:83]
+INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/LSU.sv:182]
+INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/LSU.sv:196]
+INFO: [Synth 8-6155] done synthesizing module 'LSU' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/LSU.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'AXI_Master' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/AXI_Master.sv:1]
+WARNING: [Synth 8-3848] Net mem in module/entity instr_mem does not have driver. [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/instr_mem.sv:6]
+WARNING: [Synth 8-3848] Net mem_funct_o in module/entity CPU does not have driver. [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv:9]
+WARNING: [Synth 8-3848] Net FlushF in module/entity CPU does not have driver. [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv:16]
+WARNING: [Synth 8-7129] Port m_axi_bresp[1] in module LSU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bresp[0] in module LSU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rresp[1] in module LSU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rresp[0] in module LSU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[31] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[30] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[29] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[28] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[27] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[26] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[25] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[24] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[23] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[22] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[21] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[20] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[19] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[18] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[17] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[16] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[15] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[14] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[13] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[12] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[11] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[10] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[9] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[8] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[7] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[6] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[5] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[4] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[3] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[2] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[1] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[0] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[31] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[30] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[29] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[28] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[27] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[26] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[25] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[24] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[23] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[22] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[21] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[20] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[19] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[18] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[17] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[16] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[15] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[14] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[13] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[12] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[11] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[10] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[9] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[8] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[7] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[6] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[5] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[4] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[3] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[2] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[1] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[0] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_funct_o[2] in module CPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_funct_o[1] in module CPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_funct_o[0] in module CPU is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1826.578 ; gain = 420.789 ; free physical = 5701 ; free virtual = 156546
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1844.391 ; gain = 438.602 ; free physical = 5701 ; free virtual = 156546
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1861.301 ; gain = 455.512 ; free physical = 5701 ; free virtual = 156546
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'PresentState_reg' in module 'LSU'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 ST_IDLE |                            00001 |                              000
+               ST_W_ADDR |                            00010 |                              001
+               ST_W_RESP |                            00100 |                              010
+               ST_R_ADDR |                            01000 |                              011
+               ST_R_DATA |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'PresentState_reg' using encoding 'one-hot' in module 'LSU'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1861.301 ; gain = 455.512 ; free physical = 5695 ; free virtual = 156541
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 49    
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 14    
+	   3 Input   32 Bit        Muxes := 3     
+	   4 Input   32 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 4     
+	   5 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 35    
+	   5 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design AXI_Master has port m_axi_awprot[2] driven by constant 0
+WARNING: [Synth 8-3917] design AXI_Master has port m_axi_awprot[1] driven by constant 0
+WARNING: [Synth 8-3917] design AXI_Master has port m_axi_awprot[0] driven by constant 0
+WARNING: [Synth 8-3917] design AXI_Master has port m_axi_arprot[2] driven by constant 0
+WARNING: [Synth 8-3917] design AXI_Master has port m_axi_arprot[1] driven by constant 0
+WARNING: [Synth 8-3917] design AXI_Master has port m_axi_arprot[0] driven by constant 0
+WARNING: [Synth 8-7129] Port mem_funct_o[2] in module CPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_funct_o[1] in module CPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_funct_o[0] in module CPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bresp[1] in module AXI_Master is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bresp[0] in module AXI_Master is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rresp[1] in module AXI_Master is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rresp[0] in module AXI_Master is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (lsu/FSM_onehot_PresentState_reg[1]) is unused and will be removed from module AXI_Master.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2797.137 ; gain = 1391.348 ; free physical = 4813 ; free virtual = 155664
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2797.137 ; gain = 1391.348 ; free physical = 4816 ; free virtual = 155667
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2797.137 ; gain = 1391.348 ; free physical = 4816 ; free virtual = 155667
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4799 ; free virtual = 155650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4799 ; free virtual = 155650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4799 ; free virtual = 155650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4799 ; free virtual = 155650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4799 ; free virtual = 155650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4799 ; free virtual = 155650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT4 |     1|
+|4     |FDCE |     2|
+|5     |FDPE |     1|
+|6     |IBUF |     4|
+|7     |OBUF |   111|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   121|
+|2     |  lsu    |LSU    |     5|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4799 ; free virtual = 155650
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 89 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.074 ; gain = 1398.285 ; free physical = 4807 ; free virtual = 155658
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.082 ; gain = 1398.285 ; free physical = 4807 ; free virtual = 155658
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2826.949 ; gain = 0.000 ; free physical = 4963 ; free virtual = 155814
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2905.512 ; gain = 0.000 ; free physical = 4892 ; free virtual = 155743
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 4 instances
+
+Synth Design complete | Checksum: 78e4de13
+INFO: [Common 17-83] Releasing license: Synthesis
+55 Infos, 89 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2905.512 ; gain = 1499.734 ; free physical = 4900 ; free virtual = 155751
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2256.263; main = 2175.706; forked = 267.926
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3714.262; main = 2905.516; forked = 917.121
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2929.523 ; gain = 0.000 ; free physical = 4900 ; free virtual = 155751
+INFO: [Common 17-1381] The checkpoint '/home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc/soc.runs/synth_1/AXI_Master.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file AXI_Master_utilization_synth.rpt -pb AXI_Master_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 20:55:09 2026...

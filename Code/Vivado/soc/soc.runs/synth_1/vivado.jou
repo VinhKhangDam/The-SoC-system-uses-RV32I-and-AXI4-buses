@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Mar 25 20:54:48 2026
+# Process ID         : 127874
+# Current directory  : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc/soc.runs/synth_1
+# Command line       : vivado -log AXI_Master.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AXI_Master.tcl
+# Log file           : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc/soc.runs/synth_1/AXI_Master.vds
+# Journal file       : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc/soc.runs/synth_1/vivado.jou
+# Running On         : VirtMach
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700F
+# CPU Frequency      : 2111.999 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 20
+# Host memory        : 50466 MB
+# Swap memory        : 127999 MB
+# Total Virtual      : 178466 MB
+# Available Virtual  : 165290 MB
+#-----------------------------------------------------------
+source AXI_Master.tcl -notrace

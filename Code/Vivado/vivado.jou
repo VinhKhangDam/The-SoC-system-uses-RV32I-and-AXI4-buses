@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Mar 25 20:51:00 2026
+# Process ID         : 125748
+# Current directory  : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado
+# Command line       : vivado
+# Log file           : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/vivado.log
+# Journal file       : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/vivado.jou
+# Running On         : VirtMach
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700F
+# CPU Frequency      : 2111.999 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 20
+# Host memory        : 50466 MB
+# Swap memory        : 127999 MB
+# Total Virtual      : 178466 MB
+# Available Virtual  : 166229 MB
+#-----------------------------------------------------------
+start_gui
+create_project soc /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/soc -part xczu7ev-ffvc1156-2-e
+set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
+add_files {/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ALU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/CPU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/HazardUnit.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/IF_ID.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/MainDecoder.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/signExtend.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/instr_mem.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ControlUnit.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/RegFile.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/Master/LSU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ID_EX.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/data_mem.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/EX_MEM.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/MEM_WB.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/pc.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/AXI_Master.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/ALUControl.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/CPU/data_mem.sv
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/khang/Documents/SystemVerilog/SoC-RV32I/Sim/instr.mem
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
