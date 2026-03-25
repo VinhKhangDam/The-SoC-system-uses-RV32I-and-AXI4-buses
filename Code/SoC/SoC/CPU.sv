@@ -1,6 +1,14 @@
 module CPU (
     input logic clk,
-    input logic rstn
+    input logic rstn,
+
+    output logic [31:0] mem_addr_o,
+    output logic [31:0] mem_wdata_o,
+    output logic mem_we_o,
+    output logic mem_req_o,
+    output logic [2:0] mem_funct_o,
+    input logic [31:0] mem_rdata_i,
+    input logic mem_stall_i
 );
     // Internal variables
     // Fetch Stage   
@@ -25,7 +33,7 @@ module CPU (
     logic [2:0] ImmSrc;
     // Field of Instruction
     logic [6:0] Opcode;
-    logic [2:0] Funct3;
+    logic [2:0] Funct3, Funct3E, Funct3M; 
     logic Funct7;
     logic [4:0] Rs1D;
     logic [4:0] Rs2D;
@@ -107,7 +115,7 @@ module CPU (
         .pcD(PcD),
         .pcPlus4F(PcPlus4F),
         .pcPlus4D(PcPlus4D),
-        .stall(StallF),
+        .stall(mem_stall_i),
         .flush(FlushF)
     );
 
@@ -171,6 +179,7 @@ module CPU (
         .rdD(RdD),
         .pcD(PcD),
         .pcPlus4D(PcPlus4D),
+        .Funct3D(Funct3)
         .ExtImmD(ExtImmD),
         .RegWriteE(RegWriteE),
         .MemWriteE(MemWriteE),
@@ -187,7 +196,9 @@ module CPU (
         .pcE(PcE),
         .pcPlus4E(PcPlus4E),
         .ExtImmE(ExtImmE),
-        .flush(FlushE)
+        .flush(FlushE),
+        .Funct3E(Funct3E),
+        .stall(mem_stall_i)
     );
 
     // Execution Processing
@@ -219,24 +230,35 @@ module CPU (
         .WriteDataE(WriteDataE),
         .rdE(RdE),
         .pcPlus4E(PcPlus4E),
+        .Funct3E(Funct3E),
         .RegWriteM(RegWriteM),
         .ResultSrcM(ResultSrcM),
         .MemWriteM(MemWriteM),
         .ALUResultM(ALUResultM),
         .WriteDataM(WriteDataM),
         .rdM(RdM),
-        .pcPlus4M(PcPlus4M)
+        .pcPlus4M(PcPlus4M),
+        .Funct3M(Funct3M),
+        .stall(mem_stall_i)
     );
 
     // Mem processing
-    data_mem dm(
-        .clk(clk),
-        .rstn(rstn),
-        .WE(MemWriteM),
-        .ALUResult(ALUResultM),
-        .WriteData(WriteDataM),
-        .ReadData(ReadDataM)
-    );
+    // Data mem will use in Test CPU, but i want to design a Soc so I decide remove data mem and use LSU
+    // data_mem dm(
+    //     .clk(clk),
+    //     .rstn(rstn),
+    //     .WE(MemWriteM),
+    //     .ALUResult(ALUResultM),
+    //     .WriteData(WriteDataM),
+    //     .ReadData(ReadDataM)
+    // );
+
+    assign mem_addr_o   = ALUResultM;
+    assign mem_wdata_o  = WriteDataM;
+    assign mem_we_o     = MemWriteM;
+    assign mem_req_o    = MemWriteM | (ResultSrcM == 2'b01);
+    assign mem_funct3_o = Funct3M;
+    assign ReadDataM    = mem_rdata_i;
 
     MEM_WB memwbmd(
         .clk(clk),
@@ -252,7 +274,8 @@ module CPU (
         .ALUResultW(ALUResultW),
         .ReadDataW(ReadDataW),
         .rdW(RdW),
-        .pcPlus4W(PcPlus4W)
+        .pcPlus4W(PcPlus4W),
+        .stall(mem_stall_i)
     );
 
     // WriteBack processing
@@ -277,7 +300,8 @@ module CPU (
         .stallF(StallF),
         .stallD(StallD),
         .flushE(FlushE),
-        .flushD(FlushD)
+        .flushD(FlushD),
+        .lsu_stall(mem_stall_i)
     );
 
 endmodule   

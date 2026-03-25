@@ -17,6 +17,7 @@ module ID_EX (
     input logic [31:0] pcD,
     input logic [31:0] pcPlus4D,
     input logic [31:0] ExtImmD, 
+    input logic [2:0] Funct3D,
 
     // Output
     output logic RegWriteE,
@@ -34,9 +35,11 @@ module ID_EX (
     output logic [31:0] pcE,
     output logic [31:0] pcPlus4E,
     output logic [31:0] ExtImmE, 
+    output logic [2:0] Funct3E,
 
     // Harvard Unit
-    input logic flush
+    input logic flush,
+    input logic stall
 );
 
     always_ff @(posedge clk or negedge rstn ) begin
@@ -56,6 +59,7 @@ module ID_EX (
             pcE <= 32'd0;
             pcPlus4E <= 32'd0;
             ExtImmE <= 32'd0;
+            Funct3E <= '0;
         end
         else begin
             if (flush) begin
@@ -72,8 +76,9 @@ module ID_EX (
                 rs2E        <= 5'd0;
                 rdE         <= 5'd0;
                 ExtImmE     <= 32'd0;
+                Funct3E     <= '0;
             end
-            else begin
+            else if (!stall) begin
                 RegWriteE <= RegWriteD;
                 MemWriteE <= MemWriteD;
                 ResultSrcE <= ResultSrcD;
@@ -89,6 +94,7 @@ module ID_EX (
                 pcE <= pcD;
                 pcPlus4E <= pcPlus4D;
                 ExtImmE <= ExtImmD;
+                Funct3E <= Funct3D; 
             end
         end
     end

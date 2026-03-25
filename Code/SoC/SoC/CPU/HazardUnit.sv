@@ -4,6 +4,7 @@ module HazardUnit (
     input  logic       RegWriteM, RegWriteW,
     input  logic       ResultSrc0, // Tín hiệu ResultSrcE[0] (báo lệnh Load)
     input  logic       pcSrcE,      // Tín hiệu quyết định rẽ nhánh
+    input  logic       lsu_stall,
     
     output logic [1:0] forwardAE, forwardBE,
     output logic       stallF, stallD, flushE, flushD
@@ -31,8 +32,8 @@ module HazardUnit (
     logic lwStall;
     assign lwStall = ResultSrc0 && ((rs1D == rdE) || (rs2D == rdE));
     
-    assign stallF = lwStall;
-    assign stallD = lwStall;
+    assign stallF = lwStall | lsu_stall;
+    assign stallD = lwStall | lsu_stall;
 
     // --- Logic Flush cho Control Hazard & Load-Use ---
     assign flushE = lwStall || pcSrcE;

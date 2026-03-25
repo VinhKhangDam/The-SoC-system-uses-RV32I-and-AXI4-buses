@@ -14,7 +14,9 @@ module MEM_WB (
     output logic [31:0] ALUResultW,
     output logic [31:0] ReadDataW,
     output logic [4:0] rdW,
-    output logic [31:0] pcPlus4W
+    output logic [31:0] pcPlus4W,
+
+    input logic stall
 );
     always_ff @( posedge clk or negedge rstn ) begin
         if (~rstn) begin
@@ -25,7 +27,7 @@ module MEM_WB (
             rdW <= '0;
             pcPlus4W <= '0;
         end
-        else begin
+        else if (!stall) begin
             RegWriteW <= RegWriteM;
             ResultSrcW <= ResultSrcM;
             ALUResultW <= ALUResultM;

@@ -8,6 +8,7 @@ module EX_MEM (
     input logic [31:0] WriteDataE,
     input logic [4:0] rdE,
     input logic [31:0] pcPlus4E,
+    input logic [2:0] Funct3E,
 
     //Output
     output logic RegWriteM,
@@ -16,7 +17,10 @@ module EX_MEM (
     output logic [31:0] ALUResultM,
     output logic [31:0] WriteDataM,
     output logic [4:0] rdM,
-    output logic [31:0] pcPlus4M
+    output logic [31:0] pcPlus4M,
+    output logic [2:0] Funct3M,
+
+    input logic stall
 );
     always_ff @(posedge clk or negedge rstn ) begin
         if (~rstn) begin
@@ -27,8 +31,9 @@ module EX_MEM (
             WriteDataM <= 32'd0;
             rdM <= 5'd0;
             pcPlus4M <= 32'd0;
+            Funct3M <= '0;
         end
-        else begin
+        else if (!stall) begin
             RegWriteM <= RegWriteE;
             ResultSrcM <= ResultSrcE;
             MemWriteM <= MemWriteE;
@@ -36,6 +41,7 @@ module EX_MEM (
             WriteDataM <= WriteDataE;
             rdM <= rdE;
             pcPlus4M <= pcPlus4E;
+            Funct3M <= Funct3E;
         end
     end
 endmodule
