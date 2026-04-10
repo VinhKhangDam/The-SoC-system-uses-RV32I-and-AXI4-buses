@@ -62,7 +62,8 @@ compile:
 	            +incdir+$(VERIF_DIR)/Monitor \
 	            +incdir+$(VERIF_DIR)/Driver \
 	            +incdir+$(VERIF_DIR)/Agent \
-	            +incdir+$(VERIF_DIR)/Env \
+		    +incdir+$(VERIF_DIR)/Coverage \
+		    +incdir+$(VERIF_DIR)/Env \
 		    +incdir+$(VERIF_DIR)/Scoreboard \
 	            +incdir+$(VERIF_DIR)/Sequence \
 	            +incdir+$(VERIF_DIR)/Test \

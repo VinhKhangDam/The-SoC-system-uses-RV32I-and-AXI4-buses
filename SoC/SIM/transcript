@@ -1,5 +1,5 @@
 # vsim -c -L uvm -sv_seed random vopt_top "+UVM_TESTNAME=base_test" -do "run -all; quit" 
-# Start time: 14:46:42 on Apr 08,2026
+# Start time: 19:27:02 on Apr 10,2026
 # //  Questa Sim-64
 # //  Version 2024.1 linux_x86_64 Feb  1 2024
 # //
@@ -20,8 +20,6 @@
 # Loading work.soc_pkg(fast)
 # Loading mtiUvm.questa_uvm_pkg(fast)
 # Loading work.top_tb(fast)
-# Loading work.uvm_tb_udf_pkg(fast)
-# Loading work.clk_rst_inf_sv_unit(fast)
 # Loading work.clk_rst_inf(fast__1)
 # Loading work.soc_if(fast__2)
 # Loading work.TOP(fast)
@@ -75,7 +73,7 @@
 # One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(5).
 #    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 42
 # Loading /tools/mq/2024.1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# Sv_Seed = 94157508
+# Sv_Seed = 367221099
 # run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -104,13 +102,13 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
 # UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_simple_sequence.sv(9) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] Bat dau goi tin AXI Write Test ... 
 # UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 275000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 00000100, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 275000: uvm_test_top.env.scoreeboard [SCB] Ghi vao bo nho : Addr = 00000100, Data = 0000001e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 275000: uvm_test_top.env.scoreboard [SCB] Ghi vao bo nho : Addr = 00000100, Data = 0000001e
 # UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(72) @ 285000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr = 00000100, Data = deadbeef
 # UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_simple_sequence.sv(23) @ 285000: uvm_test_top.env.agent.sequencer@@seq [SEQ] Da gui xong goi tin!
 # UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 315000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 00000004, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 315000: uvm_test_top.env.scoreeboard [SCB] Ghi vao bo nho : Addr = 00000004, Data = 0000001e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 315000: uvm_test_top.env.scoreboard [SCB] Ghi vao bo nho : Addr = 00000004, Data = 0000001e
 # UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 355000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 00000008, Data = 00000014
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 355000: uvm_test_top.env.scoreeboard [SCB] Ghi vao bo nho : Addr = 00000008, Data = 00000014
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 355000: uvm_test_top.env.scoreboard [SCB] Ghi vao bo nho : Addr = 00000008, Data = 00000014
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 385000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
@@ -130,5 +128,5 @@
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mq/2024.1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 385 ns  Iteration: 56  Instance: /top_tb
-# End time: 14:46:44 on Apr 08,2026, Elapsed time: 0:00:02
+# End time: 19:27:04 on Apr 10,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 9

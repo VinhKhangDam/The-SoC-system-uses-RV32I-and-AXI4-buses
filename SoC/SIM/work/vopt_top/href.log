@@ -1,4 +1,37 @@
+BEGIN 1:TOP:fast:work
+    m_axi_rready :  1:top_tb:fast:work
+    m_axi_awvalid :  1:top_tb:fast:work
+    m_axi_bready :  1:top_tb:fast:work
+    m_axi_awready :  1:top_tb:fast:work
+    m_axi_araddr :  1:top_tb:fast:work
+    m_axi_wdata :  1:top_tb:fast:work
+    m_axi_arvalid :  1:top_tb:fast:work
+    m_axi_wstrb :  1:top_tb:fast:work
+    m_axi_arready :  1:top_tb:fast:work
+    m_axi_wvalid :  1:top_tb:fast:work
+    m_axi_rdata :  1:top_tb:fast:work
+    m_axi_wready :  1:top_tb:fast:work
+    m_axi_rresp :  1:top_tb:fast:work
+    m_axi_bresp :  1:top_tb:fast:work
+    m_axi_rvalid :  1:top_tb:fast:work
+    m_axi_awaddr :  1:top_tb:fast:work
+    m_axi_bvalid :  1:top_tb:fast:work
+END 
+BEGIN 1:RAM:fast:work
+    mem :  1:top_tb:fast:work
+END 
 BEGIN 3:soc_if:fast__2:work
+    bvalid :  1:top_tb:fast:work
+    uart_tx :  1:top_tb:fast:work
+    wready :  1:top_tb:fast:work
+    rvalid :  1:top_tb:fast:work
+    wstrb :  1:top_tb:fast:work
+    rdata :  1:top_tb:fast:work
+    spi_mosi :  1:top_tb:fast:work
+    awready :  1:top_tb:fast:work
+    arvalid :  1:top_tb:fast:work
+    awaddr :  1:top_tb:fast:work
+    bready :  1:top_tb:fast:work
     spi_sck :  1:top_tb:fast:work
     bresp :  1:top_tb:fast:work
     rready :  1:top_tb:fast:work
@@ -11,45 +44,8 @@ BEGIN 3:soc_if:fast__2:work
     awvalid :  1:top_tb:fast:work
     araddr :  1:top_tb:fast:work
     spi_miso :  1:top_tb:fast:work
-    bvalid :  1:top_tb:fast:work
-    uart_tx :  1:top_tb:fast:work
-    wready :  1:top_tb:fast:work
-    rvalid :  1:top_tb:fast:work
-    wstrb :  1:top_tb:fast:work
-    rdata :  1:top_tb:fast:work
-    spi_mosi :  1:top_tb:fast:work
-    awready :  1:top_tb:fast:work
-    arvalid :  1:top_tb:fast:work
-    awaddr :  1:top_tb:fast:work
-    bready :  1:top_tb:fast:work
-END 
-BEGIN 1:TOP:fast:work
-    m_axi_wvalid :  1:top_tb:fast:work
-    m_axi_rdata :  1:top_tb:fast:work
-    m_axi_wready :  1:top_tb:fast:work
-    m_axi_rresp :  1:top_tb:fast:work
-    m_axi_bresp :  1:top_tb:fast:work
-    m_axi_rvalid :  1:top_tb:fast:work
-    m_axi_awaddr :  1:top_tb:fast:work
-    m_axi_bvalid :  1:top_tb:fast:work
-    m_axi_rready :  1:top_tb:fast:work
-    m_axi_awvalid :  1:top_tb:fast:work
-    m_axi_bready :  1:top_tb:fast:work
-    m_axi_awready :  1:top_tb:fast:work
-    m_axi_araddr :  1:top_tb:fast:work
-    m_axi_wdata :  1:top_tb:fast:work
-    m_axi_arvalid :  1:top_tb:fast:work
-    m_axi_wstrb :  1:top_tb:fast:work
-    m_axi_arready :  1:top_tb:fast:work
 END 
 BEGIN 3:soc_if:fast__1:work
-    rvalid :  1:soc_pkg:fast:work
-    clk :  1:soc_pkg:fast:work
-    arvalid :  1:soc_pkg:fast:work
-    wready :  1:soc_pkg:fast:work
-    awvalid :  1:soc_pkg:fast:work
-    rready :  1:soc_pkg:fast:work
-    bready :  1:soc_pkg:fast:work
     arready :  1:soc_pkg:fast:work
     wdata :  1:soc_pkg:fast:work
     awaddr :  1:soc_pkg:fast:work
@@ -59,7 +55,11 @@ BEGIN 3:soc_if:fast__1:work
     bvalid :  1:soc_pkg:fast:work
     wvalid :  1:soc_pkg:fast:work
     awready :  1:soc_pkg:fast:work
-END 
-BEGIN 1:RAM:fast:work
-    mem :  1:top_tb:fast:work
+    rvalid :  1:soc_pkg:fast:work
+    clk :  1:soc_pkg:fast:work
+    arvalid :  1:soc_pkg:fast:work
+    wready :  1:soc_pkg:fast:work
+    awvalid :  1:soc_pkg:fast:work
+    rready :  1:soc_pkg:fast:work
+    bready :  1:soc_pkg:fast:work
 END 
