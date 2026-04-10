@@ -105,31 +105,6 @@ To run this project, follow these steps:
 
 1. Clone the repository from GitHub to your local machine:
    ```
-   git clone <repository-url>
-   cd <project-directory>
-   ```
-
-2. Source the environment script to set up the necessary environment variables:
-   ```
-   source SoC/env.sh
-   ```
-
-3. Navigate to the SIM directory and run the Makefile to simulate the design:
-   ```
-   cd SIM
-   make
-   ```
-
-After running the simulation, the results will include:
-- Simulation output showing the behavior of the SoC design.
-- Coverage reports indicating the test coverage of the design.
-
-## Running the Project
-
-To run this project, follow these steps:
-
-1. Clone the repository from GitHub to your local machine:
-   ```
    git clone https://github.com/VinhKhangDam/The-SoC-system-uses-RV32I-and-AXI4-buses.git
    cd The-SoC-system-uses-RV32I-and-AXI4-buses
    ```
