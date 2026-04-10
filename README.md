@@ -130,8 +130,8 @@ To run this project, follow these steps:
 
 1. Clone the repository from GitHub to your local machine:
    ```
-   git clone <repository-url>
-   cd <project-directory>
+   git clone https://github.com/VinhKhangDam/The-SoC-system-uses-RV32I-and-AXI4-buses.git
+   cd The-SoC-system-uses-RV32I-and-AXI4-buses
    ```
 
 2. Source the environment script to set up the necessary environment variables:
