@@ -11,9 +11,9 @@ VERIF_DIR    = $(ROOT_DIR)/VERIFICATION
 SIM_DIR      = $(ROOT_DIR)/SIM
 
 # --- Cấu hình Tool ---
-VLOG_CMD     = vlog -sv +acc -L uvm
-VSIM_CMD     = vsim -c -L uvm
-VOPT_CMD     = vopt +acc top_tb -o vopt_top
+VLOG_CMD     = vlog -sv +acc -L uvm -cover bcst
+VSIM_CMD     = vsim -c -L uvm -coverage
+VOPT_CMD     = vopt +acc +cover top_tb -o vopt_top
 
 # --- Thông số mô phỏng ---
 test_name    ?= base_test
@@ -78,7 +78,12 @@ compile:
 # Target chạy mô phỏng (Console mode)
 sim:
 	@echo "--- Dang chay simulation: $(test_name) ---"
-	$(VSIM_CMD) -sv_seed $(seed) vopt_top +UVM_TESTNAME=$(test_name) -do "run -all; quit"
+	$(VSIM_CMD) -sv_seed $(seed) vopt_top +UVM_TESTNAME=$(test_name) -do "coverage save -onexit coverage_result.ucdb; run -all; quit"
+	@echo "-------------------------------------------------------"
+	@echo "--- RESULT OF COVERAGE FOR SOC RISC-V ---"
+	@echo "-------------------------------------------------------"
+	vcover report -cvg -summary coverage_result.ucdb
+	@echo "-------------------------------------------------------"
 
 # Target chạy GUI để xem sóng
 gui:

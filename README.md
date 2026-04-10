@@ -98,13 +98,52 @@ The SoC top module exposes physical IO for:
 ## Design Notes
 
 - The CPU core is designed for a 32-bit RV32-style instruction set and supports a subset of RISC-V operations.
+
+## Running the Project
+
+To run this project, follow these steps:
+
+1. Clone the repository from GitHub to your local machine:
+   ```
+   git clone <repository-url>
+   cd <project-directory>
+   ```
+
+2. Source the environment script to set up the necessary environment variables:
+   ```
+   source SoC/env.sh
+   ```
+
+3. Navigate to the SIM directory and run the Makefile to simulate the design:
+   ```
+   cd SIM
+   make
+   ```
+
+After running the simulation, the results will include:
+- Simulation output showing the behavior of the SoC design.
+- Coverage reports indicating the test coverage of the design.
+
+## Running the Project
+
+To run this project, follow these steps:
+
+1. Clone the repository from GitHub to your local machine:
+   ```
+   git clone <repository-url>
+   cd <project-directory>
+   ```
+
+2. Source the environment script to set up the necessary environment variables:
+   ```
+   source SoC/env.sh
+   ```
+
+3. Navigate to the SIM directory and run the Makefile to simulate the design:
+   ```
+   cd SIM
+   make
+   ```
 - The design is modular and separates the processor datapath from the interconnect and peripheral wrappers.
 - Pipeline forwarding and hazard handling are implemented to maintain instruction throughput and avoid data hazards.
 
-## How to Use This Document
-
-This document provides a high-level reference for the SoC architecture and CPU datapath. For implementation details, review the source code modules listed above.
-
----
-
-**Bonus:** The CPU diagram has been included as `Architecture/CPU.png` for direct reference in Markdown.

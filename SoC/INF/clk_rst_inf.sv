@@ -1,6 +1,4 @@
-`include "../VERIFICATION/Env/uvm_tb_udf_pkg.svh"
 `timescale 1ns/1ps
-import uvm_tb_udf_pkg::*;
 interface clk_rst_inf (output logic clk, output logic rstn);
     
     // Khởi tạo Clock chuẩn

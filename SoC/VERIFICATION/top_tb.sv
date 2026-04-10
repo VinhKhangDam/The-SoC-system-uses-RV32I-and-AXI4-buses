@@ -8,7 +8,7 @@ module top_tb;
 
     // 2. Khai bao cac tin hieu ket noi co ban
     logic clk;
-    logic rst;
+    logic rstn;
 
     // 3. Khoi tao Interface tao xung (Clock & Reset)
     // Gia su HALF_CLK = 5 (chu ky 10ns = 100MHz)
