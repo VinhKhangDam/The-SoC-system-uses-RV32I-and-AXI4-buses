@@ -1,0 +1,47 @@
+// --- KHỞI TẠO THANH GHI (Lệnh 0-9) ---
+00a00093 // x1 = 10
+01400113 // x2 = 20
+01e00193 // x3 = 30
+02800213 // x4 = 40
+03200293 // x5 = 50
+03c00313 // x6 = 60
+04600393 // x7 = 70
+05000413 // x8 = 80
+05a00493 // x9 = 90
+06400513 // x10 = 100
+
+// --- TEST TÍNH TOÁN VÀ FORWARDING (Lệnh 10-19) ---
+002085b3 // x11 = x1 + x2 (Forwarding từ tầng MEM)
+00b60633 // x12 = x12 + x11 (Forwarding từ tầng WB)
+401606b3 // x13 = x12 - x1 (Sub)
+00d67733 // x14 = x12 AND x13
+00e6e7b3 // x15 = x13 OR x14
+00f7c833 // x16 = x15 XOR x14
+002098b3 // x17 = x1 << 2 (SLL)
+0110d933 // x18 = x17 >> 2 (SRL)
+00100993 // x19 = x0 + 1 (Flag check)
+
+// --- TEST DATA MEMORY (Lệnh 20-29) ---
+00b02023 // sw x11, 0(x0)  --> Lưu 30 vào RAM[0]
+00c02223 // sw x12, 4(x0)  --> Lưu x12 vào RAM[4]
+00d02423 // sw x13, 8(x0)  --> Lưu x13 vào RAM[8]
+00002a03 // lw x20, 0(x0)  --> Load lại 30 vào x20 (Test Load-Use Hazard)
+014a0a33 // x20 = x20 + x20 --> x20 = 60 (Check Stall)
+00402a83 // lw x21, 4(x0)
+00802b03 // lw x22, 8(x0)
+
+// --- TEST BRANCH VÀ JUMP (Lệnh 30-39) ---
+001a0463 // beq x20, x1, +8 (Nếu 60 == 10 thì nhảy - Sai)
+00000013 // nop (Lệnh giả để fill pipeline)
+014a8463 // beq x21, x20, +8 (Nếu x21 == 60 thì nhảy - Đúng)
+00000013 // nop (Lệnh này sẽ bị Flush nếu branch đúng)
+00c0006f // jal x0, +12 (Nhảy thẳng tới phần kết thúc)
+00000013 // nop
+00000013 // nop
+
+// --- PHẦN KẾT THÚC (Sửa lại đây) ---
+013a0a33 // x20 = x20 + x19 (Lệnh cuối cùng cần check)
+00000013 // nop (Thay vì lệnh beq gây vòng lặp)
+00000013 // nop
+00000013 // nop
+00000013 // nop

@@ -1,0 +1,77 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Apr  4 11:44:37 2026
+# Process ID         : 893954
+# Current directory  : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado
+# Command line       : vivado
+# Log file           : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/vivado.log
+# Journal file       : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/vivado.jou
+# Running On         : VirtMach
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700F
+# CPU Frequency      : 2111.999 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 20
+# Host memory        : 50466 MB
+# Swap memory        : 127999 MB
+# Total Virtual      : 178466 MB
+# Available Virtual  : 158251 MB
+#-----------------------------------------------------------
+start_gui
+create_project rv32i /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i -part xcvu37p-fsvh2892-2L-e
+set_property board_part xilinx.com:vcu128:part0:1.0 [current_project]
+add_files {/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/data_mem.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/data_mem.sv
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
+reset_property board_connections [get_projects rv32i]
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+add_files -norecurse /home/khang/Documents/SystemVerilog/SoC-RV32I/Sim/instr.mem
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+open_run impl_1
+add_files -fileset constrs_1 -norecurse /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/Constraint.xdc
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+open_run impl_1
