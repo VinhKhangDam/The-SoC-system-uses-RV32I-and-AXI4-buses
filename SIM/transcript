@@ -1,5 +1,5 @@
 # vsim -c -L uvm -coverage -sv_seed random vopt_top "+UVM_TESTNAME=base_test" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
-# Start time: 19:51:57 on Apr 10,2026
+# Start time: 13:31:57 on Apr 11,2026
 # //  Questa Sim-64
 # //  Version 2024.1 linux_x86_64 Feb  1 2024
 # //
@@ -75,7 +75,7 @@
 # One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(5).
 #    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 42
 # Loading /tools/mq/2024.1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# Sv_Seed = 281111429
+# Sv_Seed = 4220835684
 # coverage save -onexit coverage_result.ucdb
 #  run -all
 # ----------------------------------------------------------------
@@ -132,5 +132,5 @@
 # ** Note: $finish    : /tools/mq/2024.1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 385 ns  Iteration: 56  Instance: /top_tb
 # Saving coverage database on exit...
-# End time: 19:51:59 on Apr 10,2026, Elapsed time: 0:00:02
+# End time: 13:31:59 on Apr 11,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 10
