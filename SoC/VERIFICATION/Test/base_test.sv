@@ -13,9 +13,11 @@ class base_test	extends uvm_test;
 	endfunction
 
 	virtual task run_phase (uvm_phase phase);
-		axi_simple_sequence seq;
+		//axi_simple_sequence seq;
+		axi_multi_slave_sequence seq;
 		phase.raise_objection(this); // Start test
-		seq = axi_simple_sequence::type_id::create("seq");
+		//seq = axi_simple_sequence::type_id::create("seq");
+		seq = axi_multi_slave_sequence::type_id::create("seq");
     	if (!seq.randomize()) 
 			`uvm_error("TEST", "Randomized failed!")
 		seq.start(env.agent.sequencer); // Run sequence on sequencer

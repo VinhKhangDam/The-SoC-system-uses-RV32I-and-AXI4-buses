@@ -95,6 +95,8 @@ module LSU (
     end
 
     // Processing 2 : FSM
+    logic aw_handshaked, w_handshaked;
+
     always_ff @( posedge clk or negedge rstn ) begin
         if (~rstn) begin
             PresentState <= ST_IDLE;
@@ -111,6 +113,16 @@ module LSU (
                 wstrb_reg  <= wstrb_comb;
             end
         end
+    end
+
+    always_ff @(posedge clk or negedge rstn) begin
+    	if (!rstn || PresentState == ST_IDLE) begin
+		aw_handshaked <= '0;
+		w_handshaked <= '0;
+	end else begin
+		if (m_axi_awvalid && m_axi_awready) aw_handshaked <= '1;
+		if (m_axi_wvalid && m_axi_wready) w_handshaked <= '1;
+	end
     end
 
     always_comb begin
@@ -132,9 +144,9 @@ module LSU (
 
             ST_W_ADDR: begin // Write address
                 lsu_stall_o   = 1'b1;
-                m_axi_awvalid = 1'b1;
-                m_axi_wvalid  = 1'b1;
-                if (m_axi_awready && m_axi_wready) 
+                m_axi_awvalid = !aw_handshaked;
+		m_axi_wvalid  = !w_handshaked;
+                if ((aw_handshaked || m_axi_awready) && (w_handshaked || m_axi_wready)) 
                     NextState = ST_W_RESP;
             end
 

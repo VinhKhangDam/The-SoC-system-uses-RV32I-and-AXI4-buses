@@ -4,19 +4,19 @@ vlib work
 --- [1/4] Bien dich Interfaces ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/*.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 13:31:54 on Apr 11,2026
+Start time: 11:08:42 on Apr 13,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/clk_rst_inf.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv 
 -- Compiling interface clk_rst_inf
 -- Compiling interface soc_if
 
 Top level modules:
 	--none--
-End time: 13:31:54 on Apr 11,2026, Elapsed time: 0:00:00
+End time: 11:08:42 on Apr 13,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 --- [2/4] Bien dich DUT (SoC Logic) ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/*.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/*.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/*.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 13:31:54 on Apr 11,2026
+Start time: 11:08:42 on Apr 13,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU" /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/data_mem.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv 
 -- Compiling module RAM
 -- Compiling module SPI
@@ -48,7 +48,7 @@ vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/
 Top level modules:
 	data_mem
 	TOP
-End time: 13:31:54 on Apr 11,2026, Elapsed time: 0:00:00
+End time: 11:08:42 on Apr 13,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 3
 --- [3/4] Bien dich UVM Package ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Transaction \
@@ -63,7 +63,7 @@ vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/SoC
             +incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Test \
             /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Package/soc_pkg.svh
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 13:31:54 on Apr 11,2026
+Start time: 11:08:42 on Apr 13,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Transaction" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequencer" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Driver" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Agent" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Coverage" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Env" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence" "+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Test" /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Package/soc_pkg.svh 
 -- Compiling package soc_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -71,27 +71,27 @@ vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/
 
 Top level modules:
 	--none--
-End time: 13:31:55 on Apr 11,2026, Elapsed time: 0:00:01
+End time: 11:08:43 on Apr 13,2026, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 --- [4/4] Bien dich Top Testbench ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 13:31:55 on Apr 11,2026
+Start time: 11:08:43 on Apr 13,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv 
 -- Compiling module top_tb
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 -- Importing package soc_pkg
-** Note: (vlog-2286) /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv(7): Using implicit +incdir+/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+** Note: (vlog-2286) /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv(6): Using implicit +incdir+/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
 
 Top level modules:
 	top_tb
-End time: 13:31:55 on Apr 11,2026, Elapsed time: 0:00:00
+End time: 11:08:43 on Apr 13,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 --- [Optimize] Chay vopt ---
 vopt +acc +cover top_tb -o vopt_top
 QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
 ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-Start time: 13:31:55 on Apr 11,2026
+Start time: 11:08:43 on Apr 13,2026
 vopt "+acc" "+cover" top_tb -o vopt_top 
 
 Top level modules:
@@ -168,12 +168,12 @@ Optimizing 31 design-units (inlining 0/26 module instances):
 -- Optimizing module CPU(fast)
 -- Optimizing module SPI(fast)
 ** Note: (vopt-143) Recognized 1 FSM in module "SPI(fast)".
+-- Optimizing module top_tb(fast)
 -- Optimizing module Timer(fast)
 -- Optimizing module TOP(fast)
 -- Optimizing module RAM(fast)
 -- Optimizing module RAM(fast__1)
 -- Optimizing module ID_EX(fast)
--- Optimizing module top_tb(fast)
 -- Optimizing module HazardUnit(fast)
 -- Optimizing module MainDecoder(fast)
 -- Optimizing module EX_MEM(fast)
@@ -192,7 +192,7 @@ Optimizing 31 design-units (inlining 0/26 module instances):
 -- Optimizing interface soc_if(fast)
 -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 Optimized design name is vopt_top
-End time: 13:31:56 on Apr 11,2026, Elapsed time: 0:00:01
+End time: 11:08:45 on Apr 13,2026, Elapsed time: 0:00:02
 Errors: 0, Warnings: 31
 --- Dang chay simulation: base_test ---
 vsim -c -L uvm -coverage -sv_seed random vopt_top +UVM_TESTNAME=base_test -do "coverage save -onexit coverage_result.ucdb; run -all; quit"
@@ -201,7 +201,7 @@ Reading pref.tcl
 # 2024.1
 
 # vsim -c -L uvm -coverage -sv_seed random vopt_top "+UVM_TESTNAME=base_test" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
-# Start time: 13:31:57 on Apr 11,2026
+# Start time: 11:08:46 on Apr 13,2026
 # //  Questa Sim-64
 # //  Version 2024.1 linux_x86_64 Feb  1 2024
 # //
@@ -249,35 +249,8 @@ Reading pref.tcl
 # Loading work.SPI(fast)
 # ** Warning: (vsim-8386) Illegal assignment to type 'enum bit uvm_pkg::uvm_active_passive_enum' from type 'bit signed[31:0]': An enum variable may only be assigned the same enum typed variable or one of its values.
 #    Time: 0 ps  Iteration: 0  Region: /soc_pkg File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Env/axi_env.sv Line: 16
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/rready' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(27).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 58
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/arvalid' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(21).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 53
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/araddr' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(19).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 52
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/bready' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(17).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 51
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/wvalid' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(12).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 47
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/wstrb' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(11).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 46
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/wdata' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(10).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 45
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/awvalid' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(7).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 43
-# ** Warning: (vsim-3838) Variable '/top_tb/s_if/awaddr' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv Line: 42
 # Loading /tools/mq/2024.1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# Sv_Seed = 4220835684
+# Sv_Seed = 4111671475
 # coverage save -onexit coverage_result.ucdb
 #  run -all
 # ----------------------------------------------------------------
@@ -304,54 +277,275 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # --- SUCCESS: Da nap chuong trinh vao Instruction Memory ---
 # UVM_INFO @ 0: reporter [RNTST] Running test base_test...
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_simple_sequence.sv(9) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] Bat dau goi tin AXI Write Test ... 
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 275000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 00000100, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 275000: uvm_test_top.env.scoreboard [SCB] Ghi vao bo nho : Addr = 00000100, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(72) @ 285000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr = 00000100, Data = deadbeef
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_simple_sequence.sv(23) @ 285000: uvm_test_top.env.agent.sequencer@@seq [SEQ] Da gui xong goi tin!
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 315000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 00000004, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 315000: uvm_test_top.env.scoreboard [SCB] Ghi vao bo nho : Addr = 00000004, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 355000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 00000008, Data = 00000014
-# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(16) @ 355000: uvm_test_top.env.scoreboard [SCB] Ghi vao bo nho : Addr = 00000008, Data = 00000014
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 385000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv(20) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- STARTING AGGRESSIVE COVERAGE TEST ---
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv(24) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] Testing Data Patterns...
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 35000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000000, Data = 5555aaaa
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 35000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000000, Data=5555aaaa
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 65000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000004, Data = aaaa5555
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 65000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000004, Data=aaaa5555
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 95000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000008, Data = ffffffff
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 95000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000008, Data=ffffffff
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 125000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000000c, Data = 00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 125000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000000c, Data=00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv(32) @ 135000: uvm_test_top.env.agent.sequencer@@seq [SEQ] Testing Byte Strobe Access...
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 155000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000100, Data = 000000ff
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 155000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000100, Data=000000ff
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 185000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000100, Data = 0000ff00
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 185000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000100, Data=0000ff00
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 215000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100003fc, Data = deadc0de
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 215000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100003fc, Data=deadc0de
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv(39) @ 225000: uvm_test_top.env.agent.sequencer@@seq [SEQ] Generating 100 Random Transactions...
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 245000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000bc, Data = 549e933a
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 245000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000bc, Data=549e933a
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 275000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003f4, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 275000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003f4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 305000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100003dc, Data = 6d71ef98
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 305000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100003dc, Data=6d71ef98
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 335000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100001c8, Data = b088f30f
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 335000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100001c8, Data=b088f30f
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 365000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 1000017c, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 365000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=1000017c
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 395000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000300, Data = 2271f5a4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 395000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000300, Data=2271f5a4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 425000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100002b8, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 425000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100002b8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 455000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100001d4, Data = 541980a4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 455000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100001d4, Data=541980a4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 485000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100001ac, Data = 64503cb7
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 485000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100001ac, Data=64503cb7
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 515000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003c4, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 515000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003c4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 545000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000024c, Data = 1525222d
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 545000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000024c, Data=1525222d
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 575000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000080, Data = 93a82ed9
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 575000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000080, Data=93a82ed9
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 605000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000384, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 605000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000384
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 635000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000b0, Data = ba5dfe2e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 635000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000b0, Data=ba5dfe2e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 665000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000178, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 665000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000178
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 695000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000007c, Data = 28e9feb7
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 695000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000007c, Data=28e9feb7
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 725000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000318, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 725000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000318
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 755000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000198, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 755000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000198
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 785000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001bc, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 785000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100001bc
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 815000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001c8, Data = deadbeef
+# UVM_ERROR /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(30) @ 815000: uvm_test_top.env.scoreboard [SCB_FAIL] DRAM Mismatch! Addr=100001c8, Exp:b088f30f, Got:deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 845000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000c0, Data = 14d5f5cc
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 845000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000c0, Data=14d5f5cc
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 875000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000006c, Data = fd8b448e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 875000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000006c, Data=fd8b448e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 905000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001f8, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 905000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100001f8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 935000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100000fc, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 935000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100000fc
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 965000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000054, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 965000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000054
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 995000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000378, Data = 24d737f3
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 995000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000378, Data=24d737f3
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1025000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000340, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1025000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000340
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1055000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001f0, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1055000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100001f0
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1085000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000384, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1085000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000384
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1115000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000334, Data = fdce8cfe
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1115000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000334, Data=fdce8cfe
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1145000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000008, Data = deadbeef
+# UVM_ERROR /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(30) @ 1145000: uvm_test_top.env.scoreboard [SCB_FAIL] DRAM Mismatch! Addr=10000008, Exp:ffffffff, Got:deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1175000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100002d8, Data = 5d07df5a
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1175000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100002d8, Data=5d07df5a
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1205000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000370, Data = e0230a78
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1205000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000370, Data=e0230a78
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1235000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000128, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1235000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000128
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1265000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000012c, Data = 6c2a78fe
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1265000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000012c, Data=6c2a78fe
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1295000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100000d8, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1295000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100000d8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1325000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000210, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1325000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000210
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1355000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000058, Data = f7dac3fa
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1355000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000058, Data=f7dac3fa
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1385000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000b4, Data = 2b3ee145
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1385000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000b4, Data=2b3ee145
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1415000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000268, Data = e0d61d9f
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1415000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000268, Data=e0d61d9f
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1445000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000294, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1445000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000294
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1475000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000004, Data = 62122dc6
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1475000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000004, Data=62122dc6
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1505000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000194, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1505000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000194
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1535000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000044, Data = dc75af1c
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1535000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000044, Data=dc75af1c
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1565000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100001b8, Data = 986d7097
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1565000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100001b8, Data=986d7097
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1595000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000178, Data = 738a350d
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1595000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000178, Data=738a350d
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1625000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000180, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1625000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000180
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1655000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000208, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1655000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000208
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1685000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000058, Data = 685df40e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1685000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000058, Data=685df40e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1715000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000270, Data = 04d9ebd8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1715000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000270, Data=04d9ebd8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1745000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100002c8, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1745000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100002c8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1775000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100001dc, Data = 7ba8bd02
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1775000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100001dc, Data=7ba8bd02
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1805000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100000c8, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1805000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100000c8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1835000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000238, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1835000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000238
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1865000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000128, Data = ae2db61b
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1865000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000128, Data=ae2db61b
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1895000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000344, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 1895000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000344
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 1925000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001dc, Data = deadbeef
+# UVM_ERROR /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(30) @ 1925000: uvm_test_top.env.scoreboard [SCB_FAIL] DRAM Mismatch! Addr=100001dc, Exp:7ba8bd02, Got:deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1955000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000030c, Data = e8c95ece
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1955000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000030c, Data=e8c95ece
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 1985000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100002c4, Data = dfe37537
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 1985000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100002c4, Data=dfe37537
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2015000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000035c, Data = 20f62ade
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2015000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000035c, Data=20f62ade
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2045000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100003b4, Data = a52447f1
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2045000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100003b4, Data=a52447f1
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2075000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003c8, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2075000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003c8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2105000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000294, Data = f62bd345
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2105000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000294, Data=f62bd345
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2135000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003e4, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2135000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003e4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2165000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000d4, Data = 3959147c
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2165000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000d4, Data=3959147c
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2195000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003e4, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2195000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003e4
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2225000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000344, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2225000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000344
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2255000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100002b0, Data = 158e55e3
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2255000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100002b0, Data=158e55e3
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2285000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100002e0, Data = 07f0e81e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2285000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100002e0, Data=07f0e81e
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2315000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003c8, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2315000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003c8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2345000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000008, Data = 4bafc247
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2345000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000008, Data=4bafc247
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2375000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100001c0, Data = cf19b31a
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2375000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100001c0, Data=cf19b31a
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2405000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000b8, Data = 58bd64e2
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2405000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000b8, Data=58bd64e2
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2435000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 1000027c, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2435000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=1000027c
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2465000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000168, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2465000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000168
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2495000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000338, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2495000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000338
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2525000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000114, Data = b5c25b1b
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2525000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000114, Data=b5c25b1b
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2555000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000258, Data = f10a133f
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2555000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000258, Data=f10a133f
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2585000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100000d0, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2585000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100000d0
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2615000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100001fc, Data = 8b3d1e18
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2615000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100001fc, Data=8b3d1e18
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2645000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000394, Data = dbc050f3
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2645000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000394, Data=dbc050f3
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2675000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000f0, Data = b5943c53
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2675000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000f0, Data=b5943c53
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2705000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003f0, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2705000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003f0
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2735000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 1000019c, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2735000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=1000019c
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2765000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000048, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2765000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000048
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2795000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000038, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2795000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000038
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2825000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100002f4, Data = 3d84e9e8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2825000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100002f4, Data=3d84e9e8
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2855000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000118, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2855000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000118
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2885000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000017c, Data = 9d2ed869
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2885000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000017c, Data=9d2ed869
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2915000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100003cc, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2915000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100003cc
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 2945000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100002d4, Data = 4e2deff5
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 2945000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100002d4, Data=4e2deff5
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 2975000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001cc, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 2975000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100001cc
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 3005000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000200, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 3005000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000200
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 3035000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000010, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 3035000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=10000010
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 3065000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000048, Data = a020b715
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 3065000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=10000048, Data=a020b715
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 3095000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001a0, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 3095000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100001a0
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 3125000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 100000c4, Data = 35ab87d1
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 3125000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=100000c4, Data=35ab87d1
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 3155000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000370, Data = deadbeef
+# UVM_ERROR /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(30) @ 3155000: uvm_test_top.env.scoreboard [SCB_FAIL] DRAM Mismatch! Addr=10000370, Exp:e0230a78, Got:deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 3185000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000024c, Data = 657904db
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(24) @ 3185000: uvm_test_top.env.scoreboard [SCB_DRAM] Write DRAM: Addr=1000024c, Data=657904db
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 3215000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 100001d0, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(32) @ 3215000: uvm_test_top.env.scoreboard [SCB_WARN] Read DRAM chua qua khoi tao: Addr=100001d0
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv(53) @ 3225000: uvm_test_top.env.agent.sequencer@@seq [SEQ] Checking Illegal Address...
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(64) @ 3245000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = ffffffff, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(46) @ 3245000: uvm_test_top.env.scoreboard [MON_IO] [UNKNOWN]  READ: Addr=ffffffff, Data=deadbeef
+# UVM_WARNING /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(51) @ 3245000: uvm_test_top.env.scoreboard [SCB_IO_ERR] Ngoai vi UNKNOWN tra ve DEADBEEF (Decode Error?)
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 3275000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 30000000, Data = 0000004b
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(46) @ 3275000: uvm_test_top.env.scoreboard [MON_IO] [UART] WRITE: Addr=30000000, Data=0000004b
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(44) @ 3305000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 40000004, Data = 00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(46) @ 3305000: uvm_test_top.env.scoreboard [MON_IO] [SPI] WRITE: Addr=40000004, Data=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv(62) @ 3315000: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- ALL TESTCASES SENT ---
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 3415000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   14
-# UVM_WARNING :    0
-# UVM_ERROR :    0
+# UVM_INFO :  226
+# UVM_WARNING :    1
+# UVM_ERROR :    4
 # UVM_FATAL :    0
 # ** Report counts by id
-# [DRV]     1
-# [MON_WR]     3
-# [Questa UVM]     3
+# [MON_IO]     3
+# [MON_RD]    51
+# [MON_WR]    59
+# [Questa UVM]     2
 # [RNTST]     1
-# [SCB]     3
-# [SEQ]     2
+# [SCB_DRAM]    57
+# [SCB_FAIL]     4
+# [SCB_IO_ERR]     1
+# [SCB_WARN]    46
+# [SEQ]     6
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mq/2024.1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 385 ns  Iteration: 56  Instance: /top_tb
+#    Time: 3415 ns  Iteration: 54  Instance: /top_tb
 # Saving coverage database on exit...
-# End time: 13:31:59 on Apr 11,2026, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 10
+# End time: 11:08:48 on Apr 13,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
 -------------------------------------------------------
 --- RESULT OF COVERAGE FOR SOC RISC-V ---
 -------------------------------------------------------
 vcover report -cvg -summary coverage_result.ucdb
 QuestaSim-64 vcover 2024.1 Coverage Utility 2024.02 Feb  1 2024
-Start time: 13:31:59 on Apr 11,2026
+Start time: 11:08:48 on Apr 13,2026
 vcover report -cvg -summary coverage_result.ucdb 
 Coverage Report Totals BY INSTANCES: Number of Instances 27
 
     Enabled Coverage              Bins      Hits    Misses    Weight  Coverage
     ----------------              ----      ----    ------    ------  --------
-    Covergroups                      1        na        na         1    14.58%
+    Covergroups                      1        na        na         1    83.33%
         Coverpoints/Crosses          6        na        na         1        na
-            Covergroup Bins         29         3        26         1    10.34%
-Total coverage (filtered view): 14.58%
+            Covergroup Bins         25        17         8         1    68.00%
+Total coverage (filtered view): 83.33%
 
-End time: 13:31:59 on Apr 11,2026, Elapsed time: 0:00:00
+End time: 11:08:48 on Apr 13,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 -------------------------------------------------------

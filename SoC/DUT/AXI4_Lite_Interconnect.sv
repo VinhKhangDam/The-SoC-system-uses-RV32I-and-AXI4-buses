@@ -62,13 +62,13 @@ module AXI4_Lite_Interconnect #(
     localparam [31:0] ADDR_UART_BASE  = 32'h3000_0000; // UART
     localparam [31:0] ADDR_SPI_BASE   = 32'h4000_0000; // SPI
 
-    localparam [31:0] ADDR_MASK_BASE  = 32'hF000_0000; 
+    localparam [31:0] ADDR_MASK_STRICT  = 32'hFF00_0000; 
 
     // Decoder address
     logic [2:0] write_sel, read_sel; // 0: Instruction RAM, 1: Data RAM, 2: Timer, 3: UART, 4: SPI
 
     always_comb begin : Write_selection
-        case (m_axi_awaddr & ADDR_MASK_BASE)
+        case (m_axi_awaddr & ADDR_MASK_STRICT)
             ADDR_IRAM_BASE : write_sel = 3'd0;
             ADDR_DRAM_BASE : write_sel = 3'd1;
             ADDR_TIMER_BASE: write_sel = 3'd2;
@@ -79,7 +79,7 @@ module AXI4_Lite_Interconnect #(
     end // Write_selection
 
     always_comb begin : Read_selection
-        case (m_axi_araddr & ADDR_MASK_BASE)
+        case (m_axi_araddr & ADDR_MASK_STRICT)
             ADDR_IRAM_BASE : read_sel = 3'd0;
             ADDR_DRAM_BASE : read_sel = 3'd1;
             ADDR_TIMER_BASE: read_sel = 3'd2;
@@ -143,20 +143,29 @@ module AXI4_Lite_Interconnect #(
             m_axi_bresp = s_axi_bresp[write_sel_q];
             m_axi_bvalid = s_axi_bvalid[write_sel_q];
             for (int i = 0; i < NUM_SLAVES; i++) s_axi_bready[i] = (write_sel_q == i) ? m_axi_bready : 1'b0;
+        end else if (write_sel_q == 3'd7) begin
+            m_axi_bresp  = 2'b11; // DECERR
+            m_axi_bvalid = 1'b1;
+            s_axi_bready = '0;
         end else begin
-            m_axi_bresp = 2'b11;//DECERR
             m_axi_bvalid = 1'b0;
             s_axi_bready = '0;
         end
 
         if (read_sel_q < NUM_SLAVES) begin
-            m_axi_rdata   = s_axi_rdata[read_sel_q];
-            m_axi_rresp   = s_axi_rresp[read_sel_q];
-            m_axi_rvalid  = s_axi_rvalid[read_sel_q];
-            for (int i=0; i<NUM_SLAVES; i++) s_axi_rready[i] = (read_sel_q == i) ? m_axi_rready : 1'b0;
-        end else begin
+            m_axi_rdata   = s_axi_rdata[read_sel_q]; 
+            m_axi_rresp   = s_axi_rresp[read_sel_q]; 
+            m_axi_rvalid  = s_axi_rvalid[read_sel_q]; 
+            for (int i=0; i<NUM_SLAVES; i++) 
+                s_axi_rready[i] = (read_sel_q == i) ? m_axi_rready : 1'b0;
+        end else if (read_sel_q == 3'd7) begin
             m_axi_rdata   = 32'hDEADBEEF;
-            m_axi_rresp   = 2'b11; // DECERR
+            m_axi_rresp   = 2'b11; // DECERR 
+            m_axi_rvalid  = 1'b1; 
+            s_axi_rready  = '0; 
+        end else begin
+            m_axi_rdata   = 32'h0;
+            m_axi_rresp   = 2'b00;
             m_axi_rvalid  = 1'b0;
             s_axi_rready  = '0;
         end

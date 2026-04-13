@@ -11,5 +11,6 @@ package soc_pkg;
     `include "axi_coverage.sv"
     `include "axi_env.sv"
     `include "axi_simple_sequence.sv"
+    `include "axi_multi_slave_sequence.sv"
     `include "base_test.sv"
 endpackage
