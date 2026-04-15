@@ -7,10 +7,15 @@ module top_tb;
 
     logic clk;
     logic rstn;
-    bit   en_cpu_mode = 0; // FLAG: 0 = UVM Test Slaves, 1 = CPU chạy App
 
-    clk_rst_inf cr_if (.clk(clk), .rstn(rstn));
-    soc_if s_if (.clk(clk), .rstn(rstn));
+    clk_rst_inf cr_if (
+        .clk(clk), 
+        .rstn(rstn)
+    );
+    soc_if s_if (
+        .clk(clk), 
+        .rstn(rstn)
+    );
 
     TOP dut (
         .clk(clk),
@@ -24,44 +29,30 @@ module top_tb;
     );
 
     initial begin
-        forever begin
-            @(en_cpu_mode);
-            if (en_cpu_mode == 0) begin
-                `uvm_info("MODE", "UVM MASTER ACTIVE", UVM_LOW)
-                force dut.axi_master.rstn = 1'b0; 
-
-                force dut.m_axi_awaddr  = s_if.awaddr;
-                force dut.m_axi_awvalid = s_if.awvalid;
-                force dut.m_axi_wdata   = s_if.wdata;
-                force dut.m_axi_wvalid  = s_if.wvalid;
-                force dut.m_axi_araddr  = s_if.araddr;
-                force dut.m_axi_arvalid = s_if.arvalid;
-                force dut.m_axi_bready  = s_if.bready;
-                force dut.m_axi_rready  = s_if.rready;
-            end else begin
-                `uvm_info("MODE", "CPU MASTER ACTIVE", UVM_LOW)
-                release dut.axi_master.rstn;
-                release dut.m_axi_awaddr;
-                release dut.m_axi_awvalid;
-                release dut.m_axi_wdata;
-                release dut.m_axi_wvalid;
-                release dut.m_axi_araddr;
-                release dut.m_axi_arvalid;
-                release dut.m_axi_bready;
-                release dut.m_axi_rready;
-            end
-        end
+    // Dùng force để UVM "đè bẹp" hoàn toàn LSU của CPU trên Bus AXI
+    force dut.m_axi_awaddr  = s_if.awaddr;
+    force dut.m_axi_awvalid = s_if.awvalid;
+    force dut.m_axi_wdata   = s_if.wdata;
+    force dut.m_axi_wstrb   = s_if.wstrb;
+    force dut.m_axi_wvalid  = s_if.wvalid;
+    force dut.m_axi_araddr  = s_if.araddr;
+    force dut.m_axi_arvalid = s_if.arvalid;
+    force dut.m_axi_bready  = s_if.bready;
+    force dut.m_axi_rready  = s_if.rready;
+    
+    // Đọc ngược lại thì dùng assign hoặc forever loop (vì chỉ có 1 nguồn lái từ Slave)
+    forever begin
+        @(clk);
+        s_if.awready = dut.m_axi_awready;
+        s_if.wready  = dut.m_axi_wready;
+        s_if.arready = dut.m_axi_arready;
+        s_if.bvalid  = dut.m_axi_bvalid;
+        s_if.rvalid  = dut.m_axi_rvalid;
+        s_if.rdata   = dut.m_axi_rdata;
     end
-
-    assign s_if.awready = (en_cpu_mode == 0) ? dut.m_axi_awready : 1'bz;
-    assign s_if.wready  = (en_cpu_mode == 0) ? dut.m_axi_wready  : 1'bz;
-    assign s_if.arready = (en_cpu_mode == 0) ? dut.m_axi_arready : 1'bz;
-    assign s_if.bvalid  = (en_cpu_mode == 0) ? dut.m_axi_bvalid  : 1'bz;
-    assign s_if.rvalid  = (en_cpu_mode == 0) ? dut.m_axi_rvalid  : 1'bz;
-    assign s_if.rdata   = (en_cpu_mode == 0) ? dut.m_axi_rdata   : 32'hz;
+end
 
     initial begin
-        en_cpu_mode = 0;
         uvm_config_db#(virtual soc_if)::set(null, "*", "vif_soc", s_if);
         run_test();
     end

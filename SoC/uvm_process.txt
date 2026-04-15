@@ -1,0 +1,8 @@
+1. sequence_item (data)
+2. sequence (create data)
+3. driver (drive DUT)
+4. monitor (observe DUT)
+5. scoreboard (check)
+6. agent (include interface)
+7. env (include system)
+8. test (run test)

@@ -13,7 +13,7 @@ Z1 d/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/SIM
 vALU
 Z2 2/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/data_mem.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv
 Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z4 !s110 1776053322
+Z4 !s110 1776231475
 !i10b 1
 !s100 a[=LR:@;a9hAZLcX2`0Kn1
 IZg?WNSjbX7@U=A19IHR?D3
@@ -29,7 +29,7 @@ Z8 OL;L;2024.1;79
 r1
 !s85 0
 31
-Z9 !s108 1776053322.000000
+Z9 !s108 1776231475.000000
 Z10 !s107 /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/data_mem.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv|
 Z11 !s90 -sv|+acc|-L|uvm|-cover|bcst|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/data_mem.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv|
 !i113 0
@@ -71,11 +71,11 @@ R2
 R3
 R4
 !i10b 1
-!s100 :IHlHFBcEVi8:[JFe^U@C3
-Ig`Z=2HBDeQl;FGfalPT3K0
+!s100 kW]f_;Sl1^jZGBoTC5hXK1
+ITaOk23jh=?2aQ5X]kAO6J0
 S1
 R1
-w1776049775
+w1776170140
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv
 !i122 1
@@ -127,11 +127,11 @@ Z16 2/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/clk_rst_inf.sv|/home/
 R3
 R4
 !i10b 1
-!s100 5B1OXlSW@aNaE:GX?Fe3[2
-Ie4YGgGGz47abl1`m>lN_02
+!s100 >2QE^9m86BjXSA=[Vfk=T2
+IzzEmEB4GM3=KdnA56EQZ92
 S1
 R1
-R5
+w1776053636
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/clk_rst_inf.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/clk_rst_inf.sv
 !i122 0
@@ -181,15 +181,15 @@ R2
 R3
 R4
 !i10b 1
-!s100 kzkjSa;AF@[ok>ciCOGam0
-I[kF[]G^LF98_E3IS9Eb<z3
+!s100 0M3d<9c=8GalF?3zeH4a[1
+I@abQY1J`>E4iSaFc@]QQO1
 S1
 R1
-R5
+w1776170017
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv
 !i122 1
-L0 1 307
+L0 1 311
 R7
 R8
 r1
@@ -348,11 +348,11 @@ R2
 R3
 R4
 !i10b 1
-!s100 n;mDcC^La]bb>QGSYaUef3
-I<dXk=5Nj21EI6Q=?eh<P21
+!s100 Imh?9:ORcZ4PEKzJhllz73
+IF=aUBKacb]V`z:1Ukc]BO2
 S1
 R1
-R5
+w1776083953
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv
 !i122 1
@@ -379,7 +379,7 @@ R4
 I[;eoX1aB6PJi`bZP?]jZW3
 S1
 R1
-w1776048808
+w1776058022
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv
 !i122 1
@@ -486,15 +486,15 @@ R2
 R3
 R4
 !i10b 1
-!s100 [GzhJfQm]]g]4SfZWCeN@0
-IOz1zAg74SE[9B6`AdYW]D1
+!s100 NTgIo8=2[L1NH1gR0=^3T1
+Ik8TK39lbXDfKYOGNnH^e[3
 S1
 R1
-R5
+w1776058041
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv
 !i122 1
-L0 1 93
+L0 1 90
 R7
 R8
 r1
@@ -570,11 +570,11 @@ R16
 R3
 R4
 !i10b 1
-!s100 k^0@RD;V<6YfKSCZY^JPU3
-IDN;]6;d56U0DW?ndQhcD31
+!s100 ]LFh^Hk=nWgV]a?ff5PXf1
+IaHI?ldVFSaZEabehFNX;b2
 S1
 R1
-R5
+w1776058127
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/INF/soc_inf.sv
 !i122 0
@@ -596,13 +596,13 @@ Xsoc_pkg
 !s115 soc_if
 R3
 Z20 DXx6 mtiUvm 7 uvm_pkg 0 22 MiVhEBb9cnBN5^J=<XBKI2
-Z21 !s110 1776053323
+Z21 !s110 1776231476
 !i10b 1
-!s100 ?oog0n5FWoaEFPe0:XEiZ2
-IU186CElldkbGZ<lDAgEZz2
+!s100 hNh:1[3K891U<4h8IOi^d2
+I6ZQ2][J`L[Fo0B:`Y7JY;2
 S1
 R1
-w1776053311
+w1776231353
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Package/soc_pkg.svh
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Package/soc_pkg.svh
 Z22 F/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
@@ -625,18 +625,17 @@ F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Agent/axi_agent.
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Coverage/axi_coverage.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Env/axi_env.sv
-F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_simple_sequence.sv
-F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv
-F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Test/base_test.sv
+F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_random_wr_rd.sv
+F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Test/axi_random_wr_rd_test.sv
 !i122 2
 L0 1 0
-VU186CElldkbGZ<lDAgEZz2
+V6ZQ2][J`L[Fo0B:`Y7JY;2
 R8
 r1
 !s85 0
 31
 R9
-!s107 /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Test/base_test.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_multi_slave_sequence.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_simple_sequence.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Env/axi_env.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Coverage/axi_coverage.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Agent/axi_agent.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Driver/axi_driver.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequencer/axi_sequencer.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Transaction/axi_transaction.sv|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Package/soc_pkg.svh|
+!s107 /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Test/axi_random_wr_rd_test.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence/axi_random_wr_rd.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Env/axi_env.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Coverage/axi_coverage.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Agent/axi_agent.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Driver/axi_driver.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequencer/axi_sequencer.sv|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Transaction/axi_transaction.sv|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Package/soc_pkg.svh|
 !s90 -sv|+acc|-L|uvm|-cover|bcst|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Transaction|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequencer|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Monitor|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Driver|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Agent|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Coverage|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Env|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Scoreboard|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Sequence|+incdir+/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Test|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/Package/soc_pkg.svh|
 !i113 0
 R12
@@ -731,14 +730,14 @@ vtop_tb
 2/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv
 R3
 R20
-DXx4 work 7 soc_pkg 0 22 U186CElldkbGZ<lDAgEZz2
+DXx4 work 7 soc_pkg 0 22 6ZQ2][J`L[Fo0B:`Y7JY;2
 R21
 !i10b 1
-!s100 l30DiH708zUhJ>PfE95KH1
-I13nS:`35hX5HzcX1JVCYg1
+!s100 CHFIanbahCMZ2A[i^e@Ri0
+ILjZT`UZ3cF1no6X_Q8[d<2
 S1
 R1
-w1776052514
+w1776170662
 8/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv
 F/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv
 R22
@@ -754,13 +753,13 @@ R31
 R32
 R33
 !i122 3
-L0 3 6542
+L0 3 6533
 R7
 R8
 r1
 !s85 0
 31
-!s108 1776053323.000000
+!s108 1776231476.000000
 !s107 /tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv|
 !s90 -sv|+acc|-L|uvm|-cover|bcst|/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/VERIFICATION/top_tb.sv|
 !i113 0
@@ -798,8 +797,8 @@ n@u@a@r@t
 Tvopt_top
 !s11d soc_pkg /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/SIM/work 1 soc_if 1 /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/SIM/work 
 !s11d uvm_pkg /tools/mq/2024.1/questasim/uvm-1.1d 1 soc_if 1 /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/SIM/work 
-!s110 1776053324
-VMi6lNac[1i8Wh52B5oQ[h3
+R21
+V?i^a8<c9g476c0WLkRSNK0
 04 6 4 work top_tb fast 0
 !s102 +cover
 R0

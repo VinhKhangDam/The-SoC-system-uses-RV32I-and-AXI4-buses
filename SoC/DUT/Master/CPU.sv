@@ -242,23 +242,27 @@ module CPU (
         .stall(mem_stall_i)
     );
 
+    logic [31:0] dmem_rdata;
+    wire is_internal_addr = (ALUResultM < 32'h1000_0000);
+
     // Mem processing
-    // Data mem will use in Test CPU, but i want to design a Soc so I decide remove data mem and use LSU
-    // data_mem dm(
-    //     .clk(clk),
-    //     .rstn(rstn),
-    //     .WE(MemWriteM),
-    //     .ALUResult(ALUResultM),
-    //     .WriteData(WriteDataM),
-    //     .ReadData(ReadDataM)
-    // );
+    data_mem dm(
+        .clk(clk),
+        .rstn(rstn),
+        .WE(MemWriteM),
+        .ALUResult(ALUResultM),
+        .WriteData(WriteDataM),
+        .ReadData(dmem_rdata)
+    );
+
+    // MUX : IF INTERNAL SIGNALS, USE DMEM_RDATA, UNLESS USE BUS_AXI
+    assign ReadDataM = (is_internal_addr) ? dmem_rdata : mem_rdata_i;
 
     assign mem_addr_o   = ALUResultM;
     assign mem_wdata_o  = WriteDataM;
-    assign mem_we_o     = MemWriteM;
-    assign mem_req_o    = MemWriteM | (ResultSrcM == 2'b01);
+    assign mem_we_o     = MemWriteM && (!is_internal_addr);
+    assign mem_req_o    = (MemWriteM || (ResultSrcM == 2'b01)) && (!is_internal_addr);;
     assign mem_funct3_o = Funct3M;
-    assign ReadDataM    = mem_rdata_i;
 
     MEM_WB memwbmd(
         .clk(clk),

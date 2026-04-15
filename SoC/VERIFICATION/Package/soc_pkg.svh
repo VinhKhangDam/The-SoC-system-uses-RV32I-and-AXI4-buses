@@ -10,7 +10,6 @@ package soc_pkg;
     `include "axi_scoreboard.sv"
     `include "axi_coverage.sv"
     `include "axi_env.sv"
-    `include "axi_simple_sequence.sv"
-    `include "axi_multi_slave_sequence.sv"
-    `include "base_test.sv"
+    `include "axi_random_wr_rd.sv"
+    `include "axi_random_wr_rd_test.sv"
 endpackage

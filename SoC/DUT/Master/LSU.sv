@@ -145,7 +145,7 @@ module LSU (
             ST_W_ADDR: begin // Write address
                 lsu_stall_o   = 1'b1;
                 m_axi_awvalid = !aw_handshaked;
-		m_axi_wvalid  = !w_handshaked;
+		        m_axi_wvalid  = !w_handshaked;
                 if ((aw_handshaked || m_axi_awready) && (w_handshaked || m_axi_wready)) 
                     NextState = ST_W_RESP;
             end

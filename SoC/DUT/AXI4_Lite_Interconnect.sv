@@ -62,7 +62,7 @@ module AXI4_Lite_Interconnect #(
     localparam [31:0] ADDR_UART_BASE  = 32'h3000_0000; // UART
     localparam [31:0] ADDR_SPI_BASE   = 32'h4000_0000; // SPI
 
-    localparam [31:0] ADDR_MASK_STRICT  = 32'hFF00_0000; 
+    localparam [31:0] ADDR_MASK_STRICT  = 32'hF000_0000; 
 
     // Decoder address
     logic [2:0] write_sel, read_sel; // 0: Instruction RAM, 1: Data RAM, 2: Timer, 3: UART, 4: SPI

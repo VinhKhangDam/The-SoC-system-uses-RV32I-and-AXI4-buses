@@ -41,6 +41,8 @@ interface soc_if (input logic clk, rstn);
 
 		input awready, wready, bresp, bvalid, arready, rdata, rvalid, rresp;
 	endclocking
+
+	modport DRV (clocking drv_cb, input clk, rstn);
 	
 	clocking mon_cb @(posedge clk);
 		default input #1 output #1;
@@ -52,6 +54,6 @@ interface soc_if (input logic clk, rstn);
 		input uart_tx,uart_rx, spi_sck, spi_mosi, spi_miso, spi_cs_n;
 	endclocking
 
-	modport DRV (clocking drv_cb, input clk, rstn);
 	modport MON (clocking mon_cb, input clk, rstn);
+
 endinterface

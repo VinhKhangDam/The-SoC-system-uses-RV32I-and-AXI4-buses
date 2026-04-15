@@ -35,7 +35,7 @@ class axi_monitor extends uvm_monitor;
 				tr.is_write = 1'b1;
 
 				while (!(vif.wvalid && vif.wready)) 
-					@(posedge vif.clk);
+				@(posedge vif.clk);
 				tr.data = vif.wdata;
 				tr.wstrb = vif.wstrb;
 

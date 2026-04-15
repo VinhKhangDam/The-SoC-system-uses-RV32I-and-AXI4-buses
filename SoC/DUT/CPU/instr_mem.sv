@@ -7,7 +7,7 @@ module instr_mem (
 
     initial begin
         // Thêm đường dẫn nếu cần, ví dụ: "../CPU/instr.memh"
-        $readmemh("instr.mem", mem);
+        $readmemh("/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/SIM/cpu_instr.mem", mem);
         
         // Kiểm tra xem lệnh đầu tiên có dữ liệu không
         if (mem[0] === 32'bx || mem[0] === 32'bz) begin

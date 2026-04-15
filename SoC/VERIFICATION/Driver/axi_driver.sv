@@ -37,7 +37,7 @@ class axi_driver extends uvm_driver #(axi_transaction);
 	// Task reset for bus
 	task reset_bus();
 		wait(vif.rstn === 0);
-	       	vif.drv_cb.awvalid <= 0;
+	    vif.drv_cb.awvalid <= 0;
 		vif.drv_cb.wvalid  <= 0;
 		vif.drv_cb.arvalid <= 0;
 		vif.drv_cb.bready  <= 0;
@@ -51,7 +51,7 @@ class axi_driver extends uvm_driver #(axi_transaction);
 		vif.drv_cb.awaddr 	<= tr.addr;
 		vif.drv_cb.awvalid 	<= 1'b1;
 		vif.drv_cb.wdata   	<= tr.data;
-	        vif.drv_cb.wstrb	<= tr.wstrb;
+	    vif.drv_cb.wstrb	<= tr.wstrb;
 		vif.drv_cb.wvalid	<= 1'b1;
 		vif.drv_cb.bready	<= 1'b1;
 

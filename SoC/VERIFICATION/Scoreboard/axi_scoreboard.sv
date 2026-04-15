@@ -17,16 +17,13 @@ class axi_scoreboard extends uvm_scoreboard;
         if (tr.addr >= 32'h1000_0000 && tr.addr < 32'h2000_0000) begin
             if (tr.is_write) begin
                 sc_mem[tr.addr] = tr.data;
-                `uvm_info("SCB_DRAM", $sformatf("Write DRAM: Addr=%h, Data=%h", tr.addr, tr.data), UVM_MEDIUM)
-            end else begin
-                if (sc_mem.exists(tr.addr)) begin
-                    if (sc_mem[tr.addr] == tr.data)
-                        `uvm_info("SCB_PASS", $sformatf("DRAM Match! Addr=%h, Data=%h", tr.addr, tr.data), UVM_LOW)
-                    else
-                        `uvm_error("SCB_FAIL", $sformatf("DRAM Mismatch! Addr=%h, Exp:%h, Got:%h", tr.addr, sc_mem[tr.addr], tr.data))
-                end else begin
-                    `uvm_info("SCB_WARN", $sformatf("Read DRAM chua qua khoi tao: Addr=%h", tr.addr), UVM_LOW)
-                end
+                `uvm_info("SCB_WRITE", $sformatf("Ghi vao SCB: Addr=%h, Data=%h", tr.addr, tr.data), UVM_HIGH)
+            end else if (sc_mem.exists(tr.addr)) begin
+                if (sc_mem[tr.addr] == tr.data)
+                    `uvm_info("SCB_PASS", $sformatf("Match! Addr=%h, Data=%h", tr.addr, tr.data), UVM_LOW)
+                else
+                    // Chỗ này báo lỗi là do DRAM thật trả về rác (deadbeef)
+                    `uvm_error("SCB_FAIL", $sformatf("DRAM THAT LOI! Addr=%h, SCB_giu:%h, DRAM_tra:%h", tr.addr, sc_mem[tr.addr], tr.data))
             end
         end
 
