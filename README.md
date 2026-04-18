@@ -1,7 +1,7 @@
 # RISC-V RV32I System-on-Chip (SoC) Design
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Verilog](https://img.shields.io/badge/Language-Verilog-blue.svg)](https://en.wikipedia.org/wiki/Verilog)
+[![Verilog](https://img.shields.io/badge/Language-SystemVerilog-blue.svg)](https://en.wikipedia.org/wiki/SystemVerilog)
 [![UVM](https://img.shields.io/badge/Verification-UVM-green.svg)](https://en.wikipedia.org/wiki/Universal_Verification_Methodology)
 
 A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32I CPU core, AXI4-Lite interconnect, and integrated peripherals with comprehensive UVM-based verification.
@@ -44,6 +44,9 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 - **Timing Constraints**: 100MHz virtual clock configuration
 
 ## Architecture Overview
+
+### CPU Block Diagram
+![CPU Architecture](Architecture/CPU.png)
 
 ### CPU Pipeline
 ```
@@ -105,8 +108,8 @@ The CPU and LSU together form the **AXI Master** component:
 │   │   └── soc_inf.sv     # AXI + physical I/O interface
 │   ├── SIM/               # Simulation files
 │   │   ├── Makefile       # Build and simulation script
-│   │   ├── instr.mem      # Instruction memory image
-│   │   └── coverage_result.ucdb
+│   │   ├── gen_mem.py     # Generate instr.mem & cpu_instr.mem
+│   │   └── (result test).log
 │   └── VERIFICATION/      # UVM verification environment
 │       ├── top_tb.sv      # Top testbench
 │       ├── Package/soc_pkg.svh
@@ -142,18 +145,30 @@ cd DoAnThietKeViMach/Project
 source SoC/env.sh
 ```
 
+### Generate Memory Files
+Before running simulations, you need to generate the instruction memory files using the `gen_mem.py` script:
+
+```bash
+cd SoC/SIM
+
+# Generate instruction memory files (instr.mem and cpu_instr.mem)
+make gen_mem
+```
+
+This script generates:
+- **instr.mem**: Instruction memory image with 100 random RISC-V instructions
+- **cpu_instr.mem**: Alternative instruction memory image for testing
+- Supported instructions: ADD, SUB, AND, OR, XOR, SLL, and immediate operations (ADDI)
+
 ### Simulation
 ```bash
 cd SoC/SIM
 
-# Compile the design
-make compile
+# Generate memory files first (required before testing)
+make gen_mem
 
-# Run a specific test
-make sim test_name=TEST_NAME
-
-# Run all tests with coverage
-make all
+# Run tests with coverage
+make all test_name=TEST_NAME | tee TEST_NAME.log # TEST_NAME : run difference tests
 
 # Interactive GUI simulation
 make gui
@@ -251,11 +266,19 @@ To run this project, follow these steps:
    source SoC/env.sh
    ```
 
-3. Navigate to the SIM directory and run the Makefile to simulate the design:
+3. Generate instruction memory files (required for simulation):
    ```
-   cd SIM
+   cd SoC/SIM
+   make gen_mem
+   ```
+
+4. Navigate to the SIM directory and run the Makefile to simulate the design:
+   ```
    make all test_name=TEST_NAME
    ```
+
+**Important**: Always run `python gen_mem.py` before executing any tests, as it generates the required instruction memory files (`instr.mem` and `cpu_instr.mem`).
+
 - The design is modular and separates the processor datapath from the interconnect and peripheral wrappers.
 - Pipeline forwarding and hazard handling are implemented to maintain instruction throughput and avoid data hazards.
 
