@@ -254,7 +254,7 @@ To run this project, follow these steps:
 3. Navigate to the SIM directory and run the Makefile to simulate the design:
    ```
    cd SIM
-   make all
+   make all test_name=TEST_NAME
    ```
 - The design is modular and separates the processor datapath from the interconnect and peripheral wrappers.
 - Pipeline forwarding and hazard handling are implemented to maintain instruction throughput and avoid data hazards.
