@@ -150,7 +150,7 @@ cd SoC/SIM
 make compile
 
 # Run a specific test
-make sim test_name=axi_random_wr_rd_test
+make sim test_name=TEST_NAME
 
 # Run all tests with coverage
 make all
@@ -183,7 +183,7 @@ The project includes a comprehensive UVM verification environment:
 cd SoC/SIM
 
 # Single test run
-make sim test_name=axi_random_wr_rd_test
+make sim test_name=TEST_NAME
 
 # Coverage analysis
 vcover report -cvg -summary coverage_result.ucdb
