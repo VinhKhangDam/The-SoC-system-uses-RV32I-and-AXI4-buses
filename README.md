@@ -1,103 +1,240 @@
-# System Overview
+# RISC-V RV32I System-on-Chip (SoC) Design
 
-## Introduction
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Verilog](https://img.shields.io/badge/Language-Verilog-blue.svg)](https://en.wikipedia.org/wiki/Verilog)
+[![UVM](https://img.shields.io/badge/Verification-UVM-green.svg)](https://en.wikipedia.org/wiki/Universal_Verification_Methodology)
 
-This project implements a small System-on-Chip (SoC) design with a pipelined CPU and AXI4-Lite interconnect for peripheral access. The design is organized around a central CPU core, memory subsystems, an on-chip interconnect, and peripheral modules for UART, SPI, and Timer functions.
+A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32I CPU core, AXI4-Lite interconnect, and integrated peripherals with comprehensive UVM-based verification.
 
-## Architecture Summary
+## Table of Contents
 
-- SoC top-level module: `SoC/DUT/TOP.sv`
-- CPU core module: `SoC/DUT/Master/CPU.sv`
-- Control and datapath units: `SoC/DUT/CPU/ControlUnit.sv`, `SoC/DUT/CPU/ALU.sv`, `SoC/DUT/CPU/ALUControl.sv`, `SoC/DUT/CPU/MainDecoder.sv`
-- AXI4-Lite interconnect: `SoC/DUT/AXI4_Lite_Interconnect.sv`
-- Instruction and data RAM: `SoC/DUT/Slaves/RAM.sv`
-- Peripheral modules: `SoC/DUT/Slaves/Timer.sv`, `SoC/DUT/Slaves/UART.sv`, `SoC/DUT/Slaves/SPI.sv`
+- [Features](#features)
+- [Architecture Overview](#architecture-overview)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Verification](#verification)
+- [Synthesis](#synthesis)
+- [Contributing](#contributing)
+- [License](#license)
 
-## CPU Block Diagram
+## Features
 
-![CPU Architecture](Architecture/CPU.png)
+### CPU Core
+- **5-Stage Pipeline**: Instruction Fetch, Decode, Execute, Memory, Writeback
+- **RV32I ISA Support**: Full 32-bit RISC-V integer instruction set
+- **Hazard Handling**: Forwarding unit and stall logic for data hazards
+- **ALU Operations**: ADD, SUB, AND, OR, XOR, SLT, SLL, SRL, SRA
 
-> Figure 1: CPU block diagram showing the main pipeline stages and control datapath.
+### Interconnect & Peripherals
+- **AXI4-Lite Bus**: Industry-standard on-chip interconnect
+- **Memory Subsystem**: Separate instruction and data RAM
+- **Integrated Peripherals**:
+  - Timer with interrupt capability
+  - UART for serial communication
+  - SPI for peripheral interface
 
-## CPU Pipeline Design
+### Verification
+- **UVM Framework**: Complete Universal Verification Methodology implementation
+- **Coverage Analysis**: Branch, condition, and statement coverage
+- **Randomized Testing**: Automated stimulus generation and scoreboard checking
 
-The CPU implements a classic five-stage pipeline:
+### Synthesis
+- **FPGA Ready**: Vivado project for Xilinx FPGA implementation
+- **Timing Constraints**: 100MHz virtual clock configuration
 
-1. Instruction Fetch (IF)
-2. Instruction Decode (ID)
-3. Execution (EX)
-4. Memory access (MEM)
-5. Writeback (WB)
+## Architecture Overview
 
-Key pipeline components:
+### CPU Pipeline
+```
+Instruction Fetch → Instruction Decode → Execute → Memory Access → Writeback
+       ↓                ↓              ↓          ↓            ↓
+     PC Reg        Control Unit       ALU        LSU       RegFile
+```
 
-- `pc_reg`: maintains the program counter and handles stall control
-- `instr_mem`: fetches instructions from on-chip instruction memory
-- `IF_ID`, `ID_EX`, `EX_MEM`, `MEM_WB`: pipeline registers separating stages
-- `RegFile`: 32-bit register file for operand reads and writeback
-- `signExtend`: immediate generation unit for instruction immediates
-- `ControlUnit`: integrates the main decoder and ALU control logic
-- `ALU`: performs arithmetic, logic, shift, and comparison operations
+The CPU implements a classic five-stage pipeline where:
+- **IF**: Fetches instruction from memory using program counter
+- **ID**: Decodes instruction, reads registers, generates control signals
+- **EX**: Performs ALU operations with forwarding for data hazards
+- **MEM**: LSU handles load/store operations via AXI interconnect
+- **WB**: Writes results back to register file
 
-## Control and Datapath Behavior
+### SoC Block Diagram
+```
+[CPU Core] + [Load-Store Unit] 
+          ↓                
+      [AXI Master] → [AXI4-Lite Interconnect] → [Slave Devices]
+```
 
-The control unit decodes instruction fields:
+### Master Interface Architecture
+The CPU and LSU together form the **AXI Master** component:
+- **CPU Core**: Generates memory access requests (address, data, control signals)
+- **Load-Store Unit (LSU)**: Translates CPU requests into AXI4-Lite protocol transactions
+- **AXI Master Wrapper**: Combines CPU and LSU, providing the AXI interface to the interconnect
 
-- Opcode
-- funct3
-- funct7
+### Memory Map
+- **Slave 0**: Instruction RAM (IRAM)
+- **Slave 1**: Data RAM (DRAM)
+- **Slave 2**: Timer Peripheral
+- **Slave 3**: UART Peripheral
+- **Slave 4**: SPI Peripheral
 
-It generates control signals for:
+## Project Structure
 
-- register file write enable (`RegWrite`)
-- ALU source selection (`ALUSrc`)
-- memory write enable (`MemWrite`)
-- jump/branch control (`Jump`, `Branch`)
-- result source selection (`ResultSrc`)
-- immediate format selection (`ImmSrc`)
+```
+├── Architecture/           # Design diagrams and documentation
+│   ├── CPU.drawio         # CPU architecture diagram
+│   └── UVM.drawio         # Verification methodology diagram
+├── SoC/                   # System-on-Chip RTL design
+│   ├── DUT/               # Design Under Test
+│   │   ├── TOP.sv         # SoC top-level module
+│   │   ├── AXI_Master.sv  # AXI master wrapper
+│   │   ├── AXI4_Lite_Interconnect.sv
+│   │   ├── CPU/           # CPU pipeline components
+│   │   │   ├── ALU.sv, ALUControl.sv, ControlUnit.sv
+│   │   │   ├── IF_ID.sv, ID_EX.sv, EX_MEM.sv, MEM_WB.sv
+│   │   │   ├── RegFile.sv, signExtend.sv, HazardUnit.sv
+│   │   │   ├── instr_mem.sv, data_mem.sv, pc.sv
+│   │   ├── Master/        # CPU and LSU
+│   │   │   ├── CPU.sv     # CPU core logic
+│   │   │   └── LSU.sv     # Load-Store Unit
+│   │   └── Slaves/        # Peripheral modules
+│   │       ├── RAM.sv, Timer.sv, UART.sv, SPI.sv
+│   ├── INF/               # Interface definitions
+│   │   ├── clk_rst_inf.sv # Clock/reset interface
+│   │   └── soc_inf.sv     # AXI + physical I/O interface
+│   ├── SIM/               # Simulation files
+│   │   ├── Makefile       # Build and simulation script
+│   │   ├── instr.mem      # Instruction memory image
+│   │   └── coverage_result.ucdb
+│   └── VERIFICATION/      # UVM verification environment
+│       ├── top_tb.sv      # Top testbench
+│       ├── Package/soc_pkg.svh
+│       ├── Agent/, Driver/, Monitor/, Sequencer/
+│       ├── Env/, Coverage/, Scoreboard/
+│       ├── Test/, Sequence/, Transaction/
+├── Vivado/                # FPGA synthesis project
+│   ├── rv32i.xpr          # Vivado project file
+│   ├── Constraint.xdc     # Timing constraints
+│   └── rv32i.runs/        # Synthesis and implementation results
+├── Project_Overview.md    # Detailed project documentation
+└── README.md              # This file
+```
 
-The ALU supports standard arithmetic and logic operations:
+## Prerequisites
 
-- ADD, SUB
-- AND, OR, XOR
-- shift left logical (SLL)
-- shift right logical (SRL)
-- shift right arithmetic (SRA)
-- set less than (SLT)
+- **QuestaSim**: For RTL simulation and UVM verification
+- **Vivado**: For FPGA synthesis and implementation (Xilinx tools)
+- **Make**: Build automation
+- **Git**: Version control
 
-## SoC Interconnect and Slave Devices
+## Getting Started
 
-The top-level SoC uses an AXI4-Lite interconnect with five slave interfaces:
+### Clone the Repository
+```bash
+git clone https://github.com/VinhKhangDam/The-SoC-system-uses-RV32I-and-AXI4-buses.git
+cd DoAnThietKeViMach/Project
+```
 
-- Slave 0: instruction RAM (`IRAM`)
-- Slave 1: data RAM (`DRAM`)
-- Slave 2: Timer peripheral
-- Slave 3: UART peripheral
-- Slave 4: SPI peripheral
+### Environment Setup
+```bash
+# Set environment variables
+source SoC/env.sh
+```
 
-The AXI4-Lite interconnect handles:
+### Simulation
+```bash
+cd SoC/SIM
 
-- address decoding
-- read/write channel arbitration
-- response signaling
+# Compile the design
+make compile
 
-## Memory and Peripheral Map
+# Run a specific test
+make sim test_name=axi_random_wr_rd_test
 
-- `instr.mem`: initial program memory image for instruction fetch
-- `RAM` modules are used for both instruction ROM and data RAM
-- UART and SPI are exposed to the top-level physical IO for serial and SPI communication
-- The Timer module is integrated as a memory-mapped peripheral
+# Run all tests with coverage
+make all
 
-## Top-Level SoC I/O
+# Interactive GUI simulation
+make gui
+```
 
-The SoC top module exposes physical IO for:
+### Synthesis
+```bash
+# Open Vivado project
+vivado Vivado/rv32i.xpr
 
-- `uart_tx`, `uart_rx`
-- `spi_sck`, `spi_mosi`, `spi_miso`, `spi_cs_n`
+# Or run synthesis from command line
+vivado -mode batch -source Vivado/synth_script.tcl
+```
 
-## Design Notes
+## Verification
 
-- The CPU core is designed for a 32-bit RV32-style instruction set and supports a subset of RISC-V operations.
+The project includes a comprehensive UVM verification environment:
+
+### Test Structure
+- **Transaction Layer**: AXI4-Lite protocol transactions
+- **Driver/Monitor**: Bus-level stimulus and observation
+- **Scoreboard**: Expected vs. actual result comparison
+- **Coverage**: Functional coverage collection
+
+### Running Verification
+```bash
+cd SoC/SIM
+
+# Single test run
+make sim test_name=axi_random_wr_rd_test
+
+# Coverage analysis
+vcover report -cvg -summary coverage_result.ucdb
+```
+
+### Coverage Metrics
+- **Statement Coverage**: RTL code execution coverage
+- **Branch Coverage**: Conditional branch testing
+- **Functional Coverage**: Protocol and design feature coverage
+
+## Synthesis
+
+### Vivado Project Setup
+1. Open `Vivado/rv32i.xpr`
+2. Set top module to `TOP`
+3. Add `Constraint.xdc` timing constraints
+4. Run synthesis and implementation
+
+### Key Synthesis Parameters
+- **Target Frequency**: 100 MHz
+- **Device**: Configurable for various Xilinx FPGAs
+- **Optimization**: Area/timing trade-off analysis
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+- Follow Verilog coding standards
+- Add UVM test cases for new features
+- Update documentation for architectural changes
+- Ensure all tests pass before submission
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- RISC-V Foundation for ISA specifications
+- ARM for AXI protocol standards
+- Accellera for UVM methodology
+- Xilinx for Vivado tools
+
+---
+
+**Note**: This project was developed as part of a digital design course focusing on SoC architecture, CPU design, and verification methodologies.
 
 ## Running the Project
 
