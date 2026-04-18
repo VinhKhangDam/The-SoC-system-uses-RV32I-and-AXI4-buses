@@ -34,7 +34,7 @@ module TOP (
 	// MASTER
 	AXI_Master  axi_master (
 		.clk(clk),
-		.rstn(cpu_rstn_i),
+		.rstn(rstn),
 		.m_axi_awaddr(m_axi_awaddr),
 		.m_axi_awprot(m_axi_awprot),
 		.m_axi_awvalid(m_axi_awvalid),

@@ -1,7 +1,8 @@
 class axi_monitor extends uvm_monitor;
 	`uvm_component_utils(axi_monitor)
 
-	virtual soc_if vif;
+	virtual clk_rst_inf vif_cr;
+	virtual soc_inf vif;
 
 	uvm_analysis_port #(axi_transaction) item_collected_port;
 
@@ -12,8 +13,10 @@ class axi_monitor extends uvm_monitor;
 
 	virtual function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
-		if (!uvm_config_db#(virtual soc_if)::get(this, "", "vif_soc", vif))	
+		if (!uvm_config_db#(virtual soc_inf)::get(this, "", "vif_soc", vif))	
 			`uvm_fatal("MON", "Could not get vif")
+		if (!uvm_config_db#(virtual clk_rst_inf)::get(this, "", "vif_cr", vif_cr))
+			`uvm_fatal("MON", "Could not get vif_cr")
 	endfunction
 	
 	virtual task run_phase(uvm_phase phase);
@@ -27,7 +30,7 @@ class axi_monitor extends uvm_monitor;
 	task collect_write_transactions();
 		forever begin
 			axi_transaction tr;
-			@(posedge vif.clk);
+			@(posedge vif_cr.clk);
 
 			if (vif.awready && vif.awvalid) begin
 				tr = axi_transaction::type_id::create("tr");	
@@ -35,11 +38,11 @@ class axi_monitor extends uvm_monitor;
 				tr.is_write = 1'b1;
 
 				while (!(vif.wvalid && vif.wready)) 
-				@(posedge vif.clk);
+				@(posedge vif_cr.clk);
 				tr.data = vif.wdata;
 				tr.wstrb = vif.wstrb;
 
-				while (!(vif.bvalid && vif.bready)) @(posedge vif.clk);
+				while (!(vif.bvalid && vif.bready)) @(posedge vif_cr.clk);
 				
 				`uvm_info("MON_WR", $sformatf("Detected WRITE : Addr = %h, Data = %h", tr.addr, tr.data), UVM_LOW)
 				item_collected_port.write(tr);
@@ -51,14 +54,14 @@ class axi_monitor extends uvm_monitor;
 	task collect_read_transactions();
 		forever begin
 			axi_transaction tr;
-			@(posedge vif.clk);
+			@(posedge vif_cr.clk);
 
 			if (vif.arvalid && vif.arready) begin
 				tr = axi_transaction::type_id::create("tr");
 				tr.addr = vif.araddr;
 				tr.is_write = 1'b0;
 
-				while (!(vif.rvalid && vif.rready)) @(posedge vif.clk);
+				while (!(vif.rvalid && vif.rready)) @(posedge vif_cr.clk);
 				tr.data = vif.rdata;
 
 				`uvm_info("MON_RD", $sformatf("Deteced READ : Addr = %h, Data = %h", tr.addr, tr.data), UVM_LOW)

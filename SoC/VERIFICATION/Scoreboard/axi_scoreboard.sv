@@ -22,7 +22,6 @@ class axi_scoreboard extends uvm_scoreboard;
                 if (sc_mem[tr.addr] == tr.data)
                     `uvm_info("SCB_PASS", $sformatf("Match! Addr=%h, Data=%h", tr.addr, tr.data), UVM_LOW)
                 else
-                    // Chỗ này báo lỗi là do DRAM thật trả về rác (deadbeef)
                     `uvm_error("SCB_FAIL", $sformatf("DRAM THAT LOI! Addr=%h, SCB_giu:%h, DRAM_tra:%h", tr.addr, sc_mem[tr.addr], tr.data))
             end
         end

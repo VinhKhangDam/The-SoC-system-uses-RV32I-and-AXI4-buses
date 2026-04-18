@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-interface soc_if (input logic clk, rstn);
+interface soc_inf (input logic clk, rstn);
 	// AXI-LITE SIGNALS
 	// AW CHANNELS
 	logic [31:0] 	awaddr;

@@ -13,7 +13,7 @@ class axi_env extends uvm_env;
 
 	function void build_phase (uvm_phase phase);
 		super.build_phase(phase);
-		uvm_config_db#(uvm_active_passive_enum)::set(this, "agent", "is_active", 1); 
+		uvm_config_db#(uvm_active_passive_enum)::set(this, "agent", "is_active", UVM_ACTIVE); 
 		agent = axi_agent::type_id::create("agent", this);
 		scoreboard = axi_scoreboard::type_id::create("scoreboard", this);
 		coverage = axi_coverage::type_id::create("coverage", this);

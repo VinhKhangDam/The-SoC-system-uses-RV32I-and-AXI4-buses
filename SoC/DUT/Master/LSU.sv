@@ -62,7 +62,7 @@ module LSU (
     // Caculate Write Trobe (mask for sb, sh, sw)
     always_comb begin
         case (funct3[1:0])
-            2'b00: // sb
+            2'b00: // store byte
                 case (addr_i[1:0])
                     2'b00: wstrb_comb = 4'b0001;
                     2'b01: wstrb_comb = 4'b0010;
@@ -70,8 +70,8 @@ module LSU (
                     2'b11: wstrb_comb = 4'b1000;
                     default: wstrb_comb = 4'b0000;
                 endcase
-            2'b01:   wstrb_comb = (addr_i[1]) ? 4'b1100 : 4'b0011; // sh
-            2'b10:   wstrb_comb = 4'b1111; // sw
+            2'b01:   wstrb_comb = (addr_i[1]) ? 4'b1100 : 4'b0011; // store half
+            2'b10:   wstrb_comb = 4'b1111; // store word
             default: wstrb_comb = 4'b0000;
         endcase
     end

@@ -62,7 +62,7 @@ module AXI4_Lite_Interconnect #(
     localparam [31:0] ADDR_UART_BASE  = 32'h3000_0000; // UART
     localparam [31:0] ADDR_SPI_BASE   = 32'h4000_0000; // SPI
 
-    localparam [31:0] ADDR_MASK_STRICT  = 32'hF000_0000; 
+    localparam [31:0] ADDR_MASK_STRICT  = 32'hFF00_0000; 
 
     // Decoder address
     logic [2:0] write_sel, read_sel; // 0: Instruction RAM, 1: Data RAM, 2: Timer, 3: UART, 4: SPI
@@ -117,57 +117,82 @@ module AXI4_Lite_Interconnect #(
             m_axi_awready = 1'b1;
             m_axi_wready = 1'b1;
         end
+    end
 
+    always_comb begin
         // Mux ready for Read channels
         if (read_sel < NUM_SLAVES) begin
             m_axi_arready = s_axi_arready[read_sel];
         end else begin
-            m_axi_arready = '1;
+            m_axi_arready = 1'b1;
         end
     end
 
     // Response logic (R & B Channels)
     logic [2:0] write_sel_q, read_sel_q;
-    always_ff @( posedge clk or negedge rstn ) begin
+    logic write_pending, read_pending;
+ 
+    always_ff @(posedge clk or negedge rstn) begin
         if (!rstn) begin
-            write_sel_q <= 3'd7;
-            read_sel_q  <= 3'd7;
+            write_sel_q   <= 3'd7;
+            read_sel_q    <= 3'd7;
+            write_pending <= 1'b0;
+            read_pending  <= 1'b0;
         end else begin
-            if (m_axi_awvalid && m_axi_awready) write_sel_q <= write_sel;
-            if (m_axi_arvalid && m_axi_arready) read_sel_q <= read_sel;
+            // Latch write slave on AW handshake; clear after B handshake seen
+            if (m_axi_awvalid && m_axi_awready) begin
+                write_sel_q   <= write_sel;
+                write_pending <= 1'b1;
+            end else if (write_pending && m_axi_bvalid && m_axi_bready) begin
+                write_pending <= 1'b0;
+            end
+ 
+            // Latch read slave on AR handshake; clear after R handshake seen
+            if (m_axi_arvalid && m_axi_arready) begin
+                read_sel_q   <= read_sel;
+                read_pending <= 1'b1;
+            end else if (read_pending && m_axi_rvalid && m_axi_rready) begin
+                read_pending <= 1'b0;
+            end
         end
     end
-
+ 
+    // B-channel mux: only active while a write transaction is in flight
     always_comb begin
-        if (write_sel_q < NUM_SLAVES) begin
-            m_axi_bresp = s_axi_bresp[write_sel_q];
+        if (write_pending && write_sel_q < NUM_SLAVES) begin
+            m_axi_bresp  = s_axi_bresp[write_sel_q];
             m_axi_bvalid = s_axi_bvalid[write_sel_q];
-            for (int i = 0; i < NUM_SLAVES; i++) s_axi_bready[i] = (write_sel_q == i) ? m_axi_bready : 1'b0;
-        end else if (write_sel_q == 3'd7) begin
+            for (int i = 0; i < NUM_SLAVES; i++)
+                s_axi_bready[i] = (write_sel_q == i) ? m_axi_bready : 1'b0;
+        end else if (write_pending) begin  // write_sel_q == 3'd7: decode error
             m_axi_bresp  = 2'b11; // DECERR
             m_axi_bvalid = 1'b1;
             s_axi_bready = '0;
-        end else begin
+        end else begin                     // no transaction in flight
+            m_axi_bresp  = 2'b00;
             m_axi_bvalid = 1'b0;
             s_axi_bready = '0;
         end
-
-        if (read_sel_q < NUM_SLAVES) begin
-            m_axi_rdata   = s_axi_rdata[read_sel_q]; 
-            m_axi_rresp   = s_axi_rresp[read_sel_q]; 
-            m_axi_rvalid  = s_axi_rvalid[read_sel_q]; 
-            for (int i=0; i<NUM_SLAVES; i++) 
+    end
+ 
+    // R-channel mux: only active while a read transaction is in flight
+    always_comb begin
+        if (read_pending && read_sel_q < NUM_SLAVES) begin
+            m_axi_rdata  = s_axi_rdata[read_sel_q];
+            m_axi_rresp  = s_axi_rresp[read_sel_q];
+            m_axi_rvalid = s_axi_rvalid[read_sel_q];
+            for (int i = 0; i < NUM_SLAVES; i++)
                 s_axi_rready[i] = (read_sel_q == i) ? m_axi_rready : 1'b0;
-        end else if (read_sel_q == 3'd7) begin
-            m_axi_rdata   = 32'hDEADBEEF;
-            m_axi_rresp   = 2'b11; // DECERR 
-            m_axi_rvalid  = 1'b1; 
-            s_axi_rready  = '0; 
-        end else begin
-            m_axi_rdata   = 32'h0;
-            m_axi_rresp   = 2'b00;
-            m_axi_rvalid  = 1'b0;
-            s_axi_rready  = '0;
+        end else if (read_pending) begin   // read_sel_q == 3'd7: decode error
+            m_axi_rdata  = 32'hDEADBEEF;
+            m_axi_rresp  = 2'b11; // DECERR
+            m_axi_rvalid = 1'b1;
+            s_axi_rready = '0;
+        end else begin                     // no transaction in flight
+            m_axi_rdata  = 32'h0;
+            m_axi_rresp  = 2'b00;
+            m_axi_rvalid = 1'b0;
+            s_axi_rready = '0;
         end
     end
     

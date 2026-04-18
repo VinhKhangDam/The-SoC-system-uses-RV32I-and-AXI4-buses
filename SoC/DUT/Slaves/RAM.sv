@@ -47,12 +47,12 @@ module RAM #(
         end
     end
 
-    // always_ff @(posedge clk) begin
-    //     if (s_axi_arready && s_axi_arvalid) begin
-    //         s_axi_rdata <= mem[read_index];
-    //     end
-    // end
-    assign s_axi_rdata = mem[read_index];
+    always_ff @(posedge clk) begin
+        if (s_axi_arready && s_axi_arvalid) begin
+            s_axi_rdata <= mem[read_index];
+        end
+    end
+    //assign s_axi_rdata = mem[read_index];
 
     always_ff @(posedge clk or negedge rstn) begin
         if (!rstn) begin
@@ -63,24 +63,20 @@ module RAM #(
             s_axi_rvalid  <= 1'b0;
         end else begin
             // --- Nhánh Write ---
-            // Sẵn sàng nhận ngay khi có VALID và không đang bận (Zero Wait State)
             s_axi_awready <= !s_axi_awready && s_axi_awvalid;
             s_axi_wready  <= !s_axi_wready && s_axi_wvalid;
-
-            // Phản hồi phản hồi ghi (B Channel)
+ 
             if (mem_write_en) 
                 s_axi_bvalid <= 1'b1;
-            else if (s_axi_bready) 
+            else if (s_axi_bvalid && s_axi_bready)  // clear only on completed handshake
                 s_axi_bvalid <= 1'b0;
-
+ 
             // --- Nhánh Read ---
-            // Chấp nhận địa chỉ đọc ngay lập tức
             s_axi_arready <= !s_axi_arready && s_axi_arvalid;
             
-            // Chỉ bật RVALID khi địa chỉ đã được chấp nhận xong
             if (s_axi_arready && s_axi_arvalid) 
                 s_axi_rvalid <= 1'b1;
-            else if (s_axi_rready) 
+            else if (s_axi_rvalid && s_axi_rready)  // clear only on completed handshake
                 s_axi_rvalid <= 1'b0;
         end
     end
