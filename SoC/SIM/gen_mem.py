@@ -111,10 +111,10 @@ def generate_instr():
 def generate_file(filepath, header, count, seed):
     random.seed(seed)
     with open(filepath, "w") as f:
-        f.write(f"# --- {header} ({count} lines) ---\n")
+        f.write(f"// --- {header} ({count} lines) ---\n")
         for _ in range(count):
             instr, asm = generate_instr()
-            f.write(f"{instr:08x}  # {asm}\n")
+            f.write(f"{instr:08x}  // {asm}\n")
     print(f"Generated {filepath}  (seed={seed})")
 
 # -----------------------------
