@@ -42,6 +42,7 @@ class axi_driver extends uvm_driver #(axi_transaction);
 		// Present address and data
 		@(vif.drv_cb);
 		vif.drv_cb.awaddr  <= tr.addr;
+		vif.drv_cb.awprot  <= tr.awprot;
 		vif.drv_cb.awvalid <= 1'b1;
 		vif.drv_cb.wdata   <= tr.data;
 		vif.drv_cb.wstrb   <= tr.wstrb;

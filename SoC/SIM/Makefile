@@ -39,7 +39,10 @@ TOP_TB       = $(VERIF_DIR)/top_tb.sv
 # --- Targets chính ---
 .PHONY: all compile sim gui clean help gen_mem
 
-TEST_LIST = axi_random_wr_rd_test 
+TEST_LIST = axi_random_wr_rd_test \
+			axi_write_test \
+			axi_read_test \
+			axi_multi_slaves_test
 
 # Chạy toàn bộ luồng: Tạo mem -> Biên dịch -> Chạy sim
 all: gen_mem compile

@@ -1,14 +1,14 @@
 module CPU (
-    input logic clk,
-    input logic rstn,
+    input   logic           clk,
+    input   logic           rstn,
 
-    output logic [31:0] mem_addr_o,
-    output logic [31:0] mem_wdata_o,
-    output logic mem_we_o,
-    output logic mem_req_o,
-    output logic [2:0] mem_funct_o,
-    input logic [31:0] mem_rdata_i,
-    input logic mem_stall_i
+    output  logic [31:0]     mem_addr_o,
+    output  logic [31:0]    mem_wdata_o,
+    output  logic           mem_we_o,
+    output  logic           mem_req_o,
+    output  logic [2:0]     mem_funct_o,
+    input   logic [31:0]    mem_rdata_i,
+    input   logic           mem_stall_i
 );
     // Internal variables
     // Fetch Stage   
@@ -121,14 +121,14 @@ module CPU (
 
     // Decode Stage Processing
 
-    // Assing field of Instruction
-    assign Opcode = InstrD[6:0];
-    assign Funct3 = InstrD[14:12];
-    assign Funct7 = InstrD[30];
-    assign Rs1D = InstrD[19:15];
-    assign Rs2D = InstrD[24:20];
-    assign RdD = InstrD[11:7];
-    assign Immediate = InstrD[31:7];
+    // Assign field of Instruction
+    assign Opcode       = InstrD[6:0];
+    assign Funct3       = InstrD[14:12];
+    assign Funct7       = InstrD[30];
+    assign Rs1D         = InstrD[19:15];
+    assign Rs2D         = InstrD[24:20];
+    assign RdD          = InstrD[11:7];
+    assign Immediate    = InstrD[31:7];
 
     ControlUnit cu (
         .Opcode(Opcode),

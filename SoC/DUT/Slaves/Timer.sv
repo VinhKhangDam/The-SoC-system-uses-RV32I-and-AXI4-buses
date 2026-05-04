@@ -46,14 +46,13 @@ module Timer (
 			s_axi_awready <= '0;
 			write_allowed <= '0;
 		end else begin
-			if (!s_axi_awready && s_axi_awvalid ) begin
-				if (s_axi_awprot[0] == 1) begin
-					s_axi_awready <= 1'b1;
-					write_allowed <= 1'b1;
-				end else begin
-					s_axi_awready <= 1'b1;
-					write_allowed <= 1'b0;
-				end
+			if (!s_axi_awready && s_axi_awvalid) begin
+				s_axi_awready <= 1'b1;
+				write_allowed <= (s_axi_awprot[0] == 1'b1) ? 1'b1 : 1'b0;
+			end else if (s_axi_wready) begin
+				// Clear write_allowed after W handshake completes
+				s_axi_awready <= 1'b0;
+				write_allowed <= 1'b0;
 			end else begin
 				s_axi_awready <= 1'b0;
 			end
@@ -67,7 +66,7 @@ module Timer (
 			timer_control 	<= '0;
 			timer_period	<= '0;
 		end else begin
-			if (!s_axi_wready && s_axi_wvalid && s_axi_awvalid) begin
+			if (!s_axi_wready && s_axi_wvalid) begin
 				s_axi_wready <= 1'b1;
 				if (write_allowed) begin
 					case (s_axi_awaddr[3:0]) 
@@ -97,7 +96,7 @@ module Timer (
 		end
 	end
 
-	// Read address hanshake logic
+	// Read address handshake logic
 	always_ff @(posedge clk or negedge rstn) begin
 		if (!rstn) begin
 			s_axi_arready <= '0;
@@ -117,7 +116,7 @@ module Timer (
 		end
 	end
 
-	// Read data hanshake logic
+	// Read data handshake logic
 	always_ff @(posedge clk or negedge rstn) begin
 		if (!rstn) begin
 			s_axi_rvalid <= '0;
@@ -136,19 +135,19 @@ module Timer (
 	always_ff @(posedge clk or negedge rstn) begin
 		if (!rstn) begin
 			timer_count <= '0;
-			irq	      <= '0;
+			irq         <= '0;
 		end else begin
-			if (timer_control[0] == 0) begin // ENABLE
-				if (timer_count >= timer_period && timer_period != '0) begin
+			if (timer_control[0] == 1'b1) begin
+				if (timer_period != '0 && timer_count >= timer_period) begin
 					timer_count <= '0;
-					irq	    <= 1'b1;
+					irq         <= 1'b1;
 				end else begin
 					timer_count <= timer_count + 1;
-					irq	    <= 1'b0;
+					irq         <= 1'b0;
 				end
 			end else begin
 				timer_count <= '0;
-				irq 	    <= '0;
+				irq         <= '0;
 			end
 		end
 	end

@@ -1,5 +1,5 @@
 module RAM #(
-    parameter ADDR_WIDTH = 14, // 16KB
+    parameter ADDR_WIDTH = 14, // 16KB = 2 ^ 14
     parameter INIT_FILE  = ""
 ) (
     input  logic        clk,

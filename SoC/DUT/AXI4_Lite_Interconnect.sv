@@ -131,7 +131,7 @@ module AXI4_Lite_Interconnect #(
     // Response logic (R & B Channels)
     logic [2:0] write_sel_q, read_sel_q;
     logic write_pending, read_pending;
- 
+    // Set latch flag
     always_ff @(posedge clk or negedge rstn) begin
         if (!rstn) begin
             write_sel_q   <= 3'd7;

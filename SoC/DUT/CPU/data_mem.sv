@@ -1,9 +1,9 @@
 module data_mem (
-    input logic clk, rstn,
-    input logic WE,
-    input logic [31:0] ALUResult,
-    input logic [31:0] WriteData,
-    output logic [31:0] ReadData
+    input   logic clk, rstn,
+    input   logic WE,
+    input   logic [31:0] ALUResult,
+    input   logic [31:0] WriteData,
+    output  logic [31:0] ReadData
 );
     logic [31:0] mem [0:255];
 

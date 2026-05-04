@@ -2,8 +2,8 @@ module HazardUnit (
     input  logic [4:0] rs1D, rs2D, rs1E, rs2E,
     input  logic [4:0] rdE, rdM, rdW,
     input  logic       RegWriteM, RegWriteW,
-    input  logic       ResultSrc0, // Tín hiệu ResultSrcE[0] (báo lệnh Load)
-    input  logic       pcSrcE,      // Tín hiệu quyết định rẽ nhánh
+    input  logic       ResultSrc0,
+    input  logic       pcSrcE,   
     input  logic       lsu_stall,
     
     output logic [1:0] forwardAE, forwardBE,
@@ -19,7 +19,6 @@ module HazardUnit (
         else 
             forwardAE = 2'b00; // Không forward
 
-        // Forward B tương tự cho rs2E...
         if (((rs2E == rdM) && RegWriteM) && (rs2E != 0)) 
             forwardBE = 2'b10; // Forward từ MEM
         else if (((rs2E == rdW) && RegWriteW) && (rs2E != 0)) 

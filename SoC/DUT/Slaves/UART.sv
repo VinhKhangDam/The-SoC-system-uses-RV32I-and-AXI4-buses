@@ -67,7 +67,7 @@ module UART (
 			end
 
 			if (s_axi_awready && s_axi_wready) s_axi_bvalid <= '1;
-			else if (s_axi_bready) s_axi_bvalid <= '0;
+			else if (s_axi_bvalid && s_axi_bready) s_axi_bvalid <= '0;
 		end
 	end
 
@@ -97,7 +97,7 @@ module UART (
 			end
 
 			if (s_axi_arready) s_axi_rvalid <= 1'b1;
-			else if (s_axi_rready) s_axi_rvalid <= '0;
+			else if (s_axi_rvalid && s_axi_rready) s_axi_rvalid <= '0;
 		end
 	end
 	
@@ -127,7 +127,7 @@ module UART (
 					if (uart_tx_count < uart_baud) uart_tx_count <= uart_tx_count + 1;
 					else begin
 						uart_tx_count <= '0;
-						tx_state <= TX_START;
+						tx_state <= TX_DATA;
 						tx_bit_idx <= '0;
 					end
 				end

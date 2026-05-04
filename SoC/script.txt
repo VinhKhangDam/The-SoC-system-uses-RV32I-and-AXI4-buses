@@ -1,0 +1,11 @@
+# clean work
+make clean
+
+# make compile & sim
+make compile test_name=TEST_NAME
+
+# open GUI
+make gui
+
+# open the coverage
+vsim -viewcov coverage coverage_result.ucdb

@@ -75,7 +75,7 @@ module SPI (
 			end
 
 			if (s_axi_awready && s_axi_wready) s_axi_bvalid <= '1;
-			else if (s_axi_bready) s_axi_bvalid <= '0;
+			else if (s_axi_bvalid && s_axi_bready) s_axi_bvalid <= '0;
 		end
 	end
 
@@ -102,7 +102,7 @@ module SPI (
 			end
 
 			if (s_axi_arready) s_axi_rvalid <= '1;
-			else if (s_axi_rready) s_axi_rvalid <= '0;
+			else if (s_axi_rvalid && s_axi_rready) s_axi_rvalid <= '0;
 		end
 	end
 
@@ -119,6 +119,7 @@ module SPI (
 	always_ff @(posedge clk or negedge rstn) begin
 		if (!rstn) begin
 			spi_state 	<= IDLE;
+			spi_rx_reg  <= '0;
 			spi_busy 	<= '0;
 			sck_internal 	<= '0;
 			spi_mosi  	<= '0;

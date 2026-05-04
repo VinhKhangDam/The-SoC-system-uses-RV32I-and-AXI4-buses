@@ -1,0 +1,101 @@
+// --- cpu_instr.mem Automated Testcases (100 lines) ---
+0cc00aef  // jal x21, 204
+b47ff46f  // jal x8, -1210
+f5dc0ce3  // beq x24, x29, -168
+402709b3  // sub x19, x14, x2
+f1140de3  // beq x8, x17, -230
+56c0096f  // jal x18, 1388
+8357a403  // lw x8, -1995(x15)
+58600cef  // jal x25, 1414
+2c548593  // addi x11, x9, 709
+3016a183  // lw x3, 769(x13)
+41a4da33  // sra x20, x9, x26
+a9e222a3  // sw x30, -1403(x4)
+3920096f  // jal x18, 914
+017389b3  // add x19, x7, x23
+a8d42b03  // lw x22, -1395(x8)
+01c45e33  // srl x28, x8, x28
+d347a483  // lw x9, -716(x15)
+08a0066f  // jal x12, 138
+a49ffbef  // jal x23, -1464
+fe6a8de3  // beq x21, x6, -6
+f077a303  // lw x6, -249(x15)
+01b5eb33  // or x22, x11, x27
+4d612d83  // lw x27, 1238(x2)
+04718163  // beq x3, x7, 66
+6b0aa723  // sw x16, 1710(x21)
+0684c293  // xori x5, x9, 104
+f049ae83  // lw x29, -252(x19)
+010882b3  // add x5, x17, x16
+d1fffe6f  // jal x28, -738
+f4eb00e3  // beq x22, x14, -192
+0146a5a3  // sw x20, 11(x13)
+41fe0933  // sub x18, x28, x31
+2e2eab03  // lw x22, 738(x29)
+68450213  // addi x4, x10, 1668
+06c00fef  // jal x31, 108
+f66c86e3  // beq x25, x6, -148
+e5dffe6f  // jal x28, -420
+80466293  // ori x5, x12, -2044
+1d70a803  // lw x16, 471(x1)
+f48108e3  // beq x2, x8, -176
+010c21b3  // slt x3, x24, x16
+73400cef  // jal x25, 1844
+58a92f83  // lw x31, 1418(x18)
+fde386e3  // beq x7, x30, -52
+3f200bef  // jal x23, 1010
+bd1eafa3  // sw x17, -1057(x29)
+8ac42403  // lw x8, -1876(x8)
+fe8900e3  // beq x18, x8, -32
+9e3ff0ef  // jal x1, -1566
+01d19433  // sll x8, x3, x29
+7888a183  // lw x3, 1928(x17)
+720003ef  // jal x7, 1824
+e10d2ba3  // sw x16, -489(x26)
+35622b23  // sw x22, 854(x4)
+9bbff76f  // jal x14, -1606
+015a8b33  // add x22, x21, x21
+00bc66b3  // or x13, x24, x11
+c723ae23  // sw x18, -900(x7)
+fe932f23  // sw x9, -2(x6)
+b23f2123  // sw x3, -1246(x30)
+412a8133  // sub x2, x21, x18
+d52ccf13  // xori x30, x25, -686
+9e782023  // sw x7, -1568(x16)
+0616ae23  // sw x1, 124(x13)
+13ad2023  // sw x26, 288(x26)
+7920076f  // jal x14, 1938
+9df38293  // addi x5, x7, -1569
+4025dc33  // sra x24, x11, x2
+fbcf00e3  // beq x30, x28, -96
+011ff133  // and x2, x31, x17
+f87ff1ef  // jal x3, -122
+fff20ee3  // beq x4, x31, -4
+f42a09e3  // beq x20, x2, -174
+053b0163  // beq x22, x19, 66
+20c00f6f  // jal x30, 524
+1994c413  // xori x8, x9, 409
+019f05b3  // add x11, x30, x25
+413a07b3  // sub x15, x20, x19
+c3d3a903  // lw x18, -963(x7)
+01d66f33  // or x30, x12, x29
+1a652723  // sw x6, 430(x10)
+f15d04e3  // beq x26, x21, -248
+b50dab03  // lw x22, -1200(x27)
+bb1eaf83  // lw x31, -1103(x29)
+f9820fe3  // beq x4, x24, -98
+2f857493  // andi x9, x10, 760
+7a2aab03  // lw x22, 1954(x21)
+41ee84b3  // sub x9, x29, x30
+96972a83  // lw x21, -1687(x14)
+0615f093  // andi x1, x11, 97
+5ae00c6f  // jal x24, 1454
+0040f933  // and x18, x1, x4
+cbd12903  // lw x18, -835(x2)
+3ab2a703  // lw x14, 939(x5)
+01af1eb3  // sll x29, x30, x26
+b4bff3ef  // jal x7, -1206
+cf2ca923  // sw x18, -782(x25)
+daaf4f13  // xori x30, x30, -598
+52c32083  // lw x1, 1324(x6)
+ff1ffd6f  // jal x26, -16

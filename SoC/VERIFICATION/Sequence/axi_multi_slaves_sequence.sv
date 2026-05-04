@@ -11,13 +11,14 @@ class axi_multi_slaves_sequence extends uvm_sequence #(axi_transaction);
         super.new(name);
     endfunction
 
-    task send_write(bit [31:0] addr, bit[31:0] data);
+    task send_write(bit [31:0] addr, bit[31:0] data, bit [2:0] prot = 3'b000);
         req = axi_transaction::type_id::create("req");
         start_item(req);
         req.addr = addr;
         req.data = data;
         req.is_write = 1'b1;
         req.wstrb = 4'hF;
+        req.awprot = prot;
         finish_item(req);
     endtask
 
@@ -41,22 +42,31 @@ class axi_multi_slaves_sequence extends uvm_sequence #(axi_transaction);
         send_read (DRAM_BASE + 32'h00);
         send_read (DRAM_BASE + 32'h04);
  
-        // --- Slave 2: Timer (write control reg, read back) ---
-        // Scoreboard logs it as peripheral — no data integrity check expected
+        // --- TIMER: use awprot=3'b001 to pass privilege check ---
+        // Write PERIOD (0x4) and CONTROL (0x0 with ENABLE=1)
+        // Read back PERIOD (0x4) and CONTROL (0x0) — both readable
         `uvm_info("SEQ", "Accessing Timer (0x2000_0000)...", UVM_LOW)
-        send_write(TIMER_BASE + 32'h00, 32'h0000_00FF); // Load timer value
-        send_read (TIMER_BASE + 32'h00);
+        send_write(TIMER_BASE + 32'h04, 32'h0000_0064, 3'b001); // PERIOD = 100, privileged
+        send_write(TIMER_BASE, 32'h0000_0001, 3'b001); // CONTROL: ENABLE=1, privileged
+        send_read (TIMER_BASE + 32'h04); // read PERIOD — should match 0x64
+        send_read (TIMER_BASE); // read CONTROL — should match 0x01
  
-        // --- Slave 3: UART (write TX data, read status) ---
+        // --- UART: write BAUD (0xC, readable), read it back ---
+        // Also write TX (0x0, write-only), read back 0x00 (expected)
         `uvm_info("SEQ", "Accessing UART (0x3000_0000)...", UVM_LOW)
-        send_write(UART_BASE + 32'h00, 32'h0000_0041); // 'A' character
-        send_read (UART_BASE + 32'h00);
+        send_write(UART_BASE + 32'h0C, 32'h0000_01B2); // BAUD = 434 (115200 @ 50MHz)
+        send_write(UART_BASE, 32'h0000_0041); // TX = 'A' (write-only)
+        send_read (UART_BASE + 32'h0C); // read BAUD — should match 0x1B2
+        send_read (UART_BASE); // read TX reg — write-only, expect 0x00
  
-        // --- Slave 4: SPI (write config register) ---
+        // --- SPI: write BAUD (0xC), read back ---
+        // Write DATA (0x0), read back after no transfer = 0x00
         `uvm_info("SEQ", "Accessing SPI (0x4000_0000)...", UVM_LOW)
-        send_write(SPI_BASE + 32'h00, 32'h0000_0001); // Enable SPI
-        send_read (SPI_BASE + 32'h00);
- 
+        send_write(SPI_BASE + 32'h0C, 32'h0000_000A); // BAUD = 10
+        send_write(SPI_BASE, 32'h0000_00AB); // TX data = 0xAB
+        send_read (SPI_BASE + 32'h0C); // read BAUD — should match 0x0A
+        send_read (SPI_BASE); // read RX data — no transfer yet, expect 0x00
+        
         // --- Final DRAM check: ensure peripheral accesses didn't corrupt DRAM ---
         `uvm_info("SEQ", "Final DRAM integrity check after peripheral accesses...", UVM_LOW)
         send_read(DRAM_BASE + 32'h00);

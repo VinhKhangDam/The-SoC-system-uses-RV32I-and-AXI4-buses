@@ -2,49 +2,100 @@
 
 class axi_scoreboard extends uvm_scoreboard;
     `uvm_component_utils(axi_scoreboard)
-    
+
     uvm_analysis_imp #(axi_transaction, axi_scoreboard) item_collected_export;
 
+    // DRAM shadow memory
     bit [31:0] sc_mem [bit[31:0]];
+
+    // Peripheral shadow registers — keyed by full address
+    bit [31:0] sc_periph [bit[31:0]];
+
+    // Track which peripheral addresses are write-only (no read-back check)
+    // UART 0x30000000 = TX register (write only)
+    // Add more as needed
+    bit write_only_regs [bit[31:0]];
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
         item_collected_export = new("item_collected_export", this);
     endfunction
 
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        // Mark write-only registers — reads from these return 0 by design
+        write_only_regs[32'h3000_0000] = 1; // UART TX data register
+        write_only_regs[32'h4000_0000] = 1; // SPI DATA: TX write, RX read
+    endfunction
+
+    function string get_peripheral(bit [31:0] addr);
+        if      (addr >= 32'h2000_0000 && addr < 32'h3000_0000) return "TIMER";
+        else if (addr >= 32'h3000_0000 && addr < 32'h4000_0000) return "UART";
+        else if (addr >= 32'h4000_0000 && addr < 32'h5000_0000) return "SPI";
+        else                                                      return "UNKNOWN";
+    endfunction
+
     virtual function void write(axi_transaction tr);
-        // --- VÙNG DRAM (0x1000_0000 - 0x1FFF_FFFF) ---
+
+        // --- DRAM (0x1000_0000 - 0x1FFF_FFFF) ---
         if (tr.addr >= 32'h1000_0000 && tr.addr < 32'h2000_0000) begin
             if (tr.is_write) begin
                 sc_mem[tr.addr] = tr.data;
-                `uvm_info("SCB_WRITE", $sformatf("Ghi vao SCB: Addr=%h, Data=%h", tr.addr, tr.data), UVM_HIGH)
-            end else if (sc_mem.exists(tr.addr)) begin
-                if (sc_mem[tr.addr] == tr.data)
-                    `uvm_info("SCB_PASS", $sformatf("Match! Addr=%h, Data=%h", tr.addr, tr.data), UVM_LOW)
-                else
-                    `uvm_error("SCB_FAIL", $sformatf("DRAM THAT LOI! Addr=%h, SCB_giu:%h, DRAM_tra:%h", tr.addr, sc_mem[tr.addr], tr.data))
+                `uvm_info("SCB_WR", $sformatf("[DRAM] WRITE Addr=%h Data=%h", tr.addr, tr.data), UVM_HIGH)
+            end else begin
+                if (!sc_mem.exists(tr.addr)) begin
+                    `uvm_warning("SCB_WARN", $sformatf("[DRAM] READ Addr=%h but never written — skipping check", tr.addr))
+                end else if (sc_mem[tr.addr] == tr.data) begin
+                    `uvm_info("SCB_PASS", $sformatf("[DRAM] PASS Addr=%h Expected=%h Got=%h",
+                              tr.addr, sc_mem[tr.addr], tr.data), UVM_LOW)
+                end else begin
+                    `uvm_error("SCB_FAIL", $sformatf("[DRAM] FAIL Addr=%h Expected=%h Got=%h",
+                               tr.addr, sc_mem[tr.addr], tr.data))
+                end
             end
         end
 
-        // --- VÙNG NGOẠI VI (UART, SPI, TIMER >= 0x2000_0000) ---
+        // --- Peripherals (TIMER/UART/SPI >= 0x2000_0000) ---
         else if (tr.addr >= 32'h2000_0000) begin
-            string peripheral;
-            if      (tr.addr < 32'h3000_0000) peripheral = "TIMER";
-            else if (tr.addr < 32'h4000_0000) peripheral = "UART";
-            else if (tr.addr < 32'h5000_0000) peripheral = "SPI";
-            else                              peripheral = "UNKNOWN";
+            string pname = get_peripheral(tr.addr);
 
-            `uvm_info("MON_IO", $sformatf("[%s] %s: Addr=%h, Data=%h", 
-                      peripheral, (tr.is_write ? "WRITE" : "READ"), tr.addr, tr.data), UVM_LOW)
-            
-            if (!tr.is_write && tr.data == 32'hDEADBEEF) begin
-                `uvm_warning("SCB_IO_ERR", $sformatf("Ngoai vi %s tra ve DEADBEEF (Decode Error?)", peripheral))
+            if (tr.is_write) begin
+                // Store expected value for readable registers
+                if (!write_only_regs.exists(tr.addr))
+                    sc_periph[tr.addr] = tr.data;
+                `uvm_info("SCB_WR", $sformatf("[%s] WRITE Addr=%h Data=%h",
+                          pname, tr.addr, tr.data), UVM_LOW)
+            end else begin
+                // Check DEADBEEF = interconnect decode error
+                if (tr.data == 32'hDEAD_BEEF) begin
+                    `uvm_error("SCB_FAIL", $sformatf("[%s] READ Addr=%h returned DEADBEEF — DECERR from interconnect!",
+                               pname, tr.addr))
+                end
+                // Write-only register — 0x00 is correct, just log it
+                else if (write_only_regs.exists(tr.addr)) begin
+                    `uvm_info("SCB_PASS", $sformatf("[%s] PASS Addr=%h is write-only, read returned %h (expected 0x00)",
+                              pname, tr.addr, tr.data), UVM_LOW)
+                end
+                // Readable register — check against shadow
+                else if (sc_periph.exists(tr.addr)) begin
+                    if (sc_periph[tr.addr] == tr.data)
+                        `uvm_info("SCB_PASS", $sformatf("[%s] PASS Addr=%h Expected=%h Got=%h",
+                                  pname, tr.addr, sc_periph[tr.addr], tr.data), UVM_LOW)
+                    else
+                        `uvm_error("SCB_FAIL", $sformatf("[%s] FAIL Addr=%h Expected=%h Got=%h",
+                                   pname, tr.addr, sc_periph[tr.addr], tr.data))
+                end
+                // Never written — just log the value
+                else begin
+                    `uvm_info("SCB_RD", $sformatf("[%s] READ Addr=%h Data=%h (status/no prior write)",
+                              pname, tr.addr, tr.data), UVM_LOW)
+                end
             end
         end
 
-        // --- VÙNG IRAM (0x0000_0000) ---
+        // --- IRAM (0x0000_0000 - 0x0FFF_FFFF) ---
         else begin
-            `uvm_info("SCB_IRAM", $sformatf("CPU Fetch/Access IRAM: Addr=%h", tr.addr), UVM_HIGH)
+            `uvm_info("SCB_IRAM", $sformatf("[IRAM] Access Addr=%h", tr.addr), UVM_HIGH)
         end
 
     endfunction

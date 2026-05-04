@@ -1,8 +1,8 @@
 module ALU (
-    input logic [31:0] OpA, OpB,
-    input logic [3:0] ALUControl,
-    output logic [31:0] ALUResult,
-    output logic Zero
+    input   logic [31:0]    OpA, OpB,
+    input   logic [3:0]     ALUControl,
+    output  logic [31:0]    ALUResult,
+    output  logic           Zero
 );
     // Logic Group
     localparam AND = 4'b0000;

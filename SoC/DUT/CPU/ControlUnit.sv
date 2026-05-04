@@ -11,10 +11,9 @@ module ControlUnit (
     output logic       ALUSrc,
     output logic [2:0] ImmSrc
 );
-    // Dây trung gian nối từ MainDecoder sang ALUControl
     logic [1:0] ALUOp_wire; 
 
-    // 1. Khối giải mã chính (Main Decoder)
+    // 1. Main Decoder
     MainDecoder md (
         .opcode(Opcode),
         .RegWrite(RegWrite),
@@ -27,7 +26,7 @@ module ControlUnit (
         .ImmSrc(ImmSrc)
     );
 
-    // 2. Khối điều khiển ALU (ALU Control)
+    // ALU Control
     ALUControl a1 (
         .ALUOp(ALUOp_wire),          
         .funct3(funct3),
