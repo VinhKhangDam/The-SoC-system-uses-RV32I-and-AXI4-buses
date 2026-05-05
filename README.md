@@ -46,7 +46,7 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 ## Architecture Overview
 
 ### CPU Block Diagram
-![CPU Architecture](Architecture/CPU.png)
+![TOP Architecture](Architecture/TOP.png)
 
 ### CPU Pipeline
 ```
