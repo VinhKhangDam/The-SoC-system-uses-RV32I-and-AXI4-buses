@@ -18,6 +18,7 @@ class axi_random_wr_rd extends uvm_sequence #(axi_transaction);
     virtual task body();
         bit [31:0] written_data[bit [31:0]];
         bit [31:0] r_addr, r_data;
+        bit [31:0] iram_addr;
 
         `uvm_info("SEQ", "--- STARTING SMART RANDOM TEST (ID 11, 12) ---", UVM_LOW)
 
@@ -32,6 +33,11 @@ class axi_random_wr_rd extends uvm_sequence #(axi_transaction);
 
         foreach (written_data[addr]) begin
             send_trans(addr, 32'h0, 1'b0); 
+        end
+
+        for (int i = 0; i < 100; i++) begin
+            iram_addr = 32'h0000_0000 + (i * 4);
+            send_trans(iram_addr, 32'h0, 1'b0);
         end
 
         send_trans(32'h1000_00A0, 32'h5555_AAAA, 1'b1);

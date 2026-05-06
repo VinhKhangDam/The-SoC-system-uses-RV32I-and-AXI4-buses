@@ -33,6 +33,20 @@ module RAM #(
     localparam MEM_DEPTH = (2**ADDR_WIDTH) / 4;
     logic [31:0] mem [0:MEM_DEPTH-1];
 
+    initial begin
+        if (INIT_FILE != "") begin
+            $display("[RAM] Loading file: %s", INIT_FILE);
+            $readmemh(INIT_FILE, mem);
+
+            // dump first 16 words
+            for (int i = 0; i < 100; i++) begin
+                $display("[RAM] mem[%0d] = %h", i, mem[i]);
+            end
+        end else begin
+            $display("[RAM] No INIT_FILE specified");
+        end
+    end
+
     wire mem_write_en = s_axi_awready && s_axi_awvalid && s_axi_wready && s_axi_wvalid;
 
     wire [ADDR_WIDTH-3:0] mem_index  = s_axi_awaddr[ADDR_WIDTH-1:2];

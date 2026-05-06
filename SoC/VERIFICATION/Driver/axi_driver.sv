@@ -64,7 +64,7 @@ class axi_driver extends uvm_driver #(axi_transaction);
 		@(vif.drv_cb);
 		vif.drv_cb.bready <= 1'b0;
 
-		`uvm_info("DRV", $sformatf("Write Done: Addr=%h, Data=%h", tr.addr, tr.data), UVM_HIGH)
+		`uvm_info("DRV", $sformatf("Write Done: Addr=%h, Data=%h", tr.addr, tr.data), UVM_MEDIUM)
 	endtask
 
 	task drive_read(axi_transaction tr);
@@ -85,6 +85,6 @@ class axi_driver extends uvm_driver #(axi_transaction);
 		@(vif.drv_cb);
 		vif.drv_cb.rready <= 1'b0;
 
-		`uvm_info("DRV", $sformatf("Read Done: Addr=%h, Data=%h", tr.addr, tr.data), UVM_HIGH)
+		`uvm_info("DRV", $sformatf("Read Done: Addr=%h, Data=%h", tr.addr, tr.data), UVM_MEDIUM)
 	endtask
 endclass

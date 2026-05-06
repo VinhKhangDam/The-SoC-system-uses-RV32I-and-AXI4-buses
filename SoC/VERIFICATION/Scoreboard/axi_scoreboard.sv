@@ -8,6 +8,8 @@ class axi_scoreboard extends uvm_scoreboard;
     // DRAM shadow memory
     bit [31:0] sc_mem [bit[31:0]];
 
+    bit [31:0] sc_iram [bit[31:0]];
+
     // Peripheral shadow registers — keyed by full address
     bit [31:0] sc_periph [bit[31:0]];
 
@@ -26,6 +28,7 @@ class axi_scoreboard extends uvm_scoreboard;
         // Mark write-only registers — reads from these return 0 by design
         write_only_regs[32'h3000_0000] = 1; // UART TX data register
         write_only_regs[32'h4000_0000] = 1; // SPI DATA: TX write, RX read
+        $readmemh("instr.mem", sc_iram);
     endfunction
 
     function string get_peripheral(bit [31:0] addr);
@@ -95,8 +98,22 @@ class axi_scoreboard extends uvm_scoreboard;
 
         // --- IRAM (0x0000_0000 - 0x0FFF_FFFF) ---
         else begin
-            `uvm_info("SCB_IRAM", $sformatf("[IRAM] Access Addr=%h", tr.addr), UVM_HIGH)
-        end
+            int idx = tr.addr >> 2;
 
+            if (!tr.is_write) begin
+                if (sc_iram[idx] != tr.data) begin
+                    `uvm_error("SCB_FAIL",
+                        $sformatf("[IRAM] FAIL Addr=%h Expected=%h Got=%h",
+                                tr.addr, sc_iram[idx], tr.data))
+                end
+                else begin
+                    // 🔥 PASS → print so you KNOW it's working
+                    `uvm_info("SCB_PASS",
+                        $sformatf("[IRAM] PASS Addr=%h Data=%h",
+                                tr.addr, tr.data),
+                        UVM_LOW)
+                end
+            end
+        end
     endfunction
 endclass

@@ -115,7 +115,7 @@ def generate_file(filepath, header, count, seed):
         for _ in range(count):
             instr, asm = generate_instr()
             f.write(f"{instr:08x}  // {asm}\n")
-    print(f"Generated {filepath}  (seed={seed})")
+    print(f"Generated {filepath}  (seed={random.seed()})")
 
 # -----------------------------
 # MAIN
@@ -125,9 +125,9 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 
 generate_file(
     os.path.join(script_dir, "cpu_instr.mem"),
-    "cpu_instr.mem Automated Testcases", 100, seed=42
+    "cpu_instr.mem Automated Testcases", 100, random.seed()
 )
 generate_file(
     os.path.join(script_dir, "instr.mem"),
-    "instr.mem Automated Testcases",     100, seed=99
+    "instr.mem Automated Testcases",     100, random.seed()
 )

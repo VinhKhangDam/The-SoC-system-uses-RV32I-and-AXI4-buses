@@ -57,14 +57,4 @@ module top_tb;
         run_test();
     end
 
-    initial begin
-        $readmemh("instr.mem", dut.IRAM.mem);
-
-	if (dut.IRAM.mem[0] == 32'hx || dut.IRAM.mem[0] == 32'hz) begin
-		$display("CANNOT LOAD INSTRUCTION FROM IRAM");
-	end else begin
-		$display("SUCCESS LOAD INSTRUCTION FROM IRAM");
-	end
-    end
-
 endmodule
