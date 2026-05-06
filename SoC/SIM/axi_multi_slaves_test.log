@@ -1,26 +1,26 @@
---- [0/4] Dang xoa file .mem cu va chay script Python tao 100 testcase moi ---
+--- [GEN_MEM] Generate new instruction memory ---
 python3 gen_mem.py
-Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/cpu_instr.mem  (seed=42)
-Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/instr.mem  (seed=99)
---- Dang dung ROOT: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC ---
+Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/cpu_instr.mem  (seed=None)
+Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/instr.mem  (seed=None)
+--- ROOT: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC ---
 rm -rf work
 vlib work
---- [1/4] Bien dich Interfaces ---
+--- [1/4] Compile Interfaces ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/*.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:39:36 on May 05,2026
+Start time: 19:37:52 on May 06,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/clk_rst_inf.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/soc_inf.sv 
 -- Compiling interface clk_rst_inf
 -- Compiling interface soc_inf
 
 Top level modules:
 	--none--
-End time: 15:39:36 on May 05,2026, Elapsed time: 0:00:00
+End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
---- [2/4] Bien dich DUT (SoC Logic) ---
+--- [2/4] Compile DUT ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:39:36 on May 05,2026
+Start time: 19:37:52 on May 06,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/RAM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/SPI.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/Timer.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/UART.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALUControl.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ControlUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/EX_MEM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/HazardUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ID_EX.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/IF_ID.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MEM_WB.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MainDecoder.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/RegFile.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/data_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/instr_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/pc.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/signExtend.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/CPU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/LSU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv 
 -- Compiling module RAM
 -- Compiling module SPI
@@ -50,10 +50,12 @@ vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/
 -- Compiling module TOP
 
 Top level modules:
+	data_mem
+	instr_mem
 	TOP
-End time: 15:39:36 on May 05,2026, Elapsed time: 0:00:00
+End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 3
---- [3/4] Bien dich UVM Package ---
+--- [3/4] Compile UVM ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction \
             +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequencer \
             +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor \
@@ -66,7 +68,7 @@ vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc
             +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test \
             /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:39:36 on May 05,2026
+Start time: 19:37:52 on May 06,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequencer" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Agent" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Coverage" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Env" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh 
 -- Compiling package soc_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -74,12 +76,12 @@ vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/
 
 Top level modules:
 	--none--
-End time: 15:39:37 on May 05,2026, Elapsed time: 0:00:01
+End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
---- [4/4] Bien dich Top Testbench ---
+--- [4/4] Compile Top TB ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:39:37 on May 05,2026
+Start time: 19:37:52 on May 06,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv 
 -- Compiling module top_tb
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -88,13 +90,13 @@ vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I
 
 Top level modules:
 	top_tb
-End time: 15:39:37 on May 05,2026, Elapsed time: 0:00:00
+End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
---- [Optimize] Chay vopt ---
+--- [OPTIMIZE] ---
 vopt +acc +cover top_tb -o vopt_top
 QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
 ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-Start time: 15:39:37 on May 05,2026
+Start time: 19:37:52 on May 06,2026
 vopt "+acc" "+cover" top_tb -o vopt_top 
 
 Top level modules:
@@ -119,8 +121,6 @@ Analyzing design...
 -- Loading module CPU
 ** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'pc_reg', but was not detected by vopt. The vlog option will be ignored.
 -- Loading module pc_reg
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'instr_mem', but was not detected by vopt. The vlog option will be ignored.
--- Loading module instr_mem
 ** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'IF_ID', but was not detected by vopt. The vlog option will be ignored.
 -- Loading module IF_ID
 ** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'ControlUnit', but was not detected by vopt. The vlog option will be ignored.
@@ -139,8 +139,6 @@ Analyzing design...
 -- Loading module ALU
 ** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'EX_MEM', but was not detected by vopt. The vlog option will be ignored.
 -- Loading module EX_MEM
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'data_mem', but was not detected by vopt. The vlog option will be ignored.
--- Loading module data_mem
 ** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'MEM_WB', but was not detected by vopt. The vlog option will be ignored.
 -- Loading module MEM_WB
 ** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'HazardUnit', but was not detected by vopt. The vlog option will be ignored.
@@ -158,16 +156,16 @@ Analyzing design...
 ** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'SPI', but was not detected by vopt. The vlog option will be ignored.
 -- Loading module SPI
 ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
-Optimizing 32 design-units (inlining 0/27 module instances):
+Optimizing 30 design-units (inlining 0/25 module instances):
 -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
 -- Optimizing package soc_pkg(fast)
 -- Optimizing interface soc_inf(fast__2)
+-- Optimizing module LSU(fast)
+** Note: (vopt-143) Recognized 1 FSM in module "LSU(fast)".
 -- Optimizing module AXI4_Lite_Interconnect(fast)
 ** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(43): (vopt-13314) Defaulting port 's_axi_bresp' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 ** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(52): (vopt-13314) Defaulting port 's_axi_rdata' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 ** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(53): (vopt-13314) Defaulting port 's_axi_rresp' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
--- Optimizing module LSU(fast)
-** Note: (vopt-143) Recognized 1 FSM in module "LSU(fast)".
 -- Optimizing module UART(fast)
 ** Note: (vopt-143) Recognized 2 FSMs in module "UART(fast)".
 -- Optimizing module CPU(fast)
@@ -180,33 +178,34 @@ Optimizing 32 design-units (inlining 0/27 module instances):
 -- Optimizing module RAM(fast__1)
 -- Optimizing module ID_EX(fast)
 -- Optimizing module HazardUnit(fast)
+-- Optimizing module AXI_Master(fast)
 -- Optimizing module MainDecoder(fast)
 -- Optimizing module EX_MEM(fast)
--- Optimizing module AXI_Master(fast)
 -- Optimizing module ALU(fast)
 -- Optimizing module MEM_WB(fast)
 -- Optimizing module RegFile(fast)
 -- Optimizing module signExtend(fast)
 -- Optimizing module IF_ID(fast)
 -- Optimizing module ALUControl(fast)
--- Optimizing module data_mem(fast)
 -- Optimizing module ControlUnit(fast)
 -- Optimizing interface clk_rst_inf(fast__2)
 -- Optimizing module pc_reg(fast)
--- Optimizing module instr_mem(fast)
 -- Optimizing interface soc_inf(fast)
 -- Optimizing interface clk_rst_inf(fast)
 -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 Optimized design name is vopt_top
-End time: 15:39:38 on May 05,2026, Elapsed time: 0:00:01
-Errors: 0, Warnings: 32
---- [SINGLE TEST MODE] Dang chay test: axi_multi_slaves_test ---
+End time: 19:37:53 on May 06,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 30
+=======================================================
+>>> RUN TEST: axi_multi_slaves_test
+=======================================================
+>>> MODE = UVM_MASTER
 Reading pref.tcl
 
 # 2024.1
 
-# vsim -c -L uvm -coverage -sv_seed random vopt_top "+UVM_TESTNAME=axi_multi_slaves_test" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
-# Start time: 15:39:39 on May 05,2026
+# vsim -c -L uvm -coverage -sv_seed random vopt_top "+UVM_TESTNAME=axi_multi_slaves_test" "+UVM_MASTER" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
+# Start time: 19:37:55 on May 06,2026
 # //  Questa Sim-64
 # //  Version 2024.1 linux_x86_64 Feb  1 2024
 # //
@@ -234,7 +233,6 @@ Reading pref.tcl
 # Loading work.AXI_Master(fast)
 # Loading work.CPU(fast)
 # Loading work.pc_reg(fast)
-# Loading work.instr_mem(fast)
 # Loading work.IF_ID(fast)
 # Loading work.ControlUnit(fast)
 # Loading work.MainDecoder(fast)
@@ -244,7 +242,6 @@ Reading pref.tcl
 # Loading work.ID_EX(fast)
 # Loading work.ALU(fast)
 # Loading work.EX_MEM(fast)
-# Loading work.data_mem(fast)
 # Loading work.MEM_WB(fast)
 # Loading work.HazardUnit(fast)
 # Loading work.LSU(fast)
@@ -255,7 +252,7 @@ Reading pref.tcl
 # Loading work.UART(fast)
 # Loading work.SPI(fast)
 # Loading /tools/mq/2024.1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# Sv_Seed = 2928733936
+# Sv_Seed = 724420849
 # coverage save -onexit coverage_result.ucdb
 #  run -all
 # ----------------------------------------------------------------
@@ -280,210 +277,411 @@ Reading pref.tcl
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# --- SUCCESS: Loaded instructions from .mem ---
+# [RAM] Loading file: instr.mem
+# [RAM] mem[0] = 4170dab3
+# [RAM] mem[1] = 7367a8a3
+# [RAM] mem[2] = 109dac03
+# [RAM] mem[3] = 40b152b3
+# [RAM] mem[4] = 9c152403
+# [RAM] mem[5] = 09ea0593
+# [RAM] mem[6] = 00aec433
+# [RAM] mem[7] = cd1fff6f
+# [RAM] mem[8] = c64ca403
+# [RAM] mem[9] = ff2e89e3
+# [RAM] mem[10] = 04a9ab03
+# [RAM] mem[11] = f82201e3
+# [RAM] mem[12] = 8035a503
+# [RAM] mem[13] = cc9ff2ef
+# [RAM] mem[14] = edfd2fa3
+# [RAM] mem[15] = 06e70b63
+# [RAM] mem[16] = 39f427a3
+# [RAM] mem[17] = 04878b63
+# [RAM] mem[18] = fd092923
+# [RAM] mem[19] = 19a0096f
+# [RAM] mem[20] = 41a483b3
+# [RAM] mem[21] = 2c312d23
+# [RAM] mem[22] = 018fd433
+# [RAM] mem[23] = a88eff93
+# [RAM] mem[24] = f73e0993
+# [RAM] mem[25] = 421dab83
+# [RAM] mem[26] = f3e3f693
+# [RAM] mem[27] = fcab8fe3
+# [RAM] mem[28] = 50c82f23
+# [RAM] mem[29] = b51ffdef
+# [RAM] mem[30] = ab6d25a3
+# [RAM] mem[31] = 4b3c2d83
+# [RAM] mem[32] = 01d2a933
+# [RAM] mem[33] = 0de0036f
+# [RAM] mem[34] = fdbb0ae3
+# [RAM] mem[35] = 015d0363
+# [RAM] mem[36] = 2b092883
+# [RAM] mem[37] = f7fc80e3
+# [RAM] mem[38] = 008a0363
+# [RAM] mem[39] = 46692923
+# [RAM] mem[40] = f68409e3
+# [RAM] mem[41] = ef462183
+# [RAM] mem[42] = 0cea8d63
+# [RAM] mem[43] = 01180c63
+# [RAM] mem[44] = 414b4a13
+# [RAM] mem[45] = c90ba283
+# [RAM] mem[46] = f5a3ce13
+# [RAM] mem[47] = 08a18463
+# [RAM] mem[48] = 1d600eef
+# [RAM] mem[49] = 90fbaa03
+# [RAM] mem[50] = 0154eeb3
+# [RAM] mem[51] = 006ae133
+# [RAM] mem[52] = 4254a5a3
+# [RAM] mem[53] = 711b2ca3
+# [RAM] mem[54] = e5f12d03
+# [RAM] mem[55] = 0cfa8c63
+# [RAM] mem[56] = bddff2ef
+# [RAM] mem[57] = 009efbb3
+# [RAM] mem[58] = f6ec2d83
+# [RAM] mem[59] = 51000cef
+# [RAM] mem[60] = 08b98763
+# [RAM] mem[61] = 9378a203
+# [RAM] mem[62] = 010e0bb3
+# [RAM] mem[63] = f5e927a3
+# [RAM] mem[64] = 01e6a833
+# [RAM] mem[65] = 3c4da723
+# [RAM] mem[66] = 0ce6a123
+# [RAM] mem[67] = 09868d63
+# [RAM] mem[68] = 00ed29b3
+# [RAM] mem[69] = a0622383
+# [RAM] mem[70] = 9d06aa23
+# [RAM] mem[71] = fcfffc6f
+# [RAM] mem[72] = 04c001ef
+# [RAM] mem[73] = 01fc4ab3
+# [RAM] mem[74] = b97726a3
+# [RAM] mem[75] = 7119aea3
+# [RAM] mem[76] = 40998a33
+# [RAM] mem[77] = 04bb2283
+# [RAM] mem[78] = f0ab8de3
+# [RAM] mem[79] = 686a2683
+# [RAM] mem[80] = 32124513
+# [RAM] mem[81] = d7cfa283
+# [RAM] mem[82] = c8032f03
+# [RAM] mem[83] = f3dff5ef
+# [RAM] mem[84] = 8641a603
+# [RAM] mem[85] = 8089fe13
+# [RAM] mem[86] = 3e362b23
+# [RAM] mem[87] = 15780c93
+# [RAM] mem[88] = 4173d9b3
+# [RAM] mem[89] = 1e7ce413
+# [RAM] mem[90] = 65f0aea3
+# [RAM] mem[91] = afbff36f
+# [RAM] mem[92] = 2d232c03
+# [RAM] mem[93] = 411ca6a3
+# [RAM] mem[94] = 7cce24a3
+# [RAM] mem[95] = 081e0c63
+# [RAM] mem[96] = 41c588b3
+# [RAM] mem[97] = 0ddb8163
+# [RAM] mem[98] = cb40a503
+# [RAM] mem[99] = fed884e3
+# [RAM] No INIT_FILE specified
+# [TB] Running in UVM MASTER mode
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_multi_slaves_test...
-# SUCCESS LOAD INSTRUCTION FROM IRAM
+# ** Warning: (vsim-PLI-8707) No address specified on line 2 of file "instr.mem" 
+# while loading into associative array using readmem command.    : /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(31)
+#    Time: 0 ps  Iteration: 8  Region: /uvm_pkg::uvm_phase::m_run_phases
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(36) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- Basic AXI4-Lite Multi Slaves ---
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(41) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 1: Basic DRAM Access ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 65000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000000, Data = a5a5a5a5
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 75000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000, Data=a5a5a5a5
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 115000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000004, Data = 5a5a5a5a
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 125000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000004, Data=5a5a5a5a
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 165000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000000, Data = a5a5a5a5
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 165000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=a5a5a5a5 Got=a5a5a5a5
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 165000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=a5a5a5a5 Got=a5a5a5a5
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 175000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000, Data=a5a5a5a5
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 215000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000004, Data = 5a5a5a5a
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 215000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=5a5a5a5a Got=5a5a5a5a
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 215000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=5a5a5a5a Got=5a5a5a5a
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 225000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000004, Data=5a5a5a5a
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(50) @ 225000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 2: Timer Basic Operation ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 275000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000004, Data = 00000064
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 275000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 275000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 285000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004, Data=00000064
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 335000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000000, Data = 00000001
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 335000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 335000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 345000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000, Data=00000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 385000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000004, Data = 00000064
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 385000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000064 Got=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 385000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000064 Got=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 395000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004, Data=00000064
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 435000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000000, Data = 00000001
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 435000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000001 Got=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 435000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000001 Got=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 445000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000, Data=00000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 485000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000008, Data = 0000000e
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(90) @ 485000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=0000000e (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(93) @ 485000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=0000000e (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 495000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008, Data=0000000e
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(60) @ 495000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 3: UART Communication ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 535000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 3000000c, Data = 000001b2
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 535000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 535000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 545000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c, Data=000001b2
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 585000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 30000000, Data = 00000041
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 585000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000041
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 585000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000041
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 595000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000, Data=00000041
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 635000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 3000000c, Data = 000001b2
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 635000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 635000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 645000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c, Data=000001b2
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 685000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 30000000, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(76) @ 685000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=30000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(79) @ 685000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=30000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 695000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=30000000, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(69) @ 695000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 4: SPI Data Transfer ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 735000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 4000000c, Data = 0000000a
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 735000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000a
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 735000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000a
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 745000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c, Data=0000000a
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 785000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 40000000, Data = 000000ab
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 785000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ab
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 785000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ab
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 795000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000, Data=000000ab
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 835000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 4000000c, Data = 0000000a
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 835000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000a Got=0000000a
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 835000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000a Got=0000000a
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 845000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c, Data=0000000a
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 885000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 40000000, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(76) @ 885000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(79) @ 885000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 895000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000000, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(78) @ 895000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 5: DRAM Burst Write/Read ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 935000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000000, Data = 10000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 945000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000, Data=10000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 985000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000004, Data = 10000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 995000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000004, Data=10000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1035000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000008, Data = 10000002
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1045000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000008, Data=10000002
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1085000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000000c, Data = 10000003
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1095000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=1000000c, Data=10000003
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1135000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000010, Data = 10000004
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1145000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000010, Data=10000004
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1185000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000014, Data = 10000005
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1195000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000014, Data=10000005
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1235000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000018, Data = 10000006
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1245000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000018, Data=10000006
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1285000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000001c, Data = 10000007
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1295000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=1000001c, Data=10000007
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1335000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000000, Data = 10000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1335000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=10000000 Got=10000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1335000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=10000000 Got=10000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1345000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000, Data=10000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1385000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000004, Data = 10000001
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1385000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=10000001 Got=10000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1385000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=10000001 Got=10000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1395000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000004, Data=10000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1435000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000008, Data = 10000002
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1435000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000008 Expected=10000002 Got=10000002
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1435000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000008 Expected=10000002 Got=10000002
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1445000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000008, Data=10000002
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1485000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 1000000c, Data = 10000003
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1485000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000000c Expected=10000003 Got=10000003
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1485000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000000c Expected=10000003 Got=10000003
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1495000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000000c, Data=10000003
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1535000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000010, Data = 10000004
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1535000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000010 Expected=10000004 Got=10000004
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1535000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000010 Expected=10000004 Got=10000004
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1545000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000010, Data=10000004
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1585000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000014, Data = 10000005
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1585000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000014 Expected=10000005 Got=10000005
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1585000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000014 Expected=10000005 Got=10000005
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1595000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000014, Data=10000005
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1635000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000018, Data = 10000006
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1635000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000018 Expected=10000006 Got=10000006
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1635000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000018 Expected=10000006 Got=10000006
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1645000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000018, Data=10000006
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1685000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 1000001c, Data = 10000007
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1685000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000001c Expected=10000007 Got=10000007
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1685000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000001c Expected=10000007 Got=10000007
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1695000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000001c, Data=10000007
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(89) @ 1695000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 6: Interleaved Access Across Slaves ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1735000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000000, Data = deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1745000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000, Data=deadbeef
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1795000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000004, Data = 00000032
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 1795000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 1795000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1805000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004, Data=00000032
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1845000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 3000000c, Data = 00000100
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 1845000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000100
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 1845000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000100
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1855000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c, Data=00000100
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 1895000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 4000000c, Data = 00000005
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 1895000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000005
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 1895000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000005
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 1905000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c, Data=00000005
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1945000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000000, Data = deadbeef
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 1945000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=deadbeef Got=deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 1945000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=deadbeef Got=deadbeef
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 1955000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000, Data=deadbeef
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 1995000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000004, Data = 00000032
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 1995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000032 Got=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 1995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000032 Got=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 2005000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004, Data=00000032
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 2045000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 3000000c, Data = 00000100
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 2045000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000100 Got=00000100
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 2045000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000100 Got=00000100
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 2055000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c, Data=00000100
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 2095000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 4000000c, Data = 00000005
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 2095000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000005 Got=00000005
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 2095000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000005 Got=00000005
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 2105000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c, Data=00000005
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(103) @ 2105000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 7: Timer Disable/Re-enable ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2155000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000004, Data = 00000050
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2155000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000050
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2155000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000050
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2165000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004, Data=00000050
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2215000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000000, Data = 00000001
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2215000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2215000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2225000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000, Data=00000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 2265000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000008, Data = 00000028
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(90) @ 2265000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000028 (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(93) @ 2265000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000028 (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 2275000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008, Data=00000028
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2325000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000000, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2325000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2325000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2335000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 2375000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000008, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(90) @ 2375000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(93) @ 2375000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 2385000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 2425000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000000, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 2425000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 2425000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 2435000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(114) @ 2435000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 8: UART Multiple TX ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2475000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 3000000c, Data = 000001b2
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2475000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2475000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2485000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c, Data=000001b2
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2525000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 30000000, Data = 00000048
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2525000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000048
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2525000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000048
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2535000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000, Data=00000048
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2575000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 30000000, Data = 00000045
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2575000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000045
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2575000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000045
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2585000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000, Data=00000045
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2625000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 30000000, Data = 0000004c
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2625000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2625000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2635000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000, Data=0000004c
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2675000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 30000000, Data = 0000004c
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2675000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2675000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2685000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000, Data=0000004c
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2725000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 30000000, Data = 0000004f
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2725000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2725000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2735000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000, Data=0000004f
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(125) @ 2735000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 9: SPI Multiple Transfers ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2775000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 4000000c, Data = 00000008
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2775000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000008
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2775000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000008
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2785000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c, Data=00000008
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2825000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 40000000, Data = 000000ff
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2825000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ff
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2825000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ff
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2835000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000, Data=000000ff
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2875000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 40000000, Data = 00000055
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2875000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=00000055
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2875000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=00000055
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2885000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000, Data=00000055
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 2925000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 40000000, Data = 000000aa
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 2925000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000aa
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 2925000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000aa
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 2935000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000, Data=000000aa
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 2975000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 40000000, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(76) @ 2975000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(79) @ 2975000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 2985000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000000, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(135) @ 2985000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 10: DRAM Address Boundaries ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3025000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000000, Data = 00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3035000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000, Data=00000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3075000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000ffc, Data = ffffffff
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3085000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000ffc, Data=ffffffff
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3125000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000000, Data = 00000001
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 3125000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=00000001 Got=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 3125000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=00000001 Got=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3135000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000, Data=00000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3175000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000ffc, Data = ffffffff
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 3175000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000ffc Expected=ffffffff Got=ffffffff
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 3175000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000ffc Expected=ffffffff Got=ffffffff
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3185000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000ffc, Data=ffffffff
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(144) @ 3185000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 11: Read All Status Registers ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3225000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000000, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 3225000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 3225000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3235000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3275000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000004, Data = 00000050
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 3275000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000050 Got=00000050
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 3275000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000050 Got=00000050
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3285000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004, Data=00000050
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3325000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000008, Data = 00000000
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(90) @ 3325000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(93) @ 3325000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3335000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008, Data=00000000
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3375000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 3000000c, Data = 000001b2
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 3375000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 3375000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3385000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c, Data=000001b2
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3425000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 4000000c, Data = 00000008
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 3425000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000008 Got=00000008
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 3425000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000008 Got=00000008
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3435000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c, Data=00000008
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(154) @ 3435000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 12: Rapid DRAM Writes ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3475000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000100, Data = 11111111
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3485000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000100, Data=11111111
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3525000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000104, Data = 22222222
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3535000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000104, Data=22222222
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3575000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000108, Data = 33333333
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3585000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000108, Data=33333333
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3625000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 1000010c, Data = 44444444
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3635000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=1000010c, Data=44444444
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3675000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000100, Data = 11111111
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 3675000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000100 Expected=11111111 Got=11111111
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 3675000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000100 Expected=11111111 Got=11111111
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3685000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000100, Data=11111111
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3725000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000104, Data = 22222222
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 3725000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000104 Expected=22222222 Got=22222222
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 3725000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000104 Expected=22222222 Got=22222222
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3735000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000104, Data=22222222
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3775000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000108, Data = 33333333
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 3775000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000108 Expected=33333333 Got=33333333
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 3775000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000108 Expected=33333333 Got=33333333
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3785000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000108, Data=33333333
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3825000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 1000010c, Data = 44444444
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 3825000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000010c Expected=44444444 Got=44444444
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 3825000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000010c Expected=44444444 Got=44444444
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 3835000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000010c, Data=44444444
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(167) @ 3835000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 13: Timer Period Update ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3885000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000004, Data = 00000010
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 3885000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000010
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 3885000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000010
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3895000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004, Data=00000010
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 3945000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000000, Data = 00000001
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 3945000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 3945000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 3955000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000, Data=00000001
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 3995000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000004, Data = 00000010
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 3995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000010 Got=00000010
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 3995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000010 Got=00000010
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4005000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004, Data=00000010
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4055000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000004, Data = 00000020
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4055000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000020
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4055000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000020
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4065000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004, Data=00000020
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4105000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000004, Data = 00000020
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4105000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000020 Got=00000020
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4105000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000020 Got=00000020
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4115000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004, Data=00000020
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(177) @ 4115000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 14: UART/SPI Baud Variations ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4155000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 3000000c, Data = 00000064
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4155000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4155000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4165000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c, Data=00000064
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4205000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 3000000c, Data = 00000064
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4205000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000064 Got=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4205000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000064 Got=00000064
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4215000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c, Data=00000064
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4255000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 3000000c, Data = 00000032
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4255000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4255000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4265000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c, Data=00000032
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4305000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 3000000c, Data = 00000032
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4305000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000032 Got=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4305000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000032 Got=00000032
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4315000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c, Data=00000032
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4355000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 4000000c, Data = 00000002
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4355000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000002
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4355000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000002
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4365000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c, Data=00000002
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4405000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 4000000c, Data = 00000002
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4405000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000002 Got=00000002
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4405000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000002 Got=00000002
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4415000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c, Data=00000002
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4455000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 4000000c, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4455000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000001e
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4455000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000001e
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4465000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c, Data=0000001e
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4505000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 4000000c, Data = 0000001e
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4505000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000001e Got=0000001e
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4505000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000001e Got=0000001e
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4515000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c, Data=0000001e
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(191) @ 4515000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 15: Final Multi-Slave Integrity ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4555000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000000, Data = cafebabe
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4565000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000, Data=cafebabe
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4615000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 20000004, Data = 0000007f
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4615000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=0000007f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4615000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=0000007f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4625000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004, Data=0000007f
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4665000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 3000000c, Data = 00000200
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4665000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000200
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4665000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000200
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4675000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c, Data=00000200
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 4715000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 4000000c, Data = 0000000f
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(66) @ 4715000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(69) @ 4715000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(67) @ 4725000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c, Data=0000000f
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4765000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 10000000, Data = cafebabe
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(49) @ 4765000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=cafebabe Got=cafebabe
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(52) @ 4765000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=cafebabe Got=cafebabe
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4775000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000, Data=cafebabe
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4815000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 20000004, Data = 0000007f
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4815000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=0000007f Got=0000007f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4815000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=0000007f Got=0000007f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4825000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004, Data=0000007f
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4865000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 3000000c, Data = 00000200
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4865000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000200 Got=00000200
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4865000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000200 Got=00000200
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4875000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c, Data=00000200
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(67) @ 4915000: uvm_test_top.env.agent.monitor [MON_RD] Deteced READ : Addr = 4000000c, Data = 0000000f
-# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(82) @ 4915000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000f Got=0000000f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(85) @ 4915000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000f Got=0000000f
+# UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver/axi_driver.sv(88) @ 4925000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c, Data=0000000f
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(202) @ 4925000: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- All Multi-Slave Tests Complete ---
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 5025000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :  195
+# UVM_INFO :  291
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [DRV]    96
 # [MON_RD]    46
 # [MON_WR]    50
 # [Questa UVM]     2
@@ -496,12 +694,16 @@ Reading pref.tcl
 # ** Note: $finish    : /tools/mq/2024.1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 5025 ns  Iteration: 54  Instance: /top_tb
 # Saving coverage database on exit...
-# End time: 15:39:41 on May 05,2026, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 0
+# End time: 19:37:56 on May 06,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+-------------------------------------------------------
+--- COVERAGE RESULT ---
+-------------------------------------------------------
+vcover report -cvg -summary coverage_result.ucdb
 QuestaSim-64 vcover 2024.1 Coverage Utility 2024.02 Feb  1 2024
-Start time: 15:39:41 on May 05,2026
+Start time: 19:37:56 on May 06,2026
 vcover report -cvg -summary coverage_result.ucdb 
-Coverage Report Totals BY INSTANCES: Number of Instances 28
+Coverage Report Totals BY INSTANCES: Number of Instances 26
 
     Enabled Coverage              Bins      Hits    Misses    Weight  Coverage
     ----------------              ----      ----    ------    ------  --------
@@ -510,5 +712,5 @@ Coverage Report Totals BY INSTANCES: Number of Instances 28
             Covergroup Bins         25        18         7         1    72.00%
 Total coverage (filtered view): 68.33%
 
-End time: 15:39:41 on May 05,2026, Elapsed time: 0:00:00
+End time: 19:37:56 on May 06,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

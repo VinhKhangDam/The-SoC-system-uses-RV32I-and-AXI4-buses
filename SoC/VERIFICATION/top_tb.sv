@@ -28,27 +28,40 @@ module top_tb;
         .spi_cs_n(s_if.spi_cs_n)
     );
 
+    bit use_uvm_master;
+
     initial begin
-        //Force DUT master inputs from interface (driver -> DUT)
-       force dut.m_axi_awaddr  = s_if.awaddr;
-       force dut.m_axi_awvalid = s_if.awvalid;
-       force dut.m_axi_wdata   = s_if.wdata;
-       force dut.m_axi_wstrb   = s_if.wstrb;
-       force dut.m_axi_wvalid  = s_if.wvalid;
-       force dut.m_axi_araddr  = s_if.araddr;
-       force dut.m_axi_arvalid = s_if.arvalid;
-       force dut.m_axi_bready  = s_if.bready;
-       force dut.m_axi_rready  = s_if.rready;
- 
-        //Force DUT outputs back into interface (DUT -> monitor/driver inputs)
-       force s_if.awready = dut.m_axi_awready;
-       force s_if.wready  = dut.m_axi_wready;
-       force s_if.arready = dut.m_axi_arready;
-       force s_if.bvalid  = dut.m_axi_bvalid;
-       force s_if.bresp   = dut.m_axi_bresp;
-       force s_if.rvalid  = dut.m_axi_rvalid;
-       force s_if.rdata   = dut.m_axi_rdata;
-       force s_if.rresp   = dut.m_axi_rresp;
+        if ($test$plusargs("UVM_MASTER")) begin
+            use_uvm_master = 1;
+            $display("[TB] Running in UVM MASTER mode");
+        end else begin
+            use_uvm_master = 0;
+            $display("[TB] Running in CPU MASTER mode");
+        end
+    end
+
+    initial begin
+        if (use_uvm_master) begin
+            // UVM = master
+            force dut.m_axi_awaddr  = s_if.awaddr;
+            force dut.m_axi_awvalid = s_if.awvalid;
+            force dut.m_axi_wdata   = s_if.wdata;
+            force dut.m_axi_wstrb   = s_if.wstrb;
+            force dut.m_axi_wvalid  = s_if.wvalid;
+            force dut.m_axi_araddr  = s_if.araddr;
+            force dut.m_axi_arvalid = s_if.arvalid;
+            force dut.m_axi_bready  = s_if.bready;
+            force dut.m_axi_rready  = s_if.rready;
+
+            force s_if.awready = dut.m_axi_awready;
+            force s_if.wready  = dut.m_axi_wready;
+            force s_if.arready = dut.m_axi_arready;
+            force s_if.bvalid  = dut.m_axi_bvalid;
+            force s_if.bresp   = dut.m_axi_bresp;
+            force s_if.rvalid  = dut.m_axi_rvalid;
+            force s_if.rdata   = dut.m_axi_rdata;
+            force s_if.rresp   = dut.m_axi_rresp;
+        end
     end
 
     initial begin

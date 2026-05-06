@@ -141,27 +141,24 @@ cd DoAnThietKeViMach/Project
 source SoC/env.sh
 ```
 
-### Generate Memory Files
-Before running simulations, you need to generate the instruction memory files using the `gen_mem.py` script:
+### Makefile Workflow
+The `SoC/SIM/Makefile` is designed to run the full verification flow for a given test. When you execute:
 
 ```bash
-cd SoC/SIM
-
-# Generate instruction memory files (instr.mem and cpu_instr.mem)
-make gen_mem
+make all test_name=TEST_NAME
 ```
 
-This script generates:
-- **instr.mem**: Instruction memory image with 100 random RISC-V instructions
-- **cpu_instr.mem**: Alternative instruction memory image for testing
-- Supported instructions: ADD, SUB, AND, OR, XOR, SLL, and immediate operations (ADDI)
+it performs the following sequence:
+
+1. `compile` - build the simulation binaries and compile RTL/UVM sources
+2. `sim` - run the simulation for the selected test
+3. `coverage` - generate coverage data and reports
+
+For tests matching `axi_*`, the run uses `UVM_MASTER` mode, where UVM acts as the AXI bus master. For tests matching `cpu_*`, the run uses `CPU_MASTER` mode, where the CPU behaves as the master device.
 
 ### Simulation
 ```bash
 cd SoC/SIM
-
-# Generate memory files first (required before testing)
-make gen_mem
 
 # Run tests with coverage
 make all test_name=TEST_NAME | tee TEST_NAME.log # TEST_NAME : run difference tests

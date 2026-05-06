@@ -1,30 +1,30 @@
 #==========================================================================================
-# SoC RISC-V Verification Makefile - Pro Version (Auto Gen Memory)
+# SoC RISC-V Verification Makefile - SINGLE TEST FLOW
 # Project: SoC-RV32I
 # Author: Khang
 #==========================================================================================
 
-# --- Khai báo các đường dẫn thư mục ---
+# --- Paths ---
 ROOT_DIR     ?= $(RISCV_TB_DIR)
 DUT_DIR      = $(ROOT_DIR)/DUT
 INF_DIR      = $(ROOT_DIR)/INF
 VERIF_DIR    = $(ROOT_DIR)/VERIFICATION
 SIM_DIR      = $(ROOT_DIR)/SIM
 
-# --- Cấu hình Tool ---
+# --- Tools ---
 VLOG_CMD     = vlog -sv +acc -L uvm -cover bcst
 VSIM_CMD     = vsim -c -L uvm -coverage
 VOPT_CMD     = vopt +acc +cover top_tb -o vopt_top
 
-# --- Cấu hình Python ---
+# --- Python ---
 PYTHON_CMD   = python3
 GEN_SCRIPT   = gen_mem.py
 
-# --- Thông số mô phỏng ---
-test_name    ?= ALL_TESTS
+# --- Simulation config ---
+test_name    ?=
 seed         ?= random
 
-# --- DANH SÁCH FILE COMPILE ---
+# --- FILE LIST ---
 INF_FILES    = $(INF_DIR)/*.sv
 DUT_FILES    = $(DUT_DIR)/Slaves/*.sv \
                $(DUT_DIR)/CPU/*.sv \
@@ -36,50 +36,60 @@ DUT_FILES    = $(DUT_DIR)/Slaves/*.sv \
 UVM_PKG      = $(VERIF_DIR)/Package/soc_pkg.svh
 TOP_TB       = $(VERIF_DIR)/top_tb.sv
 
-# --- Targets chính ---
-.PHONY: all compile sim gui clean help gen_mem
+#==========================================================================================
+# MAIN TARGET (SINGLE TEST ONLY)
+#==========================================================================================
 
-TEST_LIST = axi_random_wr_rd_test \
-			axi_write_test \
-			axi_read_test \
-			axi_multi_slaves_test
+.PHONY: all compile sim gui clean gen_mem help
 
-# Chạy toàn bộ luồng: Tạo mem -> Biên dịch -> Chạy sim
 all: gen_mem compile
-	@if [ "$(test_name)" = "ALL_TESTS" ]; then \
-		echo "--- [RUN ALL MODE] Dang chay toan bo danh sach test ---"; \
-		rm -f *.ucdb; \
-		for test in $(TEST_LIST); do \
-			echo "Running test: $$test"; \
-			$(VSIM_CMD) -sv_seed $(seed) vopt_top +UVM_TESTNAME=$$test -do "coverage save -onexit $$test.ucdb; run -all; quit"; \
-		done; \
-		vcover merge final_coverage.ucdb *.ucdb; \
-		vcover report -cvg -summary final_coverage.ucdb; \
-	else \
-		echo "--- [SINGLE TEST MODE] Dang chay test: $(test_name) ---"; \
-		$(VSIM_CMD) -sv_seed $(seed) vopt_top +UVM_TESTNAME=$(test_name) -do "coverage save -onexit coverage_result.ucdb; run -all; quit"; \
-		vcover report -cvg -summary coverage_result.ucdb; \
-	fi
+ifndef test_name
+	$(error ❌ Please specify test_name, e.g. make all test_name=axi_random_wr_rd_test)
+endif
+	@echo "======================================================="
+	@echo ">>> RUN TEST: $(test_name)"
+	@echo "======================================================="
 
-# Target 0: Tự động xóa file mem cũ và tạo tập lệnh mới (100 câu lệnh)
+	@if echo $(test_name) | grep -q "cpu_"; then \
+		MODE=CPU_MASTER; \
+	else \
+		MODE=UVM_MASTER; \
+	fi; \
+	echo ">>> MODE = $$MODE"; \
+	$(VSIM_CMD) -sv_seed $(seed) vopt_top \
+		+UVM_TESTNAME=$(test_name) +$$MODE \
+		-do "coverage save -onexit coverage_result.ucdb; run -all; quit"
+
+	@echo "-------------------------------------------------------"
+	@echo "--- COVERAGE RESULT ---"
+	@echo "-------------------------------------------------------"
+	vcover report -cvg -summary coverage_result.ucdb
+
+#==========================================================================================
+# GENERATE MEMORY
+#==========================================================================================
+
 gen_mem:
-	@echo "--- [0/4] Dang xoa file .mem cu va chay script Python tao 100 testcase moi ---"
+	@echo "--- [GEN_MEM] Generate new instruction memory ---"
 	@rm -f instr.mem cpu_instr.mem
 	$(PYTHON_CMD) $(GEN_SCRIPT)
 
-# Target 1: Biên dịch (Phụ thuộc vào gen_mem để đảm bảo file mem luôn mới)
+#==========================================================================================
+# COMPILE
+#==========================================================================================
+
 compile: gen_mem
-	@echo "--- Dang dung ROOT: $(ROOT_DIR) ---"
+	@echo "--- ROOT: $(ROOT_DIR) ---"
 	rm -rf work
 	vlib work
 	
-	@echo "--- [1/4] Bien dich Interfaces ---"
+	@echo "--- [1/4] Compile Interfaces ---"
 	$(VLOG_CMD) $(INF_FILES)
 	
-	@echo "--- [2/4] Bien dich DUT (SoC Logic) ---"
+	@echo "--- [2/4] Compile DUT ---"
 	$(VLOG_CMD) +incdir+$(DUT_DIR)/CPU $(DUT_FILES)
 	
-	@echo "--- [3/4] Bien dich UVM Package ---"
+	@echo "--- [3/4] Compile UVM ---"
 	$(VLOG_CMD) +incdir+$(VERIF_DIR)/Transaction \
 	            +incdir+$(VERIF_DIR)/Sequencer \
 	            +incdir+$(VERIF_DIR)/Monitor \
@@ -92,36 +102,74 @@ compile: gen_mem
 	            +incdir+$(VERIF_DIR)/Test \
 	            $(UVM_PKG)
 	
-	@echo "--- [4/4] Bien dich Top Testbench ---"
+	@echo "--- [4/4] Compile Top TB ---"
 	$(VLOG_CMD) $(TOP_TB)
 	
-	@echo "--- [Optimize] Chay vopt ---"
+	@echo "--- [OPTIMIZE] ---"
 	$(VOPT_CMD)
 
-# Target 2: Chạy mô phỏng (Console mode)
-sim: gen_mem
-	@echo "--- Dang chay simulation: $(test_name) ---"
-	$(VSIM_CMD) -sv_seed $(seed) vopt_top +UVM_TESTNAME=$(test_name) -do "coverage save -onexit coverage_result.ucdb; run -all; quit"
-	@echo "-------------------------------------------------------"
-	@echo "--- RESULT OF COVERAGE FOR SOC RISC-V ---"
-	@echo "-------------------------------------------------------"
-	vcover report -cvg -summary coverage_result.ucdb
+#==========================================================================================
+# SIM (alias of all but without compile)
+#==========================================================================================
 
-# Target 3: Chạy GUI để xem waveform
-gui: gen_mem
-	@echo "--- Mo GUI Questasim ---"
-	vsim -i -L uvm vopt_top +UVM_TESTNAME=$(test_name) -do "add wave -recursive vopt_top/*; run -all"
+sim:
+ifndef test_name
+	$(error ❌ Please specify test_name, e.g. make sim test_name=cpu_instr_test)
+endif
+	@echo "--- [SIM ONLY] $(test_name) ---"
 
-# Target 4: Dọn dẹp
+	@if echo $(test_name) | grep -q "cpu_"; then \
+		MODE=CPU_MASTER; \
+	else \
+		MODE=UVM_MASTER; \
+	fi; \
+	echo "MODE = $$MODE"; \
+	$(VSIM_CMD) -sv_seed $(seed) vopt_top \
+		+UVM_TESTNAME=$(test_name) +$$MODE \
+		-do "run -all; quit"
+
+#==========================================================================================
+# GUI
+#==========================================================================================
+
+gui:
+ifndef test_name
+	$(error ❌ Please specify test_name, e.g. make gui test_name=cpu_instr_test)
+endif
+	@echo "--- [GUI MODE] $(test_name) ---"
+
+	@if echo $(test_name) | grep -q "cpu_"; then \
+		MODE=CPU_MASTER; \
+	else \
+		MODE=UVM_MASTER; \
+	fi; \
+	echo "MODE = $$MODE"; \
+	vsim -i -L uvm vopt_top \
+		+UVM_TESTNAME=$(test_name) +$$MODE \
+		-do "add wave -recursive vopt_top/*; run -all"
+
+#==========================================================================================
+# CLEAN
+#==========================================================================================
+
 clean:
 	rm -rf work transcript *.wlf vopt_top *.ucdb instr.mem cpu_instr.mem
-	@echo "--- Da don dep sach se (bao gom ca file .mem) ---"
+	@echo "--- CLEAN DONE ---"
+
+#==========================================================================================
+# HELP
+#==========================================================================================
 
 help:
-	@echo "Cach dung:"
-	@echo "  make all          : Tu dong tao mem, compile va chay tat ca test"
-	@echo "  make compile      : Chi tao mem va bien dich"
-	@echo "  make sim          : Chạy simulation (mac dinh: ALL_TESTS)"
-	@echo "  make gui          : Mo Questasim GUI kem waveform"
-	@echo "  make gen_mem      : Chỉ chạy script Python tạo file instruction"
-	@echo "  make clean        : Xoa sach file tam"
+	@echo "Usage:"
+	@echo "  make all test_name=<test>     : compile + run 1 test"
+	@echo "  make sim test_name=<test>     : run only (no compile)"
+	@echo "  make gui test_name=<test>     : open waveform"
+	@echo ""
+	@echo "Examples:"
+	@echo "  make all test_name=axi_random_wr_rd_test"
+	@echo "  make all test_name=cpu_instr_test"
+	@echo ""
+	@echo "Note:"
+	@echo "  axi_* → UVM master"
+	@echo "  cpu_* → CPU master"
