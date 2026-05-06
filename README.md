@@ -45,8 +45,11 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 
 ## Architecture Overview
 
+### TOP Block Diagram
+![TOP Architecture](Architecture/TOP.png)
+
 ### CPU Block Diagram
-![TOP Architecture](Architecture/Master.png)
+![MASTER Architecture](Architecture/Master.png)
 
 ### CPU Pipeline
 ```
@@ -61,13 +64,6 @@ The CPU implements a classic five-stage pipeline where:
 - **EX**: Performs ALU operations with forwarding for data hazards
 - **MEM**: LSU handles load/store operations via AXI interconnect
 - **WB**: Writes results back to register file
-
-### SoC Block Diagram
-```
-[CPU Core] + [Load-Store Unit] 
-          ↓                
-      [AXI Master] → [AXI4-Lite Interconnect] → [Slave Devices]
-```
 
 ### Master Interface Architecture
 The CPU and LSU together form the **AXI Master** component:
