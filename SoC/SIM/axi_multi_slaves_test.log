@@ -8,19 +8,19 @@ vlib work
 --- [1/4] Bien dich Interfaces ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/*.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 09:25:08 on May 05,2026
+Start time: 15:39:36 on May 05,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/clk_rst_inf.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/soc_inf.sv 
 -- Compiling interface clk_rst_inf
 -- Compiling interface soc_inf
 
 Top level modules:
 	--none--
-End time: 09:25:08 on May 05,2026, Elapsed time: 0:00:00
+End time: 15:39:36 on May 05,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 --- [2/4] Bien dich DUT (SoC Logic) ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 09:25:08 on May 05,2026
+Start time: 15:39:36 on May 05,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/RAM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/SPI.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/Timer.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/UART.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALUControl.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ControlUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/EX_MEM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/HazardUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ID_EX.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/IF_ID.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MEM_WB.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MainDecoder.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/RegFile.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/data_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/instr_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/pc.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/signExtend.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/CPU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/LSU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv 
 -- Compiling module RAM
 -- Compiling module SPI
@@ -51,7 +51,7 @@ vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/
 
 Top level modules:
 	TOP
-End time: 09:25:08 on May 05,2026, Elapsed time: 0:00:00
+End time: 15:39:36 on May 05,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 3
 --- [3/4] Bien dich UVM Package ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction \
@@ -66,7 +66,7 @@ vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc
             +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test \
             /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 09:25:08 on May 05,2026
+Start time: 15:39:36 on May 05,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequencer" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Agent" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Coverage" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Env" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh 
 -- Compiling package soc_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -74,12 +74,12 @@ vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/
 
 Top level modules:
 	--none--
-End time: 09:25:08 on May 05,2026, Elapsed time: 0:00:00
+End time: 15:39:37 on May 05,2026, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 --- [4/4] Bien dich Top Testbench ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 09:25:08 on May 05,2026
+Start time: 15:39:37 on May 05,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv 
 -- Compiling module top_tb
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -88,13 +88,13 @@ vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I
 
 Top level modules:
 	top_tb
-End time: 09:25:08 on May 05,2026, Elapsed time: 0:00:00
+End time: 15:39:37 on May 05,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 --- [Optimize] Chay vopt ---
 vopt +acc +cover top_tb -o vopt_top
 QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
 ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-Start time: 09:25:08 on May 05,2026
+Start time: 15:39:37 on May 05,2026
 vopt "+acc" "+cover" top_tb -o vopt_top 
 
 Top level modules:
@@ -198,7 +198,7 @@ Optimizing 32 design-units (inlining 0/27 module instances):
 -- Optimizing interface clk_rst_inf(fast)
 -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 Optimized design name is vopt_top
-End time: 09:25:09 on May 05,2026, Elapsed time: 0:00:01
+End time: 15:39:38 on May 05,2026, Elapsed time: 0:00:01
 Errors: 0, Warnings: 32
 --- [SINGLE TEST MODE] Dang chay test: axi_multi_slaves_test ---
 Reading pref.tcl
@@ -206,7 +206,7 @@ Reading pref.tcl
 # 2024.1
 
 # vsim -c -L uvm -coverage -sv_seed random vopt_top "+UVM_TESTNAME=axi_multi_slaves_test" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
-# Start time: 09:25:11 on May 05,2026
+# Start time: 15:39:39 on May 05,2026
 # //  Questa Sim-64
 # //  Version 2024.1 linux_x86_64 Feb  1 2024
 # //
@@ -255,7 +255,7 @@ Reading pref.tcl
 # Loading work.UART(fast)
 # Loading work.SPI(fast)
 # Loading /tools/mq/2024.1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# Sv_Seed = 3821963006
+# Sv_Seed = 2928733936
 # coverage save -onexit coverage_result.ucdb
 #  run -all
 # ----------------------------------------------------------------
@@ -282,7 +282,7 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # --- SUCCESS: Loaded instructions from .mem ---
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_multi_slaves_test...
-# Da nap instr.mem vao top tb
+# SUCCESS LOAD INSTRUCTION FROM IRAM
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(36) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- Basic AXI4-Lite Multi Slaves ---
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(41) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 1: Basic DRAM Access ===
 # UVM_INFO /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor/axi_monitor.sv(47) @ 65000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr = 10000000, Data = a5a5a5a5
@@ -496,10 +496,10 @@ Reading pref.tcl
 # ** Note: $finish    : /tools/mq/2024.1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 5025 ns  Iteration: 54  Instance: /top_tb
 # Saving coverage database on exit...
-# End time: 09:25:12 on May 05,2026, Elapsed time: 0:00:01
+# End time: 15:39:41 on May 05,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 QuestaSim-64 vcover 2024.1 Coverage Utility 2024.02 Feb  1 2024
-Start time: 09:25:12 on May 05,2026
+Start time: 15:39:41 on May 05,2026
 vcover report -cvg -summary coverage_result.ucdb 
 Coverage Report Totals BY INSTANCES: Number of Instances 28
 
@@ -510,5 +510,5 @@ Coverage Report Totals BY INSTANCES: Number of Instances 28
             Covergroup Bins         25        18         7         1    72.00%
 Total coverage (filtered view): 68.33%
 
-End time: 09:25:12 on May 05,2026, Elapsed time: 0:00:00
+End time: 15:39:41 on May 05,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
