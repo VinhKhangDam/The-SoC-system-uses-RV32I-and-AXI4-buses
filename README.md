@@ -49,7 +49,7 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 ![TOP Architecture](Architecture/TOP.png)
 
 ### MASTER Block Diagram
-![MASTER Architecture](Architecture/Master.png)
+![MASTER Architecture](Architecture/MASTER.png)
 
 ### CPU Pipeline
 ```
@@ -172,6 +172,10 @@ For tests matching `axi_*`, the run uses `UVM_MASTER` mode, where UVM acts as th
 Furthermore, when running make all with random tests, different seeds will be generated, a file will be created to store the seed, and then when opening the GUI using `make gui`, it will open the Questasim interface with that specific seed and you can easily check the value of the signal you need.
 
 ## Verification
+
+### UVM Block Diagram
+
+![UVM Block](Architecture/UVM_Architecture.png)
 
 The project includes a comprehensive UVM verification environment:
 
