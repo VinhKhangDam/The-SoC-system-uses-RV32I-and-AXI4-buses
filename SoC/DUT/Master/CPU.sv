@@ -68,8 +68,11 @@ module CPU (
     // FETCH STAGE
     // ----------------------------------------------------------------
     pc_reg pcmd (
-        .clk    (clk),   .rstn   (rstn),
-        .stallF (StallF), .pc_next(Pc_nextF), .pc(PcF)
+        .clk    (clk),   
+        .rstn   (rstn),
+        .stallF (StallF), 
+        .pc_next(Pc_nextF), 
+        .pc(PcF)
     );
 
     assign if_pc_o  = PcF;
@@ -80,12 +83,16 @@ module CPU (
 
     // IF/ID: stall=StallF (lwStall|any_stall), flush=FlushD (pcSrcE)
     IF_ID ifid (
-        .clk(clk), .rstn(rstn),
-        .instrF(InstrF),    .instrD(InstrD),
-        .pcF(PcF),          .pcD(PcD),
-        .pcPlus4F(PcPlus4F),.pcPlus4D(PcPlus4D),
-        .stall(StallF),     // ✅ was any_stall — fixed
-        .flush(FlushD)      // ✅ was FlushF (undefined) — fixed
+        .clk(clk), 
+        .rstn(rstn),
+        .instrF(InstrF),    
+        .instrD(InstrD),
+        .pcF(PcF),          
+        .pcD(PcD),
+        .pcPlus4F(PcPlus4F),
+        .pcPlus4D(PcPlus4D),
+        .stall(StallF),     
+        .flush(FlushD)   
     );
 
     // ----------------------------------------------------------------
@@ -97,36 +104,75 @@ module CPU (
     assign Immediate = InstrD[31:7];
 
     ControlUnit cu (
-        .Opcode(Opcode), .funct3(Funct3), .funct7(Funct7),
-        .RegWrite(RegWriteD), .ResultSrc(ResultSrcD), .MemWrite(MemWriteD),
-        .Jump(JumpD), .Branch(BranchD), .ALUControl(ALUControlD),
-        .ALUSrc(ALUSrcD), .ImmSrc(ImmSrc)
+        .Opcode(Opcode), 
+        .funct3(Funct3), 
+        .funct7(Funct7),
+        .RegWrite(RegWriteD), 
+        .ResultSrc(ResultSrcD), 
+        .MemWrite(MemWriteD),
+        .Jump(JumpD),
+        .Branch(BranchD), 
+        .ALUControl(ALUControlD),
+        .ALUSrc(ALUSrcD), 
+        .ImmSrc(ImmSrc)
     );
 
     RegFile rf (
-        .clk(clk), .rstn(rstn),
-        .rs1(Rs1D), .rs2(Rs2D), .rd(RdW),
-        .WriteData(ResultW), .write_enable(RegWriteW),
-        .rd1(Rd1D), .rd2(Rd2D)
+        .clk(clk), 
+        .rstn(rstn),
+        .rs1(Rs1D), 
+        .rs2(Rs2D), 
+        .rd(RdW),
+        .WriteData(ResultW), 
+        .write_enable(RegWriteW),
+        .rd1(Rd1D), 
+        .rd2(Rd2D)
     );
 
-    signExtend se (.immInstr(Immediate), .ImmSrc(ImmSrc), .ExtImm(ExtImmD));
+    signExtend se (
+        .immInstr(Immediate), 
+        .ImmSrc(ImmSrc), 
+        .ExtImm(ExtImmD)
+    );
 
     // ID/EX: stall=StallD (lwStall|any_stall), flush=FlushE (lwStall|pcSrcE)
     ID_EX idexmd (
-        .clk(clk), .rstn(rstn),
-        .RegWriteD(RegWriteD), .MemWriteD(MemWriteD),
-        .ResultSrcD(ResultSrcD), .JumpD(JumpD), .BranchD(BranchD),
-        .ALUControlD(ALUControlD), .ALUSrcD(ALUSrcD),
-        .rd1D(Rd1D), .rd2D(Rd2D), .rs1D(Rs1D), .rs2D(Rs2D), .rdD(RdD),
-        .pcD(PcD), .pcPlus4D(PcPlus4D), .Funct3D(Funct3), .ExtImmD(ExtImmD),
-        .RegWriteE(RegWriteE), .MemWriteE(MemWriteE),
-        .ResultSrcE(ResultSrcE), .JumpE(JumpE), .BranchE(BranchE),
-        .ALUControlE(ALUControlE), .ALUSrcE(ALUSrcE),
-        .rd1E(Rd1E), .rd2E(Rd2E), .rs1E(Rs1E), .rs2E(Rs2E), .rdE(RdE),
-        .pcE(PcE), .pcPlus4E(PcPlus4E), .ExtImmE(ExtImmE), .Funct3E(Funct3E),
-        .flush(FlushE),  // ✅ lwStall | pcSrcE
-        .stall(StallD)   // ✅ was any_stall — fixed
+        .clk(clk), 
+        .rstn(rstn),
+        .RegWriteD(RegWriteD), 
+        .MemWriteD(MemWriteD),
+        .ResultSrcD(ResultSrcD), 
+        .JumpD(JumpD), 
+        .BranchD(BranchD),
+        .ALUControlD(ALUControlD), 
+        .ALUSrcD(ALUSrcD),
+        .rd1D(Rd1D), 
+        .rd2D(Rd2D), 
+        .rs1D(Rs1D), 
+        .rs2D(Rs2D), 
+        .rdD(RdD),
+        .pcD(PcD), 
+        .pcPlus4D(PcPlus4D), 
+        .Funct3D(Funct3), 
+        .ExtImmD(ExtImmD),
+        .RegWriteE(RegWriteE), 
+        .MemWriteE(MemWriteE),
+        .ResultSrcE(ResultSrcE), 
+        .JumpE(JumpE), 
+        .BranchE(BranchE),
+        .ALUControlE(ALUControlE), 
+        .ALUSrcE(ALUSrcE),
+        .rd1E(Rd1E), 
+        .rd2E(Rd2E), 
+        .rs1E(Rs1E), 
+        .rs2E(Rs2E), 
+        .rdE(RdE),
+        .pcE(PcE), 
+        .pcPlus4E(PcPlus4E), 
+        .ExtImmE(ExtImmE), 
+        .Funct3E(Funct3E),
+        .flush(FlushE), 
+        .stall(StallD)   
     );
 
     // ----------------------------------------------------------------
@@ -141,20 +187,34 @@ module CPU (
     assign PC_ExtImm = PcE + ExtImmE;
 
     ALU alu (
-        .OpA(SrcA), .OpB(SrcB),
-        .ALUControl(ALUControlE), .ALUResult(ALUResultE), .Zero(Zero)
+        .OpA(SrcA), 
+        .OpB(SrcB),
+        .ALUControl(ALUControlE), 
+        .ALUResult(ALUResultE), 
+        .Zero(Zero)
     );
 
     // EX/MEM: stall=any_stall (lwStall resolved before EX)
     EX_MEM exmemmd (
-        .clk(clk), .rstn(rstn),
-        .RegWriteE(RegWriteE), .ResultSrcE(ResultSrcE), .MemWriteE(MemWriteE),
-        .ALUResultE(ALUResultE), .WriteDataE(WriteDataE),
-        .rdE(RdE), .pcPlus4E(PcPlus4E), .Funct3E(Funct3E),
-        .RegWriteM(RegWriteM), .ResultSrcM(ResultSrcM), .MemWriteM(MemWriteM),
-        .ALUResultM(ALUResultM), .WriteDataM(WriteDataM),
-        .rdM(RdM), .pcPlus4M(PcPlus4M), .Funct3M(Funct3M),
-        .stall(any_stall)  // ✅ correct
+        .clk(clk), 
+        .rstn(rstn),
+        .RegWriteE(RegWriteE), 
+        .ResultSrcE(ResultSrcE), 
+        .MemWriteE(MemWriteE),
+        .ALUResultE(ALUResultE), 
+        .WriteDataE(WriteDataE),
+        .rdE(RdE), 
+        .pcPlus4E(PcPlus4E), 
+        .Funct3E(Funct3E),
+        .RegWriteM(RegWriteM), 
+        .ResultSrcM(ResultSrcM), 
+        .MemWriteM(MemWriteM),
+        .ALUResultM(ALUResultM), 
+        .WriteDataM(WriteDataM),
+        .rdM(RdM), 
+        .pcPlus4M(PcPlus4M), 
+        .Funct3M(Funct3M),
+        .stall(any_stall) 
     );
 
     // ----------------------------------------------------------------
@@ -165,17 +225,24 @@ module CPU (
     assign mem_wdata_o = WriteDataM;
     assign mem_we_o    = MemWriteM;
     assign mem_req_o   = MemWriteM || (ResultSrcM == 2'b01);
-    assign mem_funct_o = Funct3M;   // ✅ fixed typo (was mem_funct3_o)
+    assign mem_funct_o = Funct3M;
 
     MEM_WB memwbmd (
-        .clk(clk), .rstn(rstn),
-        .RegWriteM(RegWriteM), .ResultSrcM(ResultSrcM),
-        .ALUResultM(ALUResultM), .ReadDataM(ReadDataM),
-        .rdM(RdM), .pcPlus4M(PcPlus4M),
-        .RegWriteW(RegWriteW), .ResultSrcW(ResultSrcW),
-        .ALUResultW(ALUResultW), .ReadDataW(ReadDataW),
-        .rdW(RdW), .pcPlus4W(PcPlus4W),
-        .stall(any_stall)  // ✅ correct
+        .clk(clk), 
+        .rstn(rstn),
+        .RegWriteM(RegWriteM), 
+        .ResultSrcM(ResultSrcM),
+        .ALUResultM(ALUResultM), 
+        .ReadDataM(ReadDataM),
+        .rdM(RdM), 
+        .pcPlus4M(PcPlus4M),
+        .RegWriteW(RegWriteW), 
+        .ResultSrcW(ResultSrcW),
+        .ALUResultW(ALUResultW), 
+        .ReadDataW(ReadDataW),
+        .rdW(RdW), 
+        .pcPlus4W(PcPlus4W),
+        .stall(any_stall)
     );
 
     // ----------------------------------------------------------------
@@ -189,12 +256,19 @@ module CPU (
     // any_stall -> lsu_stall; HazardUnit adds lwStall -> StallF/StallD/FlushE/FlushD
     // ----------------------------------------------------------------
     HazardUnit hz (
-        .rs1D(Rs1D), .rs2D(Rs2D), .rs1E(Rs1E), .rs2E(Rs2E),
-        .rdE(RdE), .rdM(RdM), .rdW(RdW),
-        .RegWriteM(RegWriteM), .RegWriteW(RegWriteW),
+        .rs1D(Rs1D), 
+        .rs2D(Rs2D), 
+        .rs1E(Rs1E), 
+        .rs2E(Rs2E),
+        .rdE(RdE), 
+        .rdM(RdM), 
+        .rdW(RdW),
+        .RegWriteM(RegWriteM), 
+        .RegWriteW(RegWriteW),
         .ResultSrc0(ResultSrcE[0]),
         .pcSrcE(PCSrc),
-        .forwardAE(ForwardA), .forwardBE(ForwardB),
+        .forwardAE(ForwardA), 
+        .forwardBE(ForwardB),
         .stallF(StallF),   // -> pc_reg, IF_ID.stall
         .stallD(StallD),   // -> ID_EX.stall
         .flushE(FlushE),   // -> ID_EX.flush

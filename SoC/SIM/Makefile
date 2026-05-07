@@ -19,10 +19,28 @@ VOPT_CMD     = vopt +acc +cover top_tb -o vopt_top
 # --- Python ---
 PYTHON_CMD   = python3
 GEN_SCRIPT   = gen_mem.py
+SIM_SCRIPT   = sim_expected.py
 
 # --- Simulation config ---
 test_name    ?=
 seed         ?= random
+
+# --- RNG seed ---
+# := evaluates ONCE at parse time → gen_mem.py and sim_expected.py always share the same seed.
+# Override from CLI: make gen_mem MEM_SEED=1234
+# 1. Định nghĩa file lưu seed tạm thời
+SEED_FILE = .last_seed
+
+# 2. Logic xác định MEM_SEED:
+#    Ưu tiên 1: Lấy từ dòng lệnh nếu ông gõ 'make all MEM_SEED=123'
+#    Ưu tiên 2: Nếu không có dòng lệnh, thử đọc từ file .last_seed (dùng cho make gui, make sim)
+#    Ưu tiên 3: Nếu vẫn không có (lần đầu chạy), sinh số ngẫu nhiên mới.
+ifeq ($(origin MEM_SEED), undefined)
+    MEM_SEED := $(shell if [ -f $(SEED_FILE) ]; then cat $(SEED_FILE); else python3 -c "import struct,os; print(struct.unpack('I',os.urandom(4))[0])"; fi)
+endif
+
+# 3. Ép biến 'seed' của Questasim chạy theo MEM_SEED để đồng bộ 100%
+seed = $(MEM_SEED)
 
 # --- FILE LIST ---
 INF_FILES    = $(INF_DIR)/*.sv
@@ -47,7 +65,7 @@ ifndef test_name
 	$(error ❌ Please specify test_name, e.g. make all test_name=axi_random_wr_rd_test)
 endif
 	@echo "======================================================="
-	@echo ">>> RUN TEST: $(test_name)"
+	@echo ">>> RUN TEST: $(test_name)  [MEM_SEED=$(MEM_SEED)]"
 	@echo "======================================================="
 
 	@if echo $(test_name) | grep -q "cpu_"; then \
@@ -58,6 +76,7 @@ endif
 	echo ">>> MODE = $$MODE"; \
 	$(VSIM_CMD) -sv_seed $(seed) vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
+		+MEM_SEED=$(MEM_SEED) \
 		-do "coverage save -onexit coverage_result.ucdb; run -all; quit"
 
 	@echo "-------------------------------------------------------"
@@ -66,13 +85,17 @@ endif
 	vcover report -cvg -summary coverage_result.ucdb
 
 #==========================================================================================
-# GENERATE MEMORY
+# GENERATE MEMORY + EXPECTED RESULTS
 #==========================================================================================
 
 gen_mem:
-	@echo "--- [GEN_MEM] Generate new instruction memory ---"
-	@rm -f instr.mem cpu_instr.mem
-	$(PYTHON_CMD) $(GEN_SCRIPT)
+	@echo "--- [GEN_MEM] Generate memory + golden reference ---"
+	@echo $(MEM_SEED) > $(SEED_FILE)
+	@echo ">>> Using SEED: $(MEM_SEED) (Saved to $(SEED_FILE))"
+	@rm -f instr.mem expected.mem
+	$(PYTHON_CMD) $(GEN_SCRIPT) $(MEM_SEED)
+	$(PYTHON_CMD) $(SIM_SCRIPT) $(MEM_SEED)
+	@echo "--- Done: instr.mem + expected.mem ready ---"
 
 #==========================================================================================
 # COMPILE
@@ -109,7 +132,7 @@ compile: gen_mem
 	$(VOPT_CMD)
 
 #==========================================================================================
-# SIM (alias of all but without compile)
+# SIM (run only, no compile)
 #==========================================================================================
 
 sim:
@@ -126,6 +149,7 @@ endif
 	echo "MODE = $$MODE"; \
 	$(VSIM_CMD) -sv_seed $(seed) vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
+		+MEM_SEED=$(MEM_SEED) \
 		-do "run -all; quit"
 
 #==========================================================================================
@@ -144,8 +168,9 @@ endif
 		MODE=UVM_MASTER; \
 	fi; \
 	echo "MODE = $$MODE"; \
-	vsim -i -L uvm vopt_top \
+	vsim -i -sv_seed $(seed) -L uvm vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
+		+MEM_SEED=$(MEM_SEED) \
 		-do "add wave -recursive vopt_top/*; run -all"
 
 #==========================================================================================
@@ -153,7 +178,8 @@ endif
 #==========================================================================================
 
 clean:
-	rm -rf work transcript *.wlf vopt_top *.ucdb instr.mem cpu_instr.mem
+	rm -rf work transcript *.wlf vopt_top *.ucdb \
+		   instr.mem expected.mem $(SEED_FILE)
 	@echo "--- CLEAN DONE ---"
 
 #==========================================================================================
@@ -162,14 +188,23 @@ clean:
 
 help:
 	@echo "Usage:"
-	@echo "  make all test_name=<test>     : compile + run 1 test"
-	@echo "  make sim test_name=<test>     : run only (no compile)"
-	@echo "  make gui test_name=<test>     : open waveform"
+	@echo "  make all test_name=<test>             : compile + run 1 test"
+	@echo "  make all test_name=<test> MEM_SEED=42 : reproducible run"
+	@echo "  make sim test_name=<test>             : run only (no compile)"
+	@echo "  make gui test_name=<test>             : open waveform"
+	@echo "  make gen_mem                          : regenerate mem + golden reference"
 	@echo ""
 	@echo "Examples:"
 	@echo "  make all test_name=axi_random_wr_rd_test"
-	@echo "  make all test_name=cpu_instr_test"
+	@echo "  make all test_name=cpu_instr_test MEM_SEED=1234"
+	@echo ""
+	@echo "Outputs:"
+	@echo "  instr.mem         : generated instruction stream"
+	@echo "  cpu_instr.mem     : generated CPU instruction stream"
+	@echo "  expected.mem      : golden register file (x0-x31) for instr.mem"
+	@echo "  cpu_expected.mem  : golden register file (x0-x31) for cpu_instr.mem"
 	@echo ""
 	@echo "Note:"
 	@echo "  axi_* → UVM master"
 	@echo "  cpu_* → CPU master"
+	@echo "  MEM_SEED is auto-generated each run unless you fix it"

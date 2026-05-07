@@ -1,26 +1,31 @@
---- [GEN_MEM] Generate new instruction memory ---
-python3 gen_mem.py
-Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/cpu_instr.mem  (seed=None)
-Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/instr.mem  (seed=None)
+--- [GEN_MEM] Generate memory + golden reference ---
+>>> Using SEED: 3604541785 (Saved to .last_seed)
+python3 gen_mem.py 3604541785
+[gen_mem] MEM_SEED = 3604541785
+Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/instr.mem  (seed=3604541785)
+python3 sim_expected.py 3604541785
+Loaded  : 100 instructions from instr.mem  (seed=3604541785)
+Written : /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/expected.mem
+--- Done: instr.mem + expected.mem ready ---
 --- ROOT: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC ---
 rm -rf work
 vlib work
 --- [1/4] Compile Interfaces ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/*.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 19:37:52 on May 06,2026
+Start time: 08:23:25 on May 07,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/clk_rst_inf.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/soc_inf.sv 
 -- Compiling interface clk_rst_inf
 -- Compiling interface soc_inf
 
 Top level modules:
 	--none--
-End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
+End time: 08:23:25 on May 07,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 --- [2/4] Compile DUT ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 19:37:52 on May 06,2026
+Start time: 08:23:25 on May 07,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/RAM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/SPI.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/Timer.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/UART.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALUControl.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ControlUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/EX_MEM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/HazardUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ID_EX.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/IF_ID.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MEM_WB.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MainDecoder.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/RegFile.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/data_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/instr_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/pc.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/signExtend.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/CPU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/LSU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv 
 -- Compiling module RAM
 -- Compiling module SPI
@@ -53,7 +58,7 @@ Top level modules:
 	data_mem
 	instr_mem
 	TOP
-End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
+End time: 08:23:25 on May 07,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 3
 --- [3/4] Compile UVM ---
 vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction \
@@ -68,7 +73,7 @@ vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc
             +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test \
             /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 19:37:52 on May 06,2026
+Start time: 08:23:25 on May 07,2026
 vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequencer" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Agent" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Coverage" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Env" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh 
 -- Compiling package soc_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -76,12 +81,12 @@ vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/
 
 Top level modules:
 	--none--
-End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
+End time: 08:23:25 on May 07,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 --- [4/4] Compile Top TB ---
 vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 19:37:52 on May 06,2026
+Start time: 08:23:25 on May 07,2026
 vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv 
 -- Compiling module top_tb
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -90,13 +95,13 @@ vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I
 
 Top level modules:
 	top_tb
-End time: 19:37:52 on May 06,2026, Elapsed time: 0:00:00
+End time: 08:23:25 on May 07,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 --- [OPTIMIZE] ---
 vopt +acc +cover top_tb -o vopt_top
 QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
 ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-Start time: 19:37:52 on May 06,2026
+Start time: 08:23:25 on May 07,2026
 vopt "+acc" "+cover" top_tb -o vopt_top 
 
 Top level modules:
@@ -194,18 +199,18 @@ Optimizing 30 design-units (inlining 0/25 module instances):
 -- Optimizing interface clk_rst_inf(fast)
 -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 Optimized design name is vopt_top
-End time: 19:37:53 on May 06,2026, Elapsed time: 0:00:01
+End time: 08:23:26 on May 07,2026, Elapsed time: 0:00:01
 Errors: 0, Warnings: 30
 =======================================================
->>> RUN TEST: axi_multi_slaves_test
+>>> RUN TEST: axi_multi_slaves_test  [MEM_SEED=3604541785]
 =======================================================
 >>> MODE = UVM_MASTER
 Reading pref.tcl
 
 # 2024.1
 
-# vsim -c -L uvm -coverage -sv_seed random vopt_top "+UVM_TESTNAME=axi_multi_slaves_test" "+UVM_MASTER" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
-# Start time: 19:37:55 on May 06,2026
+# vsim -c -L uvm -coverage -sv_seed 3604541785 vopt_top "+UVM_TESTNAME=axi_multi_slaves_test" "+UVM_MASTER" "+MEM_SEED=3604541785" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
+# Start time: 08:23:28 on May 07,2026
 # //  Questa Sim-64
 # //  Version 2024.1 linux_x86_64 Feb  1 2024
 # //
@@ -252,7 +257,6 @@ Reading pref.tcl
 # Loading work.UART(fast)
 # Loading work.SPI(fast)
 # Loading /tools/mq/2024.1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# Sv_Seed = 724420849
 # coverage save -onexit coverage_result.ucdb
 #  run -all
 # ----------------------------------------------------------------
@@ -278,106 +282,106 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # [RAM] Loading file: instr.mem
-# [RAM] mem[0] = 4170dab3
-# [RAM] mem[1] = 7367a8a3
-# [RAM] mem[2] = 109dac03
-# [RAM] mem[3] = 40b152b3
-# [RAM] mem[4] = 9c152403
-# [RAM] mem[5] = 09ea0593
-# [RAM] mem[6] = 00aec433
-# [RAM] mem[7] = cd1fff6f
-# [RAM] mem[8] = c64ca403
-# [RAM] mem[9] = ff2e89e3
-# [RAM] mem[10] = 04a9ab03
-# [RAM] mem[11] = f82201e3
-# [RAM] mem[12] = 8035a503
-# [RAM] mem[13] = cc9ff2ef
-# [RAM] mem[14] = edfd2fa3
-# [RAM] mem[15] = 06e70b63
-# [RAM] mem[16] = 39f427a3
-# [RAM] mem[17] = 04878b63
-# [RAM] mem[18] = fd092923
-# [RAM] mem[19] = 19a0096f
-# [RAM] mem[20] = 41a483b3
-# [RAM] mem[21] = 2c312d23
-# [RAM] mem[22] = 018fd433
-# [RAM] mem[23] = a88eff93
-# [RAM] mem[24] = f73e0993
-# [RAM] mem[25] = 421dab83
-# [RAM] mem[26] = f3e3f693
-# [RAM] mem[27] = fcab8fe3
-# [RAM] mem[28] = 50c82f23
-# [RAM] mem[29] = b51ffdef
-# [RAM] mem[30] = ab6d25a3
-# [RAM] mem[31] = 4b3c2d83
-# [RAM] mem[32] = 01d2a933
-# [RAM] mem[33] = 0de0036f
-# [RAM] mem[34] = fdbb0ae3
-# [RAM] mem[35] = 015d0363
-# [RAM] mem[36] = 2b092883
-# [RAM] mem[37] = f7fc80e3
-# [RAM] mem[38] = 008a0363
-# [RAM] mem[39] = 46692923
-# [RAM] mem[40] = f68409e3
-# [RAM] mem[41] = ef462183
-# [RAM] mem[42] = 0cea8d63
-# [RAM] mem[43] = 01180c63
-# [RAM] mem[44] = 414b4a13
-# [RAM] mem[45] = c90ba283
-# [RAM] mem[46] = f5a3ce13
-# [RAM] mem[47] = 08a18463
-# [RAM] mem[48] = 1d600eef
-# [RAM] mem[49] = 90fbaa03
-# [RAM] mem[50] = 0154eeb3
-# [RAM] mem[51] = 006ae133
-# [RAM] mem[52] = 4254a5a3
-# [RAM] mem[53] = 711b2ca3
-# [RAM] mem[54] = e5f12d03
-# [RAM] mem[55] = 0cfa8c63
-# [RAM] mem[56] = bddff2ef
-# [RAM] mem[57] = 009efbb3
-# [RAM] mem[58] = f6ec2d83
-# [RAM] mem[59] = 51000cef
-# [RAM] mem[60] = 08b98763
-# [RAM] mem[61] = 9378a203
-# [RAM] mem[62] = 010e0bb3
-# [RAM] mem[63] = f5e927a3
-# [RAM] mem[64] = 01e6a833
-# [RAM] mem[65] = 3c4da723
-# [RAM] mem[66] = 0ce6a123
-# [RAM] mem[67] = 09868d63
-# [RAM] mem[68] = 00ed29b3
-# [RAM] mem[69] = a0622383
-# [RAM] mem[70] = 9d06aa23
-# [RAM] mem[71] = fcfffc6f
-# [RAM] mem[72] = 04c001ef
-# [RAM] mem[73] = 01fc4ab3
-# [RAM] mem[74] = b97726a3
-# [RAM] mem[75] = 7119aea3
-# [RAM] mem[76] = 40998a33
-# [RAM] mem[77] = 04bb2283
-# [RAM] mem[78] = f0ab8de3
-# [RAM] mem[79] = 686a2683
-# [RAM] mem[80] = 32124513
-# [RAM] mem[81] = d7cfa283
-# [RAM] mem[82] = c8032f03
-# [RAM] mem[83] = f3dff5ef
-# [RAM] mem[84] = 8641a603
-# [RAM] mem[85] = 8089fe13
-# [RAM] mem[86] = 3e362b23
-# [RAM] mem[87] = 15780c93
-# [RAM] mem[88] = 4173d9b3
-# [RAM] mem[89] = 1e7ce413
-# [RAM] mem[90] = 65f0aea3
-# [RAM] mem[91] = afbff36f
-# [RAM] mem[92] = 2d232c03
-# [RAM] mem[93] = 411ca6a3
-# [RAM] mem[94] = 7cce24a3
-# [RAM] mem[95] = 081e0c63
-# [RAM] mem[96] = 41c588b3
-# [RAM] mem[97] = 0ddb8163
-# [RAM] mem[98] = cb40a503
-# [RAM] mem[99] = fed884e3
+# [RAM] mem[0] = 062001ef
+# [RAM] mem[1] = 05360763
+# [RAM] mem[2] = c54b2c23
+# [RAM] mem[3] = 21600e6f
+# [RAM] mem[4] = f56b2ca3
+# [RAM] mem[5] = 6f1e2ca3
+# [RAM] mem[6] = ed1bf593
+# [RAM] mem[7] = a93e2203
+# [RAM] mem[8] = 41ccdeb3
+# [RAM] mem[9] = 00980f63
+# [RAM] mem[10] = 927ff5ef
+# [RAM] mem[11] = b5912ea3
+# [RAM] mem[12] = a2bffdef
+# [RAM] mem[13] = 01c0f5b3
+# [RAM] mem[14] = 1c14a8a3
+# [RAM] mem[15] = 07488763
+# [RAM] mem[16] = e0b4ff93
+# [RAM] mem[17] = f44585e3
+# [RAM] mem[18] = a8cd2d83
+# [RAM] mem[19] = 406308b3
+# [RAM] mem[20] = a721a523
+# [RAM] mem[21] = a73c4413
+# [RAM] mem[22] = 6bafa023
+# [RAM] mem[23] = 0f8e22a3
+# [RAM] mem[24] = 60e005ef
+# [RAM] mem[25] = b29ff66f
+# [RAM] mem[26] = fd340ce3
+# [RAM] mem[27] = 4ef40f13
+# [RAM] mem[28] = 86162803
+# [RAM] mem[29] = 5e972c23
+# [RAM] mem[30] = f6dff2ef
+# [RAM] mem[31] = 6eaba123
+# [RAM] mem[32] = 8afb2383
+# [RAM] mem[33] = 8ce1cc93
+# [RAM] mem[34] = 89f7a1a3
+# [RAM] mem[35] = 242c6213
+# [RAM] mem[36] = cfaf6c93
+# [RAM] mem[37] = 9b1eaaa3
+# [RAM] mem[38] = 5ba00eef
+# [RAM] mem[39] = 41668833
+# [RAM] mem[40] = 0b4b0c63
+# [RAM] mem[41] = 0680a383
+# [RAM] mem[42] = f506c113
+# [RAM] mem[43] = 41d10f33
+# [RAM] mem[44] = 005a1333
+# [RAM] mem[45] = c93a2b83
+# [RAM] mem[46] = 5579ab23
+# [RAM] mem[47] = 408fa523
+# [RAM] mem[48] = 81b72823
+# [RAM] mem[49] = 09c20663
+# [RAM] mem[50] = e0432da3
+# [RAM] mem[51] = 334003ef
+# [RAM] mem[52] = 11a00a6f
+# [RAM] mem[53] = 006bab23
+# [RAM] mem[54] = 3fe7af23
+# [RAM] mem[55] = fbf60ee3
+# [RAM] mem[56] = 62510a93
+# [RAM] mem[57] = 01060e63
+# [RAM] mem[58] = 00ed0a63
+# [RAM] mem[59] = 41928133
+# [RAM] mem[60] = 5bdfac03
+# [RAM] mem[61] = 00aa51b3
+# [RAM] mem[62] = ef5ff96f
+# [RAM] mem[63] = b9bf2e23
+# [RAM] mem[64] = cd1ffa6f
+# [RAM] mem[65] = 03b80b63
+# [RAM] mem[66] = 53d3ca13
+# [RAM] mem[67] = 5a997893
+# [RAM] mem[68] = 5f332a03
+# [RAM] mem[69] = 015a7bb3
+# [RAM] mem[70] = 40fa5cb3
+# [RAM] mem[71] = 73af8893
+# [RAM] mem[72] = ccb0a483
+# [RAM] mem[73] = 4b314d93
+# [RAM] mem[74] = 016e79b3
+# [RAM] mem[75] = e2bfff6f
+# [RAM] mem[76] = 01dd16b3
+# [RAM] mem[77] = 8bc92d23
+# [RAM] mem[78] = dd7ffdef
+# [RAM] mem[79] = 01888d33
+# [RAM] mem[80] = 01ee9f33
+# [RAM] mem[81] = 0f470963
+# [RAM] mem[82] = abaf4993
+# [RAM] mem[83] = 27eb4293
+# [RAM] mem[84] = 09c88763
+# [RAM] mem[85] = 35162ba3
+# [RAM] mem[86] = 41b383b3
+# [RAM] mem[87] = 79d30c93
+# [RAM] mem[88] = 811ff6ef
+# [RAM] mem[89] = 00d59633
+# [RAM] mem[90] = 3be90b13
+# [RAM] mem[91] = 78adf093
+# [RAM] mem[92] = 011e4bb3
+# [RAM] mem[93] = 4bc62f23
+# [RAM] mem[94] = 0b208193
+# [RAM] mem[95] = 5841e493
+# [RAM] mem[96] = 8b4d2523
+# [RAM] mem[97] = d12da683
+# [RAM] mem[98] = fc20ff93
+# [RAM] mem[99] = 1f2d2723
 # [RAM] No INIT_FILE specified
 # [TB] Running in UVM MASTER mode
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_multi_slaves_test...
@@ -694,14 +698,14 @@ Reading pref.tcl
 # ** Note: $finish    : /tools/mq/2024.1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 5025 ns  Iteration: 54  Instance: /top_tb
 # Saving coverage database on exit...
-# End time: 19:37:56 on May 06,2026, Elapsed time: 0:00:01
+# End time: 08:23:29 on May 07,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 -------------------------------------------------------
 --- COVERAGE RESULT ---
 -------------------------------------------------------
 vcover report -cvg -summary coverage_result.ucdb
 QuestaSim-64 vcover 2024.1 Coverage Utility 2024.02 Feb  1 2024
-Start time: 19:37:56 on May 06,2026
+Start time: 08:23:29 on May 07,2026
 vcover report -cvg -summary coverage_result.ucdb 
 Coverage Report Totals BY INSTANCES: Number of Instances 26
 
@@ -712,5 +716,5 @@ Coverage Report Totals BY INSTANCES: Number of Instances 26
             Covergroup Bins         25        18         7         1    72.00%
 Total coverage (filtered view): 68.33%
 
-End time: 19:37:56 on May 06,2026, Elapsed time: 0:00:00
+End time: 08:23:29 on May 07,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

@@ -6,7 +6,7 @@ module instr_mem (
     logic [31:0] mem [0:255];
 
     initial begin
-        $readmemh("cpu_instr.mem", mem);
+        $readmemh("instr.mem", mem);
         
         if (mem[0] === 32'bx || mem[0] === 32'bz) begin
             $display("--- ERROR: Not found file .mem or empty file ---");

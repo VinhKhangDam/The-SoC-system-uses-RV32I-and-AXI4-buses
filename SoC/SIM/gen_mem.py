@@ -1,10 +1,11 @@
 import random
 import sys
 import os
+import struct
 
-# -----------------------------
+# ==============================
 # ENCODERS
-# -----------------------------
+# ==============================
 def r_type(funct7, rs2, rs1, funct3, rd, opcode=0b0110011):
     return (funct7 << 25) | (rs2 << 20) | (rs1 << 15) | (funct3 << 12) | (rd << 7) | opcode
 
@@ -36,9 +37,9 @@ def j_type(imm, rd, opcode=0b1101111):
         (imm1912 << 12) | (rd << 7) | opcode
     )
 
-# -----------------------------
+# ==============================
 # DECODE HELPERS (self-verify)
-# -----------------------------
+# ==============================
 def sign_ext(val, bits):
     if val & (1 << (bits - 1)):
         val -= (1 << bits)
@@ -46,17 +47,17 @@ def sign_ext(val, bits):
 
 def decode_b(instr):
     return sign_ext(
-        ((instr>>31&1)<<12) | ((instr>>7&1)<<11) |
-        ((instr>>25&0x3F)<<5) | ((instr>>8&0xF)<<1), 13)
+        ((instr >> 31 & 1) << 12) | ((instr >> 7  & 1) << 11) |
+        ((instr >> 25 & 0x3F) << 5) | ((instr >> 8 & 0xF) << 1), 13)
 
 def decode_j(instr):
     return sign_ext(
-        ((instr>>31&1)<<20) | ((instr>>12&0xFF)<<12) |
-        ((instr>>20&1)<<11) | ((instr>>21&0x3FF)<<1), 21)
+        ((instr >> 31 & 1) << 20) | ((instr >> 12 & 0xFF) << 12) |
+        ((instr >> 20 & 1) << 11) | ((instr >> 21 & 0x3FF) << 1), 21)
 
-# -----------------------------
-# GENERATOR
-# -----------------------------
+# ==============================
+# INSTRUCTION GENERATOR
+# ==============================
 def generate_instr():
     rd  = random.randint(1, 31)
     rs1 = random.randint(1, 31)
@@ -108,26 +109,42 @@ def generate_instr():
 
     return instr, asm
 
+# ==============================
+# FILE WRITER
+# ==============================
 def generate_file(filepath, header, count, seed):
     random.seed(seed)
     with open(filepath, "w") as f:
-        f.write(f"// --- {header} ({count} lines) ---\n")
+        f.write(f"// --- {header} ({count} lines, seed={seed}) ---\n")
         for _ in range(count):
             instr, asm = generate_instr()
             f.write(f"{instr:08x}  // {asm}\n")
-    print(f"Generated {filepath}  (seed={random.seed()})")
+    print(f"Generated {filepath}  (seed={seed})")
 
-# -----------------------------
+# ==============================
 # MAIN
-# -----------------------------
-# Files are written next to this script
+# ==============================
+# Usage:
+#   python3 gen_mem.py          -> auto random seed (different every run)
+#   python3 gen_mem.py 1234     -> fixed seed 1234 (fully reproducible)
+#
+# NOTE: random.seed() returns None, so we NEVER use it as a value.
+#       Instead we get a real integer from os.urandom first.
+
+if len(sys.argv) >= 2:
+    try:
+        SEED = int(sys.argv[1])
+    except ValueError:
+        print(f"[ERROR] Seed must be an integer, got: {sys.argv[1]}")
+        sys.exit(1)
+else:
+    SEED = struct.unpack("I", os.urandom(4))[0]
+
+print(f"[gen_mem] MEM_SEED = {SEED}")
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 generate_file(
-    os.path.join(script_dir, "cpu_instr.mem"),
-    "cpu_instr.mem Automated Testcases", 100, random.seed()
-)
-generate_file(
     os.path.join(script_dir, "instr.mem"),
-    "instr.mem Automated Testcases",     100, random.seed()
+    "instr.mem Automated Testcases",     100, SEED
 )

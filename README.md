@@ -48,7 +48,7 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 ### TOP Block Diagram
 ![TOP Architecture](Architecture/TOP.png)
 
-### CPU Block Diagram
+### MASTER Block Diagram
 ![MASTER Architecture](Architecture/Master.png)
 
 ### CPU Pipeline
@@ -104,7 +104,8 @@ The CPU and LSU together form the **AXI Master** component:
 │   │   └── soc_inf.sv     # AXI + physical I/O interface
 │   ├── SIM/               # Simulation files
 │   │   ├── Makefile       # Build and simulation script
-│   │   ├── gen_mem.py     # Generate instr.mem & cpu_instr.mem
+│   │   ├── gen_mem.py     # Generate instr.mem
+|   |   ├── expected.py    # Generate expected.mem to check result from instr.mem
 │   │   └── (result test).log
 │   └── VERIFICATION/      # UVM verification environment
 │       ├── top_tb.sv      # Top testbench
@@ -116,7 +117,6 @@ The CPU and LSU together form the **AXI Master** component:
 │   ├── rv32i.xpr          # Vivado project file
 │   ├── Constraint.xdc     # Timing constraints
 │   └── rv32i.runs/        # Synthesis and implementation results
-├── Project_Overview.md    # Detailed project documentation
 └── README.md              # This file
 ```
 
@@ -141,6 +141,18 @@ cd DoAnThietKeViMach/Project
 source SoC/env.sh
 ```
 
+### Simulation
+```bash
+cd SoC/SIM
+
+# Run tests with coverage
+make all test_name=TEST_NAME | tee TEST_NAME.log # TEST_NAME : run difference tests
+
+# Interactive GUI simulation
+make gui test_name=TEST_NAME
+```
+
+
 ### Makefile Workflow
 The `SoC/SIM/Makefile` is designed to run the full verification flow for a given test. When you execute:
 
@@ -150,31 +162,14 @@ make all test_name=TEST_NAME
 
 it performs the following sequence:
 
-1. `compile` - build the simulation binaries and compile RTL/UVM sources
-2. `sim` - run the simulation for the selected test
-3. `coverage` - generate coverage data and reports
+1. `gen_mem` - create the instr.mem file (instruction file) and expected.mem (to check the results)
+2. `compile` - build the simulation binaries and compile RTL/UVM sources
+3. `sim` - run the simulation for the selected test
+4. `coverage` - generate coverage data and reports
 
 For tests matching `axi_*`, the run uses `UVM_MASTER` mode, where UVM acts as the AXI bus master. For tests matching `cpu_*`, the run uses `CPU_MASTER` mode, where the CPU behaves as the master device.
 
-### Simulation
-```bash
-cd SoC/SIM
-
-# Run tests with coverage
-make all test_name=TEST_NAME | tee TEST_NAME.log # TEST_NAME : run difference tests
-
-# Interactive GUI simulation
-make gui
-```
-
-### Synthesis
-```bash
-# Open Vivado project
-vivado Vivado/rv32i.xpr
-
-# Or run synthesis from command line
-vivado -mode batch -source Vivado/synth_script.tcl
-```
+Furthermore, when running make all with random tests, different seeds will be generated, a file will be created to store the seed, and then when opening the GUI using `make gui`, it will open the Questasim interface with that specific seed and you can easily check the value of the signal you need.
 
 ## Verification
 
@@ -185,17 +180,6 @@ The project includes a comprehensive UVM verification environment:
 - **Driver/Monitor**: Bus-level stimulus and observation
 - **Scoreboard**: Expected vs. actual result comparison
 - **Coverage**: Functional coverage collection
-
-### Running Verification
-```bash
-cd SoC/SIM
-
-# Single test run
-make sim test_name=TEST_NAME
-
-# Coverage analysis
-vcover report -cvg -summary coverage_result.ucdb
-```
 
 ### Coverage Metrics
 - **Statement Coverage**: RTL code execution coverage
@@ -244,33 +228,41 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Note**: This project was developed as part of a digital design course focusing on SoC architecture, CPU design, and verification methodologies.
 
-## Running the Project
+## Summary
 
 To run this project, follow these steps:
 
 1. Clone the repository from GitHub to your local machine:
-   ```
+   ```bash
    git clone https://github.com/VinhKhangDam/The-SoC-system-uses-RV32I-and-AXI4-buses.git
    cd The-SoC-system-uses-RV32I-and-AXI4-buses
    ```
 
 2. Source the environment script to set up the necessary environment variables:
-   ```
+   ```bash
    source SoC/env.sh
    ```
 
-3. Generate instruction memory files (required for simulation):
-   ```
+3. Run the desired test by (looking in the Makefile to see which tests are available)
+   ```bash
    cd SoC/SIM
-   make gen_mem
+   make all test_name=TEST_NAME | tee TEST_NAME.log #(Will be carried out in order : gen instr -> gen expected result -> compile -> sim -> coverage)
    ```
 
-4. Navigate to the SIM directory and run the Makefile to simulate the design:
-   ```
-   make all test_name=TEST_NAME
+4. Open gui
+   ```bash
+   make gui test_name=TEST_NAME
    ```
 
-**Important**: Always run `python gen_mem.py` before executing any tests, as it generates the required instruction memory files (`instr.mem` and `cpu_instr.mem`).
+5. Delete work and generated files, only keep log files (optional), Makefile, and Python files
+   ```bash
+   make clean
+   ```
+
+6. Want to see instructions for making
+   ```bash
+   make help
+   ```
 
 - The design is modular and separates the processor datapath from the interconnect and peripheral wrappers.
 - Pipeline forwarding and hazard handling are implemented to maintain instruction throughput and avoid data hazards.
