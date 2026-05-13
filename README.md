@@ -145,8 +145,11 @@ source SoC/env.sh
 ```bash
 cd SoC/SIM
 
-# Run tests with coverage
-make all test_name=TEST_NAME | tee TEST_NAME.log # TEST_NAME : run difference tests
+# Compile
+make compile test_name=TEST_NAME | tee compile_TEST_NAME.log : compile and print output to .log file
+
+# Sim
+make sim test_name=TEST_NAME | tee sim_TEST_NAME.log # TEST_NAME : run difference tests
 
 # Interactive GUI simulation
 make gui test_name=TEST_NAME
@@ -250,7 +253,8 @@ To run this project, follow these steps:
 3. Run the desired test by (looking in the Makefile to see which tests are available)
    ```bash
    cd SoC/SIM
-   make all test_name=TEST_NAME | tee TEST_NAME.log #(Will be carried out in order : gen instr -> gen expected result -> compile -> sim -> coverage)
+   make compile test_name=TEST_NAME | tee compile_TEST_NAME.log
+   make sim test_name=TEST_NAME | tee TEST_NAME.log #(Will be carried out in order : gen instr -> gen expected result -> compile -> sim -> coverage)
    ```
 
 4. Open gui

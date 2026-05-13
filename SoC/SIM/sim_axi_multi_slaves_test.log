@@ -1,222 +1,11 @@
---- [GEN_MEM] Generate memory + golden reference ---
->>> Using SEED: 968849833 (Saved to .last_seed)
-python3 gen_mem.py 968849833
-[gen_mem] MEM_SEED = 968849833
-Generated /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/instr.mem  (seed=968849833)
-python3 sim_expected.py 968849833
-Loaded  : 101 instructions from instr.mem  (seed=968849833)
-[WARN] Unknown opcode=0b0110111 @ PC=0x00000000
-Written : /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/SIM/expected.mem
---- Done: instr.mem + expected.mem ready ---
---- ROOT: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC ---
-rm -rf work
-vlib work
---- [1/4] Compile Interfaces ---
-vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/*.sv
-QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:35:32 on May 12,2026
-vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/clk_rst_inf.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/cpu_monitor_inf.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/INF/soc_inf.sv 
--- Compiling interface clk_rst_inf
--- Compiling interface cpu_monitor_inf
--- Compiling interface soc_inf
-
-Top level modules:
-	--none--
-End time: 15:35:32 on May 12,2026, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
---- [2/4] Compile DUT ---
-vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/*.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv
-QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:35:32 on May 12,2026
-vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/RAM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/SPI.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/Timer.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Slaves/UART.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ALUControl.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ControlUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/EX_MEM.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/HazardUnit.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/ID_EX.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/IF_ID.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MEM_WB.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/MainDecoder.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/RegFile.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/data_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/instr_mem.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/pc.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/CPU/signExtend.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/CPU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/Master/LSU.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI_Master.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/TOP.sv 
--- Compiling module RAM
--- Compiling module SPI
--- Compiling module Timer
--- Compiling module UART
--- Compiling module ALU
--- Compiling module ALUControl
--- Compiling module ControlUnit
--- Compiling module EX_MEM
--- Compiling module HazardUnit
--- Compiling module ID_EX
--- Compiling module IF_ID
--- Compiling module MEM_WB
--- Compiling module MainDecoder
--- Compiling module RegFile
--- Compiling module data_mem
--- Compiling module instr_mem
--- Compiling module pc_reg
--- Compiling module signExtend
--- Compiling module CPU
--- Compiling module LSU
--- Compiling module AXI_Master
--- Compiling module AXI4_Lite_Interconnect
-** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(43): (vlog-13314) Defaulting port 's_axi_bresp' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(52): (vlog-13314) Defaulting port 's_axi_rdata' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(53): (vlog-13314) Defaulting port 's_axi_rresp' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
--- Compiling module TOP
-
-Top level modules:
-	data_mem
-	instr_mem
-	TOP
-End time: 15:35:33 on May 12,2026, Elapsed time: 0:00:01
-Errors: 0, Warnings: 3
---- [3/4] Compile UVM ---
-vlog -sv +acc -L uvm -cover bcst +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequencer \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Agent \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Coverage \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Env \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence \
-            +incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test \
-            /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh
-QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:35:33 on May 12,2026
-vlog -sv "+acc" -L uvm -cover bcst "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Transaction" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequencer" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Monitor" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Driver" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Agent" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Coverage" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Env" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Scoreboard" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Sequence" "+incdir+/home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Test" /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh 
--- Compiling package soc_pkg
--- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-** Note: (vlog-2286) /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/Package/soc_pkg.svh(3): Using implicit +incdir+/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-
-Top level modules:
-	--none--
-End time: 15:35:33 on May 12,2026, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
---- [4/4] Compile Top TB ---
-vlog -sv +acc -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv
-QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 15:35:33 on May 12,2026
-vlog -sv "+acc" -L uvm -cover bcst /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv 
--- Compiling module top_tb
--- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
--- Importing package soc_pkg
-** Note: (vlog-2286) /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv(6): Using implicit +incdir+/tools/mq/2024.1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-
-Top level modules:
-	top_tb
-End time: 15:35:33 on May 12,2026, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
---- [OPTIMIZE] ---
-vopt +acc +cover top_tb -o vopt_top
-QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
-** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-Start time: 15:35:33 on May 12,2026
-vopt "+acc" "+cover" top_tb -o vopt_top 
-
-Top level modules:
-	top_tb
-
-Analyzing design...
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'top_tb', but was not detected by vopt. The vlog option will be ignored.
--- Loading module top_tb
--- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'soc_pkg', but was not detected by vopt. The vlog option will be ignored.
--- Importing package soc_pkg
--- Loading package mtiUvm.questa_uvm_pkg
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'clk_rst_inf', but was not detected by vopt. The vlog option will be ignored.
--- Loading interface clk_rst_inf
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'soc_inf', but was not detected by vopt. The vlog option will be ignored.
--- Loading interface soc_inf
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'cpu_monitor_inf', but was not detected by vopt. The vlog option will be ignored.
--- Loading interface cpu_monitor_inf
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'TOP', but was not detected by vopt. The vlog option will be ignored.
--- Loading module TOP
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'AXI_Master', but was not detected by vopt. The vlog option will be ignored.
--- Loading module AXI_Master
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'CPU', but was not detected by vopt. The vlog option will be ignored.
--- Loading module CPU
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'pc_reg', but was not detected by vopt. The vlog option will be ignored.
--- Loading module pc_reg
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'IF_ID', but was not detected by vopt. The vlog option will be ignored.
--- Loading module IF_ID
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'ControlUnit', but was not detected by vopt. The vlog option will be ignored.
--- Loading module ControlUnit
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'MainDecoder', but was not detected by vopt. The vlog option will be ignored.
--- Loading module MainDecoder
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'ALUControl', but was not detected by vopt. The vlog option will be ignored.
--- Loading module ALUControl
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'RegFile', but was not detected by vopt. The vlog option will be ignored.
--- Loading module RegFile
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'signExtend', but was not detected by vopt. The vlog option will be ignored.
--- Loading module signExtend
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'ID_EX', but was not detected by vopt. The vlog option will be ignored.
--- Loading module ID_EX
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'ALU', but was not detected by vopt. The vlog option will be ignored.
--- Loading module ALU
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'EX_MEM', but was not detected by vopt. The vlog option will be ignored.
--- Loading module EX_MEM
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'MEM_WB', but was not detected by vopt. The vlog option will be ignored.
--- Loading module MEM_WB
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'HazardUnit', but was not detected by vopt. The vlog option will be ignored.
--- Loading module HazardUnit
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'LSU', but was not detected by vopt. The vlog option will be ignored.
--- Loading module LSU
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'AXI4_Lite_Interconnect', but was not detected by vopt. The vlog option will be ignored.
--- Loading module AXI4_Lite_Interconnect
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'RAM', but was not detected by vopt. The vlog option will be ignored.
--- Loading module RAM
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'Timer', but was not detected by vopt. The vlog option will be ignored.
--- Loading module Timer
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'UART', but was not detected by vopt. The vlog option will be ignored.
--- Loading module UART
-** Warning: (vopt-10016) Option '-L uvm' was detected by vlog for design-unit 'SPI', but was not detected by vopt. The vlog option will be ignored.
--- Loading module SPI
-** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
-Optimizing 32 design-units (inlining 0/26 module instances):
--- Optimizing package mtiUvm.questa_uvm_pkg(fast)
--- Optimizing package soc_pkg(fast)
--- Optimizing interface soc_inf(fast__2)
--- Optimizing module LSU(fast)
-** Note: (vopt-143) Recognized 1 FSM in module "LSU(fast)".
--- Optimizing module top_tb(fast)
--- Optimizing module AXI4_Lite_Interconnect(fast)
-** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(43): (vopt-13314) Defaulting port 's_axi_bresp' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(52): (vopt-13314) Defaulting port 's_axi_rdata' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-** Warning: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv(53): (vopt-13314) Defaulting port 's_axi_rresp' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
--- Optimizing interface cpu_monitor_inf(fast__2)
--- Optimizing module UART(fast)
-** Note: (vopt-143) Recognized 2 FSMs in module "UART(fast)".
--- Optimizing module CPU(fast)
--- Optimizing module SPI(fast)
-** Note: (vopt-143) Recognized 1 FSM in module "SPI(fast)".
--- Optimizing module Timer(fast)
--- Optimizing module TOP(fast)
--- Optimizing module RAM(fast)
--- Optimizing module RAM(fast__1)
--- Optimizing module ID_EX(fast)
--- Optimizing module HazardUnit(fast)
--- Optimizing module MainDecoder(fast)
--- Optimizing module AXI_Master(fast)
--- Optimizing module EX_MEM(fast)
--- Optimizing module ALU(fast)
--- Optimizing module MEM_WB(fast)
--- Optimizing module RegFile(fast)
--- Optimizing module signExtend(fast)
--- Optimizing module IF_ID(fast)
--- Optimizing module ALUControl(fast)
--- Optimizing module ControlUnit(fast)
--- Optimizing interface clk_rst_inf(fast__2)
--- Optimizing module pc_reg(fast)
--- Optimizing interface cpu_monitor_inf(fast)
--- Optimizing interface soc_inf(fast)
--- Optimizing interface clk_rst_inf(fast)
--- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
-Optimized design name is vopt_top
-End time: 15:35:35 on May 12,2026, Elapsed time: 0:00:02
-Errors: 0, Warnings: 31
-=======================================================
->>> RUN TEST: axi_multi_slaves_test  [MEM_SEED=968849833]
-=======================================================
->>> MODE = UVM_MASTER
+--- [SIM ONLY] axi_multi_slaves_test ---
+MODE = UVM_MASTER
 Reading pref.tcl
 
 # 2024.1
 
-# vsim -c -L uvm -coverage -sv_seed 968849833 vopt_top "+UVM_TESTNAME=axi_multi_slaves_test" "+UVM_MASTER" "+MEM_SEED=968849833" -do "coverage save -onexit coverage_result.ucdb; run -all; quit" 
-# Start time: 15:35:36 on May 12,2026
+# vsim -c -L uvm -coverage -sv_seed 988227667 vopt_top "+UVM_TESTNAME=axi_multi_slaves_test" "+UVM_MASTER" "+MEM_SEED=988227667" -do "run -all; quit" 
+# Start time: 11:09:44 on May 13,2026
 # //  Questa Sim-64
 # //  Version 2024.1 linux_x86_64 Feb  1 2024
 # //
@@ -264,9 +53,12 @@ Reading pref.tcl
 # Loading work.Timer(fast)
 # Loading work.UART(fast)
 # Loading work.SPI(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'cr_if'.  Expected 2, found 0.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/cr_if File: /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv Line: 13
+# ** Warning: (vsim-3722) /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv(13): [TFMPC] - Missing connection for port 'clk'.
+# ** Warning: (vsim-3722) /home/khang/Documents/SystemVerilog/Soc_RV32I/SoC/VERIFICATION/top_tb.sv(13): [TFMPC] - Missing connection for port 'rstn'.
 # Loading /tools/mq/2024.1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# coverage save -onexit coverage_result.ucdb
-#  run -all
+# run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
 # (C) 2007-2013 Mentor Graphics Corporation
@@ -291,105 +83,105 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # [RAM] Loading file: instr.mem
 # [RAM] mem[0] = 100000b7
-# [RAM] mem[1] = 6c000def
-# [RAM] mem[2] = 2b536113
-# [RAM] mem[3] = 21230113
-# [RAM] mem[4] = f7da8ce3
-# [RAM] mem[5] = 3950a023
-# [RAM] mem[6] = fc150ae3
-# [RAM] mem[7] = 025d8c63
-# [RAM] mem[8] = fd490ce3
-# [RAM] mem[9] = 0c8f8d63
-# [RAM] mem[10] = de0de193
-# [RAM] mem[11] = 6d80ad83
-# [RAM] mem[12] = 7710ae23
-# [RAM] mem[13] = ca12ca13
-# [RAM] mem[14] = 04730463
-# [RAM] mem[15] = 05b84d13
-# [RAM] mem[16] = 6b80026f
-# [RAM] mem[17] = d7da8293
-# [RAM] mem[18] = 18d4e193
-# [RAM] mem[19] = 3c80a403
-# [RAM] mem[20] = 7dd4e613
-# [RAM] mem[21] = fbbff16f
-# [RAM] mem[22] = 01ea5cb3
-# [RAM] mem[23] = 0460aa23
-# [RAM] mem[24] = f9180be3
-# [RAM] mem[25] = ff9e08e3
-# [RAM] mem[26] = d91ffeef
-# [RAM] mem[27] = 65a0a423
-# [RAM] mem[28] = 1d2a6713
-# [RAM] mem[29] = 3e10a223
-# [RAM] mem[30] = 702c8593
-# [RAM] mem[31] = f6bff96f
-# [RAM] mem[32] = 4e80af03
-# [RAM] mem[33] = 017e72b3
-# [RAM] mem[34] = 38eace13
-# [RAM] mem[35] = 0b8009ef
-# [RAM] mem[36] = 10e00c6f
-# [RAM] mem[37] = 2150a223
-# [RAM] mem[38] = bc0a7793
-# [RAM] mem[39] = 00cb6233
-# [RAM] mem[40] = 001a9d33
-# [RAM] mem[41] = d3ef8d93
-# [RAM] mem[42] = 47890193
-# [RAM] mem[43] = f90589e3
-# [RAM] mem[44] = 01089533
-# [RAM] mem[45] = 7b40a183
-# [RAM] mem[46] = 5a80aa03
-# [RAM] mem[47] = 570c7493
-# [RAM] mem[48] = 20c00bef
-# [RAM] mem[49] = d1077213
-# [RAM] mem[50] = 8fa8ed13
-# [RAM] mem[51] = 7d3dca93
-# [RAM] mem[52] = 59f0a623
-# [RAM] mem[53] = 7f90a423
-# [RAM] mem[54] = 6180a503
-# [RAM] mem[55] = 402e06b3
-# [RAM] mem[56] = ff0e08e3
-# [RAM] mem[57] = 04c0a423
-# [RAM] mem[58] = f8918fe3
-# [RAM] mem[59] = df7ff7ef
-# [RAM] mem[60] = 95bffbef
-# [RAM] mem[61] = f5f10ee3
-# [RAM] mem[62] = 66c0a403
-# [RAM] mem[63] = f3638de3
-# [RAM] mem[64] = 1ec0a823
-# [RAM] mem[65] = d30e8d93
-# [RAM] mem[66] = 2680ac83
-# [RAM] mem[67] = 6510a423
-# [RAM] mem[68] = 3f00ae03
-# [RAM] mem[69] = 2c10ac23
-# [RAM] mem[70] = 40a10db3
-# [RAM] mem[71] = 2680a783
-# [RAM] mem[72] = bfc8cb93
-# [RAM] mem[73] = 0c40ac83
-# [RAM] mem[74] = 37e0a223
-# [RAM] mem[75] = 6750a423
-# [RAM] mem[76] = 40b68933
-# [RAM] mem[77] = f1ffffef
-# [RAM] mem[78] = 37e0a223
-# [RAM] mem[79] = 1b400d6f
-# [RAM] mem[80] = d27ff6ef
-# [RAM] mem[81] = 40e0a223
-# [RAM] mem[82] = 82624a93
-# [RAM] mem[83] = 50c0a623
-# [RAM] mem[84] = 3600aa03
-# [RAM] mem[85] = 40dfd233
-# [RAM] mem[86] = 00b7f633
-# [RAM] mem[87] = 6fc0ab83
-# [RAM] mem[88] = 41a20db3
-# [RAM] mem[89] = d8548093
-# [RAM] mem[90] = 09540e63
-# [RAM] mem[91] = f41c04e3
-# [RAM] mem[92] = 21a0a823
-# [RAM] mem[93] = db910b13
-# [RAM] mem[94] = 01ed5fb3
-# [RAM] mem[95] = c5b4fd93
-# [RAM] mem[96] = 05ee0d63
-# [RAM] mem[97] = 005990b3
-# [RAM] mem[98] = e237ef93
-# [RAM] mem[99] = 6230a423
+# [RAM] mem[1] = 403f06b3
+# [RAM] mem[2] = 56c0a903
+# [RAM] mem[3] = 0082cc33
+# [RAM] mem[4] = 41b95f33
+# [RAM] mem[5] = 4e0e4993
+# [RAM] mem[6] = 1ca0a223
+# [RAM] mem[7] = d0497313
+# [RAM] mem[8] = 25058393
+# [RAM] mem[9] = 8bbc7613
+# [RAM] mem[10] = 2d00ad03
+# [RAM] mem[11] = 0b876513
+# [RAM] mem[12] = fddfffef
+# [RAM] mem[13] = 35c0ac03
+# [RAM] mem[14] = fe9fff6f
+# [RAM] mem[15] = 013d89b3
+# [RAM] mem[16] = ffb684e3
+# [RAM] mem[17] = 0450ac23
+# [RAM] mem[18] = 00250433
+# [RAM] mem[19] = 016d0a63
+# [RAM] mem[20] = 1cd0ac23
+# [RAM] mem[21] = 41cc81b3
+# [RAM] mem[22] = ff050ae3
+# [RAM] mem[23] = 03220663
+# [RAM] mem[24] = 6e40a483
+# [RAM] mem[25] = 3ce66a93
+# [RAM] mem[26] = 0f80a603
+# [RAM] mem[27] = 0c80ac23
+# [RAM] mem[28] = 40a78b33
+# [RAM] mem[29] = 019b6d33
+# [RAM] mem[30] = 948ce113
+# [RAM] mem[31] = ab880993
+# [RAM] mem[32] = 0073a533
+# [RAM] mem[33] = 0390ae23
+# [RAM] mem[34] = b0b47413
+# [RAM] mem[35] = 1300a283
+# [RAM] mem[36] = 002a81b3
+# [RAM] mem[37] = 019c81b3
+# [RAM] mem[38] = 43c0a623
+# [RAM] mem[39] = 3b60aa23
+# [RAM] mem[40] = 02868663
+# [RAM] mem[41] = 748b7f13
+# [RAM] mem[42] = 1847f713
+# [RAM] mem[43] = 00610433
+# [RAM] mem[44] = 2bc0ac03
+# [RAM] mem[45] = 11e0a623
+# [RAM] mem[46] = 962bf793
+# [RAM] mem[47] = fddff96f
+# [RAM] mem[48] = 22c0a683
+# [RAM] mem[49] = 0122de33
+# [RAM] mem[50] = 5100ae83
+# [RAM] mem[51] = 6b5f7f93
+# [RAM] mem[52] = a6a4ee13
+# [RAM] mem[53] = 4be0ac23
+# [RAM] mem[54] = 6e00aa83
+# [RAM] mem[55] = 5a00a483
+# [RAM] mem[56] = 5b80ae03
+# [RAM] mem[57] = 0d40ae03
+# [RAM] mem[58] = fd5ff86f
+# [RAM] mem[59] = 836a4c93
+# [RAM] mem[60] = d4480913
+# [RAM] mem[61] = 6f00aa83
+# [RAM] mem[62] = 20b77b93
+# [RAM] mem[63] = 6e60a023
+# [RAM] mem[64] = 01fb4fb3
+# [RAM] mem[65] = 3be3e513
+# [RAM] mem[66] = 4000ae83
+# [RAM] mem[67] = 0124cd33
+# [RAM] mem[68] = 416b0633
+# [RAM] mem[69] = b5950893
+# [RAM] mem[70] = 01b851b3
+# [RAM] mem[71] = 01f66733
+# [RAM] mem[72] = aed26a13
+# [RAM] mem[73] = 017ee633
+# [RAM] mem[74] = 417859b3
+# [RAM] mem[75] = 9e8d0f13
+# [RAM] mem[76] = 18c0a783
+# [RAM] mem[77] = 5480a603
+# [RAM] mem[78] = 43d0a623
+# [RAM] mem[79] = 6f00ae83
+# [RAM] mem[80] = 1dc0a383
+# [RAM] mem[81] = 85494713
+# [RAM] mem[82] = 40588ab3
+# [RAM] mem[83] = 2a00a103
+# [RAM] mem[84] = fe5ff26f
+# [RAM] mem[85] = 7cf47113
+# [RAM] mem[86] = 7940a403
+# [RAM] mem[87] = 7c40a283
+# [RAM] mem[88] = 01b67633
+# [RAM] mem[89] = 0600a103
+# [RAM] mem[90] = 014161b3
+# [RAM] mem[91] = 0c40a483
+# [RAM] mem[92] = 50b0a423
+# [RAM] mem[93] = e99d8113
+# [RAM] mem[94] = 0005c213
+# [RAM] mem[95] = 0113ef33
+# [RAM] mem[96] = 2f728d13
+# [RAM] mem[97] = 0370ae23
+# [RAM] mem[98] = 01baad33
+# [RAM] mem[99] = f225fa13
 # [RAM] No INIT_FILE specified
 # [TB] Mode: UVM MASTER — driver controls AXI bus
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_multi_slaves_test...
@@ -723,6 +515,5 @@ Reading pref.tcl
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mq/2024.1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 5025 ns  Iteration: 54  Instance: /top_tb
-# Saving coverage database on exit...
-# End time: 15:35:38 on May 12,2026, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 1
+# End time: 11:09:46 on May 13,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 4
