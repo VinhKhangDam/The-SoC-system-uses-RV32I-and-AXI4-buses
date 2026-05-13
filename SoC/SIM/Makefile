@@ -195,7 +195,7 @@ endif
 
 clean:
 	rm -rf work transcript *.wlf vopt_top *.ucdb \
-		   instr.mem expected.mem $(SEED_FILE)
+		 expected.mem $(SEED_FILE)
 	@echo "--- CLEAN DONE ---"
 
 #==========================================================================================

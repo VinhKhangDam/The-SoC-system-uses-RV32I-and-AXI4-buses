@@ -81,43 +81,91 @@ The CPU and LSU together form the **AXI Master** component:
 ## Project Structure
 
 ```
-├── Architecture/           # Design diagrams and documentation
-│   ├── CPU.drawio         # CPU architecture diagram
-│   └── UVM.drawio         # Verification methodology diagram
-├── SoC/                   # System-on-Chip RTL design
-│   ├── DUT/               # Design Under Test
-│   │   ├── TOP.sv         # SoC top-level module
-│   │   ├── AXI_Master.sv  # AXI master wrapper
-│   │   ├── AXI4_Lite_Interconnect.sv
-│   │   ├── CPU/           # CPU pipeline components
-│   │   │   ├── ALU.sv, ALUControl.sv, ControlUnit.sv
-│   │   │   ├── IF_ID.sv, ID_EX.sv, EX_MEM.sv, MEM_WB.sv
-│   │   │   ├── RegFile.sv, signExtend.sv, HazardUnit.sv
-│   │   │   ├── instr_mem.sv, data_mem.sv, pc.sv
-│   │   ├── Master/        # CPU and LSU
-│   │   │   ├── CPU.sv     # CPU core logic
-│   │   │   └── LSU.sv     # Load-Store Unit
-│   │   └── Slaves/        # Peripheral modules
-│   │       ├── RAM.sv, Timer.sv, UART.sv, SPI.sv
-│   ├── INF/               # Interface definitions
-│   │   ├── clk_rst_inf.sv # Clock/reset interface
-│   │   └── soc_inf.sv     # AXI + physical I/O interface
-│   ├── SIM/               # Simulation files
-│   │   ├── Makefile       # Build and simulation script
-│   │   ├── gen_mem.py     # Generate instr.mem
-|   |   ├── expected.py    # Generate expected.mem to check result from instr.mem
-│   │   └── (result test).log
-│   └── VERIFICATION/      # UVM verification environment
-│       ├── top_tb.sv      # Top testbench
-│       ├── Package/soc_pkg.svh
-│       ├── Agent/, Driver/, Monitor/, Sequencer/
-│       ├── Env/, Coverage/, Scoreboard/
-│       ├── Test/, Sequence/, Transaction/
-├── Vivado/                # FPGA synthesis project
-│   ├── rv32i.xpr          # Vivado project file
-│   ├── Constraint.xdc     # Timing constraints
-│   └── rv32i.runs/        # Synthesis and implementation results
-└── README.md              # This file
+.
+├── DUT
+│   ├── AXI4_Lite_Interconnect.sv
+│   ├── AXI_Master.sv
+│   ├── CPU
+│   │   ├── ALU.sv
+│   │   ├── ALUControl.sv
+│   │   ├── ControlUnit.sv
+│   │   ├── EX_MEM.sv
+│   │   ├── HazardUnit.sv
+│   │   ├── ID_EX.sv
+│   │   ├── IF_ID.sv
+│   │   ├── MEM_WB.sv
+│   │   ├── MainDecoder.sv
+│   │   ├── RegFile.sv
+│   │   ├── data_mem.sv
+│   │   ├── instr_mem.sv
+│   │   ├── pc.sv
+│   │   └── signExtend.sv
+│   ├── Master
+│   │   ├── CPU.sv
+│   │   └── LSU.sv
+│   ├── Slaves
+│   │   ├── DRAM.sv
+│   │   ├── IRAM.sv
+│   │   ├── SPI.sv
+│   │   ├── Timer.sv
+│   │   └── UART.sv
+│   └── TOP.sv
+├── INF
+│   ├── clk_rst_inf.sv
+│   ├── cpu_monitor_inf.sv
+│   └── soc_inf.sv
+├── SIM
+│   ├── Makefile
+│   ├── compile_axi_multi_slaves_test.log
+│   ├── compile_axi_random_wr_rd_test.log
+│   ├── compile_axi_read_test.log
+│   ├── compile_axi_write_test.log
+│   ├── compile_cpu_test.log
+│   ├── gen_mem.py
+│   ├── instr.mem
+│   ├── sim_axi_multi_slaves_test.log
+│   ├── sim_axi_random_wr_rd_test.log
+│   ├── sim_axi_read_test.log
+│   ├── sim_axi_write_test.log
+│   ├── sim_cpu_test.log
+│   └── sim_expected.py
+├── VERIFICATION
+│   ├── Agent
+│   │   ├── axi_agent.sv
+│   │   └── cpu_agent.sv
+│   ├── Coverage
+│   │   └── axi_coverage.sv
+│   ├── Driver
+│   │   └── axi_driver.sv
+│   ├── Env
+│   │   ├── axi_env.sv
+│   │   └── cpu_env.sv
+│   ├── Monitor
+│   │   ├── axi_monitor.sv
+│   │   └── cpu_monitor.sv
+│   ├── Package
+│   │   └── soc_pkg.svh
+│   ├── Scoreboard
+│   │   ├── axi_scoreboard.sv
+│   │   └── cpu_scoreboard.sv
+│   ├── Sequence
+│   │   ├── axi_multi_slaves_sequence.sv
+│   │   ├── axi_random_wr_rd.sv
+│   │   ├── axi_read_sequence.sv
+│   │   └── axi_write_sequence.sv
+│   ├── Sequencer
+│   │   └── axi_sequencer.sv
+│   ├── Test
+│   │   ├── axi_multi_slaves_test.sv
+│   │   ├── axi_random_wr_rd_test.sv
+│   │   ├── axi_read_test.sv
+│   │   ├── axi_write_test.sv
+│   │   └── cpu_test.sv
+│   ├── Transaction
+│   │   ├── axi_transaction.sv
+│   │   └── cpu_transaction.sv
+│   └── top_tb.sv
+├── env.sh
 ```
 
 ## Prerequisites

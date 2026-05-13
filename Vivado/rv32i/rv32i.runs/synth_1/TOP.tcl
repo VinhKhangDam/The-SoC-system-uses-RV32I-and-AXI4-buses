@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.runs/synth_1/TOP.tcl"
+  variable script "C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.runs/synth_1/TOP.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,50 +56,46 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param power.BramSDPPropagationFix 1
-set_param chipscope.maxJobs 5
-set_param power.enableUnconnectedCarry8PinPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableLutRouteBelPower 1
+set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xczu7ev-ffvc1156-2-e
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.cache/wt [current_project]
-set_property parent.project_path /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.xpr [current_project]
+set_property webtalk.parent_dir C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.cache/wt [current_project]
+set_property parent.project_path C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
-set_property ip_output_repo /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.cache/ip [current_project]
+set_property ip_output_repo c:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem /home/khang/Documents/SystemVerilog/SoC-RV32I/Sim/instr.mem
+read_mem C:/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem
 read_verilog -library xil_defaultlib -sv {
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv
-  /home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ALU.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ALUControl.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/AXI4_Lite_Interconnect.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/AXI_Master.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/CPU.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ControlUnit.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/DRAM.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/EX_MEM.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/HazardUnit.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ID_EX.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/IF_ID.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/LSU.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/MEM_WB.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/MainDecoder.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/RegFile.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/Timer.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/pc.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/signExtend.sv
+  C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/TOP.sv
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -110,12 +106,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/Constraint.xdc
-set_property used_in_implementation false [get_files /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/Constraint.xdc]
+read_xdc C:/Documents/DoAnThietKeViMach/Project/Vivado/Constraint.xdc
+set_property used_in_implementation false [get_files C:/Documents/DoAnThietKeViMach/Project/Vivado/Constraint.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp
+read_checkpoint -auto_incremental -incremental C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

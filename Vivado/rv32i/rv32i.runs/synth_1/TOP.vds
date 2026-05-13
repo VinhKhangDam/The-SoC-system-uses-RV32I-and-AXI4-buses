@@ -1,116 +1,211 @@
 #-----------------------------------------------------------
-# Vivado v2024.2 (64-bit)
-# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
-# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
-# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sat Apr  4 13:09:17 2026
-# Process ID         : 986855
-# Current directory  : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.runs/synth_1
-# Command line       : vivado -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
-# Log file           : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.runs/synth_1/TOP.vds
-# Journal file       : /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.runs/synth_1/vivado.jou
-# Running On         : VirtMach
-# Platform           : Ubuntu
-# Operating System   : Ubuntu 24.04.3 LTS
-# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700F
-# CPU Frequency      : 2111.999 MHz
-# CPU Physical cores : 20
-# CPU Logical cores  : 20
-# Host memory        : 50466 MB
-# Swap memory        : 127999 MB
-# Total Virtual      : 178466 MB
-# Available Virtual  : 154838 MB
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed May 13 23:24:07 2026
+# Process ID         : 3500
+# Current directory  : C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.runs/synth_1
+# Command line       : vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+# Log file           : C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.runs/synth_1/TOP.vds
+# Journal file       : C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.runs/synth_1\vivado.jou
+# Running On         : VinhKhang
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics         
+# CPU Frequency      : 2895 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16558 MB
+# Swap memory        : 5905 MB
+# Total Virtual      : 22463 MB
+# Available Virtual  : 8363 MB
 #-----------------------------------------------------------
 source TOP.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 545.707 ; gain = 219.109
+Command: read_checkpoint -auto_incremental -incremental C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top TOP -part xczu7ev-ffvc1156-2-e
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+WARNING: [Vivado_Tcl 4-1809] The reference checkpoint is from an old version of Vivado; A full resynthesis flow will be run
 INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 986887
+INFO: [Synth 8-7075] Helper process launched with PID 20324
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2592.715 ; gain = 133.688 ; free physical = 8364 ; free virtual = 145877
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1989.316 ; gain = 222.773
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'mem_funct3_o', assumed default net type 'wire' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv:260]
-INFO: [Synth 8-11241] undeclared symbol 'StallD', assumed default net type 'wire' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv:301]
-INFO: [Synth 8-11241] undeclared symbol 'FlushD', assumed default net type 'wire' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv:303]
-INFO: [Synth 8-6157] synthesizing module 'TOP' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'AXI_Master' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'CPU' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'pc_reg' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/pc.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'instr_mem' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv:1]
-INFO: [Synth 8-3876] $readmem data file 'instr.mem' is read successfully [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv:10]
-INFO: [Synth 8-251] --- SUCCESS: Da nap chuong trinh vao Instruction Memory --- [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv:16]
-INFO: [Synth 8-6155] done synthesizing module 'instr_mem' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/instr_mem.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'IF_ID' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/IF_ID.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'MainDecoder' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'MainDecoder' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MainDecoder.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'ALUControl' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALUControl.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ControlUnit.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'RegFile' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/RegFile.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'signExtend' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'signExtend' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/signExtend.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'ID_EX' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ID_EX.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/ALU.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/EX_MEM.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/MEM_WB.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/CPU/HazardUnit.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'CPU' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'LSU' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv:1]
-INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv:66]
-INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv:83]
-INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv:182]
-INFO: [Synth 8-226] default block is never used [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv:196]
-INFO: [Synth 8-6155] done synthesizing module 'LSU' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/LSU.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'AXI_Master' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI_Master.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'AXI4_Lite_Interconnect' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'TOP' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/TOP.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'AXI_Master' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/AXI_Master.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'CPU' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/CPU.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/pc.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/pc.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/IF_ID.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/IF_ID.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'MainDecoder' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/MainDecoder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'MainDecoder' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/MainDecoder.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ALUControl' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ALUControl.sv:1]
+INFO: [Synth 8-226] default block is never used [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ALUControl.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ALUControl.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/RegFile.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/RegFile.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'signExtend' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/signExtend.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'signExtend' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/signExtend.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ID_EX.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ID_EX.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ALU.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/ALU.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/EX_MEM.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/EX_MEM.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/MEM_WB.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/MEM_WB.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/HazardUnit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/CPU/HazardUnit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'CPU' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/CPU.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'LSU' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/LSU.sv:1]
+INFO: [Synth 8-226] default block is never used [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/LSU.sv:94]
+INFO: [Synth 8-226] default block is never used [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/LSU.sv:110]
+INFO: [Synth 8-226] default block is never used [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/LSU.sv:313]
+INFO: [Synth 8-226] default block is never used [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/LSU.sv:328]
+INFO: [Synth 8-6155] done synthesizing module 'LSU' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Master/LSU.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'AXI_Master' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/AXI_Master.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'AXI4_Lite_Interconnect' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/AXI4_Lite_Interconnect.sv:1]
 	Parameter NUM_SLAVES bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'AXI4_Lite_Interconnect' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/AXI4_Lite_Interconnect.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'RAM' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'AXI4_Lite_Interconnect' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/AXI4_Lite_Interconnect.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'IRAM' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:1]
 	Parameter INIT_FILE bound to: instr.mem - type: string 
-INFO: [Synth 8-3876] $readmem data file 'instr.mem' is read successfully [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv:37]
-INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized0' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized0' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/RAM.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'Timer' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'Timer' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/Timer.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'UART' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:1]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:56]
-INFO: [Synth 8-6155] done synthesizing module 'UART' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'SPI' [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv:1]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv:63]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv:128]
-INFO: [Synth 8-6155] done synthesizing module 'SPI' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'TOP' (0#1) [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/TOP.sv:1]
-WARNING: [Synth 8-3848] Net mem_funct_o in module/entity CPU does not have driver. [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv:9]
-WARNING: [Synth 8-3848] Net FlushF in module/entity CPU does not have driver. [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Master/CPU.sv:16]
-WARNING: [Synth 8-7137] Register uart_tx_reg_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:58]
-WARNING: [Synth 8-7137] Register s_axi_rdata_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:87]
-WARNING: [Synth 8-7137] Register uart_tx_count_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:121]
-WARNING: [Synth 8-7137] Register tx_bit_idx_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:131]
-WARNING: [Synth 8-7137] Register uart_rx_count_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:169]
-WARNING: [Synth 8-7137] Register rx_bit_idx_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:178]
-WARNING: [Synth 8-7137] Register uart_rx_reg_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/UART.sv:186]
-WARNING: [Synth 8-7137] Register s_axi_rdata_reg in module SPI has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv:94]
-WARNING: [Synth 8-7137] Register shift_reg_reg in module SPI has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv:133]
-WARNING: [Synth 8-7137] Register spi_rx_reg_reg in module SPI has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khang/Documents/SystemVerilog/SoC-RV32I/SoC/DUT/Slaves/SPI.sv:169]
+INFO: [Synth 8-251] [IRAM] Loading file: instr.mem [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:34]
+INFO: [Synth 8-3876] $readmem data file 'instr.mem' is read successfully [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:35]
+INFO: [Synth 8-251] [IRAM] mem[0] = 100000b7 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[1] = 1700a683 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[2] = 6150a823 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[3] = 400c6f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[4] = 135c233 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[5] = ffc80ce3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[6] = b95333 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[7] = 2f91c293 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[8] = e00aa03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[9] = 580a283 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[10] = 49d8413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[11] = 77c0ab03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[12] = 65c0ae23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[13] = 3780ab83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[14] = 66c0ad83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[15] = 41d68633 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[16] = 155e8b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[17] = 290db3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[18] = ff9ff9ef [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[19] = 57e0a023 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[20] = 5ae0a423 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[21] = 6f5e6413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[22] = 73c0aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[23] = 9a2bb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[24] = fecc86e3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[25] = 29b48493 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[26] = 6a00ab03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[27] = 55c0a603 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[28] = 86e833 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[29] = 73c6c13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[30] = 14bd533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[31] = 86a8b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[32] = 77e1fc13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[33] = 1376733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[34] = 3c90a623 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[35] = 43a733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[36] = 95440693 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[37] = 6f00a103 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[38] = f7686413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[39] = ff5ffc6f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[40] = 100af83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[41] = 1fa0b33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[42] = fe5ff86f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[43] = 7fe0a823 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[44] = 4a80a383 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[45] = 1d72733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[46] = 97fbf193 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[47] = 30584b13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[48] = 6028593 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[49] = 143ea33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[50] = 3898863 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[51] = eaca4893 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[52] = 639fe793 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[53] = 33c0463 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[54] = 4a60ae23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[55] = d2736b93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[56] = 30b8063 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[57] = 9da533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[58] = 1d48633 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[59] = 10001ef [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[60] = 7c80ac23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[61] = 9c1c33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[62] = 17667b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[63] = 16edab3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[64] = 987133 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[65] = 2fd533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[66] = 1724cb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[67] = f0a223 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[68] = b50ae193 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[69] = 19444b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[70] = 1d92ab3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[71] = 3ec0a603 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[72] = a2180f93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[73] = dc0a783 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[74] = f0dd4c93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[75] = 5d05cc93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[76] = eb38e693 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[77] = cb0a223 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[78] = 865c7e93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[79] = 40cc0933 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[80] = be880613 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[81] = f2be6713 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[82] = 6640a483 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[83] = 1da8e33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[84] = ae0a223 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[85] = 3ece8413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[86] = f1a6b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[87] = 414adeb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[88] = f97533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[89] = 4cd0aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[90] = 5edc6e93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[91] = 28874193 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[92] = 5763fa93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[93] = 93768993 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[94] = bb0c33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[95] = c32fc93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[96] = 8b198f13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[97] = 7fa2ef13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[98] = 1740ae03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Common 17-14] Message 'Synth 8-251' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'IRAM' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'DRAM' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/DRAM.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'DRAM' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/DRAM.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Timer' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/Timer.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Timer' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/Timer.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'UART' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:56]
+INFO: [Synth 8-6155] done synthesizing module 'UART' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'SPI' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv:63]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv:129]
+INFO: [Synth 8-6155] done synthesizing module 'SPI' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'TOP' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/TOP.sv:1]
+WARNING: [Synth 8-7137] Register uart_tx_reg_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:58]
+WARNING: [Synth 8-7137] Register s_axi_rdata_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:87]
+WARNING: [Synth 8-7137] Register uart_tx_count_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:121]
+WARNING: [Synth 8-7137] Register tx_bit_idx_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:131]
+WARNING: [Synth 8-7137] Register uart_rx_count_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:169]
+WARNING: [Synth 8-7137] Register rx_bit_idx_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:178]
+WARNING: [Synth 8-7137] Register uart_rx_reg_reg in module UART has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv:186]
+WARNING: [Synth 8-7137] Register s_axi_rdata_reg in module SPI has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv:94]
+WARNING: [Synth 8-7137] Register shift_reg_reg in module SPI has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv:134]
+WARNING: [Synth 8-3848] Net s_axi_bresp[0] in module/entity TOP does not have driver. [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/TOP.sv:29]
 WARNING: [Synth 8-7129] Port s_axi_awaddr[31] in module SPI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_awaddr[30] in module SPI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_awaddr[29] in module SPI is either unconnected or has no load
@@ -213,35 +308,36 @@ WARNING: [Synth 8-7129] Port s_axi_wstrb[2] in module UART is either unconnected
 WARNING: [Synth 8-7129] Port s_axi_wstrb[1] in module UART is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2679.684 ; gain = 220.656 ; free physical = 8248 ; free virtual = 145763
+Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 4413.496 ; gain = 2646.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2685.621 ; gain = 226.594 ; free physical = 8249 ; free virtual = 145764
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 4413.496 ; gain = 2646.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2685.621 ; gain = 226.594 ; free physical = 8249 ; free virtual = 145764
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 4413.496 ; gain = 2646.953
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2685.621 ; gain = 0.000 ; free physical = 8257 ; free virtual = 145771
+Netlist sorting complete. Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4413.496 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/Constraint.xdc]
-Finished Parsing XDC File [/home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/Constraint.xdc]
+Parsing XDC File [C:/Documents/DoAnThietKeViMach/Project/Vivado/Constraint.xdc]
+create_clock: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 4748.145 ; gain = 55.418
+Finished Parsing XDC File [C:/Documents/DoAnThietKeViMach/Project/Vivado/Constraint.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2816.434 ; gain = 0.000 ; free physical = 8268 ; free virtual = 145783
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.155 . Memory (MB): peak = 4748.145 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2816.434 ; gain = 0.000 ; free physical = 8268 ; free virtual = 145783
+Constraint Validation Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4750.086 ; gain = 1.941
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2816.434 ; gain = 357.406 ; free physical = 8291 ; free virtual = 145805
+Finished Constraint Validation : Time (s): cpu = 00:02:11 ; elapsed = 00:02:09 . Memory (MB): peak = 4751.652 ; gain = 2985.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -249,13 +345,13 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2824.438 ; gain = 365.410 ; free physical = 8291 ; free virtual = 145805
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:11 ; elapsed = 00:02:09 . Memory (MB): peak = 4751.652 ; gain = 2985.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2824.438 ; gain = 365.410 ; free physical = 8291 ; free virtual = 145806
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:11 ; elapsed = 00:02:10 . Memory (MB): peak = 4751.652 ; gain = 2985.109
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'PresentState_reg' in module 'LSU'
 INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'UART'
@@ -264,17 +360,15 @@ INFO: [Synth 8-802] inferred FSM for state register 'spi_state_reg' in module 'S
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                 ST_IDLE |                            00001 |                              000
-               ST_W_ADDR |                            00010 |                              001
-               ST_W_RESP |                            00100 |                              010
-               ST_R_ADDR |                            01000 |                              011
-               ST_R_DATA |                            10000 |                              100
+                 ST_IDLE |                              000 |                              000
+              ST_IF_ADDR |                              110 |                              001
+               ST_W_ADDR |                              100 |                              011
+               ST_W_RESP |                              011 |                              100
+               ST_R_ADDR |                              010 |                              101
+               ST_R_DATA |                              001 |                              110
+              ST_IF_DATA |                              101 |                              010
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'PresentState_reg' using encoding 'one-hot' in module 'LSU'
-INFO: [Synth 8-6794] RAM ("RAM__parameterized0:/mem_reg") will be automatically implemented using URAM. 
-INFO: [Synth 8-6794] RAM ("RAM__parameterized0:/mem_reg") will be automatically implemented using URAM. 
-INFO: [Synth 8-6794] RAM ("RAM__parameterized0:/mem_reg") will be automatically implemented using URAM. 
-INFO: [Synth 8-5780] Default cascade height of 1 will be used for URAM '"RAM__parameterized0:/mem_reg"'.
+INFO: [Synth 8-3354] encoded FSM with state register 'PresentState_reg' using encoding 'sequential' in module 'LSU'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -287,8 +381,10 @@ INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encodi
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                 TX_IDLE |                                0 |                               00
-                TX_START |                                1 |                               01
+                 TX_IDLE |                               00 |                               00
+                TX_START |                               01 |                               01
+                 TX_DATA |                               10 |                               10
+                 TX_STOP |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'UART'
 ---------------------------------------------------------------------------------------------------
@@ -300,7 +396,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'spi_state_reg' using encoding 'one-hot' in module 'SPI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2824.438 ; gain = 365.410 ; free physical = 8291 ; free virtual = 145807
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:57 ; elapsed = 00:05:15 . Memory (MB): peak = 4751.652 ; gain = 2985.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -314,37 +410,37 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 63    
+	               32 Bit    Registers := 4163  
 	                8 Bit    Registers := 5     
 	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 7     
 	                2 Bit    Registers := 5     
-	                1 Bit    Registers := 40    
-+---RAMs : 
-	             128K Bit	(4096 X 32 bit)          RAMs := 2     
+	                1 Bit    Registers := 43    
++---ROMs : 
+	                    ROMs := 1     
 +---Muxes : 
-	  39 Input   32 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 33    
-	   3 Input   32 Bit        Muxes := 4     
-	   4 Input   32 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 4118  
+	   3 Input   32 Bit        Muxes := 5     
+	   4 Input   32 Bit        Muxes := 4     
 	   2 Input   16 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 16386 
 	   4 Input    8 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 4     
 	   3 Input    8 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 6     
-	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 5     
 	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 1     
 	   3 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 3     
-	   4 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 6     
-	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 68    
-	   5 Input    1 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 7     
+	   7 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 73    
+	   7 Input    1 Bit        Muxes := 8     
 	   3 Input    1 Bit        Muxes := 13    
-	   4 Input    1 Bit        Muxes := 9     
+	   5 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 15    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -360,86 +456,42 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-INFO: [Synth 8-6794] RAM ("TOP/DRAM/mem_reg") will be automatically implemented using URAM. 
-INFO: [Synth 8-6794] RAM ("TOP/DRAM/mem_reg") will be automatically implemented using URAM. 
-INFO: [Synth 8-5780] Default cascade height of 1 will be used for URAM '"TOP/DRAM/mem_reg"'.
-INFO: [Synth 8-6794] RAM ("TOP/DRAM/mem_reg") will be automatically implemented using URAM. 
-INFO: [Synth 8-6794] RAM ("TOP/DRAM/mem_reg") will be automatically implemented using URAM. 
-INFO: [Synth 8-5780] Default cascade height of 1 will be used for URAM '"TOP/DRAM/mem_reg"'.
+INFO: [Synth 8-5546] ROM "md/ResultSrc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "md/ALUOp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "md/ImmSrc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "md/ResultSrc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "md/ALUOp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "md/ImmSrc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "read_sel" won't be mapped to RAM because address size (31) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "write_sel" won't be mapped to RAM because address size (31) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "read_sel" won't be mapped to RAM because address size (31) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "write_sel" won't be mapped to RAM because address size (31) is larger than maximum supported(25)
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'axi_master/cpu/ifid/pcPlus4D_reg[0]' (FDCE) to 'axi_master/cpu/ifid/pcD_reg[0]'
+INFO: [Synth 8-3886] merging instance 'axi_master/cpu/idexmd/JumpE_reg' (FDCE) to 'axi_master/cpu/idexmd/ResultSrcE_reg[1]'
+INFO: [Synth 8-3886] merging instance 'axi_master/cpu/idexmd/pcPlus4E_reg[0]' (FDCE) to 'axi_master/cpu/idexmd/pcE_reg[0]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2824.438 ; gain = 365.410 ; free physical = 8283 ; free virtual = 145806
----------------------------------------------------------------------------------
-WARNING: [Synth 8-6057] Memory: "DRAM/mem_reg" defined in module: "TOP" implemented as Ultra-Ram has no pipeline registers. It is recommended to use pipeline registers to achieve high performance.
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-Ultra RAM: Preliminary Mapping Report (see note below)
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+---------+--------------+--------------------------+-------------+
-|Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | URAM288 | Matrix Shape | FF provided for Pipeline | FF absorbed | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+---------+--------------+--------------------------+-------------+
-|TOP         | DRAM/mem_reg | 4 K x 32               | W |   | 4 K x 32               |   | R | Port A and B     | 1       | 1x1          | 0                        | 0           | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+---------+--------------+--------------------------+-------------+
-
-Note: The table above is a preliminary report that shows the Ultra RAMs at the current stage of the synthesis flow. Some Ultra RAMs may be reimplemented as non Ultra RAM primitives later in the synthesis flow. Multiple instantiated Ultra RAMs are reported only once. Fields "FF provided for Pipeline" and "FF absorbed" respectively indicate number of registers available for pipelining and number of registers absorbed in the URAM matrix for pipelining. 
-
-Block RAM: Preliminary Mapping Report (see note below)
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
-|Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
-|TOP         | IRAM/mem_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      |                 | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
-
-Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:08:52 ; elapsed = 00:09:29 . Memory (MB): peak = 4751.652 ; gain = 2985.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 3444.379 ; gain = 985.352 ; free physical = 7780 ; free virtual = 145303
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:09:19 ; elapsed = 00:09:58 . Memory (MB): peak = 4751.652 ; gain = 2985.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3519.496 ; gain = 1060.469 ; free physical = 7711 ; free virtual = 145234
----------------------------------------------------------------------------------
-WARNING: [Synth 8-6057] Memory: "DRAM/mem_reg" defined in module: "TOP" implemented as Ultra-Ram has no pipeline registers. It is recommended to use pipeline registers to achieve high performance.
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-Ultra RAM: Final Mapping Report
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+---------+--------------+--------------------------+-------------+
-|Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | URAM288 | Matrix Shape | FF provided for Pipeline | FF absorbed | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+---------+--------------+--------------------------+-------------+
-|TOP         | DRAM/mem_reg | 4 K x 32               | W |   | 4 K x 32               |   | R | Port A and B     | 1       | 1x1          | 0                        | 0           | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+---------+--------------+--------------------------+-------------+
-
-
-Block RAM: Final Mapping Report
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
-|Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
-|TOP         | IRAM/mem_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      |                 | 
-+------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+Finished Timing Optimization : Time (s): cpu = 00:10:29 ; elapsed = 00:11:10 . Memory (MB): peak = 5001.457 ; gain = 3234.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-7052] The timing for the instance IRAM/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance IRAM/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance IRAM/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance IRAM/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance DRAM/mem_reg_uram_0 (implemented as a Ultra RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/IRAM/s_axi_rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/IRAM/s_axi_rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3527.504 ; gain = 1068.477 ; free physical = 7703 ; free virtual = 145226
+Finished Technology Mapping : Time (s): cpu = 00:11:41 ; elapsed = 00:12:35 . Memory (MB): peak = 5058.090 ; gain = 3291.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -453,41 +505,43 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance IRAM/s_axi_rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance IRAM/s_axi_rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Finished IO Insertion : Time (s): cpu = 00:14:48 ; elapsed = 00:15:46 . Memory (MB): peak = 5142.047 ; gain = 3375.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Finished Renaming Generated Instances : Time (s): cpu = 00:14:49 ; elapsed = 00:15:47 . Memory (MB): peak = 5142.047 ; gain = 3375.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:15:11 ; elapsed = 00:16:09 . Memory (MB): peak = 5147.910 ; gain = 3381.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Finished Renaming Generated Ports : Time (s): cpu = 00:15:15 ; elapsed = 00:16:13 . Memory (MB): peak = 5147.910 ; gain = 3381.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Finished Handling Custom Attributes : Time (s): cpu = 00:15:24 ; elapsed = 00:16:22 . Memory (MB): peak = 5147.910 ; gain = 3381.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Finished Renaming Generated Nets : Time (s): cpu = 00:15:25 ; elapsed = 00:16:22 . Memory (MB): peak = 5147.910 ; gain = 3381.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -500,53 +554,53 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |BUFG     |     1|
-|2     |CARRY8   |    40|
-|3     |LUT1     |    13|
-|4     |LUT2     |   123|
-|5     |LUT3     |   102|
-|6     |LUT4     |   211|
-|7     |LUT5     |   382|
-|8     |LUT6     |  1169|
-|9     |MUXF7    |   264|
-|10    |MUXF8    |   128|
-|11    |RAMB36E2 |     4|
-|15    |URAM288  |     1|
-|16    |FDCE     |  1731|
-|17    |FDPE     |    16|
-|18    |FDRE     |   123|
-|19    |IBUF     |     4|
-|20    |OBUF     |     4|
-+------+---------+------+
++------+---------+-------+
+|      |Cell     |Count  |
++------+---------+-------+
+|1     |BUFG     |      1|
+|2     |CARRY8   |     48|
+|3     |LUT1     |     12|
+|4     |LUT2     |   1177|
+|5     |LUT3     |    649|
+|6     |LUT4     |    774|
+|7     |LUT5     |   3847|
+|8     |LUT6     |  53322|
+|9     |MUXF7    |  17760|
+|10    |MUXF8    |   8864|
+|11    |RAMB18E2 |      1|
+|12    |FDCE     | 135337|
+|13    |FDPE     |     18|
+|14    |FDRE     |    222|
+|15    |IBUF     |      4|
+|16    |OBUF     |      4|
++------+---------+-------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Finished Writing Synthesis Report : Time (s): cpu = 00:15:25 ; elapsed = 00:16:23 . Memory (MB): peak = 5147.910 ; gain = 3381.367
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 325 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 3646.316 ; gain = 1056.477 ; free physical = 7614 ; free virtual = 145137
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3646.316 ; gain = 1187.289 ; free physical = 7614 ; free virtual = 145137
+Synthesis finished with 0 errors, 0 critical warnings and 100 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:13:29 ; elapsed = 00:15:26 . Memory (MB): peak = 5147.910 ; gain = 3043.211
+Synthesis Optimization Complete : Time (s): cpu = 00:15:26 ; elapsed = 00:16:33 . Memory (MB): peak = 5147.910 ; gain = 3381.367
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3646.316 ; gain = 0.000 ; free physical = 7777 ; free virtual = 145300
-INFO: [Netlist 29-17] Analyzing 437 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 5147.910 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 26677 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'TOP' is not ideal for floorplanning, since the cellview 'DRAM' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3646.316 ; gain = 0.000 ; free physical = 7781 ; free virtual = 145304
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell IRAM/s_axi_rdata_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 5148.859 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 5 instances were transformed.
   BUFG => BUFGCE: 1 instance 
   IBUF => IBUF (IBUFCTRL, INBUF): 4 instances
 
-Synth Design complete | Checksum: 429e4ac0
+Synth Design complete | Checksum: d924235e
 INFO: [Common 17-83] Releasing license: Synthesis
-104 Infos, 115 Warnings, 0 Critical Warnings and 0 Errors encountered.
+203 Infos, 112 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:34 . Memory (MB): peak = 3646.316 ; gain = 2272.668 ; free physical = 7781 ; free virtual = 145304
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2772.381; main = 2772.381; forked = 268.926
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4085.008; main = 3628.516; forked = 917.125
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3652.523 ; gain = 0.000 ; free physical = 7781 ; free virtual = 145304
-INFO: [Common 17-1381] The checkpoint '/home/khang/Documents/SystemVerilog/SoC-RV32I/Vivado/rv32i/rv32i.runs/synth_1/TOP.dcp' has been generated.
+synth_design: Time (s): cpu = 00:16:55 ; elapsed = 00:18:16 . Memory (MB): peak = 5148.859 ; gain = 4595.668
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.275 . Memory (MB): peak = 5148.859 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.runs/synth_1/TOP.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 5148.859 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  4 13:09:54 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed May 13 23:42:59 2026...
