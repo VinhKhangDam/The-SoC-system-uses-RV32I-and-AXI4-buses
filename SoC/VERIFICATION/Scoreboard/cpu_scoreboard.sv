@@ -156,20 +156,25 @@ class cpu_scoreboard extends uvm_scoreboard;
 
         `uvm_info("SCB", "", UVM_LOW)
         `uvm_info("SCB",
-            "╔══════════════════════════════════════════════════════════════╗",
+            "==============================================================",
             UVM_LOW)
+
         `uvm_info("SCB",
-            "║            CPU REGISTER FILE — FINAL RESULT                 ║",
+            "            CPU REGISTER FILE - FINAL RESULT                  ",
             UVM_LOW)
+
         `uvm_info("SCB",
-            "╠═══════╦══════════════╦══════════════╦════════╦══════════════╣",
+            "==============================================================",
             UVM_LOW)
+
         `uvm_info("SCB",
-            "║  REG  ║   EXPECTED   ║    ACTUAL    ║ MATCH  ║    STATUS    ║",
+            " REG   |   EXPECTED   |    ACTUAL    | MATCH |    STATUS    ",
             UVM_LOW)
+
         `uvm_info("SCB",
-            "╠═══════╬══════════════╬══════════════╬════════╬══════════════╣",
+            "--------------------------------------------------------------",
             UVM_LOW)
+        `uvm_info("SCB", "", UVM_LOW)
 
         for (int i = 0; i < 32; i++) begin
             logic [31:0] exp_val = expected_regs[i];
@@ -180,49 +185,62 @@ class cpu_scoreboard extends uvm_scoreboard;
                 status    = "NO_REF";
                 match_str = "  ??  ";
                 skip_count++;
+
             end else if (i == 0) begin
                 act_val   = 32'h0;
-                match_str = "  ✓   ";
+                match_str = " PASS ";
                 status    = "PASS";
                 pass_count++;
+
             end else if (!reg_written[i] && exp_val == 32'h0) begin
-                match_str = "  ✓   ";
+                match_str = " PASS ";
                 status    = "PASS";
                 pass_count++;
+
             end else if (!reg_written[i]) begin
-                match_str = "  ✗   ";
+                match_str = " FAIL ";
                 status    = "FAIL (never written)";
                 fail_count++;
+
             end else if (act_val === exp_val) begin
-                match_str = "  ✓   ";
+                match_str = " PASS ";
                 status    = "PASS";
                 pass_count++;
+
             end else begin
-                match_str = "  ✗   ";
+                match_str = " FAIL ";
                 status    = $sformatf("FAIL (diff=%h)", exp_val ^ act_val);
                 fail_count++;
             end
 
             `uvm_info("SCB",
-                $sformatf("║  x%02d  ║  %h  ║  %h  ║%s║  %-12s  ║",
-                    i, exp_val, (i==0)?32'h0:act_val, match_str, status),
+                $sformatf("| x%02d |  %08h  |  %08h  | %-5s | %-20s |",
+                    i,
+                    exp_val,
+                    (i==0) ? 32'h0 : act_val,
+                    match_str,
+                    status),
                 UVM_LOW)
         end
 
         `uvm_info("SCB",
-            "╠══════════════════════════════════════════════════════════════╣",
+            "--------------------------------------------------------------",
             UVM_LOW)
+
         `uvm_info("SCB",
-            $sformatf("║  Total WB events: %-5d   PASS: %-3d  FAIL: %-3d  SKIP: %-3d  ║",
+            $sformatf(" Total WB events : %-5d   PASS : %-3d   FAIL : %-3d   SKIP : %-3d",
                 wb_count, pass_count, fail_count, skip_count),
             UVM_LOW)
+
         `uvm_info("SCB",
-            $sformatf("║  AXI Write Errors: %-3d   AXI Read Errors: %-3d               ║",
+            $sformatf(" AXI Write Errors : %-3d   AXI Read Errors : %-3d",
                 axi_write_errors, axi_read_errors),
             UVM_LOW)
+
         `uvm_info("SCB",
-            "╚══════════════════════════════════════════════════════════════╝",
+            "==============================================================",
             UVM_LOW)
+
         `uvm_info("SCB", "", UVM_LOW)
 
         if (fail_count > 0)

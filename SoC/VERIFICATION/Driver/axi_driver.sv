@@ -41,7 +41,7 @@ class axi_driver extends uvm_driver #(axi_transaction);
 	task drive_write(axi_transaction tr);
 		@(vif.drv_cb);
 		vif.drv_cb.awaddr  <= tr.addr;
-		vif.drv_cb.awprot  <= tr.awprot;   // ✅ already correct
+		vif.drv_cb.awprot  <= tr.awprot;
 		vif.drv_cb.awvalid <= 1'b1;
 		vif.drv_cb.wdata   <= tr.data;
 		vif.drv_cb.wstrb   <= tr.wstrb;
@@ -66,7 +66,7 @@ class axi_driver extends uvm_driver #(axi_transaction);
 	task drive_read(axi_transaction tr);
 		@(vif.drv_cb);
 		vif.drv_cb.araddr  <= tr.addr;
-		vif.drv_cb.arprot  <= tr.arprot;   // ✅ FIXED: was missing
+		vif.drv_cb.arprot  <= tr.arprot;
 		vif.drv_cb.arvalid <= 1'b1;
 		vif.drv_cb.rready  <= 1'b1;
 

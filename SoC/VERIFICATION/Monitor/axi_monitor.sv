@@ -35,7 +35,7 @@ class axi_monitor extends uvm_monitor;
 			if (vif.awvalid && vif.awready) begin
 				tr          = axi_transaction::type_id::create("tr");
 				tr.addr     = vif.awaddr;
-				tr.awprot   = vif.awprot;   // ✅ FIXED: capture awprot
+				tr.awprot   = vif.awprot;
 				tr.is_write = 1'b1;
 
 				// Capture W channel
@@ -47,7 +47,7 @@ class axi_monitor extends uvm_monitor;
 				// Capture B response
 				while (!(vif.bvalid && vif.bready))
 					@(posedge vif_cr.clk);
-				tr.bresp = vif.bresp;       // ✅ FIXED: capture bresp
+				tr.bresp = vif.bresp;     
 
 				`uvm_info("MON_WR",
 					$sformatf("Detected WRITE : Addr=%h Data=%h Strb=%b Prot=%b BResp=%b",
@@ -67,14 +67,14 @@ class axi_monitor extends uvm_monitor;
 			if (vif.arvalid && vif.arready) begin
 				tr          = axi_transaction::type_id::create("tr");
 				tr.addr     = vif.araddr;
-				tr.arprot   = vif.arprot;   // ✅ FIXED: capture arprot
+				tr.arprot   = vif.arprot; 
 				tr.is_write = 1'b0;
 
 				// Capture R data + response
 				while (!(vif.rvalid && vif.rready))
 					@(posedge vif_cr.clk);
 				tr.data  = vif.rdata;
-				tr.rresp = vif.rresp;       // ✅ FIXED: capture rresp
+				tr.rresp = vif.rresp;
 
 				`uvm_info("MON_RD",
 					$sformatf("Detected READ  : Addr=%h Data=%h Prot=%b RResp=%b",

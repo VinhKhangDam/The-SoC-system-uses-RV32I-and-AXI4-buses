@@ -185,7 +185,7 @@ class cpu_monitor extends uvm_monitor;
 
         `uvm_info("CPU_MON", "=== CPU Monitor started — watching pipeline ===", UVM_LOW)
         `uvm_info("CPU_MON",
-            "─────────────────────────────────────────────────────────", UVM_LOW)
+            "============================================================", UVM_LOW)
 
         fork
             monitor_pipeline();

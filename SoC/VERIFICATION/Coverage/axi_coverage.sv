@@ -274,17 +274,21 @@ class axi_coverage extends uvm_subscriber #(axi_transaction);
         real total_cov  = (proto_cov + data_cov + dram_cov + periph_cov + cpu_cov) / 5.0;
 
         `uvm_info("COV", "", UVM_LOW)
-        `uvm_info("COV", "╔══════════════════════════════════════════════════════╗", UVM_LOW)
-        `uvm_info("COV", "║           FUNCTIONAL COVERAGE REPORT                ║", UVM_LOW)
-        `uvm_info("COV", "╠══════════════════════════════════════════════════════╣", UVM_LOW)
-        `uvm_info("COV", $sformatf("║  AXI Protocol Coverage   : %6.2f%%  (target >90%%) ║", proto_cov),  UVM_LOW)
-        `uvm_info("COV", $sformatf("║  Data Pattern Coverage   : %6.2f%%  (target >90%%) ║", data_cov),   UVM_LOW)
-        `uvm_info("COV", $sformatf("║  DRAM Address Coverage   : %6.2f%%  (target >90%%) ║", dram_cov),   UVM_LOW)
-        `uvm_info("COV", $sformatf("║  Peripheral Reg Coverage : %6.2f%%  (target >80%%) ║", periph_cov), UVM_LOW)
-        `uvm_info("COV", $sformatf("║  CPU Pipeline Coverage   : %6.2f%%  (target >80%%) ║", cpu_cov),    UVM_LOW)
-        `uvm_info("COV", "╠══════════════════════════════════════════════════════╣", UVM_LOW)
-        `uvm_info("COV", $sformatf("║  TOTAL (avg)             : %6.2f%%  (target >90%%) ║", total_cov),  UVM_LOW)
-        `uvm_info("COV", "╚══════════════════════════════════════════════════════╝", UVM_LOW)
+        `uvm_info("COV", "======================================================", UVM_LOW)
+        `uvm_info("COV", "               FUNCTIONAL COVERAGE REPORT             ", UVM_LOW)
+        `uvm_info("COV", "======================================================", UVM_LOW)
+
+        `uvm_info("COV", $sformatf(" AXI Protocol Coverage   : %6.2f%%  (target >90%%)", proto_cov),  UVM_LOW)
+        `uvm_info("COV", $sformatf(" Data Pattern Coverage   : %6.2f%%  (target >90%%)", data_cov),   UVM_LOW)
+        `uvm_info("COV", $sformatf(" DRAM Address Coverage   : %6.2f%%  (target >90%%)", dram_cov),   UVM_LOW)
+        `uvm_info("COV", $sformatf(" Peripheral Reg Coverage : %6.2f%%  (target >80%%)", periph_cov), UVM_LOW)
+        `uvm_info("COV", $sformatf(" CPU Pipeline Coverage   : %6.2f%%  (target >80%%)", cpu_cov),    UVM_LOW)
+
+        `uvm_info("COV", "------------------------------------------------------", UVM_LOW)
+
+        `uvm_info("COV", $sformatf(" TOTAL (avg)             : %6.2f%%  (target >90%%)", total_cov), UVM_LOW)
+
+        `uvm_info("COV", "======================================================", UVM_LOW)
         `uvm_info("COV", "", UVM_LOW)
 
         if (proto_cov  < 90.0) `uvm_warning("COV", $sformatf("AXI Protocol  %.1f%% < 90%% target", proto_cov))

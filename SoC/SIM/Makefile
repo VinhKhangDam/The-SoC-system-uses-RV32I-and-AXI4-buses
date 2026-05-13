@@ -11,9 +11,15 @@ INF_DIR      = $(ROOT_DIR)/INF
 VERIF_DIR    = $(ROOT_DIR)/VERIFICATION
 SIM_DIR      = $(ROOT_DIR)/SIM
 
+# --- Windows path conversion for WSL + Questa Windows ---
+ROOT_DIR_WIN := $(shell wslpath -m $(ROOT_DIR))
+DUT_DIR_WIN  := $(ROOT_DIR_WIN)/DUT
+INF_DIR_WIN  := $(ROOT_DIR_WIN)/INF
+VERIF_DIR_WIN:= $(ROOT_DIR_WIN)/VERIFICATION
+
 # --- Tools ---
-VLOG_CMD     = vlog -sv +acc -L uvm -cover bcst
-VSIM_CMD     = vsim -c -L uvm -coverage
+VLOG_CMD     = vlog -sv +acc -cover bcst
+VSIM_CMD     = vsim -c -coverage
 VOPT_CMD     = vopt +acc +cover top_tb -o vopt_top
 
 # --- Python ---
@@ -43,16 +49,16 @@ endif
 seed = $(MEM_SEED)
 
 # --- FILE LIST ---
-INF_FILES    = $(INF_DIR)/*.sv
-DUT_FILES    = $(DUT_DIR)/Slaves/*.sv \
-               $(DUT_DIR)/CPU/*.sv \
-               $(DUT_DIR)/Master/*.sv \
-               $(DUT_DIR)/AXI_Master.sv \
-               $(DUT_DIR)/AXI4_Lite_Interconnect.sv \
-               $(DUT_DIR)/TOP.sv
+INF_FILES    = $(INF_DIR_WIN)/*.sv
+DUT_FILES    = $(DUT_DIR_WIN)/Slaves/*.sv \
+               $(DUT_DIR_WIN)/CPU/*.sv \
+               $(DUT_DIR_WIN)/Master/*.sv \
+               $(DUT_DIR_WIN)/AXI_Master.sv \
+               $(DUT_DIR_WIN)/AXI4_Lite_Interconnect.sv \
+               $(DUT_DIR_WIN)/TOP.sv
 
-UVM_PKG      = $(VERIF_DIR)/Package/soc_pkg.svh
-TOP_TB       = $(VERIF_DIR)/top_tb.sv
+UVM_PKG      = $(VERIF_DIR_WIN)/Package/soc_pkg.svh
+TOP_TB       = $(VERIF_DIR_WIN)/top_tb.sv
 
 #==========================================================================================
 # AVAILABLE TESTS
@@ -120,19 +126,19 @@ compile: gen_mem
 	$(VLOG_CMD) $(INF_FILES)
 	
 	@echo "--- [2/4] Compile DUT ---"
-	$(VLOG_CMD) +incdir+$(DUT_DIR)/CPU $(DUT_FILES)
+	$(VLOG_CMD) +incdir+$(DUT_DIR_WIN)/CPU $(DUT_FILES)
 	
 	@echo "--- [3/4] Compile UVM ---"
-	$(VLOG_CMD) +incdir+$(VERIF_DIR)/Transaction \
-	            +incdir+$(VERIF_DIR)/Sequencer \
-	            +incdir+$(VERIF_DIR)/Monitor \
-	            +incdir+$(VERIF_DIR)/Driver \
-	            +incdir+$(VERIF_DIR)/Agent \
-	            +incdir+$(VERIF_DIR)/Coverage \
-	            +incdir+$(VERIF_DIR)/Env \
-	            +incdir+$(VERIF_DIR)/Scoreboard \
-	            +incdir+$(VERIF_DIR)/Sequence \
-	            +incdir+$(VERIF_DIR)/Test \
+	$(VLOG_CMD) +incdir+$(VERIF_DIR_WIN)/Transaction \
+	            +incdir+$(VERIF_DIR_WIN)/Sequencer \
+	            +incdir+$(VERIF_DIR_WIN)/Monitor \
+	            +incdir+$(VERIF_DIR_WIN)/Driver \
+	            +incdir+$(VERIF_DIR_WIN)/Agent \
+	            +incdir+$(VERIF_DIR_WIN)/Coverage \
+	            +incdir+$(VERIF_DIR_WIN)/Env \
+	            +incdir+$(VERIF_DIR_WIN)/Scoreboard \
+	            +incdir+$(VERIF_DIR_WIN)/Sequence \
+	            +incdir+$(VERIF_DIR_WIN)/Test \
 	            $(UVM_PKG)
 	
 	@echo "--- [4/4] Compile Top TB ---"
@@ -178,7 +184,7 @@ endif
 		MODE=UVM_MASTER; \
 	fi; \
 	echo "MODE = $$MODE"; \
-	vsim -i -sv_seed $(seed) -L uvm vopt_top \
+	vsim -i -sv_seed $(seed) vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
 		+MEM_SEED=$(MEM_SEED) \
 		-do "add wave -recursive vopt_top/*; run -all"
