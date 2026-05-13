@@ -80,6 +80,7 @@ module LSU (
     logic [3:0]  wstrb_reg;
     logic [31:0] if_pc_reg;           // latched PC for IF fetch
     logic [31:0] if_instr_reg;        // latched instruction result
+    logic [31:0] rdata_reg;
 
     // ----------------------------------------------------------------
     // DATA channel: write strobe + data alignment (same as before)
@@ -341,6 +342,10 @@ module LSU (
         endcase
     end
 
-    assign lsu_rdata_o = rdata_aligned;
+    always_ff @( posedge clk ) begin
+        if (PresentState == ST_R_DATA && m_axi_rvalid)
+            rdata_reg <= rdata_aligned;
+    end
+    assign lsu_rdata_o = rdata_reg;
 
 endmodule

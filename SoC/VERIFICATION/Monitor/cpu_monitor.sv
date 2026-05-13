@@ -24,6 +24,14 @@ class cpu_monitor extends uvm_monitor;
     logic [31:0] last_pc_f    = '0;
     logic [31:0] last_instr_f = '0;
 
+    // ======================================================
+    // Instruction statistics
+    // ======================================================
+    int total_instr = 0;
+    int cycle_count = 0;
+
+    int instr_stat[string];
+
     // ---- Instruction mnemonic decoder (for readable logs) ----
     function string decode_instr(logic [31:0] instr);
         logic [6:0] op   = instr[6:0];
@@ -78,6 +86,79 @@ class cpu_monitor extends uvm_monitor;
         endcase
     endfunction
 
+    function string get_opcode_name(logic [31:0] instr);
+
+        logic [6:0] op = instr[6:0];
+        logic [2:0] f3 = instr[14:12];
+        logic       f7 = instr[30];
+
+        case (op)
+
+            // =========================
+            // R-TYPE
+            // =========================
+            7'b0110011: begin
+                case ({f7,f3})
+                    4'b0_000: return "ADD";
+                    4'b1_000: return "SUB";
+                    4'b0_111: return "AND";
+                    4'b0_110: return "OR";
+                    4'b0_100: return "XOR";
+                    4'b0_001: return "SLL";
+                    4'b0_101: return "SRL";
+                    4'b1_101: return "SRA";
+                    4'b0_010: return "SLT";
+                    default:  return "R_UNKNOWN";
+                endcase
+            end
+
+            // =========================
+            // I-TYPE
+            // =========================
+            7'b0010011: begin
+                case (f3)
+                    3'b000: return "ADDI";
+                    3'b111: return "ANDI";
+                    3'b110: return "ORI";
+                    3'b100: return "XORI";
+                    default:return "I_UNKNOWN";
+                endcase
+            end
+
+            // =========================
+            // LOAD / STORE
+            // =========================
+            7'b0000011: return "LW";
+            7'b0100011: return "SW";
+
+            // =========================
+            // BRANCH
+            // =========================
+            7'b1100011: begin
+                case (f3)
+                    3'b000: return "BEQ";
+                    3'b001: return "BNE";
+                    3'b100: return "BLT";
+                    3'b101: return "BGE";
+                    default:return "BRANCH_UNKNOWN";
+                endcase
+            end
+
+            // =========================
+            // JUMP
+            // =========================
+            7'b1101111: return "JAL";
+
+            // =========================
+            // U-TYPE
+            // =========================
+            7'b0110111: return "LUI";
+
+            default: return "UNKNOWN";
+        endcase
+
+    endfunction
+
     function new(string name, uvm_component parent);
         super.new(name, parent);
         wb_port  = new("wb_port",  this);
@@ -119,6 +200,7 @@ class cpu_monitor extends uvm_monitor;
     task monitor_pipeline();
         forever begin
             @(cpu_vif.mon_cb);
+            cycle_count++;
 
             // ---- FETCH: log every new PC / instruction ----
             if (cpu_vif.mon_cb.PcF !== last_pc_f && !cpu_vif.mon_cb.StallF) begin

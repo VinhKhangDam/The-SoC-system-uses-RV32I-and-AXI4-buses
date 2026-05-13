@@ -178,7 +178,7 @@ def simulate(instructions):
     mem      = {}
     pc       = 0
     pc_limit = len(instructions) * 4
-    max_steps = len(instructions) * 10
+    max_steps = len(instructions) * 4
     steps     = 0
 
     while steps < max_steps:
