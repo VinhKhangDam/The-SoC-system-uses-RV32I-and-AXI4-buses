@@ -21,6 +21,8 @@ module IF_ID (
             // If flush, insert NOP 
         end else if (flush) begin
             instrD <= NOP;
+            pcD <= '0;
+            pcPlus4D <= '0;
         end else if (!stall) begin
             instrD <= instrF;
             pcD <= pcF;

@@ -5,44 +5,72 @@ module top_tb;
     import soc_pkg::*;
     `include "uvm_macros.svh"
 
-    logic clk;
-    logic rstn;
+    // ----------------------------------------------------------------
+    // Clock & reset come from clk_rst_inf — it drives clk and rstn
+    // internally via its own initial blocks. No standalone drivers here.
+    // FIX: removed duplicate clk/rstn logic — would cause multi-driver
+    // ----------------------------------------------------------------
+    clk_rst_inf     cr_if ();
+    soc_inf         s_if  (.clk(cr_if.clk), .rstn(cr_if.rstn));
+    cpu_monitor_inf cpu_if(.clk(cr_if.clk), .rstn(cr_if.rstn));
 
-    clk_rst_inf cr_if (
-        .clk(clk), 
-        .rstn(rstn)
-    );
-    soc_inf s_if (
-        .clk(clk), 
-        .rstn(rstn)
-    );
-
+    // ----------------------------------------------------------------
+    // DUT
+    // ----------------------------------------------------------------
     TOP dut (
-        .clk(clk),
-        .rstn(rstn),
-        .uart_tx(s_if.uart_tx),
-        .uart_rx(s_if.uart_rx),
-        .spi_sck(s_if.spi_sck),
-        .spi_mosi(s_if.spi_mosi),
-        .spi_miso(s_if.spi_miso),
-        .spi_cs_n(s_if.spi_cs_n)
+        .clk      (cr_if.clk),
+        .rstn     (cr_if.rstn),
+        .uart_tx  (s_if.uart_tx),
+        .uart_rx  (s_if.uart_rx),
+        .spi_sck  (s_if.spi_sck),
+        .spi_mosi (s_if.spi_mosi),
+        .spi_miso (s_if.spi_miso),
+        .spi_cs_n (s_if.spi_cs_n)
     );
 
+    // ---- Fetch ----
+    assign cpu_if.PcF         = dut.axi_master.cpu.PcF;
+    assign cpu_if.InstrF      = dut.axi_master.cpu.InstrF;
+    // ---- Decode ----
+    assign cpu_if.InstrD      = dut.axi_master.cpu.InstrD;
+    assign cpu_if.PcD         = dut.axi_master.cpu.PcD;
+    assign cpu_if.Rs1D        = dut.axi_master.cpu.Rs1D;
+    assign cpu_if.Rs2D        = dut.axi_master.cpu.Rs2D;
+    assign cpu_if.RdD         = dut.axi_master.cpu.RdD;
+    // ---- Execute ----
+    assign cpu_if.ALUResultE  = dut.axi_master.cpu.ALUResultE;
+    assign cpu_if.RdE         = dut.axi_master.cpu.RdE;
+    assign cpu_if.ForwardA    = dut.axi_master.cpu.ForwardA;
+    assign cpu_if.ForwardB    = dut.axi_master.cpu.ForwardB;
+    assign cpu_if.PCSrc       = dut.axi_master.cpu.PCSrc;
+    // ---- Memory ----
+    assign cpu_if.ALUResultM  = dut.axi_master.cpu.ALUResultM;
+    assign cpu_if.WriteDataM  = dut.axi_master.cpu.WriteDataM;
+    assign cpu_if.MemWriteM   = dut.axi_master.cpu.MemWriteM;
+    assign cpu_if.RdM         = dut.axi_master.cpu.RdM;
+    // ---- Writeback ----
+    assign cpu_if.RegWriteW   = dut.axi_master.cpu.RegWriteW;
+    assign cpu_if.RdW         = dut.axi_master.cpu.RdW;
+    assign cpu_if.ResultW     = dut.axi_master.cpu.ResultW;
+    // ---- Hazard ----
+    assign cpu_if.StallF      = dut.axi_master.cpu.StallF;
+    assign cpu_if.FlushE      = dut.axi_master.cpu.FlushE;
+    assign cpu_if.mem_stall_i = dut.axi_master.cpu.mem_stall_i;
+
+    // ----------------------------------------------------------------
+    // SINGLE initial block — fixes the race condition
+    // ----------------------------------------------------------------
     bit use_uvm_master;
 
     initial begin
-        if ($test$plusargs("UVM_MASTER")) begin
-            use_uvm_master = 1;
-            $display("[TB] Running in UVM MASTER mode");
-        end else begin
-            use_uvm_master = 0;
-            $display("[TB] Running in CPU MASTER mode");
-        end
-    end
+        use_uvm_master = $test$plusargs("UVM_MASTER") ? 1 : 0;
 
-    initial begin
+        if (use_uvm_master)
+            $display("[TB] Mode: UVM MASTER — driver controls AXI bus");
+        else
+            $display("[TB] Mode: CPU MASTER — CPU drives AXI, UVM observes");
+
         if (use_uvm_master) begin
-            // UVM = master
             force dut.m_axi_awaddr  = s_if.awaddr;
             force dut.m_axi_awvalid = s_if.awvalid;
             force dut.m_axi_wdata   = s_if.wdata;
@@ -52,7 +80,6 @@ module top_tb;
             force dut.m_axi_arvalid = s_if.arvalid;
             force dut.m_axi_bready  = s_if.bready;
             force dut.m_axi_rready  = s_if.rready;
-
             force s_if.awready = dut.m_axi_awready;
             force s_if.wready  = dut.m_axi_wready;
             force s_if.arready = dut.m_axi_arready;
@@ -61,12 +88,30 @@ module top_tb;
             force s_if.rvalid  = dut.m_axi_rvalid;
             force s_if.rdata   = dut.m_axi_rdata;
             force s_if.rresp   = dut.m_axi_rresp;
+        end else begin
+            force s_if.awaddr  = dut.m_axi_awaddr;
+            force s_if.awvalid = dut.m_axi_awvalid;
+            force s_if.awready = dut.m_axi_awready;
+            force s_if.wdata   = dut.m_axi_wdata;
+            force s_if.wstrb   = dut.m_axi_wstrb;
+            force s_if.wvalid  = dut.m_axi_wvalid;
+            force s_if.wready  = dut.m_axi_wready;
+            force s_if.bresp   = dut.m_axi_bresp;
+            force s_if.bvalid  = dut.m_axi_bvalid;
+            force s_if.bready  = dut.m_axi_bready;
+            force s_if.araddr  = dut.m_axi_araddr;
+            force s_if.arvalid = dut.m_axi_arvalid;
+            force s_if.arready = dut.m_axi_arready;
+            force s_if.rdata   = dut.m_axi_rdata;
+            force s_if.rvalid  = dut.m_axi_rvalid;
+            force s_if.rready  = dut.m_axi_rready;
+            force s_if.rresp   = dut.m_axi_rresp;
         end
-    end
 
-    initial begin
-        uvm_config_db #(virtual clk_rst_inf)::set(null,"*", "vif_cr", cr_if); 
-        uvm_config_db#(virtual soc_inf)::set(null, "*", "vif_soc", s_if);
+        uvm_config_db #(virtual clk_rst_inf)::set(null,    "*", "vif_cr",  cr_if);
+        uvm_config_db #(virtual soc_inf)::set(null,        "*", "vif_soc", s_if);
+        uvm_config_db #(virtual cpu_monitor_inf)::set(null,"*", "cpu_vif", cpu_if);
+
         run_test();
     end
 

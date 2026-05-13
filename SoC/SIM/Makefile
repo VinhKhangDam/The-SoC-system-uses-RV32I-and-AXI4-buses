@@ -55,6 +55,21 @@ UVM_PKG      = $(VERIF_DIR)/Package/soc_pkg.svh
 TOP_TB       = $(VERIF_DIR)/top_tb.sv
 
 #==========================================================================================
+# AVAILABLE TESTS
+#==========================================================================================
+ 
+# --- UVM MASTER tests (axi_*) ---
+UVM_TESTS = \
+    axi_write_test \
+    axi_read_test \
+    axi_random_wr_rd_test \
+    axi_multi_slaves_test
+ 
+# --- CPU MASTER tests (cpu_*) ---
+CPU_TESTS = \
+    cpu_test
+
+#==========================================================================================
 # MAIN TARGET (SINGLE TEST ONLY)
 #==========================================================================================
 
@@ -78,11 +93,6 @@ endif
 		+UVM_TESTNAME=$(test_name) +$$MODE \
 		+MEM_SEED=$(MEM_SEED) \
 		-do "coverage save -onexit coverage_result.ucdb; run -all; quit"
-
-	@echo "-------------------------------------------------------"
-	@echo "--- COVERAGE RESULT ---"
-	@echo "-------------------------------------------------------"
-	vcover report -cvg -summary coverage_result.ucdb
 
 #==========================================================================================
 # GENERATE MEMORY + EXPECTED RESULTS
@@ -185,26 +195,36 @@ clean:
 #==========================================================================================
 # HELP
 #==========================================================================================
-
+ 
 help:
-	@echo "Usage:"
-	@echo "  make all test_name=<test>             : compile + run 1 test"
-	@echo "  make all test_name=<test> MEM_SEED=42 : reproducible run"
-	@echo "  make sim test_name=<test>             : run only (no compile)"
-	@echo "  make gui test_name=<test>             : open waveform"
-	@echo "  make gen_mem                          : regenerate mem + golden reference"
 	@echo ""
-	@echo "Examples:"
-	@echo "  make all test_name=axi_random_wr_rd_test"
-	@echo "  make all test_name=cpu_instr_test MEM_SEED=1234"
+	@echo "======================================================="
+	@echo "         SoC-RV32I Verification — HELP"
+	@echo "======================================================="
 	@echo ""
-	@echo "Outputs:"
-	@echo "  instr.mem         : generated instruction stream"
-	@echo "  cpu_instr.mem     : generated CPU instruction stream"
-	@echo "  expected.mem      : golden register file (x0-x31) for instr.mem"
-	@echo "  cpu_expected.mem  : golden register file (x0-x31) for cpu_instr.mem"
+	@echo "  Targets:"
+	@echo "    make all  test_name=<test>             compile + run 1 test"
+	@echo "    make sim  test_name=<test>             run only (no recompile)"
+	@echo "    make gui  test_name=<test>             open waveform viewer"
+	@echo "    make compile                           compile only"
+	@echo "    make gen_mem                           regenerate mem + golden ref"
+	@echo "    make list                              show all available tests"
+	@echo "    make clean                             remove all build artifacts"
+	@echo "    make help                              show this message"
 	@echo ""
-	@echo "Note:"
-	@echo "  axi_* → UVM master"
-	@echo "  cpu_* → CPU master"
-	@echo "  MEM_SEED is auto-generated each run unless you fix it"
+	@echo "  Options:"
+	@echo "    MEM_SEED=<N>   fix the RNG seed for reproducible runs (default: random)"
+	@echo ""
+	@echo "  Examples:"
+	@echo "    make all  test_name=axi_write_test"
+	@echo "    make all  test_name=axi_random_wr_rd_test MEM_SEED=1234"
+	@echo "    make all  test_name=cpu_test"
+	@echo "    make sim  test_name=axi_read_test"
+	@echo "    make gui  test_name=cpu_test MEM_SEED=42"
+	@echo ""
+	@echo "  Test naming convention:"
+	@echo "    axi_*  →  UVM MASTER  (driver controls AXI bus)"
+	@echo "    cpu_*  →  CPU MASTER  (CPU runs, UVM observes pipeline)"
+	@echo ""
+	@echo "  Run 'make list' to see all available test names."
+	@echo ""

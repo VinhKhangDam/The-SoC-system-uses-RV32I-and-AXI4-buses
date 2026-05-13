@@ -2,7 +2,7 @@ class axi_monitor extends uvm_monitor;
 	`uvm_component_utils(axi_monitor)
 
 	virtual clk_rst_inf vif_cr;
-	virtual soc_inf vif;
+	virtual soc_inf     vif;
 
 	uvm_analysis_port #(axi_transaction) item_collected_port;
 
@@ -26,45 +26,60 @@ class axi_monitor extends uvm_monitor;
 		join_none
 	endtask
 
-	//See Write Channel
+	// Watch Write Channel
 	task collect_write_transactions();
 		forever begin
 			axi_transaction tr;
 			@(posedge vif_cr.clk);
 
-			if (vif.awready && vif.awvalid) begin
-				tr = axi_transaction::type_id::create("tr");	
-				tr.addr = vif.awaddr;
+			if (vif.awvalid && vif.awready) begin
+				tr          = axi_transaction::type_id::create("tr");
+				tr.addr     = vif.awaddr;
+				tr.awprot   = vif.awprot;   // ✅ FIXED: capture awprot
 				tr.is_write = 1'b1;
 
-				while (!(vif.wvalid && vif.wready)) 
-				@(posedge vif_cr.clk);
-				tr.data = vif.wdata;
+				// Capture W channel
+				while (!(vif.wvalid && vif.wready))
+					@(posedge vif_cr.clk);
+				tr.data  = vif.wdata;
 				tr.wstrb = vif.wstrb;
 
-				while (!(vif.bvalid && vif.bready)) @(posedge vif_cr.clk);
-				
-				`uvm_info("MON_WR", $sformatf("Detected WRITE : Addr = %h, Data = %h", tr.addr, tr.data), UVM_LOW)
+				// Capture B response
+				while (!(vif.bvalid && vif.bready))
+					@(posedge vif_cr.clk);
+				tr.bresp = vif.bresp;       // ✅ FIXED: capture bresp
+
+				`uvm_info("MON_WR",
+					$sformatf("Detected WRITE : Addr=%h Data=%h Strb=%b Prot=%b BResp=%b",
+						tr.addr, tr.data, tr.wstrb, tr.awprot, tr.bresp),
+					UVM_LOW)
 				item_collected_port.write(tr);
 			end
 		end
 	endtask
 
-	// See Read Channel
+	// Watch Read Channel
 	task collect_read_transactions();
 		forever begin
 			axi_transaction tr;
 			@(posedge vif_cr.clk);
 
 			if (vif.arvalid && vif.arready) begin
-				tr = axi_transaction::type_id::create("tr");
-				tr.addr = vif.araddr;
+				tr          = axi_transaction::type_id::create("tr");
+				tr.addr     = vif.araddr;
+				tr.arprot   = vif.arprot;   // ✅ FIXED: capture arprot
 				tr.is_write = 1'b0;
 
-				while (!(vif.rvalid && vif.rready)) @(posedge vif_cr.clk);
-				tr.data = vif.rdata;
+				// Capture R data + response
+				while (!(vif.rvalid && vif.rready))
+					@(posedge vif_cr.clk);
+				tr.data  = vif.rdata;
+				tr.rresp = vif.rresp;       // ✅ FIXED: capture rresp
 
-				`uvm_info("MON_RD", $sformatf("Deteced READ : Addr = %h, Data = %h", tr.addr, tr.data), UVM_LOW)
+				`uvm_info("MON_RD",
+					$sformatf("Detected READ  : Addr=%h Data=%h Prot=%b RResp=%b",
+						tr.addr, tr.data, tr.arprot, tr.rresp),
+					UVM_LOW)
 				item_collected_port.write(tr);
 			end
 		end

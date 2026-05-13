@@ -33,6 +33,8 @@ module ALUControl (
                     default: ALUControl = 4'b0010;
                 endcase
             end
+
+            2'b11: ALUControl = 4'b1111; // Pass B (immediate) for LUI
             
             default: ALUControl = 4'b0010;
         endcase

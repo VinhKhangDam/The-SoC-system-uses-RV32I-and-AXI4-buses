@@ -159,7 +159,7 @@ module LSU (
             end
 
             // Latch IF PC when starting an IF fetch in IDLE
-            if (PresentState == ST_IDLE && !req_i && if_req_i) begin
+            if (PresentState == ST_IDLE && if_req_i) begin
                 if_pc_reg <= if_pc_i;
             end
 

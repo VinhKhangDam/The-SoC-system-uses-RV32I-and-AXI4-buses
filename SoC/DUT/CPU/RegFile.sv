@@ -11,7 +11,7 @@ module RegFile (
 
     // Write logic
     always_ff @(posedge clk or negedge rstn) begin
-        if (~rstn) begin
+        if (!rstn) begin
             for (int i = 0; i < 32; i++) begin
                 reg_internal[i] <= '0;
             end
@@ -23,8 +23,8 @@ module RegFile (
 
     // Read logic
     assign rd1 = (rs1 == 5'd0) ? 32'd0 : 
-                 ((rs1 == rd) && write_enable) ? WriteData : reg_internal[rs1];
-                 
+             ((rs1 == rd) && write_enable && (rd != 5'd0)) ? WriteData : reg_internal[rs1];
+             
     assign rd2 = (rs2 == 5'd0) ? 32'd0 : 
-                 ((rs2 == rd) && write_enable) ? WriteData : reg_internal[rs2];
+             ((rs2 == rd) && write_enable && (rd != 5'd0)) ? WriteData : reg_internal[rs2];
 endmodule

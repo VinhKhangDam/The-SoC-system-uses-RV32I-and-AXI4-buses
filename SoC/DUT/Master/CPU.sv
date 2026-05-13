@@ -60,6 +60,8 @@ module CPU (
     // Stall/Flush from HazardUnit
     logic StallF, StallD, FlushE, FlushD;
 
+    logic hz_FlushE;
+
     // Combined AXI stall passed into HazardUnit
     logic any_stall;
     assign any_stall = if_stall_i | mem_stall_i;
@@ -271,9 +273,11 @@ module CPU (
         .forwardBE(ForwardB),
         .stallF(StallF),   // -> pc_reg, IF_ID.stall
         .stallD(StallD),   // -> ID_EX.stall
-        .flushE(FlushE),   // -> ID_EX.flush
+        .flushE(hz_FlushE),   // -> ID_EX.flush
         .flushD(FlushD),   // -> IF_ID.flush
         .lsu_stall(any_stall)
     );
+
+    assign FlushE = hz_FlushE && !any_stall;
 
 endmodule

@@ -19,18 +19,22 @@ module ALU (
     localparam SRL = 4'b0101; // Shift Right Logical
     localparam SRA = 4'b1001; // Shift Right Arithmetic
 
+    // LUI
+    localparam PASSB = 4'b1111;
+
     always_comb begin
         case(ALUControl)
-            AND : ALUResult = OpA & OpB;
-            OR  : ALUResult = OpA | OpB;
-            XOR : ALUResult = OpA ^ OpB;
-            ADD : ALUResult = OpA + OpB;
-            SUB : ALUResult = OpA - OpB;
-            SLT : ALUResult = ($signed(OpA) < $signed(OpB)) ? 32'd1 : 32'd0;
-            SLL : ALUResult = OpA << OpB[4:0];
-            SRL : ALUResult = OpA >> (OpB[4:0]);
-            SRA : ALUResult = $signed(OpA) >>> (OpB[4:0]);
-            default: ALUResult = 32'd0;
+            AND     : ALUResult = OpA & OpB;
+            OR      : ALUResult = OpA | OpB;
+            XOR     : ALUResult = OpA ^ OpB;
+            ADD     : ALUResult = OpA + OpB;
+            SUB     : ALUResult = OpA - OpB;
+            SLT     : ALUResult = ($signed(OpA) < $signed(OpB)) ? 32'd1 : 32'd0;
+            SLL     : ALUResult = OpA << OpB[4:0];
+            SRL     : ALUResult = OpA >> (OpB[4:0]);
+            SRA     : ALUResult = $signed(OpA) >>> (OpB[4:0]);
+            PASSB   : ALUResult = OpB;
+            default : ALUResult = 32'd0;
         endcase
     end
 

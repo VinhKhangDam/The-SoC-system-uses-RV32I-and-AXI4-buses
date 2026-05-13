@@ -64,6 +64,14 @@ module MainDecoder (
                 Jump       = 1;
                 ResultSrc  = 2'b10;
             end
+
+            7'b0110111: begin // LUI
+                RegWrite  = 1;
+                ALUSrc    = 1;
+                ResultSrc = 2'b00;
+                ALUOp     = 2'b11; // or dedicated control
+                ImmSrc    = 3'b011; // U-type
+            end
             
             default: ; 
         endcase

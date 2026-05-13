@@ -45,7 +45,7 @@ interface soc_inf (input logic clk, rstn);
 	modport DRV (clocking drv_cb, input clk, rstn);
 	
 	clocking mon_cb @(posedge clk);
-		default input #1 output #1;
+		default input #1;
 		input awaddr, awvalid, awready;
 		input wdata, wstrb, wvalid, wready;
 		input bresp, bvalid, bready;
