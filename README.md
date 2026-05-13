@@ -146,7 +146,7 @@ source SoC/env.sh
 cd SoC/SIM
 
 # Compile
-make compile test_name=TEST_NAME | tee compile_TEST_NAME.log : compile and print output to .log file
+make compile test_name=TEST_NAME | tee compile_TEST_NAME.log #  compile and print output to .log file
 
 # Sim
 make sim test_name=TEST_NAME | tee sim_TEST_NAME.log # TEST_NAME : run difference tests
