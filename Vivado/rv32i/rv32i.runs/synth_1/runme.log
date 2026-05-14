@@ -8,28 +8,26 @@
   **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Wed May 13 23:24:08 2026
+  **** Start of session at: Thu May 14 19:05:08 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source TOP.tcl -notrace
-create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 545.707 ; gain = 219.109
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 546.188 ; gain = 219.348
 Command: read_checkpoint -auto_incremental -incremental C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+read_checkpoint: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 552.719 ; gain = 6.531
 Command: synth_design -top TOP -part xczu7ev-ffvc1156-2-e
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
-WARNING: [Vivado_Tcl 4-1809] The reference checkpoint is from an old version of Vivado; A full resynthesis flow will be run
 INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20324
+INFO: [Synth 8-7075] Helper process launched with PID 14524
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1989.316 ; gain = 222.773
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1987.422 ; gain = 220.234
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TOP' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/TOP.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'AXI_Master' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/AXI_Master.sv:1]
@@ -75,104 +73,104 @@ INFO: [Synth 8-6157] synthesizing module 'IRAM' [C:/Documents/DoAnThietKeViMach/
 INFO: [Synth 8-251] [IRAM] Loading file: instr.mem [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:34]
 INFO: [Synth 8-3876] $readmem data file 'instr.mem' is read successfully [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:35]
 INFO: [Synth 8-251] [IRAM] mem[0] = 100000b7 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[1] = 1700a683 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[2] = 6150a823 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[3] = 400c6f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[4] = 135c233 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[5] = ffc80ce3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[6] = b95333 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[7] = 2f91c293 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[8] = e00aa03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[9] = 580a283 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[10] = 49d8413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[11] = 77c0ab03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[12] = 65c0ae23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[13] = 3780ab83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[14] = 66c0ad83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[15] = 41d68633 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[16] = 155e8b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[17] = 290db3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[18] = ff9ff9ef [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[19] = 57e0a023 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[20] = 5ae0a423 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[21] = 6f5e6413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[22] = 73c0aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[23] = 9a2bb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[24] = fecc86e3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[25] = 29b48493 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[26] = 6a00ab03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[27] = 55c0a603 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[28] = 86e833 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[29] = 73c6c13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[30] = 14bd533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[31] = 86a8b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[32] = 77e1fc13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[33] = 1376733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[34] = 3c90a623 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[35] = 43a733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[36] = 95440693 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[37] = 6f00a103 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[38] = f7686413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[39] = ff5ffc6f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[40] = 100af83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[41] = 1fa0b33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[42] = fe5ff86f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[43] = 7fe0a823 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[44] = 4a80a383 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[45] = 1d72733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[46] = 97fbf193 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[47] = 30584b13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[48] = 6028593 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[49] = 143ea33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[50] = 3898863 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[51] = eaca4893 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[52] = 639fe793 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[53] = 33c0463 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[54] = 4a60ae23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[55] = d2736b93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[56] = 30b8063 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[57] = 9da533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[58] = 1d48633 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[59] = 10001ef [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[60] = 7c80ac23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[61] = 9c1c33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[62] = 17667b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[63] = 16edab3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[64] = 987133 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[65] = 2fd533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[66] = 1724cb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[67] = f0a223 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[68] = b50ae193 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[69] = 19444b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[70] = 1d92ab3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[71] = 3ec0a603 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[72] = a2180f93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[73] = dc0a783 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[74] = f0dd4c93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[75] = 5d05cc93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[76] = eb38e693 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[77] = cb0a223 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[78] = 865c7e93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[79] = 40cc0933 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[80] = be880613 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[81] = f2be6713 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[82] = 6640a483 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[83] = 1da8e33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[84] = ae0a223 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[85] = 3ece8413 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[86] = f1a6b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[87] = 414adeb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[88] = f97533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[89] = 4cd0aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[90] = 5edc6e93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[91] = 28874193 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[92] = 5763fa93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[93] = 93768993 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[94] = bb0c33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[95] = c32fc93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[96] = 8b198f13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[97] = 7fa2ef13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
-INFO: [Synth 8-251] [IRAM] mem[98] = 1740ae03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[1] = 7d40ae03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[2] = 800a183 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[3] = b2ca4293 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[4] = aefbfa13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[5] = c67df593 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[6] = 73a86613 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[7] = 4750a423 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[8] = ddf533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[9] = 280086f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[10] = e3218d13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[11] = 7f9cf993 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[12] = fddff86f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[13] = 2d98663 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[14] = 3188663 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[15] = 500a383 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[16] = 1fc0aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[17] = 1279e33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[18] = 1eb4533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[19] = 4700a603 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[20] = 598233 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[21] = e60263 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[22] = b4b9f193 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[23] = fd9fffef [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[24] = 3800a303 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[25] = 1880ad03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[26] = 53f533 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[27] = 694233 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[28] = 21a54d93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[29] = 419ddfb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[30] = 20002ef [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[31] = 40db5733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[32] = 74c0ae23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[33] = 41590233 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[34] = ce274293 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[35] = ff5b0ce3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[36] = 15525b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[37] = 33a733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[38] = 17c9bb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[39] = 2050a823 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[40] = 7f237e13 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[41] = 1b46633 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[42] = 50a0aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[43] = 3580a283 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[44] = 18a0663 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[45] = 1d9f1b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[46] = d4ff33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[47] = 15a5733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[48] = e55f33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[49] = 4c80a383 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[50] = ab83e893 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[51] = 41690f33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[52] = ce7933 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[53] = 7038313 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[54] = 5780aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[55] = 14c0a203 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[56] = 20f17893 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[57] = ed0a623 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[58] = 22df8893 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[59] = 53c0a623 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[60] = b112b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[61] = 2800e6f [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[62] = 51ac33 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[63] = 41e98bb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[64] = 161a933 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[65] = 767d8793 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[66] = 1792433 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[67] = 51d0ae23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[68] = 13c2733 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[69] = 6176693 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[70] = 34c84f93 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[71] = 5300a403 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[72] = 12c0ac03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[73] = 4ae0aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[74] = 76f833 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[75] = a51633 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[76] = 1680af83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[77] = fa2e913 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[78] = 875833 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[79] = 4080a503 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[80] = 6c63b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[81] = 7270a423 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[82] = 2b60a023 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[83] = 22e0a023 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[84] = 1e1ecb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[85] = c4f7b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[86] = 5110a223 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[87] = 7e1333 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[88] = 41eb55b3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[89] = 41dd8eb3 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[90] = cb0a023 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[91] = 3680af83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[92] = 8e5333 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[93] = a00ab03 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[94] = 7e90aa23 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[95] = 2d8c0513 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[96] = e5b96993 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[97] = 5200ae83 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
+INFO: [Synth 8-251] [IRAM] mem[98] = 890933 [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:38]
 INFO: [Common 17-14] Message 'Synth 8-251' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-6155] done synthesizing module 'IRAM' (0#1) [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/IRAM.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'DRAM' [C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/DRAM.sv:1]
@@ -299,36 +297,35 @@ WARNING: [Synth 8-7129] Port s_axi_wstrb[2] in module UART is either unconnected
 WARNING: [Synth 8-7129] Port s_axi_wstrb[1] in module UART is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 4413.496 ; gain = 2646.953
+Finished RTL Elaboration : Time (s): cpu = 00:00:47 ; elapsed = 00:00:52 . Memory (MB): peak = 4418.984 ; gain = 2651.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 4413.496 ; gain = 2646.953
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:55 . Memory (MB): peak = 4418.984 ; gain = 2651.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 4413.496 ; gain = 2646.953
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:50 ; elapsed = 00:00:55 . Memory (MB): peak = 4418.984 ; gain = 2651.797
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4413.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 4418.984 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Documents/DoAnThietKeViMach/Project/Vivado/Constraint.xdc]
-create_clock: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 4748.145 ; gain = 55.418
+create_clock: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 4742.176 ; gain = 40.793
 Finished Parsing XDC File [C:/Documents/DoAnThietKeViMach/Project/Vivado/Constraint.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.155 . Memory (MB): peak = 4748.145 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.168 . Memory (MB): peak = 4742.176 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-ERROR: [Common 17-1257] Failed to create directory 'C'.
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4742.176 ; gain = 0.000
+ERROR: [Common 17-354] Could not open 'C' for writing.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:02:11 ; elapsed = 00:02:09 . Memory (MB): peak = 4751.652 ; gain = 2985.109
+Finished Constraint Validation : Time (s): cpu = 00:02:19 ; elapsed = 00:02:22 . Memory (MB): peak = 4743.379 ; gain = 2976.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -336,59 +333,106 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:11 ; elapsed = 00:02:09 . Memory (MB): peak = 4751.652 ; gain = 2985.109
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:19 ; elapsed = 00:02:22 . Memory (MB): peak = 4743.379 ; gain = 2976.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:11 ; elapsed = 00:02:10 . Memory (MB): peak = 4751.652 ; gain = 2985.109
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:19 ; elapsed = 00:02:23 . Memory (MB): peak = 4743.379 ; gain = 2976.191
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'PresentState_reg' in module 'LSU'
-INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'UART'
-INFO: [Synth 8-802] inferred FSM for state register 'rx_state_reg' in module 'UART'
-INFO: [Synth 8-802] inferred FSM for state register 'spi_state_reg' in module 'SPI'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 ST_IDLE |                              000 |                              000
-              ST_IF_ADDR |                              110 |                              001
-               ST_W_ADDR |                              100 |                              011
-               ST_W_RESP |                              011 |                              100
-               ST_R_ADDR |                              010 |                              101
-               ST_R_DATA |                              001 |                              110
-              ST_IF_DATA |                              101 |                              010
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'PresentState_reg' using encoding 'sequential' in module 'LSU'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 RX_IDLE |                               00 |                               00
-                RX_START |                               01 |                               01
-                 RX_DATA |                               10 |                               10
-                 RX_STOP |                               11 |                               11
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encoding 'sequential' in module 'UART'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 TX_IDLE |                               00 |                               00
-                TX_START |                               01 |                               01
-                 TX_DATA |                               10 |                               10
-                 TX_STOP |                               11 |                               11
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'UART'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    IDLE |                              001 |                               00
-                TRANSFER |                              010 |                               01
-                    DONE |                              100 |                               10
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'spi_state_reg' using encoding 'one-hot' in module 'SPI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:57 ; elapsed = 00:05:15 . Memory (MB): peak = 4751.652 ; gain = 2985.109
+Start Preparing Guide Design
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:02:33 ; elapsed = 00:02:38 . Memory (MB): peak = 4743.379 ; gain = 2976.191
+---------------------------------------------------------------------------------
+DRAM__GB26DRAM__GB9DRAM__GB4DRAM__GB24DRAM__GB16DRAM__GB3DRAM__GB25DRAM__GB13DRAM__GB21DRAM__GB12DRAM__GB20DRAM__GB10DRAM__GB7DRAM__GB15DRAM__GB27DRAM__GB18DRAM__GB22DRAM__GB8DRAM__GB19DRAM__GB14DRAM__GB2DRAM__GB6DRAM__GB17DRAM__GB11DRAM__GB28DRAM__GB1DRAM__GB23DRAM__GB5---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:02:41 ; elapsed = 00:02:48 . Memory (MB): peak = 4743.379 ; gain = 2976.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:46 ; elapsed = 00:02:53 . Memory (MB): peak = 4743.379 ; gain = 2976.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Mimic Skeleton from Reference
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Mimic Skeleton from Reference : Time (s): cpu = 00:02:54 ; elapsed = 00:03:01 . Memory (MB): peak = 4743.379 ; gain = 2976.191
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: yes
+
+   Stitch points used : changed
+
+
+2. Change Summary
+
+Report Incremental Modules: 
++------+----------------+------------+----------+----------+
+|      |Changed Modules |Replication |Instances |Changed % |
++------+----------------+------------+----------+----------+
+|1     |IRAM            |           1|        43|    0.0043|
++------+----------------+------------+----------+----------+
+
+
+   Full Design Size (number of cells) : 998404
+   Resynthesis Design Size (number of cells) : 142567
+   Resynth % : 14.2795,  Reuse % : 85.7205
+
+3. Reference Checkpoint Information
+
++-----------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.srcs/utils_1/imports/synth_1/TOP.dcp |
++-----------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+------------------------------+
+|         DCP Information        |             Value            |
++--------------------------------+------------------------------+
+| Vivado Version                 |                    v2025.2 |
+| DCP State                      |                              |
++--------------------------------+------------------------------+
+
+
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |TOP__GC0           |           1|     11527|
+|2     |muxpart__4126_DRAM |           1|    131040|
+|3     |DRAM__GB1_#REUSE#  |           1|         0|
+|4     |DRAM__GB2_#REUSE#  |           1|         0|
+|5     |DRAM__GB3_#REUSE#  |           1|         0|
+|6     |DRAM__GB4_#REUSE#  |           1|         0|
+|7     |DRAM__GB5_#REUSE#  |           1|         0|
+|8     |DRAM__GB6_#REUSE#  |           1|         0|
+|9     |DRAM__GB7_#REUSE#  |           1|         0|
+|10    |DRAM__GB8_#REUSE#  |           1|         0|
+|11    |DRAM__GB9_#REUSE#  |           1|         0|
+|12    |DRAM__GB10_#REUSE# |           1|         0|
+|13    |DRAM__GB11_#REUSE# |           1|         0|
+|14    |DRAM__GB12_#REUSE# |           1|         0|
+|15    |DRAM__GB13_#REUSE# |           1|         0|
+|16    |DRAM__GB14_#REUSE# |           1|         0|
+|17    |DRAM__GB15_#REUSE# |           1|         0|
+|18    |DRAM__GB16_#REUSE# |           1|         0|
+|19    |DRAM__GB17_#REUSE# |           1|         0|
+|20    |DRAM__GB18_#REUSE# |           1|         0|
+|21    |DRAM__GB19_#REUSE# |           1|         0|
+|22    |DRAM__GB20_#REUSE# |           1|         0|
+|23    |DRAM__GB21_#REUSE# |           1|         0|
+|24    |DRAM__GB22_#REUSE# |           1|         0|
+|25    |DRAM__GB23_#REUSE# |           1|         0|
+|26    |DRAM__GB24_#REUSE# |           1|         0|
+|27    |DRAM__GB25_#REUSE# |           1|         0|
+|28    |DRAM__GB26_#REUSE# |           1|         0|
+|29    |DRAM__GB27_#REUSE# |           1|         0|
+|30    |DRAM__GB28_#REUSE# |           1|         0|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -401,22 +445,22 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 4163  
+	               32 Bit    Registers := 66    
 	                8 Bit    Registers := 5     
 	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 7     
 	                2 Bit    Registers := 5     
-	                1 Bit    Registers := 43    
+	                1 Bit    Registers := 38    
 +---ROMs : 
 	                    ROMs := 1     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 4118  
+	   2 Input   32 Bit        Muxes := 22    
 	   3 Input   32 Bit        Muxes := 5     
 	   4 Input   32 Bit        Muxes := 4     
 	   2 Input   16 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 16386 
 	   4 Input    8 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
 	   3 Input    8 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 5     
 	   4 Input    4 Bit        Muxes := 1     
@@ -427,7 +471,7 @@ Detailed RTL Component Info :
 	   4 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 5     
 	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 73    
+	   2 Input    1 Bit        Muxes := 71    
 	   7 Input    1 Bit        Muxes := 8     
 	   3 Input    1 Bit        Muxes := 13    
 	   5 Input    1 Bit        Muxes := 1     
@@ -462,19 +506,25 @@ INFO: [Synth 8-3886] merging instance 'axi_master/cpu/ifid/pcPlus4D_reg[0]' (FDC
 INFO: [Synth 8-3886] merging instance 'axi_master/cpu/idexmd/JumpE_reg' (FDCE) to 'axi_master/cpu/idexmd/ResultSrcE_reg[1]'
 INFO: [Synth 8-3886] merging instance 'axi_master/cpu/idexmd/pcPlus4E_reg[0]' (FDCE) to 'axi_master/cpu/idexmd/pcE_reg[0]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:08:52 ; elapsed = 00:09:29 . Memory (MB): peak = 4751.652 ; gain = 2985.109
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:09 ; elapsed = 00:03:39 . Memory (MB): peak = 4743.379 ; gain = 2976.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Stitch Unchanged AreaOpt Partitions
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Stitch Unchanged AreaOpt Partitions : Time (s): cpu = 00:03:15 ; elapsed = 00:03:46 . Memory (MB): peak = 4743.379 ; gain = 2976.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:09:19 ; elapsed = 00:09:58 . Memory (MB): peak = 4751.652 ; gain = 2985.109
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:43 ; elapsed = 00:04:17 . Memory (MB): peak = 4858.879 ; gain = 3091.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:10:29 ; elapsed = 00:11:10 . Memory (MB): peak = 5001.457 ; gain = 3234.914
+Finished Timing Optimization : Time (s): cpu = 00:04:08 ; elapsed = 00:04:44 . Memory (MB): peak = 4920.969 ; gain = 3153.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -482,7 +532,13 @@ Start Technology Mapping
 INFO: [Synth 8-7052] The timing for the instance i_0/IRAM/s_axi_rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/IRAM/s_axi_rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:11:41 ; elapsed = 00:12:35 . Memory (MB): peak = 5058.090 ; gain = 3291.547
+Finished Technology Mapping : Time (s): cpu = 00:04:18 ; elapsed = 00:05:36 . Memory (MB): peak = 5011.590 ; gain = 3244.402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Stitch Unchanged Partitions
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Stitch Unchanged Partitions : Time (s): cpu = 00:04:22 ; elapsed = 00:05:40 . Memory (MB): peak = 5011.590 ; gain = 3244.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -502,37 +558,37 @@ INFO: [Synth 8-7052] The timing for the instance IRAM/s_axi_rdata_reg (implement
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:14:48 ; elapsed = 00:15:46 . Memory (MB): peak = 5142.047 ; gain = 3375.504
+Finished IO Insertion : Time (s): cpu = 00:07:43 ; elapsed = 00:09:09 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:14:49 ; elapsed = 00:15:47 . Memory (MB): peak = 5142.047 ; gain = 3375.504
+Finished Renaming Generated Instances : Time (s): cpu = 00:07:44 ; elapsed = 00:09:09 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:15:11 ; elapsed = 00:16:09 . Memory (MB): peak = 5147.910 ; gain = 3381.367
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:52 ; elapsed = 00:09:18 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:15:15 ; elapsed = 00:16:13 . Memory (MB): peak = 5147.910 ; gain = 3381.367
+Finished Renaming Generated Ports : Time (s): cpu = 00:07:56 ; elapsed = 00:09:22 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:15:24 ; elapsed = 00:16:22 . Memory (MB): peak = 5147.910 ; gain = 3381.367
+Finished Handling Custom Attributes : Time (s): cpu = 00:08:05 ; elapsed = 00:09:31 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:15:25 ; elapsed = 00:16:22 . Memory (MB): peak = 5147.910 ; gain = 3381.367
+Finished Renaming Generated Nets : Time (s): cpu = 00:08:05 ; elapsed = 00:09:32 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -566,20 +622,20 @@ Report Cell Usage:
 |16    |OBUF     |      4|
 +------+---------+-------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:15:25 ; elapsed = 00:16:23 . Memory (MB): peak = 5147.910 ; gain = 3381.367
+Finished Writing Synthesis Report : Time (s): cpu = 00:08:06 ; elapsed = 00:09:33 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 100 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:13:29 ; elapsed = 00:15:26 . Memory (MB): peak = 5147.910 ; gain = 3043.211
-Synthesis Optimization Complete : Time (s): cpu = 00:15:26 ; elapsed = 00:16:33 . Memory (MB): peak = 5147.910 ; gain = 3381.367
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:01 ; elapsed = 00:08:25 . Memory (MB): peak = 5144.750 ; gain = 3053.168
+Synthesis Optimization Complete : Time (s): cpu = 00:08:06 ; elapsed = 00:09:37 . Memory (MB): peak = 5144.750 ; gain = 3377.562
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 5147.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 5144.750 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 26677 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'TOP' is not ideal for floorplanning, since the cellview 'DRAM' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell IRAM/s_axi_rdata_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 5148.859 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.123 . Memory (MB): peak = 5144.750 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 5 instances were transformed.
   BUFG => BUFGCE: 1 instance 
@@ -587,11 +643,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 
 Synth Design complete | Checksum: d924235e
 INFO: [Common 17-83] Releasing license: Synthesis
-203 Infos, 112 Warnings, 0 Critical Warnings and 0 Errors encountered.
+191 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:16:55 ; elapsed = 00:18:16 . Memory (MB): peak = 5148.859 ; gain = 4595.668
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.275 . Memory (MB): peak = 5148.859 ; gain = 0.000
+synth_design: Time (s): cpu = 00:09:09 ; elapsed = 00:10:59 . Memory (MB): peak = 5144.750 ; gain = 4592.031
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.308 . Memory (MB): peak = 5144.750 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Documents/DoAnThietKeViMach/Project/Vivado/rv32i/rv32i.runs/synth_1/TOP.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 5148.859 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 5144.750 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May 13 23:42:59 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu May 14 19:16:52 2026...

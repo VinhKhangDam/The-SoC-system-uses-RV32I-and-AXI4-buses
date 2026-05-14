@@ -1,0 +1,32 @@
+List of CLB Tiles
+CLEL_L_X67Y15
+CLEL_R_X67Y15
+CLEL_R_X60Y59
+CLEM_X59Y84
+CLEL_R_X59Y84
+CLEM_X58Y100
+CLEL_R_X58Y100
+CLEM_X58Y287
+CLEL_R_X58Y287
+CLEL_L_X56Y81
+CLEL_R_X56Y81
+CLEM_X54Y36
+CLEM_X50Y18
+CLEL_R_X50Y18
+CLEL_L_X47Y189
+CLEL_R_X47Y189
+CLEM_X46Y174
+CLEL_R_X46Y174
+
+List of Congested Nets
+axi_master/lsu/addr_reg_reg[2]_13
+axi_master/lsu/addr_reg_reg[3]_3
+axi_master/lsu/addr_reg_reg[2]_5
+DRAM/mem_reg_n_0_[4085][23]
+DRAM/mem_reg_n_0_[4084][23]
+DRAM/mem_reg_n_0_[4079][0]
+DRAM/mem_reg_n_0_[199][12]
+DRAM/mem_reg_n_0_[147][4]
+DRAM/mem_reg_n_0_[1452][30]
+DRAM/mem_reg_n_0_[1454][30]
+
