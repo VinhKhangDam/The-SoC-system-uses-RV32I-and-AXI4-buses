@@ -75,11 +75,14 @@ UVM_TESTS = \
 CPU_TESTS = \
     cpu_test
 
+# --- ALL TEST ---
+ALL_TESTS := $(UVM_TESTS) $(CPU_TESTS)
+
 #==========================================================================================
 # MAIN TARGET (SINGLE TEST ONLY)
 #==========================================================================================
 
-.PHONY: all compile sim gui clean gen_mem help
+.PHONY: all compile sim gui clean gen_mem help list
 
 all: gen_mem compile
 ifndef test_name
@@ -187,7 +190,7 @@ endif
 	vsim -i -sv_seed $(seed) vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
 		+MEM_SEED=$(MEM_SEED) \
-		-do "add wave -recursive vopt_top/*; run -all"
+		-do "add wave -recursive vopt_top/*"
 
 #==========================================================================================
 # CLEAN
@@ -233,4 +236,18 @@ help:
 	@echo "    cpu_*  →  CPU MASTER  (CPU runs, UVM observes pipeline)"
 	@echo ""
 	@echo "  Run 'make list' to see all available test names."
+	@echo ""
+
+#==========================================================================================
+# TEST LIST
+#==========================================================================================
+
+list: 
+	@echo ""
+	@echo "======================================================"
+	@echo "		TEST LIST				     "
+	@echo "======================================================"
+	@for t in $(ALL_TESTS); do \
+		echo "	$$t"; \
+		done
 	@echo ""

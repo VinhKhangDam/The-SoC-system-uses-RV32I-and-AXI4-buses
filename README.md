@@ -320,6 +320,10 @@ To run this project, follow these steps:
    make help
    ```
 
+7. Want to see the list of test
+    ```bash
+    make list
+    ```
 - The design is modular and separates the processor datapath from the interconnect and peripheral wrappers.
 - Pipeline forwarding and hazard handling are implemented to maintain instruction throughput and avoid data hazards.
 
