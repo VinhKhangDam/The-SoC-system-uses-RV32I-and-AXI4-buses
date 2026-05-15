@@ -85,7 +85,7 @@ class cpu_test extends uvm_test;
         disable fork;
 
         // Allow pipeline to drain (4 stages = 4 extra cycles)
-        repeat(10) @(posedge vif_cr.clk);
+        repeat(30) @(posedge vif_cr.clk);
 
         phase.drop_objection(this);
     endtask

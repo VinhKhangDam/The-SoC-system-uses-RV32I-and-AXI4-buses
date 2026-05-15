@@ -2,7 +2,10 @@ module ALUControl (
     input  logic [1:0]  ALUOp,
     input  logic [2:0]  funct3,
     input  logic        funct7b,    // Instr[30]
-    output logic [3:0]  ALUControl  // Đã nâng lên 4 bit
+    output logic [3:0]  ALUControl,  // Đã nâng lên 4 bit
+
+    // Add opcode
+    input  logic [6:0]  opcode
 );
     always_comb begin
         case (ALUOp)
@@ -11,7 +14,7 @@ module ALUControl (
             
             2'b10: begin // R-type hoặc I-type ALU
                 case (funct3)
-                    3'b000: if (funct7b) 
+                    3'b000: if (opcode == 7'b0110011 && funct7b)
                                  ALUControl = 4'b0110; // Subtract (sub)
                             else 
                                  ALUControl = 4'b0010; // Add (add, addi)

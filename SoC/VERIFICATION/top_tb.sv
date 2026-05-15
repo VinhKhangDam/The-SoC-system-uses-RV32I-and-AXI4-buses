@@ -10,7 +10,8 @@ module top_tb;
     // internally via its own initial blocks. No standalone drivers here.
     // FIX: removed duplicate clk/rstn logic — would cause multi-driver
     // ----------------------------------------------------------------
-    clk_rst_inf     cr_if ();
+   logic clk_wire, rstn_wire;
+    clk_rst_inf     cr_if (.clk(clk_wire), .rstn(rstn_wire));
     soc_inf         s_if  (.clk(cr_if.clk), .rstn(cr_if.rstn));
     cpu_monitor_inf cpu_if(.clk(cr_if.clk), .rstn(cr_if.rstn));
 

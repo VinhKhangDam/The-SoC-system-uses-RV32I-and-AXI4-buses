@@ -84,6 +84,17 @@ class cpu_monitor extends uvm_monitor;
             7'b000_0000: return "NOP";
             default:     return $sformatf("???  [%h]", instr);
         endcase
+    endfunction // decode_instr
+
+    function string get_slaves_name(logic [31:0] addr);
+       case(addr & 32'hFF00_0000)
+         32'h0000_0000: return "IRAM";
+         32'h1000_0000: return "DRAM";
+         32'h2000_0000: return "TIMER";
+         32'h3000_0000: return "UART";
+         32'h4000_0000: return "SPI";
+         default      : return "UNKNOWN";
+       endcase
     endfunction
 
     function string get_opcode_name(logic [31:0] instr);
@@ -183,7 +194,7 @@ class cpu_monitor extends uvm_monitor;
         @(posedge cr_vif.rstn);
         repeat(2) @(posedge cr_vif.clk);
 
-        `uvm_info("CPU_MON", "=== CPU Monitor started — watching pipeline ===", UVM_LOW)
+        `uvm_info("CPU_MON", "=== CPU Monitor started == watching pipeline ===", UVM_LOW)
         `uvm_info("CPU_MON",
             "============================================================", UVM_LOW)
 
@@ -311,8 +322,8 @@ class cpu_monitor extends uvm_monitor;
                 tr.bresp = axi_vif.mon_cb.bresp;
 
                 `uvm_info("AXI_WR",
-                    $sformatf("CPU→DRAM  Addr=%h Data=%h Strb=%b BRESP=%b",
-                        tr.addr, tr.data, tr.wstrb, tr.bresp),
+                    $sformatf("CPU -> %s  Addr=%h Data=%h Strb=%b BRESP=%b",
+                        get_slaves_name(tr.addr), tr.addr, tr.data, tr.wstrb, tr.bresp),
                     UVM_LOW)
 
                 axi_port.write(tr);
@@ -340,8 +351,8 @@ class cpu_monitor extends uvm_monitor;
                 tr.rresp = axi_vif.mon_cb.rresp;
 
                 `uvm_info("AXI_RD",
-                    $sformatf("CPU←DRAM  Addr=%h Data=%h RRESP=%b",
-                        tr.addr, tr.data, tr.rresp),
+                    $sformatf("CPU <- %s  Addr=%h Data=%h RRESP=%b",
+                        get_slaves_name(tr.addr), tr.addr, tr.data, tr.rresp),
                     UVM_LOW)
 
                 axi_port.write(tr);

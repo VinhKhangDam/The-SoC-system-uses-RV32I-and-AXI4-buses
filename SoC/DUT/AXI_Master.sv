@@ -42,7 +42,7 @@ module AXI_Master (
     logic        cpu_if_req;
     logic [31:0] lsu_if_instr;
     logic        lsu_if_stall;
-
+    logic        lsu_data_done;
     // ----------------------------------------------------------------
     // CPU instance
     // ----------------------------------------------------------------
@@ -102,7 +102,9 @@ module AXI_Master (
         .m_axi_rdata  (m_axi_rdata),
         .m_axi_rresp  (m_axi_rresp),
         .m_axi_rvalid (m_axi_rvalid),
-        .m_axi_rready (m_axi_rready)
+        .m_axi_rready (m_axi_rready),
+
+        .data_done_o  (lsu_data_done)
     );
 
 endmodule

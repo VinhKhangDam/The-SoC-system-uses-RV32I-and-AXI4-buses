@@ -245,13 +245,13 @@ class cpu_scoreboard extends uvm_scoreboard;
 
         if (fail_count > 0)
             `uvm_error("SCB",
-                $sformatf("SIMULATION FAILED — %0d register(s) mismatch", fail_count))
+                $sformatf("SIMULATION FAILED : %0d register(s) mismatch", fail_count))
         else if (axi_write_errors > 0 || axi_read_errors > 0)
             `uvm_error("SCB",
                 $sformatf("SIMULATION FAILED — AXI errors: %0d write, %0d read",
                     axi_write_errors, axi_read_errors))
         else if (pass_count > 0)
-            `uvm_info("SCB", "✓ SIMULATION PASSED — all registers match expected", UVM_LOW)
+            `uvm_info("SCB", "SIMULATION PASSED: all registers match expected", UVM_LOW)
 
     endfunction
 

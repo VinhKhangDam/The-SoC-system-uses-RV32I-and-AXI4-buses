@@ -1,21 +1,21 @@
 module CPU (
-    input   logic        clk,
-    input   logic        rstn,
+    input logic         clk,
+    input logic         rstn,
 
     // DATA channel (load/store) to LSU
-    output  logic [31:0] mem_addr_o,
-    output  logic [31:0] mem_wdata_o,
-    output  logic        mem_we_o,
-    output  logic        mem_req_o,
-    output  logic [2:0]  mem_funct_o,
-    input   logic [31:0] mem_rdata_i,
-    input   logic        mem_stall_i,
+    output logic [31:0] mem_addr_o,
+    output logic [31:0] mem_wdata_o,
+    output logic        mem_we_o,
+    output logic        mem_req_o,
+    output logic [2:0]  mem_funct_o,
+    input logic [31:0]  mem_rdata_i,
+    input logic         mem_stall_i,
 
     // IF channel (instruction fetch) to LSU
-    output  logic [31:0] if_pc_o,
-    output  logic        if_req_o,
-    input   logic [31:0] if_instr_i,
-    input   logic        if_stall_i
+    output logic [31:0] if_pc_o,
+    output logic        if_req_o,
+    input logic [31:0]  if_instr_i,
+    input logic         if_stall_i
 );
 
     // Fetch stage
@@ -34,6 +34,9 @@ module CPU (
     logic [4:0]  Rs1D, Rs2D, RdD;
     logic [24:0] Immediate;
     logic [31:0] Rd1D, Rd2D, ExtImmD;
+
+   // Branch logic signal
+    logic        BranchTaken;
 
     // Execute stage
     logic        RegWriteE, MemWriteE, JumpE, BranchE, ALUSrcE;
@@ -62,15 +65,17 @@ module CPU (
 
     logic hz_FlushE;
 
+    logic  mem_access_m;
+
     // Combined AXI stall passed into HazardUnit
-    logic any_stall;
-    assign any_stall = if_stall_i | mem_stall_i;
+    logic front_stall;
+    assign front_stall = mem_stall_i | if_stall_i;
 
     // ----------------------------------------------------------------
     // FETCH STAGE
     // ----------------------------------------------------------------
     pc_reg pcmd (
-        .clk    (clk),   
+        .clk    (clk),
         .rstn   (rstn),
         .stallF (StallF), 
         .pc_next(Pc_nextF), 
@@ -180,7 +185,7 @@ module CPU (
     // ----------------------------------------------------------------
     // EXECUTE STAGE
     // ----------------------------------------------------------------
-    assign PCSrc      = JumpE | (Zero & BranchE);
+    //assign PCSrc      = JumpE | (Zero & BranchE);
     assign SrcA       = (ForwardA==2'b10) ? ALUResultM :
                         (ForwardA==2'b01) ? ResultW    : Rd1E;
     assign WriteDataE = (ForwardB==2'b10) ? ALUResultM :
@@ -216,17 +221,32 @@ module CPU (
         .rdM(RdM), 
         .pcPlus4M(PcPlus4M), 
         .Funct3M(Funct3M),
-        .stall(any_stall) 
+        .stall(front_stall)
     );
+
+    always_comb begin
+       case (Funct3E)
+         3'b000 : BranchTaken = (SrcA == WriteDataE);                         // BEQ
+         3'b001 : BranchTaken = (SrcA != WriteDataE);                         // BNE
+         3'b100 : BranchTaken = ($signed(SrcA) < $signed(WriteDataE));        // BLT
+         3'b101 : BranchTaken = ($signed(SrcA) >= $signed(WriteDataE));       // BGE
+         3'b110 : BranchTaken = (SrcA <  WriteDataE);                         // BLTU
+         3'b111 : BranchTaken = (SrcA >= WriteDataE);                         // BGEU
+         default: BranchTaken = 1'b0;
+       endcase // case (Funct3E)
+    end // always_comb
+
+   assign PCSrc = JumpE | (BranchE & BranchTaken);
 
     // ----------------------------------------------------------------
     // MEMORY STAGE — all accesses via LSU over AXI
     // ----------------------------------------------------------------
+    assign mem_access_m = MemWriteM || (ResultSrcM == 2'b01);
     assign ReadDataM   = mem_rdata_i;
     assign mem_addr_o  = ALUResultM;
     assign mem_wdata_o = WriteDataM;
     assign mem_we_o    = MemWriteM;
-    assign mem_req_o   = MemWriteM || (ResultSrcM == 2'b01);
+    assign mem_req_o   = mem_access_m;
     assign mem_funct_o = Funct3M;
 
     MEM_WB memwbmd (
@@ -244,7 +264,7 @@ module CPU (
         .ReadDataW(ReadDataW),
         .rdW(RdW), 
         .pcPlus4W(PcPlus4W),
-        .stall(any_stall)
+        .stall(front_stall)
     );
 
     // ----------------------------------------------------------------
@@ -275,9 +295,9 @@ module CPU (
         .stallD(StallD),   // -> ID_EX.stall
         .flushE(hz_FlushE),   // -> ID_EX.flush
         .flushD(FlushD),   // -> IF_ID.flush
-        .lsu_stall(any_stall)
+        .lsu_stall(front_stall)
     );
 
-    assign FlushE = hz_FlushE && !any_stall;
+    assign FlushE = hz_FlushE && !front_stall;
 
 endmodule

@@ -1,6 +1,5 @@
 module DRAM #(
-    parameter ADDR_WIDTH = 14,
-    parameter INIT_FILE  = ""
+    parameter ADDR_WIDTH = 14
 )(
     input  logic        clk,
     input  logic        rstn,
@@ -62,16 +61,6 @@ module DRAM #(
         s_axi_awvalid &&
         s_axi_wready  &&
         s_axi_wvalid;
-
-    // =========================================================
-    // OPTIONAL MEMORY INIT
-    // =========================================================
-    initial begin
-        if (INIT_FILE != "") begin
-            $display("[DRAM] Loading file: %s", INIT_FILE);
-            $readmemh(INIT_FILE, mem);
-        end
-    end
 
     // =========================================================
     // WRITE MEMORY

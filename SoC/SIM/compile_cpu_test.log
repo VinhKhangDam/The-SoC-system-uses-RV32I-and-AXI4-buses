@@ -1,9 +1,9 @@
 --- [GEN_MEM] Generate memory + golden reference ---
->>> Using SEED: 290628402 (Saved to .last_seed)
-python3 gen_mem.py 290628402
-[gen_mem] MEM_SEED = 290628402
-Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (seed=290628402)
-python3 sim_expected.py 290628402
+>>> Using SEED: 4164348126 (Saved to .last_seed)
+python3 gen_mem.py 4164348126
+[gen_mem] MEM_SEED = 4164348126
+Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (seed=4164348126)
+python3 sim_expected.py 4164348126
 Loaded  : 101 instructions from instr.mem
 Written : /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/expected.mem
 --- Done: instr.mem + expected.mem ready ---
@@ -118,15 +118,15 @@ Analyzing design...
 -- Loading module UART
 -- Loading module SPI
 Optimizing 29 design-units (inlining 0 instances):
--- Optimizing interface soc_inf(fast)
 -- Optimizing module LSU(fast)
 ** Note: (vopt-143) Recognized 1 FSM in module "LSU(fast)".
+-- Optimizing interface soc_inf(fast)
 -- Optimizing module AXI4_Lite_Interconnect(fast)
 -- Optimizing interface cpu_monitor_inf(fast)
+-- Optimizing module CPU(fast)
 -- Optimizing module top_tb(fast)
 -- Optimizing module UART(fast)
 ** Note: (vopt-143) Recognized 2 FSMs in module "UART(fast)".
--- Optimizing module CPU(fast)
 -- Optimizing module SPI(fast)
 ** Note: (vopt-143) Recognized 1 FSM in module "SPI(fast)".
 -- Optimizing module Timer(fast)

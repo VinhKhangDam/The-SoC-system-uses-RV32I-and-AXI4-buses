@@ -231,10 +231,9 @@ def generate_instr(instr_index, total_count):
         beq_count += 1
 
         max_fwd = min(12, (total_count - 1) - instr_index)
-        max_bwd = min(12, instr_index)
 
-        lo = -max_bwd
-        hi =  max_fwd
+        lo = 1
+        hi = max_fwd
 
         if lo == hi:
             lo, hi = 0, 0
@@ -260,10 +259,9 @@ def generate_instr(instr_index, total_count):
         jal_count += 1
 
         max_fwd = min(12, (total_count - 1) - instr_index)
-        max_bwd = min(12, instr_index)
 
-        lo = -max_bwd
-        hi =  max_fwd
+        lo = 1
+        hi = max_fwd
 
         if lo == hi:
             lo, hi = 0, 0

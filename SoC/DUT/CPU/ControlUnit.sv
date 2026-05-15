@@ -31,7 +31,8 @@ module ControlUnit (
         .ALUOp(ALUOp_wire),          
         .funct3(funct3),
         .funct7b(funct7),            
-        .ALUControl(ALUControl)      
+        .ALUControl(ALUControl),
+        .opcode(Opcode)
     );
     
 endmodule
