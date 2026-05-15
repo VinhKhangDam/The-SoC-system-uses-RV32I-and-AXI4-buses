@@ -30,6 +30,14 @@ import sys
 # ──────────────────────────────────────────────────────────────────────────────
 MASK32 = 0xFFFF_FFFF
 
+PERIPH_RESET = {
+    0x2000_0000: 0x0000_0000,  # TIMER_CONTROL
+    0x2000_0004: 0x0000_0000,  # TIMER_PERIOD
+    0x3000_000C: 115200,       # UART_BAUD
+    0x4000_0004: 0x0000_0008,  # SPI_CONTROL
+    0x4000_000C: 10,           # SPI_BAUD
+}
+
 def to_signed32(v):
     v &= MASK32
     return v - (1 << 32) if v & (1 << 31) else v
@@ -115,6 +123,7 @@ def execute(d, regs, mem, pc):
         imm = d['imm_i']
 
         if   f3 == 0b000: result = a  + imm
+        elif f3 == 0b010: result = 1 if a < imm else 0
         elif f3 == 0b111: result = ua & to_u32(imm)
         elif f3 == 0b110: result = ua | to_u32(imm)
         elif f3 == 0b100: result = ua ^ to_u32(imm)
@@ -145,11 +154,15 @@ def execute(d, regs, mem, pc):
     elif op == 0b110_0011:
         a     = to_signed32(regs[rs1])
         b     = to_signed32(regs[rs2])
+        ua    = to_u32(regs[rs1])
+        ub    = to_u32(regs[rs2])
         taken = False
         if   f3 == 0b000: taken = (a == b)
         elif f3 == 0b001: taken = (a != b)
         elif f3 == 0b100: taken = (a <  b)
         elif f3 == 0b101: taken = (a >= b)
+        elif f3 == 0b110: taken = (ua <  ub)
+        elif f3 == 0b111: taken = (ua >= ub)
         else:
             print(f"[WARN] Unsupported branch f3={f3:03b} @ PC={pc:#010x}")
         if taken:
@@ -175,7 +188,7 @@ def simulate(instructions):
     """
     regs = [0] * 32
 
-    mem      = {}
+    mem      = dict(PERIPH_RESET)
     pc       = 0
     pc_limit = len(instructions) * 4
     max_steps = len(instructions) * 4

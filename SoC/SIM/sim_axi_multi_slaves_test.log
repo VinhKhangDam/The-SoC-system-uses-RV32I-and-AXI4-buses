@@ -4,7 +4,7 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 
 # 10.2c
 
-# vsim +UVM_TESTNAME=axi_multi_slaves_test +UVM_MASTER +MEM_SEED=2853377737 -coverage -do {run -all; quit} -c -sv_seed 2853377737 vopt_top 
+# vsim +UVM_TESTNAME=axi_multi_slaves_test +UVM_MASTER +MEM_SEED=397709044 -coverage -do {run -all; quit} -c -sv_seed 397709044 vopt_top 
 # //  Questa Sim-64
 # //  Version 10.2c Unknown Platform Jul 19 2013
 # //
@@ -45,13 +45,6 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # Loading work.UART(fast)
 # Loading work.SPI(fast)
 # Loading mtiUvm.questa_uvm_pkg(fast)
-# ** Warning: (vsim-3017) C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/top_tb.sv(13): [TFMPC] - Too few port connections. Expected 2, found 0.
-# 
-#         Region: /top_tb/cr_if
-# ** Warning: (vsim-3722) C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/top_tb.sv(13): [TFMPC] - Missing connection for port 'clk'.
-# 
-# ** Warning: (vsim-3722) C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/top_tb.sv(13): [TFMPC] - Missing connection for port 'rstn'.
-# 
 # Loading C:/app/QuestaSim/uvm-1.1d\win64\uvm_dpi.dll
 # run -all 
 # ----------------------------------------------------------------
@@ -78,106 +71,106 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # [IRAM] Loading file: instr.mem
 # [IRAM] mem[0] = 100000b7
-# [IRAM] mem[1] = 004b0133
-# [IRAM] mem[2] = f06b0d13
-# [IRAM] mem[3] = 384f8793
-# [IRAM] mem[4] = 0100056f
-# [IRAM] mem[5] = 54944413
-# [IRAM] mem[6] = 00d85233
-# [IRAM] mem[7] = 014f8863
-# [IRAM] mem[8] = 007f1233
-# [IRAM] mem[9] = 1794f893
-# [IRAM] mem[10] = 41598133
-# [IRAM] mem[11] = 416fd4b3
-# [IRAM] mem[12] = 63d0a023
-# [IRAM] mem[13] = 40dc5433
-# [IRAM] mem[14] = 01cd0ab3
-# [IRAM] mem[15] = 00570a33
-# [IRAM] mem[16] = 0d7d0513
-# [IRAM] mem[17] = 20c0a483
-# [IRAM] mem[18] = 2250ae23
-# [IRAM] mem[19] = 41a386b3
-# [IRAM] mem[20] = fd0d0ee3
-# [IRAM] mem[21] = 1d00a103
-# [IRAM] mem[22] = 4280a883
-# [IRAM] mem[23] = ffa786e3
-# [IRAM] mem[24] = 4846eb13
-# [IRAM] mem[25] = 011fa333
-# [IRAM] mem[26] = 1c40ab03
-# [IRAM] mem[27] = 00ec1633
-# [IRAM] mem[28] = ff3e06e3
-# [IRAM] mem[29] = 38e0a223
-# [IRAM] mem[30] = 1a00ad83
-# [IRAM] mem[31] = 5bd56b93
-# [IRAM] mem[32] = 3f80a223
-# [IRAM] mem[33] = 7d80a903
-# [IRAM] mem[34] = 00e6da33
-# [IRAM] mem[35] = 003d6fb3
-# [IRAM] mem[36] = 018129b3
-# [IRAM] mem[37] = fe7700e3
-# [IRAM] mem[38] = 40318933
-# [IRAM] mem[39] = ff9ff2ef
-# [IRAM] mem[40] = 40c98db3
-# [IRAM] mem[41] = fe5ff96f
-# [IRAM] mem[42] = 61d56c13
-# [IRAM] mem[43] = 00f6ddb3
-# [IRAM] mem[44] = 40260eb3
-# [IRAM] mem[45] = 01aae9b3
-# [IRAM] mem[46] = 2740aa03
-# [IRAM] mem[47] = 4f40ab03
-# [IRAM] mem[48] = 1300a983
-# [IRAM] mem[49] = 0153a1b3
-# [IRAM] mem[50] = 5e30aa23
-# [IRAM] mem[51] = 01856e33
-# [IRAM] mem[52] = 0fc67a93
-# [IRAM] mem[53] = 40cd0c33
-# [IRAM] mem[54] = 0167cdb3
-# [IRAM] mem[55] = 009b6eb3
-# [IRAM] mem[56] = f3af7f93
-# [IRAM] mem[57] = 40e28c33
-# [IRAM] mem[58] = 5870a223
-# [IRAM] mem[59] = e86cc513
-# [IRAM] mem[60] = 9954ed13
-# [IRAM] mem[61] = 00fa0f33
-# [IRAM] mem[62] = 0154afb3
-# [IRAM] mem[63] = 27e0a223
-# [IRAM] mem[64] = 5a00aa03
-# [IRAM] mem[65] = 74c0a903
-# [IRAM] mem[66] = 5336c293
-# [IRAM] mem[67] = b293e513
-# [IRAM] mem[68] = 0d618a13
-# [IRAM] mem[69] = 0ca8c893
-# [IRAM] mem[70] = 2ec0a203
-# [IRAM] mem[71] = 3c90a823
-# [IRAM] mem[72] = 88d24713
-# [IRAM] mem[73] = 7900ac03
-# [IRAM] mem[74] = 1e590513
-# [IRAM] mem[75] = fb89ee13
-# [IRAM] mem[76] = 40d4d833
-# [IRAM] mem[77] = 3c00a203
-# [IRAM] mem[78] = 0169feb3
-# [IRAM] mem[79] = 6100a503
-# [IRAM] mem[80] = 63c30e13
-# [IRAM] mem[81] = 40bc83b3
-# [IRAM] mem[82] = 6830a823
-# [IRAM] mem[83] = 0f00ac83
-# [IRAM] mem[84] = 87424613
-# [IRAM] mem[85] = 3640a283
-# [IRAM] mem[86] = 0d30a623
-# [IRAM] mem[87] = 1fe0a223
-# [IRAM] mem[88] = 4190a823
-# [IRAM] mem[89] = 38c0ab03
-# [IRAM] mem[90] = 3940a883
-# [IRAM] mem[91] = 4ff0a823
-# [IRAM] mem[92] = 5840aa83
-# [IRAM] mem[93] = 70786b93
-# [IRAM] mem[94] = fddffe6f
-# [IRAM] mem[95] = 952dff93
-# [IRAM] mem[96] = 01cd4a33
-# [IRAM] mem[97] = 000007ef
-# [IRAM] mem[98] = 00c5d833
-# [IRAM] mem[99] = 01ac2fb3
-# [IRAM] mem[100] = 01ff1e33
+# [IRAM] mem[1] = 20000137
+# [IRAM] mem[2] = 300001b7
+# [IRAM] mem[3] = 40000237
+# [IRAM] mem[4] = 41ed0cb3
+# [IRAM] mem[5] = b899f393
+# [IRAM] mem[6] = 08c0a283
+# [IRAM] mem[7] = 86dd4393
+# [IRAM] mem[8] = 2280a603
+# [IRAM] mem[9] = 40aa0e33
+# [IRAM] mem[10] = 07e0a023
+# [IRAM] mem[11] = 0157c633
+# [IRAM] mem[12] = 4e80a383
+# [IRAM] mem[13] = 1bf0a823
+# [IRAM] mem[14] = 41d7dbb3
+# [IRAM] mem[15] = 01800c6f
+# [IRAM] mem[16] = 234ccd93
+# [IRAM] mem[17] = e7656b93
+# [IRAM] mem[18] = 1ec0ab03
+# [IRAM] mem[19] = 00cb5ab3
+# [IRAM] mem[20] = 4980a223
+# [IRAM] mem[21] = 2790a023
+# [IRAM] mem[22] = 667b6813
+# [IRAM] mem[23] = 0115a4b3
+# [IRAM] mem[24] = 31b0a623
+# [IRAM] mem[25] = 2caafe93
+# [IRAM] mem[26] = 1600ad83
+# [IRAM] mem[27] = 40dd8a33
+# [IRAM] mem[28] = 01c0076f
+# [IRAM] mem[29] = 41765eb3
+# [IRAM] mem[30] = 01190e63
+# [IRAM] mem[31] = 21e70413
+# [IRAM] mem[32] = 01f78263
+# [IRAM] mem[33] = 01736eb3
+# [IRAM] mem[34] = 01762fb3
+# [IRAM] mem[35] = 4d40ab03
+# [IRAM] mem[36] = 00bc0863
+# [IRAM] mem[37] = 29a0ae23
+# [IRAM] mem[38] = 54af6313
+# [IRAM] mem[39] = 81ea7913
+# [IRAM] mem[40] = 00c008ef
+# [IRAM] mem[41] = 54b0a223
+# [IRAM] mem[42] = a9be6b13
+# [IRAM] mem[43] = 00c2adb3
+# [IRAM] mem[44] = 032a0863
+# [IRAM] mem[45] = 3ce0ac23
+# [IRAM] mem[46] = 40b38633
+# [IRAM] mem[47] = 0188c833
+# [IRAM] mem[48] = d4a5f393
+# [IRAM] mem[49] = 016e8463
+# [IRAM] mem[50] = 4d00ad03
+# [IRAM] mem[51] = 24c0a683
+# [IRAM] mem[52] = 48f46793
+# [IRAM] mem[53] = dcd86b13
+# [IRAM] mem[54] = 3780ac83
+# [IRAM] mem[55] = 014003ef
+# [IRAM] mem[56] = 01be9333
+# [IRAM] mem[57] = 72e0ae23
+# [IRAM] mem[58] = d7690513
+# [IRAM] mem[59] = 4c00a803
+# [IRAM] mem[60] = 7c40af83
+# [IRAM] mem[61] = 0116a333
+# [IRAM] mem[62] = 024006ef
+# [IRAM] mem[63] = f26c8313
+# [IRAM] mem[64] = 8313e293
+# [IRAM] mem[65] = fc848393
+# [IRAM] mem[66] = 1980aa03
+# [IRAM] mem[67] = 4f40a623
+# [IRAM] mem[68] = 52928493
+# [IRAM] mem[69] = 00c4d3b3
+# [IRAM] mem[70] = 007aa533
+# [IRAM] mem[71] = 1310aa23
+# [IRAM] mem[72] = 6eec0d93
+# [IRAM] mem[73] = 0f20ac23
+# [IRAM] mem[74] = 00554d33
+# [IRAM] mem[75] = 010485b3
+# [IRAM] mem[76] = 40f4dab3
+# [IRAM] mem[77] = 4ec0a783
+# [IRAM] mem[78] = 01692ab3
+# [IRAM] mem[79] = 0b00a823
+# [IRAM] mem[80] = 1380ad83
+# [IRAM] mem[81] = 11a0a423
+# [IRAM] mem[82] = 0138d6b3
+# [IRAM] mem[83] = 00c66933
+# [IRAM] mem[84] = 00d2d633
+# [IRAM] mem[85] = 16a0a423
+# [IRAM] mem[86] = 34e4cb93
+# [IRAM] mem[87] = 01429b33
+# [IRAM] mem[88] = da1c8913
+# [IRAM] mem[89] = 4be0a823
+# [IRAM] mem[90] = 50564f13
+# [IRAM] mem[91] = 41b4dbb3
+# [IRAM] mem[92] = 01490633
+# [IRAM] mem[93] = 012fe5b3
+# [IRAM] mem[94] = 4079dfb3
+# [IRAM] mem[95] = 4b0f6393
+# [IRAM] mem[96] = 01a2d833
+# [IRAM] mem[97] = 00fb64b3
+# [IRAM] mem[98] = c7df7913
+# [IRAM] mem[99] = 00c44a33
+# [IRAM] mem[100] = 40cf88b3
 # [TB] Mode: UVM MASTER â?? driver controls AXI bus
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_multi_slaves_test...
 # ** Warning: (vsim-PLI-8707) No address specified on line 2 of file "instr.mem" 

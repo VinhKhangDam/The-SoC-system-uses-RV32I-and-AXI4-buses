@@ -1,6 +1,7 @@
 module IRAM #(
-    parameter ADDR_WIDTH = 14,
-    parameter INIT_FILE  = "instr.mem"
+    parameter ADDR_WIDTH = 16,
+    parameter INIT_FILE  = "instr.mem",
+    parameter DUMP_WORDS = 256
 )(
     input  logic        clk,
     input  logic        rstn,
@@ -30,13 +31,22 @@ module IRAM #(
     // LOAD INSTRUCTION MEMORY
     // =========================================================
     initial begin
+        int loaded_words;
+
         if (INIT_FILE != "") begin
             $display("[IRAM] Loading file: %s", INIT_FILE);
             $readmemh(INIT_FILE, mem);
 
-            for (int i = 0; i < 101; i++) begin
-                $display("[IRAM] mem[%0d] = %h", i, mem[i]);
+            loaded_words = 0;
+            for (int i = 0; i < MEM_DEPTH; i++) begin
+                if (!$isunknown(mem[i])) begin
+                    loaded_words++;
+                    if (i < DUMP_WORDS)
+                        $display("[IRAM] mem[%0d] = %h", i, mem[i]);
+                end
             end
+
+            $display("[IRAM] Loaded %0d instruction words", loaded_words);
         end
     end
 

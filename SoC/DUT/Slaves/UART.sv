@@ -48,7 +48,7 @@ module UART (
 			s_axi_wready  <= '0;
 			s_axi_bvalid  <= '0;
 			uart_tx_start <= '0;
-			uart_baud     <= 32'd434; // Default 115200 @ 50MHz
+			uart_baud     <= 32'd115200;
 		end else begin
 			if (!s_axi_awready && s_axi_awvalid && s_axi_wvalid) begin
 				s_axi_awready <= '1;
