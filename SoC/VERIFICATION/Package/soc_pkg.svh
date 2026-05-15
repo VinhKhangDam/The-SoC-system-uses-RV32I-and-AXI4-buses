@@ -20,6 +20,7 @@ package soc_pkg;
 
     // ---- Coverage ----
     `include "axi_coverage.sv"
+    `include "cpu_coverage.sv"
 
     // ---- Environments ----
     `include "axi_env.sv"

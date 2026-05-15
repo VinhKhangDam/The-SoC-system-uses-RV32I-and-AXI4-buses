@@ -5,6 +5,7 @@ class cpu_env extends uvm_env;
     `uvm_component_utils(cpu_env)
     cpu_agent      agent;
     cpu_scoreboard scoreboard;
+    cpu_coverage   coverage;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -14,11 +15,13 @@ class cpu_env extends uvm_env;
         super.build_phase(phase);
         agent      = cpu_agent::type_id::create("agent",      this);
         scoreboard = cpu_scoreboard::type_id::create("scoreboard", this);
+        coverage   = cpu_coverage::type_id::create("coverage", this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
         // Monitor WB port → Scoreboard WB import
         agent.monitor.wb_port.connect(scoreboard.wb_export);
+        agent.monitor.fetch_port.connect(coverage.analysis_export);
         // FIX: Monitor AXI port → Scoreboard AXI import (was unconnected before)
         agent.monitor.axi_port.connect(scoreboard.axi_export);
     endfunction

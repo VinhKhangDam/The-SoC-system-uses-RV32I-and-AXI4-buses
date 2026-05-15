@@ -5,6 +5,7 @@
 //   2. AXI bus transactions (via soc_inf.mon_cb)
 //
 // Emits two analysis streams:
+//   - fetch_port : one cpu_transaction per fetched instruction
 //   - wb_port    : one cpu_wb_transaction per register writeback
 //   - axi_port   : one axi_transaction per AXI write/read
 // ============================================================
@@ -17,6 +18,7 @@ class cpu_monitor extends uvm_monitor;
     virtual clk_rst_inf     cr_vif;
 
     // Analysis ports
+    uvm_analysis_port #(cpu_transaction) fetch_port;
     uvm_analysis_port #(cpu_transaction) wb_port;
     uvm_analysis_port #(axi_transaction)    axi_port;
 
@@ -172,8 +174,9 @@ class cpu_monitor extends uvm_monitor;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
-        wb_port  = new("wb_port",  this);
-        axi_port = new("axi_port", this);
+        fetch_port = new("fetch_port", this);
+        wb_port    = new("wb_port",    this);
+        axi_port   = new("axi_port",   this);
     endfunction
 
     virtual function void build_phase(uvm_phase phase);
@@ -215,8 +218,13 @@ class cpu_monitor extends uvm_monitor;
 
             // ---- FETCH: log every new PC / instruction ----
             if (cpu_vif.mon_cb.PcF !== last_pc_f && !cpu_vif.mon_cb.StallF) begin
+                cpu_transaction fetch_tr;
                 last_pc_f    = cpu_vif.mon_cb.PcF;
                 last_instr_f = cpu_vif.mon_cb.InstrF;
+                fetch_tr       = cpu_transaction::type_id::create("fetch_tr");
+                fetch_tr.pc    = cpu_vif.mon_cb.PcF;
+                fetch_tr.instr = cpu_vif.mon_cb.InstrF;
+                fetch_port.write(fetch_tr);
                 `uvm_info("IF",
                     $sformatf("PC=%h  INSTR=%h  [%s]%s",
                         cpu_vif.mon_cb.PcF,
