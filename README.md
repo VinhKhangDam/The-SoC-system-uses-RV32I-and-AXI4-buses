@@ -310,7 +310,7 @@ To run this project, follow these steps:
    make gui test_name=TEST_NAME
    ```
 
-5. Delete work and generated files, only keep log files (optional), Makefile, and Python files
+5. Delete work and generated files, only keep log files (optional), Makefile, and Python files (Make sure run 'make clean' before run simulation)
    ```bash
    make clean
    ```
