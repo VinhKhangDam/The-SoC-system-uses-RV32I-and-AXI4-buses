@@ -1,10 +1,10 @@
 --- [GEN_MEM] Generate memory + golden reference ---
->>> Using SEED: 3928850739 (Saved to .last_seed)
-python3 gen_mem.py 3928850739
-[gen_mem] MEM_SEED = 3928850739
-Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (seed=3928850739)
-python3 sim_expected.py 3928850739
-Loaded  : 184 instructions from instr.mem
+>>> Using SEED: 4031322993 (Saved to .last_seed)
+python3 gen_mem.py 4031322993
+[gen_mem] MEM_SEED = 4031322993
+Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (200 instructions, seed=4031322993)
+python3 sim_expected.py 4031322993
+Loaded  : 200 instructions from instr.mem
 Written : /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/expected.mem
 --- Done: instr.mem + expected.mem ready ---
 --- ROOT: /mnt/c/Documents/DoAnThietKeViMach/Project/SoC ---

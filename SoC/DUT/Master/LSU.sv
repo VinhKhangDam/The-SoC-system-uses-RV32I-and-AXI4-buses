@@ -89,13 +89,13 @@ module LSU (
     logic [3:0]  wstrb_comb;
     logic [31:0] wdata_comb;
 
-   logic [31:0]  rdata_aligned;
+    logic [31:0]  rdata_aligned;
 
-   logic [31:0]  if_pc_reg;
-   logic         wait_req_drop;
-   logic         data_done;
-   logic         active_data_req;
-   logic         same_data_req;
+    logic [31:0]  if_pc_reg;
+    logic         wait_req_drop;
+    logic         data_done;
+    logic         active_data_req;
+    logic         same_data_req;
 
     always_comb begin
         case (funct3[1:0])

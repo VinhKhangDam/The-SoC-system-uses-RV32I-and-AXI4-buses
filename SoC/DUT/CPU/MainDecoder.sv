@@ -6,12 +6,12 @@ module MainDecoder (
     output logic [1:0] ResultSrc,
     output logic       Jump,
     output logic       Branch,
-    output logic [1:0] ALUOp,      // Nên đặt là ALUOp để phân biệt với ALUControl 4-bit
+    output logic [1:0] ALUOp,
     output logic [2:0] ImmSrc
 );
 
     always_comb begin
-        // Thiết lập giá trị mặc định để tránh tạo Latch
+        // Set default value to avoid generate latch
         RegWrite   = 0;
         ALUSrc     = 0;
         MemWrite   = 0;
@@ -30,7 +30,7 @@ module MainDecoder (
                 ALUOp      = 2'b00;
             end
 
-            7'b0100011: begin // sw (Store Word) - Đã sửa opcode
+            7'b0100011: begin // sw (Store Word)
                 ImmSrc     = 3'b001; // S-type
                 ALUSrc     = 1;
                 MemWrite   = 1;
@@ -54,7 +54,7 @@ module MainDecoder (
 
             7'b1100011: begin // beq (Branch)
                 ImmSrc     = 3'b010; // B-type
-                Branch     = 1;      // Đã sửa typo
+                Branch     = 1;
                 ALUOp      = 2'b01;
             end
 

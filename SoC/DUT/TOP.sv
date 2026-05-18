@@ -147,7 +147,7 @@ module TOP (
 	);
 
 	// PERIPHERALS
-	Timer timer (
+	Timer Timer (
 		.clk(clk),
 		.rstn(rstn),
 		.s_axi_awaddr(s_axi_awaddr[2]),

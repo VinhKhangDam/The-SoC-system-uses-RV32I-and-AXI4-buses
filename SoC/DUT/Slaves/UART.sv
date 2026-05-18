@@ -12,7 +12,7 @@ module UART (
 	input logic [31:0] 	s_axi_wdata,
 	input logic [3:0]  	s_axi_wstrb,
 	input logic 	   	s_axi_wvalid,
-	output logic 	   	s_axi_wready,
+   output logic 	   	s_axi_wready,
 	// Response signals
 	output logic 	   	s_axi_bvalid,
 	output logic [1:0] 	s_axi_bresp,

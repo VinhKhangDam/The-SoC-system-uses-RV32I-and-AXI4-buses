@@ -1,10 +1,10 @@
 module RegFile (
-    input logic clk, 
-    input logic rstn, 
-    input logic [4:0] rs1, rs2, 
-    input logic [4:0] rd,
-    input logic [31:0] WriteData,
-    input logic write_enable,
+    input  logic        clk,
+    input  logic        rstn,
+    input  logic [4:0]  rs1, rs2,
+    input  logic [4:0]  rd,
+    input  logic [31:0] WriteData,
+    input  logic        write_enable,
     output logic [31:0] rd1, rd2
 );
     logic [31:0] reg_internal [31:0]; // Array has 32 register, each has 32bit

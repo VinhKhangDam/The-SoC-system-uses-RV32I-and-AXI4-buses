@@ -26,7 +26,7 @@ class axi_coverage extends uvm_subscriber #(axi_transaction);
             bins READ  = { 0 };
         }
 
-        STRB_CP : coverpoint tr.wstrb {
+        STRB_CP : coverpoint tr.wstrb iff (tr.is_write) {
             bins BYTE_0  = { 4'b0001 };
             bins BYTE_1  = { 4'b0010 };
             bins BYTE_2  = { 4'b0100 };
@@ -37,28 +37,28 @@ class axi_coverage extends uvm_subscriber #(axi_transaction);
             bins INVALID = default;       // default is fine here — not used in cross
         }
 
-        BRESP_CP : coverpoint tr.bresp {
+        BRESP_CP : coverpoint tr.bresp iff (tr.is_write) {
             bins OKAY   = { 2'b00 };
-            bins SLVERR = { 2'b10 };
             bins DECERR = { 2'b11 };
+            ignore_bins SLVERR = { 2'b10 };
             ignore_bins EXOKAY = { 2'b01 }; // explicit value — legal in ignore_bins
         }
 
-        RRESP_CP : coverpoint tr.rresp {
+        RRESP_CP : coverpoint tr.rresp iff (!tr.is_write) {
             bins OKAY   = { 2'b00 };
-            bins SLVERR = { 2'b10 };
             bins DECERR = { 2'b11 };
+            ignore_bins SLVERR = { 2'b10 };
             ignore_bins EXOKAY = { 2'b01 };
         }
 
-        AWPROT_CP : coverpoint tr.awprot {
+        AWPROT_CP : coverpoint tr.awprot iff (tr.is_write) {
             bins NORMAL_NONSEC = { 3'b000 };
             bins PRIV_NONSEC   = { 3'b001 };
             bins NORMAL_SEC    = { 3'b010 };
             bins others        = default;
         }
 
-        ARPROT_CP : coverpoint tr.arprot {
+        ARPROT_CP : coverpoint tr.arprot iff (!tr.is_write) {
             bins NORMAL_NONSEC = { 3'b000 };
             bins PRIV_NONSEC   = { 3'b001 };
             bins NORMAL_SEC    = { 3'b010 };
@@ -113,8 +113,24 @@ class axi_coverage extends uvm_subscriber #(axi_transaction);
             ignore_bins ILL_STRBW    = binsof(ADDR_CP.ILLEGAL) && binsof(STRB_CP.WORD);
         }
 
-        ADDR_x_BRESP : cross ADDR_CP, BRESP_CP;
-        ADDR_x_RRESP : cross ADDR_CP, RRESP_CP;
+        ADDR_x_BRESP : cross ADDR_CP, BRESP_CP {
+            ignore_bins IRAM_OKAY     = binsof(ADDR_CP.IRAM)    && binsof(BRESP_CP.OKAY);
+            ignore_bins IRAM_DECERR   = binsof(ADDR_CP.IRAM)    && binsof(BRESP_CP.DECERR);
+            ignore_bins DRAM_DECERR   = binsof(ADDR_CP.DRAM)    && binsof(BRESP_CP.DECERR);
+            ignore_bins TIMER_DECERR  = binsof(ADDR_CP.TIMER)   && binsof(BRESP_CP.DECERR);
+            ignore_bins UART_DECERR   = binsof(ADDR_CP.UART)    && binsof(BRESP_CP.DECERR);
+            ignore_bins SPI_DECERR    = binsof(ADDR_CP.SPI)     && binsof(BRESP_CP.DECERR);
+            ignore_bins ILLEGAL_OKAY  = binsof(ADDR_CP.ILLEGAL) && binsof(BRESP_CP.OKAY);
+        }
+
+        ADDR_x_RRESP : cross ADDR_CP, RRESP_CP {
+            ignore_bins IRAM_DECERR   = binsof(ADDR_CP.IRAM)    && binsof(RRESP_CP.DECERR);
+            ignore_bins DRAM_DECERR   = binsof(ADDR_CP.DRAM)    && binsof(RRESP_CP.DECERR);
+            ignore_bins TIMER_DECERR  = binsof(ADDR_CP.TIMER)   && binsof(RRESP_CP.DECERR);
+            ignore_bins UART_DECERR   = binsof(ADDR_CP.UART)    && binsof(RRESP_CP.DECERR);
+            ignore_bins SPI_DECERR    = binsof(ADDR_CP.SPI)     && binsof(RRESP_CP.DECERR);
+            ignore_bins ILLEGAL_OKAY  = binsof(ADDR_CP.ILLEGAL) && binsof(RRESP_CP.OKAY);
+        }
 
     endgroup
 
@@ -200,8 +216,12 @@ class axi_coverage extends uvm_subscriber #(axi_transaction);
         }
 
         PERIPH_REG_x_CMD : cross PERIPH_REG_CP, PERIPH_CMD_CP {
-            ignore_bins UART_TX_RD  = binsof(PERIPH_REG_CP.UART_TX)  && binsof(PERIPH_CMD_CP.READ);
-            ignore_bins SPI_DATA_RD = binsof(PERIPH_REG_CP.SPI_DATA) && binsof(PERIPH_CMD_CP.READ);
+            ignore_bins TIMER_COUNT_WR  = binsof(PERIPH_REG_CP.TIMER_COUNT) && binsof(PERIPH_CMD_CP.WRITE);
+            ignore_bins UART_TX_RD      = binsof(PERIPH_REG_CP.UART_TX)     && binsof(PERIPH_CMD_CP.READ);
+            ignore_bins UART_RX_WR      = binsof(PERIPH_REG_CP.UART_RX)     && binsof(PERIPH_CMD_CP.WRITE);
+            ignore_bins UART_STATUS_WR  = binsof(PERIPH_REG_CP.UART_STATUS) && binsof(PERIPH_CMD_CP.WRITE);
+            ignore_bins SPI_DATA_RD     = binsof(PERIPH_REG_CP.SPI_DATA)    && binsof(PERIPH_CMD_CP.READ);
+            ignore_bins SPI_STATUS_WR   = binsof(PERIPH_REG_CP.SPI_STATUS)  && binsof(PERIPH_CMD_CP.WRITE);
         }
 
     endgroup

@@ -11,24 +11,26 @@ class axi_multi_slaves_sequence extends uvm_sequence #(axi_transaction);
         super.new(name);
     endfunction
 
-    task send_write(bit [31:0] addr, bit[31:0] data, bit [2:0] prot = 3'b000);
+    task send_write(bit [31:0] addr, bit[31:0] data, bit [2:0] prot = 3'b000,
+                    bit [3:0] wstrb = 4'hF);
         req = axi_transaction::type_id::create("req");
         start_item(req);
         req.addr = addr;
         req.data = data;
         req.is_write = 1'b1;
-        req.wstrb = 4'hF;
+        req.wstrb = wstrb;
         req.awprot = prot;
         finish_item(req);
     endtask
 
-    task send_read(bit[31:0] addr);
+    task send_read(bit[31:0] addr, bit [2:0] prot = 3'b000);
         req = axi_transaction::type_id::create("req");
         start_item(req);
         req.addr = addr;
         req.data = 32'h0;
         req.is_write = 1'b0;
         req.wstrb = 4'h0;
+        req.arprot = prot;
         finish_item(req);
     endtask
 
@@ -198,6 +200,68 @@ class axi_multi_slaves_sequence extends uvm_sequence #(axi_transaction);
         send_read(TIMER_BASE + 32'h04);
         send_read(UART_BASE + 32'h0C);
         send_read(SPI_BASE + 32'h0C);
+
+        // ========================================
+        // TEST 16: Coverage Closure - PROT, Strobed DRAM, Regions
+        // ========================================
+        `uvm_info("SEQ", "=== TEST 16: AXI Protocol/DRAM Coverage Closure ===", UVM_LOW)
+        send_write(DRAM_BASE + 32'h0400, 32'h0000_0000, 3'b000);
+        send_read (DRAM_BASE + 32'h0400, 3'b000);
+        send_write(DRAM_BASE + 32'h2000, 32'hAAAA_5555, 3'b001);
+        send_read (DRAM_BASE + 32'h2000, 3'b001);
+        send_write(DRAM_BASE + 32'h3FFC, 32'h5555_AAAA, 3'b010);
+        send_read (DRAM_BASE + 32'h3FFC, 3'b010);
+        send_write(DRAM_BASE + 32'h2100, 32'h0000_0001, 3'b111);
+        send_read (DRAM_BASE + 32'h2100, 3'b111);
+
+        send_write(DRAM_BASE + 32'h2200, 32'h0000_0000);
+        send_write(DRAM_BASE + 32'h2200, 32'h1111_1111, 3'b000, 4'b0001);
+        send_read (DRAM_BASE + 32'h2200);
+        send_write(DRAM_BASE + 32'h2204, 32'h0000_0000);
+        send_write(DRAM_BASE + 32'h2204, 32'h2222_2222, 3'b000, 4'b0010);
+        send_read (DRAM_BASE + 32'h2204);
+        send_write(DRAM_BASE + 32'h2208, 32'h0000_0000);
+        send_write(DRAM_BASE + 32'h2208, 32'h4444_4444, 3'b000, 4'b0100);
+        send_read (DRAM_BASE + 32'h2208);
+        send_write(DRAM_BASE + 32'h220C, 32'h0000_0000);
+        send_write(DRAM_BASE + 32'h220C, 32'h8888_8888, 3'b000, 4'b1000);
+        send_read (DRAM_BASE + 32'h220C);
+        send_write(DRAM_BASE + 32'h2210, 32'h0000_0000);
+        send_write(DRAM_BASE + 32'h2210, 32'h3333_3333, 3'b000, 4'b0011);
+        send_read (DRAM_BASE + 32'h2210);
+        send_write(DRAM_BASE + 32'h2214, 32'h0000_0000);
+        send_write(DRAM_BASE + 32'h2214, 32'hCCCC_CCCC, 3'b000, 4'b1100);
+        send_read (DRAM_BASE + 32'h2214);
+
+        // ========================================
+        // TEST 17: Peripheral Register Coverage Closure
+        // ========================================
+        `uvm_info("SEQ", "=== TEST 17: Peripheral Register Coverage Closure ===", UVM_LOW)
+        send_write(TIMER_BASE + 32'h04, 32'h0000_0025, 3'b001);
+        send_write(TIMER_BASE + 32'h00, 32'h0000_0001, 3'b001);
+        send_read (TIMER_BASE + 32'h00, 3'b001);
+        send_read (TIMER_BASE + 32'h04, 3'b001);
+        send_read (TIMER_BASE + 32'h08, 3'b001);
+
+        send_write(UART_BASE + 32'h0C, 32'd115200, 3'b010);
+        send_write(UART_BASE + 32'h00, 32'h0000_0055, 3'b010);
+        send_read (UART_BASE + 32'h04, 3'b010);
+        send_read (UART_BASE + 32'h08, 3'b010);
+        send_read (UART_BASE + 32'h0C, 3'b010);
+
+        send_write(SPI_BASE + 32'h04, 32'h0000_0001, 3'b000);
+        send_write(SPI_BASE + 32'h0C, 32'h0000_0004, 3'b000);
+        send_write(SPI_BASE + 32'h00, 32'h0000_00A5, 3'b000);
+        send_read (SPI_BASE + 32'h04, 3'b000);
+        send_read (SPI_BASE + 32'h08, 3'b000);
+        send_read (SPI_BASE + 32'h0C, 3'b000);
+
+        // ========================================
+        // TEST 18: Decode Error Response Coverage
+        // ========================================
+        `uvm_info("SEQ", "=== TEST 18: Decode Error Coverage ===", UVM_LOW)
+        send_write(32'h5000_0000, 32'h1234_5678, 3'b010);
+        send_read (32'h5000_0000, 3'b010);
  
         `uvm_info("SEQ", "--- All Multi-Slave Tests Complete ---", UVM_LOW)
     endtask

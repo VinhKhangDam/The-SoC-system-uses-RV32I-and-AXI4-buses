@@ -39,12 +39,36 @@ class axi_scoreboard extends uvm_scoreboard;
     endfunction
 
     virtual function void write(axi_transaction tr);
+        bit [31:0] exp_data;
+
+        // --- Illegal decode region (0x5000_0000 - 0xFFFF_FFFF) ---
+        if (tr.addr >= 32'h5000_0000) begin
+            if (tr.is_write) begin
+                if (tr.bresp == 2'b11)
+                    `uvm_info("SCB_PASS", $sformatf("[DECERR] PASS WRITE Addr=%h BResp=%b", tr.addr, tr.bresp), UVM_LOW)
+                else
+                    `uvm_error("SCB_FAIL", $sformatf("[DECERR] WRITE Addr=%h Expected BResp=11 Got=%b", tr.addr, tr.bresp))
+            end else begin
+                if (tr.rresp == 2'b11 && tr.data == 32'hDEAD_BEEF)
+                    `uvm_info("SCB_PASS", $sformatf("[DECERR] PASS READ Addr=%h Data=%h RResp=%b", tr.addr, tr.data, tr.rresp), UVM_LOW)
+                else
+                    `uvm_error("SCB_FAIL", $sformatf("[DECERR] READ Addr=%h Expected Data=DEADBEEF RResp=11 Got Data=%h RResp=%b",
+                               tr.addr, tr.data, tr.rresp))
+            end
+            return;
+        end
 
         // --- DRAM (0x1000_0000 - 0x1FFF_FFFF) ---
         if (tr.addr >= 32'h1000_0000 && tr.addr < 32'h2000_0000) begin
             if (tr.is_write) begin
-                sc_mem[tr.addr] = tr.data;
-                `uvm_info("SCB_WR", $sformatf("[DRAM] WRITE Addr=%h Data=%h", tr.addr, tr.data), UVM_HIGH)
+                exp_data = sc_mem.exists(tr.addr) ? sc_mem[tr.addr] : 32'h0;
+                if (tr.wstrb[0]) exp_data[7:0]   = tr.data[7:0];
+                if (tr.wstrb[1]) exp_data[15:8]  = tr.data[15:8];
+                if (tr.wstrb[2]) exp_data[23:16] = tr.data[23:16];
+                if (tr.wstrb[3]) exp_data[31:24] = tr.data[31:24];
+                sc_mem[tr.addr] = exp_data;
+                `uvm_info("SCB_WR", $sformatf("[DRAM] WRITE Addr=%h Data=%h Strb=%b Expected=%h",
+                          tr.addr, tr.data, tr.wstrb, exp_data), UVM_HIGH)
             end else begin
                 if (!sc_mem.exists(tr.addr)) begin
                     `uvm_warning("SCB_WARN", $sformatf("[DRAM] READ Addr=%h but never written — skipping check", tr.addr))

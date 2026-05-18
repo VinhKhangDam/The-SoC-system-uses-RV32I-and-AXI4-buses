@@ -105,9 +105,12 @@ module CPU (
     // ----------------------------------------------------------------
     // DECODE STAGE
     // ----------------------------------------------------------------
-    assign Opcode    = InstrD[6:0];   assign Funct3 = InstrD[14:12];
-    assign Funct7    = InstrD[30];    assign Rs1D   = InstrD[19:15];
-    assign Rs2D      = InstrD[24:20]; assign RdD    = InstrD[11:7];
+    assign Opcode    = InstrD[6:0];
+    assign Funct3    = InstrD[14:12];
+    assign Funct7    = InstrD[30];
+    assign Rs1D      = InstrD[19:15];
+    assign Rs2D      = InstrD[24:20];
+    assign RdD       = InstrD[11:7];
     assign Immediate = InstrD[31:7];
 
     ControlUnit cu (
@@ -185,7 +188,6 @@ module CPU (
     // ----------------------------------------------------------------
     // EXECUTE STAGE
     // ----------------------------------------------------------------
-    //assign PCSrc      = JumpE | (Zero & BranchE);
     assign SrcA       = (ForwardA==2'b10) ? ALUResultM :
                         (ForwardA==2'b01) ? ResultW    : Rd1E;
     assign WriteDataE = (ForwardB==2'b10) ? ALUResultM :
@@ -224,6 +226,7 @@ module CPU (
         .stall(front_stall)
     );
 
+    // Logic of BranchTaken
     always_comb begin
        case (Funct3E)
          3'b000 : BranchTaken = (SrcA == WriteDataE);                         // BEQ
