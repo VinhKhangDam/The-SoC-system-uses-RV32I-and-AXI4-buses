@@ -67,9 +67,9 @@ module top_tb;
         use_uvm_master = $test$plusargs("UVM_MASTER") ? 1 : 0;
 
         if (use_uvm_master)
-            $display("[TB] Mode: UVM MASTER — driver controls AXI bus");
+            $display("[TB] Mode: UVM MASTER —> driver controls AXI bus");
         else
-            $display("[TB] Mode: CPU MASTER — CPU drives AXI, UVM observes");
+            $display("[TB] Mode: CPU MASTER —> CPU drives AXI, UVM observes");
 
         if (use_uvm_master) begin
             force dut.m_axi_awaddr  = s_if.awaddr;
