@@ -16,6 +16,7 @@ ROOT_DIR_WIN := $(shell wslpath -m $(ROOT_DIR))
 DUT_DIR_WIN  := $(ROOT_DIR_WIN)/DUT
 INF_DIR_WIN  := $(ROOT_DIR_WIN)/INF
 VERIF_DIR_WIN:= $(ROOT_DIR_WIN)/VERIFICATION
+SVA_DIR_WIN  := $(VERIF_DIR_WIN)/SVA
 
 # --- Tools ---
 VLOG_CMD     = vlog -sv +acc -cover bcst
@@ -30,6 +31,10 @@ SIM_SCRIPT   = sim_expected.py
 # --- Simulation config ---
 test_name    ?=
 seed         ?= random
+
+# Count loaded instructions from instr.mem at run time.
+# Use recursive '=' so this is evaluated after gen_mem creates instr.mem.
+CPU_INSTR_COUNT = $(shell if [ -f instr.mem ]; then awk 'NF && $$1 !~ /^\/\// {count++} END {print count+0}' instr.mem; else echo 0; fi)
 
 # --- RNG seed ---
 # := evaluates ONCE at parse time → gen_mem.py and sim_expected.py always share the same seed.
@@ -59,6 +64,7 @@ DUT_FILES    = $(DUT_DIR_WIN)/Slaves/*.sv \
 
 UVM_PKG      = $(VERIF_DIR_WIN)/Package/soc_pkg.svh
 TOP_TB       = $(VERIF_DIR_WIN)/top_tb.sv
+SVA_FILES    = $(SVA_DIR_WIN)/*.sv
 
 #==========================================================================================
 # AVAILABLE TESTS
@@ -90,6 +96,7 @@ ifndef test_name
 endif
 	@echo "======================================================="
 	@echo ">>> RUN TEST: $(test_name)  [MEM_SEED=$(MEM_SEED)]"
+	@echo ">>> CPU_INSTR_COUNT = $(CPU_INSTR_COUNT)"
 	@echo "======================================================="
 
 	@if echo $(test_name) | grep -q "cpu_"; then \
@@ -101,6 +108,7 @@ endif
 	$(VSIM_CMD) -sv_seed $(seed) vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
 		+MEM_SEED=$(MEM_SEED) \
+		+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
 		-do "coverage save -onexit coverage_result.ucdb; run -all; quit"
 
 #==========================================================================================
@@ -143,6 +151,9 @@ compile: gen_mem
 	            +incdir+$(VERIF_DIR_WIN)/Sequence \
 	            +incdir+$(VERIF_DIR_WIN)/Test \
 	            $(UVM_PKG)
+
+	@echo "--- [SVA] Compile Assertions ---"
+	$(VLOG_CMD) $(SVA_FILES)
 	
 	@echo "--- [4/4] Compile Top TB ---"
 	$(VLOG_CMD) $(TOP_TB)
@@ -169,6 +180,7 @@ endif
 	$(VSIM_CMD) -sv_seed $(seed) vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
 		+MEM_SEED=$(MEM_SEED) \
+		+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
 		-do "run -all; quit"
 
 #==========================================================================================
@@ -190,6 +202,7 @@ endif
 	vsim -i -sv_seed $(seed) vopt_top \
 		+UVM_TESTNAME=$(test_name) +$$MODE \
 		+MEM_SEED=$(MEM_SEED) \
+		+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
 		-do "add wave -recursive vopt_top/*"
 
 #==========================================================================================

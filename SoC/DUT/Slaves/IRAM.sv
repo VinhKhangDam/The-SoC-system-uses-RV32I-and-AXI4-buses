@@ -33,6 +33,9 @@ module IRAM #(
     initial begin
         int loaded_words;
 
+        for (int i = 0; i < MEM_DEPTH; i++)
+            mem[i] = 32'h0000_0013; // NOP: ADDI x0, x0, 0
+
         if (INIT_FILE != "") begin
             $display("[IRAM] Loading file: %s", INIT_FILE);
             $readmemh(INIT_FILE, mem);

@@ -1,0 +1,5 @@
+*.sv   text eol=lf
+*.svh  text eol=lf
+*.mem  text eol=lf
+Makefile text eol=lf
+*.py   text eol=lf
