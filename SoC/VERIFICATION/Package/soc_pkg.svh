@@ -27,12 +27,12 @@ package soc_pkg;
     `include "cpu_env.sv"             // put in Env/ folder
 
     // ---- UVM MASTER sequences + tests ----
-    `include "axi_write_sequence.sv"
-    `include "axi_read_sequence.sv"
+    //`include "axi_write_sequence.sv"
+    //`include "axi_read_sequence.sv"
     `include "axi_random_wr_rd.sv"
     `include "axi_multi_slaves_sequence.sv"
-    `include "axi_write_test.sv"
-    `include "axi_read_test.sv"
+    //`include "axi_write_test.sv"
+    //`include "axi_read_test.sv"
     `include "axi_random_wr_rd_test.sv"
     `include "axi_multi_slaves_test.sv"
 

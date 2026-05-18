@@ -1,0 +1,71 @@
+--- [UART] Compile Interfaces ---
+rm -rf work
+vlib work
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/INF/*.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling interface clk_rst_inf
+-- Compiling interface cpu_monitor_inf
+-- Compiling interface soc_inf
+
+Top level modules:
+	--none--
+--- [UART] Compile DUT ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/UART.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module UART
+
+Top level modules:
+	UART
+--- [UART] Compile SVA ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/SVA/uart_sva.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module uart_sva
+
+Top level modules:
+	uart_sva
+--- [UART] Compile UVM Package ---
+vlog -sv +acc -cover bcst +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/uart_pkg.svh
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling package uart_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+--- [UART] Compile Top TB ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/uart_top_tb.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module uart_top_tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package uart_pkg
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	uart_top_tb
+--- [UART] Optimize ---
+vopt +acc +cover uart_top_tb -o uart_vopt
+QuestaSim-64 vopt 10.2c Compiler 2013.07 Jul 19 2013
+
+Top level modules:
+	uart_top_tb
+
+Analyzing design...
+-- Loading module uart_top_tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package uart_pkg
+-- Loading package mtiUvm.questa_uvm_pkg
+-- Loading interface clk_rst_inf
+-- Loading interface soc_inf
+-- Loading module UART
+-- Loading module uart_sva
+Optimizing 8 design-units (inlining 0 instances):
+-- Optimizing interface soc_inf(fast)
+-- Optimizing module UART(fast)
+** Note: (vopt-143) Recognized 2 FSMs in module "UART(fast)".
+-- Optimizing module uart_sva(fast)
+-- Optimizing module uart_top_tb(fast)
+-- Optimizing interface clk_rst_inf(fast)
+-- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+-- Optimizing package uart_pkg(fast)
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+Optimized design name is uart_vopt

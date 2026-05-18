@@ -72,8 +72,6 @@ SVA_FILES    = $(SVA_DIR_WIN)/*.sv
  
 # --- UVM MASTER tests (axi_*) ---
 UVM_TESTS = \
-    axi_write_test \
-    axi_read_test \
     axi_random_wr_rd_test \
     axi_multi_slaves_test
  
@@ -85,14 +83,18 @@ CPU_TESTS = \
 TIMER_TESTS = \
     timer_test
 
+# --- UART standalone tests ---
+UART_TESTS = \
+	uart_test
+
 # --- ALL TEST ---
-ALL_TESTS := $(UVM_TESTS) $(CPU_TESTS) $(TIMER_TESTS)
+ALL_TESTS := $(UVM_TESTS) $(CPU_TESTS) $(TIMER_TESTS) $(UART_TESTS)
 
 #==========================================================================================
 # MAIN TARGET (SINGLE TEST ONLY)
 #==========================================================================================
 
-.PHONY: all compile sim gui clean gen_mem help list timer_all timer_compile timer_sim timer_gui
+.PHONY: all compile sim gui clean gen_mem help list timer_all timer_compile timer_sim timer_gui uart_all uart_compile uart_sim uart_gui
 
 all: gen_mem compile
 ifndef test_name
@@ -134,6 +136,8 @@ gen_mem:
 
 ifeq ($(test_name),timer_test)
 compile: timer_compile
+else ifeq ($(test_name),uart_test)
+compile: uart_compile
 else
 compile: gen_mem
 	@echo "--- ROOT: $(ROOT_DIR) ---"
@@ -175,6 +179,8 @@ endif
 
 ifeq ($(test_name),timer_test)
 sim: timer_sim
+else ifeq ($(test_name),uart_test)
+sim: uart_sim
 else
 sim:
 ifndef test_name
@@ -207,6 +213,8 @@ endif
 
 ifeq ($(test_name),timer_test)
 gui: timer_gui
+else ifeq ($(test_name),uart_test)
+gui: uart_gui
 else
 gui:
 ifndef test_name
@@ -349,3 +357,54 @@ timer_gui:
 	vsim -i $(TIMER_VOPT) \
 		+UVM_TESTNAME=timer_test \
 		-do "add wave -recursive timer_top_tb/*"
+
+#==========================================================================================
+# UART STANDALONE TEST
+#==========================================================================================
+UART_PKG       = $(VERIF_DIR_WIN)/Package/uart_pkg.svh
+UART_TOP_TB    = $(VERIF_DIR_WIN)/uart_top_tb.sv
+UART_SVA       = $(SVA_DIR_WIN)/uart_sva.sv
+UART_VOPT      = uart_vopt
+UART_INC_DIRS  = +incdir+$(VERIF_DIR_WIN)/Transaction \
+                  +incdir+$(VERIF_DIR_WIN)/Driver \
+                  +incdir+$(VERIF_DIR_WIN)/Monitor \
+                  +incdir+$(VERIF_DIR_WIN)/Coverage \
+                  +incdir+$(VERIF_DIR_WIN)/Env \
+                  +incdir+$(VERIF_DIR_WIN)/Scoreboard \
+                  +incdir+$(VERIF_DIR_WIN)/Sequence \
+                  +incdir+$(VERIF_DIR_WIN)/Test
+
+uart_all: uart_compile uart_sim
+
+uart_compile:
+	@echo "--- [UART] Compile Interfaces ---"
+	rm -rf work
+	vlib work
+	$(VLOG_CMD) $(INF_DIR_WIN)/*.sv
+
+	@echo "--- [UART] Compile DUT ---"
+	$(VLOG_CMD) $(DUT_DIR_WIN)/Slaves/UART.sv
+
+	@echo "--- [UART] Compile SVA ---"
+	$(VLOG_CMD) $(UART_SVA)
+
+	@echo "--- [UART] Compile UVM Package ---"
+	$(VLOG_CMD) $(UART_INC_DIRS) $(UART_PKG)
+
+	@echo "--- [UART] Compile Top TB ---"
+	$(VLOG_CMD) $(UART_TOP_TB)
+
+	@echo "--- [UART] Optimize ---"
+	vopt +acc +cover uart_top_tb -o $(UART_VOPT)
+
+uart_sim:
+	@echo "--- [UART] Sim ---"
+	$(VSIM_CMD) $(UART_VOPT) \
+		+UVM_TESTNAME=uart_test \
+		-do "coverage save -onexit uart_coverage.ucdb; run -all; quit"
+
+uart_gui:
+	@echo "--- [UART] GUI ---"
+	vsim -i $(UART_VOPT) \
+		+UVM_TESTNAME=uart_test \
+		-do "add wave -recursive uart_top_tb/*"

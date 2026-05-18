@@ -159,7 +159,10 @@ module UART (
 	always_ff @(posedge clk or negedge rstn) begin
 		if (!rstn) begin
 			rx_state <= RX_IDLE;
-			uart_rx_ready <= 1'b0;		
+			uart_rx_ready <= 1'b0;
+			uart_rx_reg <= '0;
+			uart_rx_count <= '0;
+			rx_bit_idx <= '0;
 		end else begin
 			if (uart_rx_clear) uart_rx_ready <= 1'b0;
 			case (rx_state) 
