@@ -1,0 +1,70 @@
+--- [TIMER] Compile Interfaces ---
+rm -rf work
+vlib work
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/INF/*.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling interface clk_rst_inf
+-- Compiling interface cpu_monitor_inf
+-- Compiling interface soc_inf
+
+Top level modules:
+	--none--
+--- [TIMER] Compile DUT ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/Timer.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module Timer
+
+Top level modules:
+	Timer
+--- [TIMER] Compile SVA ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/SVA/timer_sva.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module timer_sva
+
+Top level modules:
+	timer_sva
+--- [TIMER] Compile UVM Package ---
+vlog -sv +acc -cover bcst +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/timer_pkg.svh
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling package timer_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+--- [TIMER] Compile Top TB ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/timer_top_tb.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module timer_top_tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package timer_pkg
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	timer_top_tb
+--- [TIMER] Optimize ---
+vopt +acc +cover timer_top_tb -o timer_vopt
+QuestaSim-64 vopt 10.2c Compiler 2013.07 Jul 19 2013
+
+Top level modules:
+	timer_top_tb
+
+Analyzing design...
+-- Loading module timer_top_tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package timer_pkg
+-- Loading package mtiUvm.questa_uvm_pkg
+-- Loading interface clk_rst_inf
+-- Loading interface soc_inf
+-- Loading module Timer
+-- Loading module timer_sva
+Optimizing 8 design-units (inlining 0 instances):
+-- Optimizing interface soc_inf(fast)
+-- Optimizing module timer_sva(fast)
+-- Optimizing module Timer(fast)
+-- Optimizing module timer_top_tb(fast)
+-- Optimizing interface clk_rst_inf(fast)
+-- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+-- Optimizing package timer_pkg(fast)
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+Optimized design name is timer_vopt

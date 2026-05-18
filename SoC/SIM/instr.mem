@@ -1,202 +1,202 @@
-// --- instr.mem Randomized Mixed Testcases (200 instructions, seed=1073936890) ---
+// --- instr.mem Randomized Mixed Testcases (200 instructions, seed=3771343177) ---
 // Mix: CPU=54, ALU=14, JAL=8, BRANCH=40, TIMER=30, UART=30, SPI=20
 100000b7  // lui x1, 0x10000   // x1 = DRAM base 0x1000_0000
 20000137  // lui x2, 0x20000  // x2 = Timer base 0x2000_0000
 300001b7  // lui x3, 0x30000   // x3 = UART base 0x3000_0000
 40000237  // lui x4, 0x40000    // x4 = SPI base 0x4000_0000
+51d0a423  // [DRAM] sw x29, 1288(x1)
+00d04263  // [BRANCH] blt x0, x13, 4  // data-dependent, no skip
+2840a983  // [DRAM] lw x19, 644(x1)
+0161a023  // [UART] sw x22, 0(x3)  // UART_TXDATA
+00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
+5e362993  // [CPU] slti x19, x12, 1507
+5ef0a223  // [DRAM] sw x15, 1508(x1)
+00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
+01faa333  // [CPU] slt x6, x21, x31
 01222023  // [SPI] sw x18, 0(x4)  // SPI_DATA
-00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
-418c0eb3  // [CPU] sub x29, x24, x24
-01412023  // [TIMER] sw x20, 0(x2)  // TIMER_CONTROL
-005c9bb3  // [CPU] sll x23, x25, x5
-00512023  // [TIMER] sw x5, 0(x2)  // TIMER_CONTROL
-0148d7b3  // [ALU_COV] srl x15, x17, x20
-4090a023  // [DRAM] sw x9, 1024(x1)
-00f22623  // [SPI] sw x15, 12(x4)  // SPI_BAUD
-00e06263  // [BRANCH] bltu x0, x14, 4  // data-dependent, no skip
-00c1ab83  // [UART] lw x23, 12(x3)  // UART_BAUD
-00588a33  // [CPU] add x20, x17, x5
-00704263  // [BRANCH] blt x0, x7, 4  // data-dependent, no skip
-00c1af83  // [UART] lw x31, 12(x3)  // UART_BAUD
+00400fef  // [JAL_COV] jal x31, 4  // no skip
 0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
-fb34c613  // [CPU] xori x12, x9, -77
-01e2f3b3  // [CPU] and x7, x5, x30
-0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
-00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
-00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
-00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
-01822223  // [SPI] sw x24, 4(x4)  // SPI_CONTROL
-01112223  // [TIMER] sw x17, 4(x2)  // TIMER_PERIOD
-00822003  // [SPI] lw x0, 8(x4)  // SPI_STATUS volatile
-4657ee93  // [CPU] ori x29, x15, 1125
-00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
-00c22d03  // [SPI] lw x26, 12(x4)  // SPI_BAUD
-ce72af13  // [ALU_COV] slti x30, x5, -793
-01601263  // [BRANCH] bne x0, x22, 4  // data-dependent, no skip
-00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
-01176c33  // [CPU] or x24, x14, x17
-01b657b3  // [CPU] srl x15, x12, x27
-40946a13  // [CPU] ori x20, x8, 1033
-0121a023  // [UART] sw x18, 0(x3)  // UART_TXDATA
-0111a623  // [UART] sw x17, 12(x3)  // UART_BAUD
-384a4c13  // [CPU] xori x24, x20, 900
-00d81db3  // [ALU_COV] sll x27, x16, x13
-004003ef  // [JAL_COV] jal x7, 4  // no skip
-00512223  // [TIMER] sw x5, 4(x2)  // TIMER_PERIOD
-90a52513  // [CPU] slti x10, x10, -1782
-b349f393  // [CPU] andi x7, x19, -1228
-009e25b3  // [CPU] slt x11, x28, x9
-0040096f  // [JAL_COV] jal x18, 4  // no skip
-84e34b93  // [ALU_COV] xori x23, x6, -1970
-01ec6333  // [ALU_COV] or x6, x24, x30
-42c0a823  // [DRAM] sw x12, 1072(x1)
-00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
-01804263  // [BRANCH] blt x0, x24, 4  // data-dependent, no skip
+00012503  // [TIMER] lw x10, 0(x2)  // TIMER_CONTROL
+37368c13  // [ALU_COV] addi x24, x13, 883
 0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
-0165ad33  // [ALU_COV] slt x26, x11, x22
-01d04263  // [BRANCH] blt x0, x29, 4  // data-dependent, no skip
-00c28fb3  // [CPU] add x31, x5, x12
-0131a623  // [UART] sw x19, 12(x3)  // UART_BAUD
-01ccc2b3  // [ALU_COV] xor x5, x25, x28
-01a12223  // [TIMER] sw x26, 4(x2)  // TIMER_PERIOD
-00522623  // [SPI] sw x5, 12(x4)  // SPI_BAUD
-00822023  // [SPI] sw x8, 0(x4)  // SPI_DATA
-00c7f2b3  // [CPU] and x5, x15, x12
-0121a623  // [UART] sw x18, 12(x3)  // UART_BAUD
-00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
-00c22983  // [SPI] lw x19, 12(x4)  // SPI_BAUD
 00412903  // [TIMER] lw x18, 4(x2)  // TIMER_PERIOD
-01d04263  // [BRANCH] blt x0, x29, 4  // data-dependent, no skip
-00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
-00412e83  // [TIMER] lw x29, 4(x2)  // TIMER_PERIOD
-5cc0ae03  // [DRAM] lw x28, 1484(x1)
-01f22223  // [SPI] sw x31, 4(x4)  // SPI_CONTROL
-01948533  // [CPU] add x10, x9, x25
-01fa04b3  // [CPU] add x9, x20, x31
-00422a03  // [SPI] lw x20, 4(x4)  // SPI_CONTROL
-41468833  // [ALU_COV] sub x16, x13, x20
-da0b4313  // [CPU] xori x6, x22, -608
-f677f693  // [CPU] andi x13, x15, -153
-0840ad83  // [DRAM] lw x27, 132(x1)
-00c1ac83  // [UART] lw x25, 12(x3)  // UART_BAUD
-0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
-f3152b13  // [CPU] slti x22, x10, -207
-00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
-00012c83  // [TIMER] lw x25, 0(x2)  // TIMER_CONTROL
-0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
-00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
-409cdab3  // [ALU_COV] sra x21, x25, x9
-00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
-017673b3  // [ALU_COV] and x7, x12, x23
-4280a223  // [DRAM] sw x8, 1060(x1)
-01506263  // [BRANCH] bltu x0, x21, 4  // data-dependent, no skip
-01b7a3b3  // [CPU] slt x7, x15, x27
-00637fb3  // [CPU] and x31, x6, x6
-00c01263  // [BRANCH] bne x0, x12, 4  // data-dependent, no skip
+01622623  // [SPI] sw x22, 12(x4)  // SPI_BAUD
 00c1a883  // [UART] lw x17, 12(x3)  // UART_BAUD
-00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
-42d4e493  // [CPU] ori x9, x9, 1069
-00412483  // [TIMER] lw x9, 4(x2)  // TIMER_PERIOD
-00012c83  // [TIMER] lw x25, 0(x2)  // TIMER_CONTROL
+c3b82613  // [CPU] slti x12, x16, -965
 00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
-6980a603  // [DRAM] lw x12, 1688(x1)
 00822003  // [SPI] lw x0, 8(x4)  // SPI_STATUS volatile
-0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
-00012283  // [TIMER] lw x5, 0(x2)  // TIMER_CONTROL
-004005ef  // [JAL_COV] jal x11, 4  // no skip
-2d40a883  // [DRAM] lw x17, 724(x1)
-00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
-0e80aa03  // [DRAM] lw x20, 232(x1)
-01801263  // [BRANCH] bne x0, x24, 4  // data-dependent, no skip
-00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
-00400def  // [JAL_COV] jal x27, 4  // no skip
-00422e83  // [SPI] lw x29, 4(x4)  // SPI_CONTROL
-01b06263  // [BRANCH] bltu x0, x27, 4  // data-dependent, no skip
-0091a623  // [UART] sw x9, 12(x3)  // UART_BAUD
-00b12223  // [TIMER] sw x11, 4(x2)  // TIMER_PERIOD
-d1998993  // [ALU_COV] addi x19, x19, -743
-01e01263  // [BRANCH] bne x0, x30, 4  // data-dependent, no skip
-00822223  // [SPI] sw x8, 4(x4)  // SPI_CONTROL
-7400a703  // [DRAM] lw x14, 1856(x1)
-01b01263  // [BRANCH] bne x0, x27, 4  // data-dependent, no skip
-41e484b3  // [CPU] sub x9, x9, x30
-008aa9b3  // [CPU] slt x19, x21, x8
-01304263  // [BRANCH] blt x0, x19, 4  // data-dependent, no skip
-00c1af03  // [UART] lw x30, 12(x3)  // UART_BAUD
-00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
-00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
-01a1a023  // [UART] sw x26, 0(x3)  // UART_TXDATA
-00ce65b3  // [CPU] or x11, x28, x12
-00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
-bc93ae13  // [CPU] slti x28, x7, -1079
-2cc0af03  // [DRAM] lw x30, 716(x1)
-00806263  // [BRANCH] bltu x0, x8, 4  // data-dependent, no skip
-00412383  // [TIMER] lw x7, 4(x2)  // TIMER_PERIOD
-0158ecb3  // [CPU] or x25, x17, x21
-2880a623  // [DRAM] sw x8, 652(x1)
+00012d83  // [TIMER] lw x27, 0(x2)  // TIMER_CONTROL
+0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
 00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
-00022003  // [SPI] lw x0, 0(x4)  // SPI_DATA volatile
-009c04b3  // [ALU_COV] add x9, x24, x9
-00506263  // [BRANCH] bltu x0, x5, 4  // data-dependent, no skip
-00400e6f  // [JAL_COV] jal x28, 4  // no skip
-a5b56313  // [ALU_COV] ori x6, x10, -1445
-00422383  // [SPI] lw x7, 4(x4)  // SPI_CONTROL
-00904263  // [BRANCH] blt x0, x9, 4  // data-dependent, no skip
-01822623  // [SPI] sw x24, 12(x4)  // SPI_BAUD
-00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
-0191a023  // [UART] sw x25, 0(x3)  // UART_TXDATA
-00400a6f  // [JAL_COV] jal x20, 4  // no skip
-4087d533  // [CPU] sra x10, x15, x8
-01bdddb3  // [CPU] srl x27, x27, x27
-01812023  // [TIMER] sw x24, 0(x2)  // TIMER_CONTROL
-0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
-01912023  // [TIMER] sw x25, 0(x2)  // TIMER_CONTROL
-00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
-0171a023  // [UART] sw x23, 0(x3)  // UART_TXDATA
-41980c33  // [CPU] sub x24, x16, x25
-0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
+00400cef  // [JAL_COV] jal x25, 4  // no skip
+bd1ffd13  // [CPU] andi x26, x31, -1071
 0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
-5100a603  // [DRAM] lw x12, 1296(x1)
-00b01263  // [BRANCH] bne x0, x11, 4  // data-dependent, no skip
-01b804b3  // [CPU] add x9, x16, x27
-6b90a223  // [DRAM] sw x25, 1700(x1)
-00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
-004005ef  // [JAL_COV] jal x11, 4  // no skip
-00822003  // [SPI] lw x0, 8(x4)  // SPI_STATUS volatile
-00412d83  // [TIMER] lw x27, 4(x2)  // TIMER_PERIOD
-00d1a023  // [UART] sw x13, 0(x3)  // UART_TXDATA
+00412403  // [TIMER] lw x8, 4(x2)  // TIMER_PERIOD
+01b22223  // [SPI] sw x27, 4(x4)  // SPI_CONTROL
+00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
+01d12023  // [TIMER] sw x29, 0(x2)  // TIMER_CONTROL
+d1b80813  // [CPU] addi x16, x16, -741
+00c22703  // [SPI] lw x14, 12(x4)  // SPI_BAUD
+01c04263  // [BRANCH] blt x0, x28, 4  // data-dependent, no skip
 00c1ab83  // [UART] lw x23, 12(x3)  // UART_BAUD
-00012603  // [TIMER] lw x12, 0(x2)  // TIMER_CONTROL
-00012b83  // [TIMER] lw x23, 0(x2)  // TIMER_CONTROL
-00e06263  // [BRANCH] bltu x0, x14, 4  // data-dependent, no skip
-00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
 00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
-0040096f  // [JAL_COV] jal x18, 4  // no skip
-0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
-0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
-9b64f793  // [ALU_COV] andi x15, x9, -1610
+00412383  // [TIMER] lw x7, 4(x2)  // TIMER_PERIOD
+0086f633  // [ALU_COV] and x12, x13, x8
+00400aef  // [JAL_COV] jal x21, 4  // no skip
+00b12223  // [TIMER] sw x11, 4(x2)  // TIMER_PERIOD
+00412283  // [TIMER] lw x5, 4(x2)  // TIMER_PERIOD
+01512223  // [TIMER] sw x21, 4(x2)  // TIMER_PERIOD
+00504263  // [BRANCH] blt x0, x5, 4  // data-dependent, no skip
+012607b3  // [CPU] add x15, x12, x18
+41198a33  // [CPU] sub x20, x19, x17
+01612223  // [TIMER] sw x22, 4(x2)  // TIMER_PERIOD
 00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
-01a35f33  // [CPU] srl x30, x6, x26
-019593b3  // [CPU] sll x7, x11, x25
-431f0813  // [CPU] addi x16, x30, 1073
-01912223  // [TIMER] sw x25, 4(x2)  // TIMER_PERIOD
-00c22c83  // [SPI] lw x25, 12(x4)  // SPI_BAUD
-01b12223  // [TIMER] sw x27, 4(x2)  // TIMER_PERIOD
-55f0a623  // [DRAM] sw x31, 1356(x1)
-00012783  // [TIMER] lw x15, 0(x2)  // TIMER_CONTROL
-00022003  // [SPI] lw x0, 0(x4)  // SPI_DATA volatile
-0111a023  // [UART] sw x17, 0(x3)  // UART_TXDATA
-00022003  // [SPI] lw x0, 0(x4)  // SPI_DATA volatile
-40bc0933  // [CPU] sub x18, x24, x11
-01f12023  // [TIMER] sw x31, 0(x2)  // TIMER_CONTROL
+0b00ae83  // [DRAM] lw x29, 176(x1)
+e3164b93  // [CPU] xori x23, x12, -463
+00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
+00d6ef33  // [CPU] or x30, x13, x13
+03c0aa83  // [DRAM] lw x21, 60(x1)
+01a22623  // [SPI] sw x26, 12(x4)  // SPI_BAUD
+00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
+00d06263  // [BRANCH] bltu x0, x13, 4  // data-dependent, no skip
+01c82633  // [ALU_COV] slt x12, x16, x28
+23e30913  // [CPU] addi x18, x6, 574
+2370a623  // [DRAM] sw x23, 556(x1)
 0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
-01806263  // [BRANCH] bltu x0, x24, 4  // data-dependent, no skip
-40fe8933  // [CPU] sub x18, x29, x15
-00afd9b3  // [CPU] srl x19, x31, x10
-ec29ad93  // [CPU] slti x27, x19, -318
-00a7d733  // [CPU] srl x14, x15, x10
-00412983  // [TIMER] lw x19, 4(x2)  // TIMER_PERIOD
 00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
-00f12023  // [TIMER] sw x15, 0(x2)  // TIMER_CONTROL
-0101a623  // [UART] sw x16, 12(x3)  // UART_BAUD
-0141a623  // [UART] sw x20, 12(x3)  // UART_BAUD
+00012d83  // [TIMER] lw x27, 0(x2)  // TIMER_CONTROL
+0161a623  // [UART] sw x22, 12(x3)  // UART_BAUD
+01a22223  // [SPI] sw x26, 4(x4)  // SPI_CONTROL
+41e50533  // [ALU_COV] sub x10, x10, x30
+3280ab03  // [DRAM] lw x22, 808(x1)
+00d1a623  // [UART] sw x13, 12(x3)  // UART_BAUD
+0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
+2fc0af03  // [DRAM] lw x30, 764(x1)
+79c0a023  // [DRAM] sw x28, 1920(x1)
+4970ac23  // [DRAM] sw x23, 1176(x1)
+01c12023  // [TIMER] sw x28, 0(x2)  // TIMER_CONTROL
+e0aec593  // [CPU] xori x11, x29, -502
+00704263  // [BRANCH] blt x0, x7, 4  // data-dependent, no skip
+01206263  // [BRANCH] bltu x0, x18, 4  // data-dependent, no skip
+01cc78b3  // [CPU] and x17, x24, x28
+0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
+6d672393  // [CPU] slti x7, x14, 1750
+00012883  // [TIMER] lw x17, 0(x2)  // TIMER_CONTROL
+006955b3  // [CPU] srl x11, x18, x6
+00422403  // [SPI] lw x8, 4(x4)  // SPI_CONTROL
+0f90ae23  // [DRAM] sw x25, 252(x1)
+00df0eb3  // [CPU] add x29, x30, x13
+01187933  // [CPU] and x18, x16, x17
+28e0a423  // [DRAM] sw x14, 648(x1)
+00e2a4b3  // [CPU] slt x9, x5, x14
+00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
+004008ef  // [JAL_COV] jal x17, 4  // no skip
+01b22223  // [SPI] sw x27, 4(x4)  // SPI_CONTROL
+0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
+00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
+00c04263  // [BRANCH] blt x0, x12, 4  // data-dependent, no skip
+00e2f333  // [CPU] and x6, x5, x14
+01622623  // [SPI] sw x22, 12(x4)  // SPI_BAUD
+01b1a023  // [UART] sw x27, 0(x3)  // UART_TXDATA
+406b84b3  // [CPU] sub x9, x23, x6
+00c12023  // [TIMER] sw x12, 0(x2)  // TIMER_CONTROL
+ee87cf93  // [ALU_COV] xori x31, x15, -280
+5d40af83  // [DRAM] lw x31, 1492(x1)
+0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
+00e01263  // [BRANCH] bne x0, x14, 4  // data-dependent, no skip
+00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
+0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
+00412b03  // [TIMER] lw x22, 4(x2)  // TIMER_PERIOD
+01e49633  // [ALU_COV] sll x12, x9, x30
+00f12223  // [TIMER] sw x15, 4(x2)  // TIMER_PERIOD
+00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
+34da7a13  // [ALU_COV] andi x20, x20, 845
+414ed9b3  // [CPU] sra x19, x29, x20
+00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
+40bc07b3  // [CPU] sub x15, x24, x11
+5b7c6c13  // [CPU] ori x24, x24, 1463
+00922023  // [SPI] sw x9, 0(x4)  // SPI_DATA
+00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
+1500a983  // [DRAM] lw x19, 336(x1)
+00412a03  // [TIMER] lw x20, 4(x2)  // TIMER_PERIOD
+ce09cc13  // [CPU] xori x24, x19, -800
+39c0a983  // [DRAM] lw x19, 924(x1)
+0119e9b3  // [ALU_COV] or x19, x19, x17
+00022003  // [SPI] lw x0, 0(x4)  // SPI_DATA volatile
+00822003  // [SPI] lw x0, 8(x4)  // SPI_STATUS volatile
+00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
+01b5c833  // [CPU] xor x16, x11, x27
+0054c6b3  // [ALU_COV] xor x13, x9, x5
+00e68833  // [CPU] add x16, x13, x14
+01604263  // [BRANCH] blt x0, x22, 4  // data-dependent, no skip
+418c5e33  // [CPU] sra x28, x24, x24
+01112223  // [TIMER] sw x17, 4(x2)  // TIMER_PERIOD
+00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
+18f72513  // [ALU_COV] slti x10, x14, 399
+0091a023  // [UART] sw x9, 0(x3)  // UART_TXDATA
+00fead33  // [CPU] slt x26, x29, x15
+afcc4393  // [CPU] xori x7, x24, -1284
+01406263  // [BRANCH] bltu x0, x20, 4  // data-dependent, no skip
+01e01263  // [BRANCH] bne x0, x30, 4  // data-dependent, no skip
+01f12023  // [TIMER] sw x31, 0(x2)  // TIMER_CONTROL
+0040036f  // [JAL_COV] jal x6, 4  // no skip
+0121a623  // [UART] sw x18, 12(x3)  // UART_BAUD
+00422283  // [SPI] lw x5, 4(x4)  // SPI_CONTROL
+00e77cb3  // [CPU] and x25, x14, x14
+0081a623  // [UART] sw x8, 12(x3)  // UART_BAUD
+00bc4933  // [CPU] xor x18, x24, x11
+01c12023  // [TIMER] sw x28, 0(x2)  // TIMER_CONTROL
+00022003  // [SPI] lw x0, 0(x4)  // SPI_DATA volatile
+01a81533  // [CPU] sll x10, x16, x26
+01a4f933  // [CPU] and x18, x9, x26
+01912023  // [TIMER] sw x25, 0(x2)  // TIMER_CONTROL
+0081a003  // [UART] lw x0, 8(x3)  // UART_STATUS volatile
+00c22403  // [SPI] lw x8, 12(x4)  // SPI_BAUD
+0040086f  // [JAL_COV] jal x16, 4  // no skip
+0101a023  // [UART] sw x16, 0(x3)  // UART_TXDATA
+fa56fe93  // [CPU] andi x29, x13, -91
+23b7ee13  // [ALU_COV] ori x28, x15, 571
+0051a623  // [UART] sw x5, 12(x3)  // UART_BAUD
+00012983  // [TIMER] lw x19, 0(x2)  // TIMER_CONTROL
+00942633  // [CPU] slt x12, x8, x9
+00c1ac03  // [UART] lw x24, 12(x3)  // UART_BAUD
+004008ef  // [JAL_COV] jal x17, 4  // no skip
+0041a003  // [UART] lw x0, 4(x3)  // UART_RXDATA volatile
+00604263  // [BRANCH] blt x0, x6, 4  // data-dependent, no skip
+00a01263  // [BRANCH] bne x0, x10, 4  // data-dependent, no skip
+00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
+01cb56b3  // [ALU_COV] srl x13, x22, x28
+41da53b3  // [ALU_COV] sra x7, x20, x29
+00c22c83  // [SPI] lw x25, 12(x4)  // SPI_BAUD
+00901263  // [BRANCH] bne x0, x9, 4  // data-dependent, no skip
+01a31e33  // [CPU] sll x28, x6, x26
+00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
+00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip
+01401263  // [BRANCH] bne x0, x20, 4  // data-dependent, no skip
+01528cb3  // [ALU_COV] add x25, x5, x21
+01a06263  // [BRANCH] bltu x0, x26, 4  // data-dependent, no skip
+92cb6513  // [CPU] ori x10, x22, -1748
+0151a623  // [UART] sw x21, 12(x3)  // UART_BAUD
+00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
+01201263  // [BRANCH] bne x0, x18, 4  // data-dependent, no skip
+0111a023  // [UART] sw x17, 0(x3)  // UART_TXDATA
+01022023  // [SPI] sw x16, 0(x4)  // SPI_DATA
+00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
+2c80a983  // [DRAM] lw x19, 712(x1)
+00022003  // [SPI] lw x0, 0(x4)  // SPI_DATA volatile
+00c1a683  // [UART] lw x13, 12(x3)  // UART_BAUD
+01906263  // [BRANCH] bltu x0, x25, 4  // data-dependent, no skip
+00c1ac83  // [UART] lw x25, 12(x3)  // UART_BAUD
+00c1a603  // [UART] lw x12, 12(x3)  // UART_BAUD
+00812003  // [TIMER] lw x0, 8(x2)  // TIMER_COUNT volatile
+00005263  // [BRANCH] bge x0, x0, 4  // taken, no skip
+01f4c433  // [CPU] xor x8, x9, x31
+00422903  // [SPI] lw x18, 4(x4)  // SPI_CONTROL
+00e1a023  // [UART] sw x14, 0(x3)  // UART_TXDATA
+0040a703  // [DRAM] lw x14, 4(x1)
+00012a83  // [TIMER] lw x21, 0(x2)  // TIMER_CONTROL
+00000263  // [BRANCH] beq x0, x0, 4  // taken, no skip
+00e12223  // [TIMER] sw x14, 4(x2)  // TIMER_PERIOD
+00400def  // [JAL_COV] jal x27, 4  // no skip
+01c06263  // [BRANCH] bltu x0, x28, 4  // data-dependent, no skip
+00007263  // [BRANCH] bgeu x0, x0, 4  // taken, no skip

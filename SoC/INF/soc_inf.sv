@@ -46,10 +46,10 @@ interface soc_inf (input logic clk, rstn);
 	
 	clocking mon_cb @(posedge clk);
 		default input #1;
-		input awaddr, awvalid, awready;
+		input awaddr, awvalid, awready, awprot;
 		input wdata, wstrb, wvalid, wready;
 		input bresp, bvalid, bready;
-		input araddr, arvalid, arready;
+		input araddr, arvalid, arready, arprot;
 		input rdata, rresp, rvalid, rready;
 		input uart_tx,uart_rx, spi_sck, spi_mosi, spi_miso, spi_cs_n;
 	endclocking

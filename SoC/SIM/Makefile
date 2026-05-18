@@ -81,14 +81,18 @@ UVM_TESTS = \
 CPU_TESTS = \
     cpu_test
 
+# --- TIMER standalone tests ---
+TIMER_TESTS = \
+    timer_test
+
 # --- ALL TEST ---
-ALL_TESTS := $(UVM_TESTS) $(CPU_TESTS)
+ALL_TESTS := $(UVM_TESTS) $(CPU_TESTS) $(TIMER_TESTS)
 
 #==========================================================================================
 # MAIN TARGET (SINGLE TEST ONLY)
 #==========================================================================================
 
-.PHONY: all compile sim gui clean gen_mem help list
+.PHONY: all compile sim gui clean gen_mem help list timer_all timer_compile timer_sim timer_gui
 
 all: gen_mem compile
 ifndef test_name
@@ -128,6 +132,9 @@ gen_mem:
 # COMPILE
 #==========================================================================================
 
+ifeq ($(test_name),timer_test)
+compile: timer_compile
+else
 compile: gen_mem
 	@echo "--- ROOT: $(ROOT_DIR) ---"
 	rm -rf work
@@ -160,11 +167,15 @@ compile: gen_mem
 	
 	@echo "--- [OPTIMIZE] ---"
 	$(VOPT_CMD)
+endif
 
 #==========================================================================================
 # SIM (run only, no compile)
 #==========================================================================================
 
+ifeq ($(test_name),timer_test)
+sim: timer_sim
+else
 sim:
 ifndef test_name
 	$(error ❌ Please specify test_name, e.g. make sim test_name=cpu_instr_test)
@@ -173,20 +184,30 @@ endif
 
 	@if echo $(test_name) | grep -q "cpu_"; then \
 		MODE=CPU_MASTER; \
+		echo "MODE = $$MODE"; \
+		$(VSIM_CMD) -sv_seed $(seed) vopt_top \
+			+UVM_TESTNAME=$(test_name) +$$MODE \
+			+MEM_SEED=$(MEM_SEED) \
+			+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
+			-do "run -all; quit"; \
 	else \
 		MODE=UVM_MASTER; \
-	fi; \
-	echo "MODE = $$MODE"; \
-	$(VSIM_CMD) -sv_seed $(seed) vopt_top \
-		+UVM_TESTNAME=$(test_name) +$$MODE \
-		+MEM_SEED=$(MEM_SEED) \
-		+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
-		-do "run -all; quit"
+		echo "MODE = $$MODE"; \
+		$(VSIM_CMD) -sv_seed $(seed) vopt_top \
+			+UVM_TESTNAME=$(test_name) +$$MODE \
+			+MEM_SEED=$(MEM_SEED) \
+			+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
+			-do "run -all; quit"; \
+	fi
+endif
 
 #==========================================================================================
 # GUI
 #==========================================================================================
 
+ifeq ($(test_name),timer_test)
+gui: timer_gui
+else
 gui:
 ifndef test_name
 	$(error ❌ Please specify test_name, e.g. make gui test_name=cpu_instr_test)
@@ -195,22 +216,29 @@ endif
 
 	@if echo $(test_name) | grep -q "cpu_"; then \
 		MODE=CPU_MASTER; \
+		echo "MODE = $$MODE"; \
+		vsim -i -sv_seed $(seed) vopt_top \
+			+UVM_TESTNAME=$(test_name) +$$MODE \
+			+MEM_SEED=$(MEM_SEED) \
+			+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
+			-do "add wave -recursive vopt_top/*"; \
 	else \
 		MODE=UVM_MASTER; \
-	fi; \
-	echo "MODE = $$MODE"; \
-	vsim -i -sv_seed $(seed) vopt_top \
-		+UVM_TESTNAME=$(test_name) +$$MODE \
-		+MEM_SEED=$(MEM_SEED) \
-		+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
-		-do "add wave -recursive vopt_top/*"
+		echo "MODE = $$MODE"; \
+		vsim -i -sv_seed $(seed) vopt_top \
+			+UVM_TESTNAME=$(test_name) +$$MODE \
+			+MEM_SEED=$(MEM_SEED) \
+			+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
+			-do "add wave -recursive vopt_top/*"; \
+	fi
+endif
 
 #==========================================================================================
 # CLEAN
 #==========================================================================================
 
 clean:
-	rm -rf work transcript *.wlf vopt_top *.ucdb \
+	rm -rf work transcript *.wlf vopt_top timer_vopt *.ucdb \
 		 expected.mem $(SEED_FILE)
 	@echo "--- CLEAN DONE ---"
 
@@ -229,6 +257,10 @@ help:
 	@echo "    make sim  test_name=<test>             run only (no recompile)"
 	@echo "    make gui  test_name=<test>             open waveform viewer"
 	@echo "    make compile                           compile only"
+	@echo "    make timer_all                         compile + run Timer standalone test"
+	@echo "    make timer_compile                     compile Timer standalone testbench"
+	@echo "    make timer_sim                         run Timer standalone simulation"
+	@echo "    make timer_gui                         open Timer standalone waveform viewer"
 	@echo "    make gen_mem                           regenerate mem + golden ref"
 	@echo "    make list                              show all available tests"
 	@echo "    make clean                             remove all build artifacts"
@@ -241,6 +273,7 @@ help:
 	@echo "    make all  test_name=axi_write_test"
 	@echo "    make all  test_name=axi_random_wr_rd_test MEM_SEED=1234"
 	@echo "    make all  test_name=cpu_test"
+	@echo "    make timer_all"
 	@echo "    make sim  test_name=axi_read_test"
 	@echo "    make gui  test_name=cpu_test MEM_SEED=42"
 	@echo ""
@@ -264,3 +297,55 @@ list:
 		echo "	$$t"; \
 		done
 	@echo ""
+
+#==========================================================================================
+# TIMER STANDALONE TEST
+#==========================================================================================
+
+TIMER_PKG       = $(VERIF_DIR_WIN)/Package/timer_pkg.svh
+TIMER_TOP_TB    = $(VERIF_DIR_WIN)/timer_top_tb.sv
+TIMER_SVA       = $(SVA_DIR_WIN)/timer_sva.sv
+TIMER_VOPT      = timer_vopt
+TIMER_INC_DIRS  = +incdir+$(VERIF_DIR_WIN)/Transaction \
+                  +incdir+$(VERIF_DIR_WIN)/Driver \
+                  +incdir+$(VERIF_DIR_WIN)/Monitor \
+                  +incdir+$(VERIF_DIR_WIN)/Coverage \
+                  +incdir+$(VERIF_DIR_WIN)/Env \
+                  +incdir+$(VERIF_DIR_WIN)/Scoreboard \
+                  +incdir+$(VERIF_DIR_WIN)/Sequence \
+                  +incdir+$(VERIF_DIR_WIN)/Test
+
+timer_all: timer_compile timer_sim
+
+timer_compile:
+	@echo "--- [TIMER] Compile Interfaces ---"
+	rm -rf work
+	vlib work
+	$(VLOG_CMD) $(INF_DIR_WIN)/*.sv
+
+	@echo "--- [TIMER] Compile DUT ---"
+	$(VLOG_CMD) $(DUT_DIR_WIN)/Slaves/Timer.sv
+
+	@echo "--- [TIMER] Compile SVA ---"
+	$(VLOG_CMD) $(TIMER_SVA)
+
+	@echo "--- [TIMER] Compile UVM Package ---"
+	$(VLOG_CMD) $(TIMER_INC_DIRS) $(TIMER_PKG)
+
+	@echo "--- [TIMER] Compile Top TB ---"
+	$(VLOG_CMD) $(TIMER_TOP_TB)
+
+	@echo "--- [TIMER] Optimize ---"
+	vopt +acc +cover timer_top_tb -o $(TIMER_VOPT)
+
+timer_sim:
+	@echo "--- [TIMER] Sim ---"
+	$(VSIM_CMD) $(TIMER_VOPT) \
+		+UVM_TESTNAME=timer_test \
+		-do "coverage save -onexit timer_coverage.ucdb; run -all; quit"
+
+timer_gui:
+	@echo "--- [TIMER] GUI ---"
+	vsim -i $(TIMER_VOPT) \
+		+UVM_TESTNAME=timer_test \
+		-do "add wave -recursive timer_top_tb/*"
