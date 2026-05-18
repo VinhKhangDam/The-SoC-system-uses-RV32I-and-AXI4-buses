@@ -4,7 +4,7 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 
 # 10.2c
 
-# vsim +UVM_TESTNAME=axi_multi_slaves_test +UVM_MASTER +MEM_SEED=397709044 -coverage -do {run -all; quit} -c -sv_seed 397709044 vopt_top 
+# vsim +UVM_TESTNAME=axi_multi_slaves_test +UVM_MASTER +MEM_SEED=2361987765 -coverage -do {run -all; quit} -c -sv_seed 2361987765 vopt_top 
 # //  Questa Sim-64
 # //  Version 10.2c Unknown Platform Jul 19 2013
 # //
@@ -74,111 +74,211 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # [IRAM] mem[1] = 20000137
 # [IRAM] mem[2] = 300001b7
 # [IRAM] mem[3] = 40000237
-# [IRAM] mem[4] = 41ed0cb3
-# [IRAM] mem[5] = b899f393
-# [IRAM] mem[6] = 08c0a283
-# [IRAM] mem[7] = 86dd4393
-# [IRAM] mem[8] = 2280a603
-# [IRAM] mem[9] = 40aa0e33
-# [IRAM] mem[10] = 07e0a023
-# [IRAM] mem[11] = 0157c633
-# [IRAM] mem[12] = 4e80a383
-# [IRAM] mem[13] = 1bf0a823
-# [IRAM] mem[14] = 41d7dbb3
-# [IRAM] mem[15] = 01800c6f
-# [IRAM] mem[16] = 234ccd93
-# [IRAM] mem[17] = e7656b93
-# [IRAM] mem[18] = 1ec0ab03
-# [IRAM] mem[19] = 00cb5ab3
-# [IRAM] mem[20] = 4980a223
-# [IRAM] mem[21] = 2790a023
-# [IRAM] mem[22] = 667b6813
-# [IRAM] mem[23] = 0115a4b3
-# [IRAM] mem[24] = 31b0a623
-# [IRAM] mem[25] = 2caafe93
-# [IRAM] mem[26] = 1600ad83
-# [IRAM] mem[27] = 40dd8a33
-# [IRAM] mem[28] = 01c0076f
-# [IRAM] mem[29] = 41765eb3
-# [IRAM] mem[30] = 01190e63
-# [IRAM] mem[31] = 21e70413
-# [IRAM] mem[32] = 01f78263
-# [IRAM] mem[33] = 01736eb3
-# [IRAM] mem[34] = 01762fb3
-# [IRAM] mem[35] = 4d40ab03
-# [IRAM] mem[36] = 00bc0863
-# [IRAM] mem[37] = 29a0ae23
-# [IRAM] mem[38] = 54af6313
-# [IRAM] mem[39] = 81ea7913
-# [IRAM] mem[40] = 00c008ef
-# [IRAM] mem[41] = 54b0a223
-# [IRAM] mem[42] = a9be6b13
-# [IRAM] mem[43] = 00c2adb3
-# [IRAM] mem[44] = 032a0863
-# [IRAM] mem[45] = 3ce0ac23
-# [IRAM] mem[46] = 40b38633
-# [IRAM] mem[47] = 0188c833
-# [IRAM] mem[48] = d4a5f393
-# [IRAM] mem[49] = 016e8463
-# [IRAM] mem[50] = 4d00ad03
-# [IRAM] mem[51] = 24c0a683
-# [IRAM] mem[52] = 48f46793
-# [IRAM] mem[53] = dcd86b13
-# [IRAM] mem[54] = 3780ac83
-# [IRAM] mem[55] = 014003ef
-# [IRAM] mem[56] = 01be9333
-# [IRAM] mem[57] = 72e0ae23
-# [IRAM] mem[58] = d7690513
-# [IRAM] mem[59] = 4c00a803
-# [IRAM] mem[60] = 7c40af83
-# [IRAM] mem[61] = 0116a333
-# [IRAM] mem[62] = 024006ef
-# [IRAM] mem[63] = f26c8313
-# [IRAM] mem[64] = 8313e293
-# [IRAM] mem[65] = fc848393
-# [IRAM] mem[66] = 1980aa03
-# [IRAM] mem[67] = 4f40a623
-# [IRAM] mem[68] = 52928493
-# [IRAM] mem[69] = 00c4d3b3
-# [IRAM] mem[70] = 007aa533
-# [IRAM] mem[71] = 1310aa23
-# [IRAM] mem[72] = 6eec0d93
-# [IRAM] mem[73] = 0f20ac23
-# [IRAM] mem[74] = 00554d33
-# [IRAM] mem[75] = 010485b3
-# [IRAM] mem[76] = 40f4dab3
-# [IRAM] mem[77] = 4ec0a783
-# [IRAM] mem[78] = 01692ab3
-# [IRAM] mem[79] = 0b00a823
-# [IRAM] mem[80] = 1380ad83
-# [IRAM] mem[81] = 11a0a423
-# [IRAM] mem[82] = 0138d6b3
-# [IRAM] mem[83] = 00c66933
-# [IRAM] mem[84] = 00d2d633
-# [IRAM] mem[85] = 16a0a423
-# [IRAM] mem[86] = 34e4cb93
-# [IRAM] mem[87] = 01429b33
-# [IRAM] mem[88] = da1c8913
-# [IRAM] mem[89] = 4be0a823
-# [IRAM] mem[90] = 50564f13
-# [IRAM] mem[91] = 41b4dbb3
-# [IRAM] mem[92] = 01490633
-# [IRAM] mem[93] = 012fe5b3
-# [IRAM] mem[94] = 4079dfb3
-# [IRAM] mem[95] = 4b0f6393
-# [IRAM] mem[96] = 01a2d833
-# [IRAM] mem[97] = 00fb64b3
-# [IRAM] mem[98] = c7df7913
-# [IRAM] mem[99] = 00c44a33
-# [IRAM] mem[100] = 40cf88b3
+# [IRAM] mem[4] = 00007263
+# [IRAM] mem[5] = 00c1aa03
+# [IRAM] mem[6] = c5fef313
+# [IRAM] mem[7] = 3400a603
+# [IRAM] mem[8] = 4ce0aa23
+# [IRAM] mem[9] = 0081a003
+# [IRAM] mem[10] = 00f12023
+# [IRAM] mem[11] = 00812223
+# [IRAM] mem[12] = 0080aa03
+# [IRAM] mem[13] = 0051a623
+# [IRAM] mem[14] = 00c1ab03
+# [IRAM] mem[15] = 01d1a623
+# [IRAM] mem[16] = 01022023
+# [IRAM] mem[17] = 00f47833
+# [IRAM] mem[18] = 0081a003
+# [IRAM] mem[19] = 01f22623
+# [IRAM] mem[20] = 593cae13
+# [IRAM] mem[21] = 015962b3
+# [IRAM] mem[22] = 36b60313
+# [IRAM] mem[23] = 00400fef
+# [IRAM] mem[24] = 01906263
+# [IRAM] mem[25] = 00007263
+# [IRAM] mem[26] = 0071a023
+# [IRAM] mem[27] = 00005263
+# [IRAM] mem[28] = 014a9533
+# [IRAM] mem[29] = 01622223
+# [IRAM] mem[30] = 010f65b3
+# [IRAM] mem[31] = 01a12023
+# [IRAM] mem[32] = 7240a383
+# [IRAM] mem[33] = 00022003
+# [IRAM] mem[34] = 00812003
+# [IRAM] mem[35] = 01004263
+# [IRAM] mem[36] = 00f854b3
+# [IRAM] mem[37] = 00822003
+# [IRAM] mem[38] = 00007263
+# [IRAM] mem[39] = 018aebb3
+# [IRAM] mem[40] = 0040056f
+# [IRAM] mem[41] = 00012303
+# [IRAM] mem[42] = 00c22d03
+# [IRAM] mem[43] = 01304263
+# [IRAM] mem[44] = 00005263
+# [IRAM] mem[45] = 00822003
+# [IRAM] mem[46] = 00412e83
+# [IRAM] mem[47] = 00712023
+# [IRAM] mem[48] = 004007ef
+# [IRAM] mem[49] = 01ffabb3
+# [IRAM] mem[50] = 00c459b3
+# [IRAM] mem[51] = 00412303
+# [IRAM] mem[52] = a18e8a93
+# [IRAM] mem[53] = 00801263
+# [IRAM] mem[54] = 01712223
+# [IRAM] mem[55] = 01922223
+# [IRAM] mem[56] = 87fa8993
+# [IRAM] mem[57] = 01801263
+# [IRAM] mem[58] = 4890a823
+# [IRAM] mem[59] = 00022003
+# [IRAM] mem[60] = 01d36333
+# [IRAM] mem[61] = 01922023
+# [IRAM] mem[62] = 00000263
+# [IRAM] mem[63] = 01735933
+# [IRAM] mem[64] = 3a57e593
+# [IRAM] mem[65] = 0041a003
+# [IRAM] mem[66] = 01406263
+# [IRAM] mem[67] = 005cfeb3
+# [IRAM] mem[68] = 00005263
+# [IRAM] mem[69] = 00000263
+# [IRAM] mem[70] = 00812003
+# [IRAM] mem[71] = 01706263
+# [IRAM] mem[72] = 00012803
+# [IRAM] mem[73] = 00c1a303
+# [IRAM] mem[74] = 00bb5bb3
+# [IRAM] mem[75] = 00c1ae83
+# [IRAM] mem[76] = 00400fef
+# [IRAM] mem[77] = 8903fb13
+# [IRAM] mem[78] = 416ad633
+# [IRAM] mem[79] = 406e0933
+# [IRAM] mem[80] = 00412e03
+# [IRAM] mem[81] = 00400c6f
+# [IRAM] mem[82] = 010ef733
+# [IRAM] mem[83] = 7b60ae23
+# [IRAM] mem[84] = 00b72433
+# [IRAM] mem[85] = 418c0433
+# [IRAM] mem[86] = 6da0ae23
+# [IRAM] mem[87] = 01312223
+# [IRAM] mem[88] = 0041a003
+# [IRAM] mem[89] = 00012783
+# [IRAM] mem[90] = 00012e83
+# [IRAM] mem[91] = 65b0a823
+# [IRAM] mem[92] = 00812003
+# [IRAM] mem[93] = 5c40a303
+# [IRAM] mem[94] = 0041a003
+# [IRAM] mem[95] = 00007263
+# [IRAM] mem[96] = 004009ef
+# [IRAM] mem[97] = 00812003
+# [IRAM] mem[98] = 00400d6f
+# [IRAM] mem[99] = 01612223
+# [IRAM] mem[100] = 00a1a623
+# [IRAM] mem[101] = 0171a623
+# [IRAM] mem[102] = 01bd8cb3
+# [IRAM] mem[103] = 01e40a33
+# [IRAM] mem[104] = 0081a003
+# [IRAM] mem[105] = 00412d83
+# [IRAM] mem[106] = 00422503
+# [IRAM] mem[107] = 00822003
+# [IRAM] mem[108] = 0072f6b3
+# [IRAM] mem[109] = db9e0f93
+# [IRAM] mem[110] = 7dc0ac03
+# [IRAM] mem[111] = 00400bef
+# [IRAM] mem[112] = 013859b3
+# [IRAM] mem[113] = 01d22223
+# [IRAM] mem[114] = 01012023
+# [IRAM] mem[115] = 407fdd33
+# [IRAM] mem[116] = 00c22883
+# [IRAM] mem[117] = 00000263
+# [IRAM] mem[118] = 0081a023
+# [IRAM] mem[119] = 00b04263
+# [IRAM] mem[120] = 00012783
+# [IRAM] mem[121] = 24877713
+# [IRAM] mem[122] = 00812003
+# [IRAM] mem[123] = 00422e83
+# [IRAM] mem[124] = 00000263
+# [IRAM] mem[125] = 00005263
+# [IRAM] mem[126] = 01901263
+# [IRAM] mem[127] = 4c454c13
+# [IRAM] mem[128] = 00c1a683
+# [IRAM] mem[129] = 0081a003
+# [IRAM] mem[130] = 0051a623
+# [IRAM] mem[131] = 00012583
+# [IRAM] mem[132] = 00c22483
+# [IRAM] mem[133] = 01e1a023
+# [IRAM] mem[134] = 00412a03
+# [IRAM] mem[135] = 00d22623
+# [IRAM] mem[136] = 7040a703
+# [IRAM] mem[137] = 00a12023
+# [IRAM] mem[138] = 00504263
+# [IRAM] mem[139] = 00005263
+# [IRAM] mem[140] = 41a98733
+# [IRAM] mem[141] = 0071a023
+# [IRAM] mem[142] = 3e00a983
+# [IRAM] mem[143] = 40a65933
+# [IRAM] mem[144] = e6f4e913
+# [IRAM] mem[145] = 01f12223
+# [IRAM] mem[146] = 00007263
+# [IRAM] mem[147] = 00c12023
+# [IRAM] mem[148] = 00c01263
+# [IRAM] mem[149] = 01104263
+# [IRAM] mem[150] = 0041a003
+# [IRAM] mem[151] = 00e06263
+# [IRAM] mem[152] = 00612223
+# [IRAM] mem[153] = 0081a003
+# [IRAM] mem[154] = 4dc0ac23
+# [IRAM] mem[155] = 00422c83
+# [IRAM] mem[156] = 00d06263
+# [IRAM] mem[157] = 1c40a783
+# [IRAM] mem[158] = 79d0a023
+# [IRAM] mem[159] = 015edfb3
+# [IRAM] mem[160] = 19e0a023
+# [IRAM] mem[161] = 41fa05b3
+# [IRAM] mem[162] = 00005263
+# [IRAM] mem[163] = 00412d03
+# [IRAM] mem[164] = 41a65f33
+# [IRAM] mem[165] = 434c8e13
+# [IRAM] mem[166] = 00000263
+# [IRAM] mem[167] = 01e01263
+# [IRAM] mem[168] = 00c1a303
+# [IRAM] mem[169] = 00007263
+# [IRAM] mem[170] = 01c1a023
+# [IRAM] mem[171] = 00e01263
+# [IRAM] mem[172] = 00804263
+# [IRAM] mem[173] = 018e4a33
+# [IRAM] mem[174] = 0041a003
+# [IRAM] mem[175] = 010d4bb3
+# [IRAM] mem[176] = 01e1a623
+# [IRAM] mem[177] = 00904263
+# [IRAM] mem[178] = 01e1a023
+# [IRAM] mem[179] = 01561fb3
+# [IRAM] mem[180] = d93bea13
+# [IRAM] mem[181] = 01722623
+# [IRAM] mem[182] = 8c98ce93
+# [IRAM] mem[183] = c299a593
+# [IRAM] mem[184] = 3f90ae23
+# [IRAM] mem[185] = 00812003
+# [IRAM] mem[186] = 01b01263
+# [IRAM] mem[187] = 00000263
+# [IRAM] mem[188] = 6df6cf93
+# [IRAM] mem[189] = 012f54b3
+# [IRAM] mem[190] = 01622023
+# [IRAM] mem[191] = 69e0ae23
+# [IRAM] mem[192] = 018f26b3
+# [IRAM] mem[193] = 40ef82b3
+# [IRAM] mem[194] = 0041a003
+# [IRAM] mem[195] = 00706263
+# [IRAM] mem[196] = d99ce893
+# [IRAM] mem[197] = 00000263
+# [IRAM] mem[198] = 0081a003
+# [IRAM] mem[199] = 00005263
+# [IRAM] Loaded 200 instruction words
 # [TB] Mode: UVM MASTER â?? driver controls AXI bus
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_multi_slaves_test...
-# ** Warning: (vsim-PLI-8707) No address specified on line 2 of file "instr.mem" 
+# ** Warning: (vsim-PLI-8707) No address specified on line 3 of file "instr.mem" 
 # 
 # while loading into associative array using readmem command.    : C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(31)
 #    Time: 0 ps  Iteration: 8  Region: /uvm_pkg::uvm_phase::m_run_phases
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(36) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- Basic AXI4-Lite Multi Slaves ---
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(41) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 1: Basic DRAM Access ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(38) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- Basic AXI4-Lite Multi Slaves ---
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(43) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 1: Basic DRAM Access ===
 # [DRAM WRITE] addr=10000000 data=a5a5a5a5
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 65000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000000 Data=a5a5a5a5 Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 75000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000 Data=a5a5a5a5 Prot=000
@@ -186,56 +286,56 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 115000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000004 Data=5a5a5a5a Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 125000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000004 Data=5a5a5a5a Prot=000
 # [DRAM READ] addr=10000000 data=a5a5a5a5
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 165000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=a5a5a5a5 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 165000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=a5a5a5a5 Got=a5a5a5a5
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 175000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=a5a5a5a5 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 165000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=a5a5a5a5 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 165000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=a5a5a5a5 Got=a5a5a5a5
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 175000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=a5a5a5a5 Prot=000
 # [DRAM READ] addr=10000004 data=5a5a5a5a
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 215000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000004 Data=5a5a5a5a Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 215000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=5a5a5a5a Got=5a5a5a5a
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 225000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000004 Data=5a5a5a5a Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(50) @ 225000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 2: Timer Basic Operation ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 215000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000004 Data=5a5a5a5a Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 215000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=5a5a5a5a Got=5a5a5a5a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 225000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000004 Data=5a5a5a5a Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(52) @ 225000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 2: Timer Basic Operation ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 275000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000004 Data=00000064 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 275000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000064
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 275000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000064
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 285000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004 Data=00000064 Prot=001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 335000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000000 Data=00000001 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 335000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 335000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 345000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000 Data=00000001 Prot=001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 385000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000064 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 385000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000064 Got=00000064
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 395000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000064 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 435000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000000 Data=00000001 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 435000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000001 Got=00000001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 445000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000 Data=00000001 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 485000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=0000000e Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 485000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=0000000e (status/no prior write)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 495000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=0000000e Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(60) @ 495000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 3: UART Communication ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 385000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000064 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 385000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000064 Got=00000064
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 395000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000064 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 435000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000000 Data=00000001 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 435000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000001 Got=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 445000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000 Data=00000001 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 485000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=0000000e Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 485000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=0000000e (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 495000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=0000000e Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(62) @ 495000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 3: UART Communication ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 535000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=3000000c Data=000001b2 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 535000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 535000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 545000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c Data=000001b2 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 585000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=30000000 Data=00000041 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 585000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000041
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 585000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000041
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 595000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000 Data=00000041 Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 635000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=000001b2 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 635000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 645000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=000001b2 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 685000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=30000000 Data=00000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(80) @ 685000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=30000000 is write-only, read returned 00000000 (expected 0x00)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 695000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=30000000 Data=00000000 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(69) @ 695000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 4: SPI Data Transfer ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 635000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=000001b2 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 635000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 645000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=000001b2 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 685000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=30000000 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(104) @ 685000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=30000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 695000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=30000000 Data=00000000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(71) @ 695000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 4: SPI Data Transfer ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 735000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=4000000c Data=0000000a Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 735000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 735000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000a
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 745000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c Data=0000000a Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 785000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=40000000 Data=000000ab Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 785000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ab
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 785000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ab
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 795000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000 Data=000000ab Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 835000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=0000000a Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 835000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000a Got=0000000a
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 845000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=0000000a Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 885000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=40000000 Data=00000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(80) @ 885000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 895000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000000 Data=00000000 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(78) @ 895000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 5: DRAM Burst Write/Read ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 835000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=0000000a Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 835000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000a Got=0000000a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 845000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=0000000a Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 885000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=40000000 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(104) @ 885000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 895000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000000 Data=00000000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(80) @ 895000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 5: DRAM Burst Write/Read ===
 # [DRAM WRITE] addr=10000000 data=10000000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 935000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000000 Data=10000000 Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 945000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000 Data=10000000 Prot=000
@@ -261,118 +361,118 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 1285000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=1000001c Data=10000007 Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 1295000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=1000001c Data=10000007 Prot=000
 # [DRAM READ] addr=10000000 data=10000000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1335000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=10000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1335000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=10000000 Got=10000000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1345000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=10000000 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1335000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=10000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1335000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=10000000 Got=10000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1345000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=10000000 Prot=000
 # [DRAM READ] addr=10000004 data=10000001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1385000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000004 Data=10000001 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1385000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=10000001 Got=10000001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1395000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000004 Data=10000001 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1385000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000004 Data=10000001 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1385000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000004 Expected=10000001 Got=10000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1395000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000004 Data=10000001 Prot=000
 # [DRAM READ] addr=10000008 data=10000002
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1435000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000008 Data=10000002 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1435000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000008 Expected=10000002 Got=10000002
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1445000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000008 Data=10000002 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1435000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000008 Data=10000002 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1435000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000008 Expected=10000002 Got=10000002
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1445000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000008 Data=10000002 Prot=000
 # [DRAM READ] addr=1000000c data=10000003
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1485000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=1000000c Data=10000003 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1485000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000000c Expected=10000003 Got=10000003
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1495000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000000c Data=10000003 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1485000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=1000000c Data=10000003 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1485000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000000c Expected=10000003 Got=10000003
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1495000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000000c Data=10000003 Prot=000
 # [DRAM READ] addr=10000010 data=10000004
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1535000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000010 Data=10000004 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1535000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000010 Expected=10000004 Got=10000004
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1545000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000010 Data=10000004 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1535000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000010 Data=10000004 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1535000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000010 Expected=10000004 Got=10000004
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1545000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000010 Data=10000004 Prot=000
 # [DRAM READ] addr=10000014 data=10000005
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1585000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000014 Data=10000005 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1585000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000014 Expected=10000005 Got=10000005
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1595000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000014 Data=10000005 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1585000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000014 Data=10000005 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1585000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000014 Expected=10000005 Got=10000005
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1595000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000014 Data=10000005 Prot=000
 # [DRAM READ] addr=10000018 data=10000006
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1635000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000018 Data=10000006 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1635000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000018 Expected=10000006 Got=10000006
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1645000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000018 Data=10000006 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1635000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000018 Data=10000006 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1635000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000018 Expected=10000006 Got=10000006
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1645000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000018 Data=10000006 Prot=000
 # [DRAM READ] addr=1000001c data=10000007
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1685000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=1000001c Data=10000007 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1685000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000001c Expected=10000007 Got=10000007
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1695000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000001c Data=10000007 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(89) @ 1695000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 6: Interleaved Access Across Slaves ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1685000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=1000001c Data=10000007 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1685000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000001c Expected=10000007 Got=10000007
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1695000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000001c Data=10000007 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(91) @ 1695000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 6: Interleaved Access Across Slaves ===
 # [DRAM WRITE] addr=10000000 data=deadbeef
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 1735000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000000 Data=deadbeef Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 1745000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000 Data=deadbeef Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 1795000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000004 Data=00000032 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 1795000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000032
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 1795000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000032
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 1805000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004 Data=00000032 Prot=001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 1845000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=3000000c Data=00000100 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 1845000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000100
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 1845000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000100
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 1855000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c Data=00000100 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 1895000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=4000000c Data=00000005 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 1895000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000005
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 1895000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000005
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 1905000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c Data=00000005 Prot=000
 # [DRAM READ] addr=10000000 data=deadbeef
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1945000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=deadbeef Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 1945000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=deadbeef Got=deadbeef
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1955000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=deadbeef Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1995000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000032 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 1995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000032 Got=00000032
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2005000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000032 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2045000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000100 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 2045000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000100 Got=00000100
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2055000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000100 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2095000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=00000005 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 2095000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000005 Got=00000005
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2105000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=00000005 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(103) @ 2105000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 7: Timer Disable/Re-enable ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1945000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=deadbeef Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 1945000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=deadbeef Got=deadbeef
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 1955000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=deadbeef Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 1995000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000032 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 1995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000032 Got=00000032
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2005000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000032 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2045000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000100 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 2045000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000100 Got=00000100
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2055000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000100 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2095000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=00000005 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 2095000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000005 Got=00000005
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2105000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=00000005 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(105) @ 2105000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 7: Timer Disable/Re-enable ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2155000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000004 Data=00000050 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2155000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000050
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2155000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000050
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2165000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004 Data=00000050 Prot=001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2215000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000000 Data=00000001 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2215000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2215000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2225000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000 Data=00000001 Prot=001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2265000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=00000028 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2265000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000028 (status/no prior write)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2275000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=00000028 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2265000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=00000028 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 2265000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000028 (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2275000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=00000028 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2325000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000000 Data=00000000 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2325000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2325000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2335000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000 Data=00000000 Prot=001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2375000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=00000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2375000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2385000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=00000000 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2425000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000000 Data=00000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 2425000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2435000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000 Data=00000000 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(114) @ 2435000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 8: UART Multiple TX ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2375000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 2375000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2385000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=00000000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2425000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000000 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 2425000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2435000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000 Data=00000000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(116) @ 2435000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 8: UART Multiple TX ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2475000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=3000000c Data=000001b2 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2475000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2475000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=000001b2
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2485000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c Data=000001b2 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2525000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=30000000 Data=00000048 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2525000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000048
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2525000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000048
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2535000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000 Data=00000048 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2575000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=30000000 Data=00000045 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2575000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000045
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2575000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000045
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2585000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000 Data=00000045 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2625000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=30000000 Data=0000004c Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2625000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2625000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2635000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000 Data=0000004c Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2675000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=30000000 Data=0000004c Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2675000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2675000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004c
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2685000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000 Data=0000004c Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2725000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=30000000 Data=0000004f Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2725000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004f
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2725000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=0000004f
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2735000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000 Data=0000004f Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(125) @ 2735000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 9: SPI Multiple Transfers ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(127) @ 2735000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 9: SPI Multiple Transfers ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2775000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=4000000c Data=00000008 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2775000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000008
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2775000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000008
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2785000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c Data=00000008 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2825000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=40000000 Data=000000ff Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2825000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ff
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2825000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000ff
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2835000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000 Data=000000ff Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2875000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=40000000 Data=00000055 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2875000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=00000055
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2875000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=00000055
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2885000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000 Data=00000055 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 2925000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=40000000 Data=000000aa Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 2925000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000aa
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 2925000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000aa
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 2935000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000 Data=000000aa Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2975000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=40000000 Data=00000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(80) @ 2975000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2985000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000000 Data=00000000 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(135) @ 2985000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 10: DRAM Address Boundaries ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 2975000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=40000000 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(104) @ 2975000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000000 is write-only, read returned 00000000 (expected 0x00)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 2985000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000000 Data=00000000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(137) @ 2985000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 10: DRAM Address Boundaries ===
 # [DRAM WRITE] addr=10000000 data=00000001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 3025000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000000 Data=00000001 Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 3035000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000 Data=00000001 Prot=000
@@ -380,30 +480,30 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 3075000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000ffc Data=ffffffff Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 3085000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000ffc Data=ffffffff Prot=000
 # [DRAM READ] addr=10000000 data=00000001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3125000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=00000001 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 3125000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=00000001 Got=00000001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3135000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=00000001 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3125000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=00000001 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 3125000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=00000001 Got=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3135000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=00000001 Prot=000
 # [DRAM READ] addr=10000ffc data=ffffffff
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3175000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000ffc Data=ffffffff Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 3175000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000ffc Expected=ffffffff Got=ffffffff
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3185000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000ffc Data=ffffffff Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(144) @ 3185000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 11: Read All Status Registers ===
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3225000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000000 Data=00000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 3225000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3235000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000 Data=00000000 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3275000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000050 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 3275000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000050 Got=00000050
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3285000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000050 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3325000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=00000000 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 3325000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3335000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=00000000 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3375000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=000001b2 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 3375000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3385000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=000001b2 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3425000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=00000008 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 3425000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000008 Got=00000008
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3435000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=00000008 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(154) @ 3435000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 12: Rapid DRAM Writes ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3175000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000ffc Data=ffffffff Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 3175000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000ffc Expected=ffffffff Got=ffffffff
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3185000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000ffc Data=ffffffff Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(146) @ 3185000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 11: Read All Status Registers ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3225000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000000 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 3225000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000000 Got=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3235000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000 Data=00000000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3275000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000050 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 3275000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000050 Got=00000050
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3285000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000050 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3325000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 3325000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000000 (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3335000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=00000000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3375000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=000001b2 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 3375000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=000001b2 Got=000001b2
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3385000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=000001b2 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3425000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=00000008 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 3425000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000008 Got=00000008
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3435000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=00000008 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(156) @ 3435000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 12: Rapid DRAM Writes ===
 # [DRAM WRITE] addr=10000100 data=11111111
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 3475000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000100 Data=11111111 Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 3485000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000100 Data=11111111 Prot=000
@@ -417,126 +517,267 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 3625000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=1000010c Data=44444444 Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 3635000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=1000010c Data=44444444 Prot=000
 # [DRAM READ] addr=10000100 data=11111111
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3675000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000100 Data=11111111 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 3675000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000100 Expected=11111111 Got=11111111
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3685000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000100 Data=11111111 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3675000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000100 Data=11111111 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 3675000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000100 Expected=11111111 Got=11111111
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3685000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000100 Data=11111111 Prot=000
 # [DRAM READ] addr=10000104 data=22222222
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3725000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000104 Data=22222222 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 3725000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000104 Expected=22222222 Got=22222222
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3735000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000104 Data=22222222 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3725000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000104 Data=22222222 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 3725000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000104 Expected=22222222 Got=22222222
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3735000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000104 Data=22222222 Prot=000
 # [DRAM READ] addr=10000108 data=33333333
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3775000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000108 Data=33333333 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 3775000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000108 Expected=33333333 Got=33333333
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3785000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000108 Data=33333333 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3775000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000108 Data=33333333 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 3775000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000108 Expected=33333333 Got=33333333
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3785000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000108 Data=33333333 Prot=000
 # [DRAM READ] addr=1000010c data=44444444
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3825000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=1000010c Data=44444444 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 3825000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000010c Expected=44444444 Got=44444444
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3835000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000010c Data=44444444 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(167) @ 3835000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 13: Timer Period Update ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3825000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=1000010c Data=44444444 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 3825000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000010c Expected=44444444 Got=44444444
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 3835000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000010c Data=44444444 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(169) @ 3835000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 13: Timer Period Update ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 3885000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000004 Data=00000010 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 3885000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 3885000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000010
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 3895000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004 Data=00000010 Prot=001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 3945000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000000 Data=00000001 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 3945000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 3945000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 3955000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000 Data=00000001 Prot=001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3995000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000010 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 3995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000010 Got=00000010
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4005000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000010 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 3995000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000010 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 3995000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000010 Got=00000010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4005000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000010 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4055000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000004 Data=00000020 Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4055000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000020
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4055000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000020
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4065000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004 Data=00000020 Prot=001
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4105000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000020 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4105000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000020 Got=00000020
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4115000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000020 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(177) @ 4115000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 14: UART/SPI Baud Variations ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4105000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000020 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4105000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000020 Got=00000020
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4115000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000020 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(179) @ 4115000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 14: UART/SPI Baud Variations ===
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4155000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=3000000c Data=00000064 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4155000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000064
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4155000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000064
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4165000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c Data=00000064 Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4205000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000064 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4205000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000064 Got=00000064
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4215000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000064 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4205000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000064 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4205000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000064 Got=00000064
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4215000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000064 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4255000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=3000000c Data=00000032 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4255000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000032
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4255000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000032
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4265000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c Data=00000032 Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4305000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000032 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4305000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000032 Got=00000032
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4315000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000032 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4305000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000032 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4305000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000032 Got=00000032
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4315000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000032 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4355000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=4000000c Data=00000002 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4355000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000002
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4355000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000002
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4365000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c Data=00000002 Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4405000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=00000002 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4405000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000002 Got=00000002
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4415000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=00000002 Prot=xxx
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4405000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=00000002 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4405000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000002 Got=00000002
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4415000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=00000002 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4455000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=4000000c Data=0000001e Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4455000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000001e
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4455000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000001e
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4465000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c Data=0000001e Prot=000
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4505000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=0000001e Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4505000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000001e Got=0000001e
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4515000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=0000001e Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(191) @ 4515000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 15: Final Multi-Slave Integrity ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4505000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=0000001e Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4505000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000001e Got=0000001e
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4515000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=0000001e Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(193) @ 4515000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 15: Final Multi-Slave Integrity ===
 # [DRAM WRITE] addr=10000000 data=cafebabe
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4555000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000000 Data=cafebabe Strb=1111 Prot=000 BResp=00
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4565000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000000 Data=cafebabe Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4615000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000004 Data=0000007f Strb=1111 Prot=001 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4615000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=0000007f
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4615000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=0000007f
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4625000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004 Data=0000007f Prot=001
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4665000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=3000000c Data=00000200 Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4665000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000200
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4665000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=00000200
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4675000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c Data=00000200 Prot=000
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4715000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=4000000c Data=0000000f Strb=1111 Prot=000 BResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(70) @ 4715000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000f
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 4715000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=0000000f
 # UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4725000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c Data=0000000f Prot=000
 # [DRAM READ] addr=10000000 data=cafebabe
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4765000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=cafebabe Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 4765000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=cafebabe Got=cafebabe
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4775000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=cafebabe Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4815000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=0000007f Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4815000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=0000007f Got=0000007f
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4825000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=0000007f Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4865000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000200 Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4865000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000200 Got=00000200
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4875000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000200 Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4915000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=0000000f Prot=xxx RResp=00
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(86) @ 4915000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000f Got=0000000f
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4925000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=0000000f Prot=xxx
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(202) @ 4925000: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- All Multi-Slave Tests Complete ---
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 5025000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(276) @ 5025000: uvm_test_top.env.coverage [COV] 
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(277) @ 5025000: uvm_test_top.env.coverage [COV] ======================================================
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(278) @ 5025000: uvm_test_top.env.coverage [COV]                FUNCTIONAL COVERAGE REPORT             
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(279) @ 5025000: uvm_test_top.env.coverage [COV] ======================================================
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(281) @ 5025000: uvm_test_top.env.coverage [COV]  AXI Protocol Coverage   :  41.99%  (target >90%)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(282) @ 5025000: uvm_test_top.env.coverage [COV]  Data Pattern Coverage   :  77.78%  (target >90%)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(283) @ 5025000: uvm_test_top.env.coverage [COV]  DRAM Address Coverage   :  73.33%  (target >90%)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(284) @ 5025000: uvm_test_top.env.coverage [COV]  Peripheral Reg Coverage :  72.88%  (target >80%)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(285) @ 5025000: uvm_test_top.env.coverage [COV]  CPU Pipeline Coverage   :  83.33%  (target >80%)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(287) @ 5025000: uvm_test_top.env.coverage [COV] ------------------------------------------------------
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(289) @ 5025000: uvm_test_top.env.coverage [COV]  TOTAL (avg)             :  69.86%  (target >90%)
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(291) @ 5025000: uvm_test_top.env.coverage [COV] ======================================================
-# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(292) @ 5025000: uvm_test_top.env.coverage [COV] 
-# UVM_WARNING C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(294) @ 5025000: uvm_test_top.env.coverage [COV] AXI Protocol  42.0% < 90% target
-# UVM_WARNING C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(295) @ 5025000: uvm_test_top.env.coverage [COV] Data Pattern  77.8% < 90% target
-# UVM_WARNING C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(296) @ 5025000: uvm_test_top.env.coverage [COV] DRAM Address  73.3% < 90% target
-# UVM_WARNING C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(297) @ 5025000: uvm_test_top.env.coverage [COV] Peripheral    72.9% < 80% target
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4765000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000000 Data=cafebabe Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 4765000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000000 Expected=cafebabe Got=cafebabe
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4775000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000000 Data=cafebabe Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4815000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=0000007f Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4815000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=0000007f Got=0000007f
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4825000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=0000007f Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4865000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=00000200 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4865000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=00000200 Got=00000200
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4875000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=00000200 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 4915000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=0000000f Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 4915000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=0000000f Got=0000000f
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 4925000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=0000000f Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(207) @ 4925000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 16: AXI Protocol/DRAM Coverage Closure ===
+# [DRAM WRITE] addr=10000400 data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 4965000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10000400 Data=00000000 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 4975000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10000400 Data=00000000 Prot=000
+# [DRAM READ] addr=10000400 data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5015000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10000400 Data=00000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5015000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10000400 Expected=00000000 Got=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5025000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10000400 Data=00000000 Prot=000
+# [DRAM WRITE] addr=10002000 data=aaaa5555
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5065000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002000 Data=aaaa5555 Strb=1111 Prot=001 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5075000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002000 Data=aaaa5555 Prot=001
+# [DRAM READ] addr=10002000 data=aaaa5555
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5115000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10002000 Data=aaaa5555 Prot=001 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5115000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10002000 Expected=aaaa5555 Got=aaaa5555
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5125000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10002000 Data=aaaa5555 Prot=001
+# [DRAM WRITE] addr=10003ffc data=5555aaaa
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5165000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10003ffc Data=5555aaaa Strb=1111 Prot=010 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5175000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10003ffc Data=5555aaaa Prot=010
+# [DRAM READ] addr=10003ffc data=5555aaaa
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5215000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10003ffc Data=5555aaaa Prot=010 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5215000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10003ffc Expected=5555aaaa Got=5555aaaa
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5225000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10003ffc Data=5555aaaa Prot=010
+# [DRAM WRITE] addr=10002100 data=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5265000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002100 Data=00000001 Strb=1111 Prot=111 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5275000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002100 Data=00000001 Prot=111
+# [DRAM READ] addr=10002100 data=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5315000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10002100 Data=00000001 Prot=111 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5315000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10002100 Expected=00000001 Got=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5325000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10002100 Data=00000001 Prot=111
+# [DRAM WRITE] addr=10002200 data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5365000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002200 Data=00000000 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5375000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002200 Data=00000000 Prot=000
+# [DRAM WRITE] addr=10002200 data=11111111
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5415000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002200 Data=11111111 Strb=0001 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5425000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002200 Data=11111111 Prot=000
+# [DRAM READ] addr=10002200 data=00000011
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5465000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10002200 Data=00000011 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5465000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10002200 Expected=00000011 Got=00000011
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5475000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10002200 Data=00000011 Prot=000
+# [DRAM WRITE] addr=10002204 data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5515000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002204 Data=00000000 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5525000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002204 Data=00000000 Prot=000
+# [DRAM WRITE] addr=10002204 data=22222222
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5565000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002204 Data=22222222 Strb=0010 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5575000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002204 Data=22222222 Prot=000
+# [DRAM READ] addr=10002204 data=00002200
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5615000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10002204 Data=00002200 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5615000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10002204 Expected=00002200 Got=00002200
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5625000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10002204 Data=00002200 Prot=000
+# [DRAM WRITE] addr=10002208 data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5665000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002208 Data=00000000 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5675000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002208 Data=00000000 Prot=000
+# [DRAM WRITE] addr=10002208 data=44444444
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5715000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002208 Data=44444444 Strb=0100 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5725000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002208 Data=44444444 Prot=000
+# [DRAM READ] addr=10002208 data=00440000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5765000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10002208 Data=00440000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5765000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10002208 Expected=00440000 Got=00440000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5775000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10002208 Data=00440000 Prot=000
+# [DRAM WRITE] addr=1000220c data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5815000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=1000220c Data=00000000 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5825000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=1000220c Data=00000000 Prot=000
+# [DRAM WRITE] addr=1000220c data=88888888
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5865000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=1000220c Data=88888888 Strb=1000 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5875000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=1000220c Data=88888888 Prot=000
+# [DRAM READ] addr=1000220c data=88000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 5915000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=1000220c Data=88000000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 5915000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=1000220c Expected=88000000 Got=88000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 5925000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=1000220c Data=88000000 Prot=000
+# [DRAM WRITE] addr=10002210 data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 5965000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002210 Data=00000000 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 5975000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002210 Data=00000000 Prot=000
+# [DRAM WRITE] addr=10002210 data=33333333
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6015000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002210 Data=33333333 Strb=0011 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6025000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002210 Data=33333333 Prot=000
+# [DRAM READ] addr=10002210 data=00003333
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6065000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10002210 Data=00003333 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 6065000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10002210 Expected=00003333 Got=00003333
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6075000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10002210 Data=00003333 Prot=000
+# [DRAM WRITE] addr=10002214 data=00000000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6115000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002214 Data=00000000 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6125000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002214 Data=00000000 Prot=000
+# [DRAM WRITE] addr=10002214 data=cccccccc
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6165000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=10002214 Data=cccccccc Strb=1100 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6175000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=10002214 Data=cccccccc Prot=000
+# [DRAM READ] addr=10002214 data=cccc0000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6215000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=10002214 Data=cccc0000 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(77) @ 6215000: uvm_test_top.env.scoreboard [SCB_PASS] [DRAM] PASS Addr=10002214 Expected=cccc0000 Got=cccc0000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6225000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=10002214 Data=cccc0000 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(239) @ 6225000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 17: Peripheral Register Coverage Closure ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6275000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000004 Data=00000025 Strb=1111 Prot=001 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 6275000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000004 Data=00000025
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6285000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000004 Data=00000025 Prot=001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6335000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=20000000 Data=00000001 Strb=1111 Prot=001 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 6335000: uvm_test_top.env.scoreboard [SCB_WR] [TIMER] WRITE Addr=20000000 Data=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6345000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=20000000 Data=00000001 Prot=001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6385000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000000 Data=00000001 Prot=001 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 6385000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000000 Expected=00000001 Got=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6395000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000000 Data=00000001 Prot=001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6435000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000004 Data=00000025 Prot=001 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 6435000: uvm_test_top.env.scoreboard [SCB_PASS] [TIMER] PASS Addr=20000004 Expected=00000025 Got=00000025
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6445000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000004 Data=00000025 Prot=001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6485000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=20000008 Data=00000013 Prot=001 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 6485000: uvm_test_top.env.scoreboard [SCB_RD] [TIMER] READ Addr=20000008 Data=00000013 (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6495000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=20000008 Data=00000013 Prot=001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6535000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=3000000c Data=0001c200 Strb=1111 Prot=010 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 6535000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=3000000c Data=0001c200
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6545000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=3000000c Data=0001c200 Prot=010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6585000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=30000000 Data=00000055 Strb=1111 Prot=010 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 6585000: uvm_test_top.env.scoreboard [SCB_WR] [UART] WRITE Addr=30000000 Data=00000055
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6595000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=30000000 Data=00000055 Prot=010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6635000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=30000004 Data=000000xx Prot=010 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 6635000: uvm_test_top.env.scoreboard [SCB_RD] [UART] READ Addr=30000004 Data=000000xx (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6645000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=30000004 Data=000000xx Prot=010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6685000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=30000008 Data=00000001 Prot=010 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 6685000: uvm_test_top.env.scoreboard [SCB_RD] [UART] READ Addr=30000008 Data=00000001 (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6695000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=30000008 Data=00000001 Prot=010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6735000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=3000000c Data=0001c200 Prot=010 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 6735000: uvm_test_top.env.scoreboard [SCB_PASS] [UART] PASS Addr=3000000c Expected=0001c200 Got=0001c200
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6745000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=3000000c Data=0001c200 Prot=010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6785000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=40000004 Data=00000001 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 6785000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000004 Data=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6795000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000004 Data=00000001 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6835000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=4000000c Data=00000004 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 6835000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=4000000c Data=00000004
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6845000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=4000000c Data=00000004 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 6885000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=40000000 Data=000000a5 Strb=1111 Prot=000 BResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(94) @ 6885000: uvm_test_top.env.scoreboard [SCB_WR] [SPI] WRITE Addr=40000000 Data=000000a5
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 6895000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=40000000 Data=000000a5 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6935000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=40000004 Data=00000001 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 6935000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=40000004 Expected=00000001 Got=00000001
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6945000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000004 Data=00000001 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 6985000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=40000008 Data=00000001 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(118) @ 6985000: uvm_test_top.env.scoreboard [SCB_RD] [SPI] READ Addr=40000008 Data=00000001 (status/no prior write)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 6995000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=40000008 Data=00000001 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 7035000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=4000000c Data=00000004 Prot=000 RResp=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(110) @ 7035000: uvm_test_top.env.scoreboard [SCB_PASS] [SPI] PASS Addr=4000000c Expected=00000004 Got=00000004
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 7045000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=4000000c Data=00000004 Prot=000
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(262) @ 7045000: uvm_test_top.env.agent.sequencer@@seq [SEQ] === TEST 18: Decode Error Coverage ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(55) @ 7075000: uvm_test_top.env.agent.monitor [MON_WR] Detected WRITE : Addr=50000000 Data=12345678 Strb=1111 Prot=010 BResp=11
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(48) @ 7075000: uvm_test_top.env.scoreboard [SCB_PASS] [DECERR] PASS WRITE Addr=50000000 BResp=11
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(63) @ 7085000: uvm_test_top.env.agent.driver [DRV] Write Done: Addr=50000000 Data=12345678 Prot=010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/axi_monitor.sv(82) @ 7115000: uvm_test_top.env.agent.monitor [MON_RD] Detected READ  : Addr=50000000 Data=deadbeef Prot=010 RResp=11
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/axi_scoreboard.sv(53) @ 7115000: uvm_test_top.env.scoreboard [SCB_PASS] [DECERR] PASS READ Addr=50000000 Data=deadbeef RResp=11
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/axi_driver.sv(83) @ 7125000: uvm_test_top.env.agent.driver [DRV] Read Done: Addr=50000000 Data=deadbeef Prot=010
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/axi_multi_slaves_sequence.sv(266) @ 7125000: uvm_test_top.env.agent.sequencer@@seq [SEQ] --- All Multi-Slave Tests Complete ---
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 7225000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(296) @ 7225000: uvm_test_top.env.coverage [COV] 
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(297) @ 7225000: uvm_test_top.env.coverage [COV] ======================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(298) @ 7225000: uvm_test_top.env.coverage [COV]                FUNCTIONAL COVERAGE REPORT             
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(299) @ 7225000: uvm_test_top.env.coverage [COV] ======================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(301) @ 7225000: uvm_test_top.env.coverage [COV]  AXI Protocol Coverage   :  95.96%  (target >90%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(302) @ 7225000: uvm_test_top.env.coverage [COV]  Data Pattern Coverage   : 100.00%  (target >90%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(303) @ 7225000: uvm_test_top.env.coverage [COV]  DRAM Address Coverage   : 100.00%  (target >90%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(304) @ 7225000: uvm_test_top.env.coverage [COV]  Peripheral Reg Coverage : 100.00%  (target >80%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(305) @ 7225000: uvm_test_top.env.coverage [COV]  CPU Pipeline Coverage   : 100.00%  (target >80%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(307) @ 7225000: uvm_test_top.env.coverage [COV] ------------------------------------------------------
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(309) @ 7225000: uvm_test_top.env.coverage [COV]  TOTAL (avg)             :  99.19%  (target >90%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(311) @ 7225000: uvm_test_top.env.coverage [COV] ======================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/axi_coverage.sv(312) @ 7225000: uvm_test_top.env.coverage [COV] 
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :  304
-# UVM_WARNING :    4
+# UVM_INFO :  423
+# UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [COV]    17
-# [DRV]    96
-# [MON_RD]    46
-# [MON_WR]    50
+# [COV]    13
+# [DRV]   140
+# [MON_RD]    66
+# [MON_WR]    74
 # [Questa UVM]     2
 # [RNTST]     1
-# [SCB_PASS]    42
-# [SCB_RD]     4
-# [SCB_WR]    32
-# [SEQ]    17
+# [SCB_PASS]    59
+# [SCB_RD]     8
+# [SCB_WR]    39
+# [SEQ]    20
 # [TEST_DONE]     1
 # ** Note: $finish    : C:/app/QuestaSim/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 5025 ns  Iteration: 54  Instance: /top_tb
+#    Time: 7225 ns  Iteration: 54  Instance: /top_tb
