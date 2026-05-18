@@ -45,7 +45,6 @@ module cpu_sva (
    assert property (@(posedge clk) disable iff(!rstn || !sva_en_InstrD)
                     !$isunknown(InstrD)
                     ) else $error("[CPU_SVA] InstrD has X/Z");
-
   // Fetch stall must hold PC Stable
    assert property(@(posedge clk) disable iff(!rstn || !sva_en_InstrF)
                    StallF |=> $stable(PcF)
