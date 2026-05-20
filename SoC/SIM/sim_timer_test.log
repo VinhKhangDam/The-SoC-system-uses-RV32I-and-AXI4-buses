@@ -39,7 +39,7 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 # 
 #   ***********       IMPORTANT RELEASE NOTES         ************
 # 
-#   You are using a version of the UVM library that has been compiled
+#   You are using a version of the UVM library that has been
 #   with `UVM_NO_DEPRECATED undefined.
 #   See http://www.eda.org/svdb/view.php?id=3313 for more details.
 # 

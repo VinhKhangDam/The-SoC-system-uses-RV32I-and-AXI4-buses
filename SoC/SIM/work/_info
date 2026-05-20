@@ -1,0 +1,223 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dC:/Documents/DoAnThietKeViMach/Project/SoC/SIM
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+Yclk_rst_inf
+Z1 DXx6 sv_std 3 std 0 22 `a<MJET1=lN@jzbA7kHm;1
+Z2 !s110 1779267397
+IS7DcJ1]AFLhARR[2cTALB2
+Z3 V`JN@9S9cnhjKRR_L]QIcM3
+S1
+Z4 dC:/Documents/DoAnThietKeViMach/Project/SoC/SIM
+w1776403684
+8C:/Documents/DoAnThietKeViMach/Project/SoC/INF/clk_rst_inf.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/INF/clk_rst_inf.sv
+L0 2
+Z5 OL;L;10.2c;57
+r1
+31
+Z6 !s108 1779267397.232000
+Z7 !s107 C:/Documents/DoAnThietKeViMach/Project/SoC/INF/soc_inf.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/INF/cpu_monitor_inf.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/INF/clk_rst_inf.sv|
+Z8 !s90 -sv|+acc|-cover|bcst|C:/Documents/DoAnThietKeViMach/Project/SoC/INF/clk_rst_inf.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/INF/cpu_monitor_inf.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/INF/soc_inf.sv|
+Z9 !s102 -cover bcst
+Z10 o-sv +acc -cover bcst -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 H1J=jDe:Jbz@N;49:dGzb3
+!s105 clk_rst_inf_sv_unit
+!i10b 1
+!s85 0
+!i111 0
+Ycpu_monitor_inf
+R1
+R2
+I?N_<kT_D`3DB7NPGd`l^W1
+R3
+S1
+R4
+w1778312045
+8C:/Documents/DoAnThietKeViMach/Project/SoC/INF/cpu_monitor_inf.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/INF/cpu_monitor_inf.sv
+L0 2
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!s100 FzSQQ9ZiIgI?1oV6h1W5V1
+!s105 cpu_monitor_inf_sv_unit
+!i10b 1
+!s85 0
+!i111 0
+Ysoc_inf
+R1
+R2
+IdEBd=nT`OUTO0;g6ejLoD0
+R3
+S1
+R4
+w1779094050
+8C:/Documents/DoAnThietKeViMach/Project/SoC/INF/soc_inf.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/INF/soc_inf.sv
+L0 2
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!s100 Cj36RXldQ5LdUM9fmSK210
+!s105 soc_inf_sv_unit
+!i10b 1
+!s85 0
+!i111 0
+vSPI
+R1
+R2
+I`2^@<V6D:[OZ=^<IMU=_11
+R3
+S1
+R4
+w1779266355
+8C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv
+L0 1
+R5
+r1
+31
+R9
+R10
+n@s@p@i
+!s100 V6XaYBJYmQU=K1B5Anam=0
+!s105 SPI_sv_unit
+!s108 1779267397.331000
+!s107 C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv|
+!s90 -sv|+acc|-cover|bcst|C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv|
+!i10b 1
+!s85 0
+!i111 0
+Xspi_pkg
+R1
+Z11 DXx6 mtiUvm 7 uvm_pkg 0 22 6c<UYR5cbJC8ZT=63Rnh52
+R2
+Ia1]EL0S?:1j84SYA?:O]D1
+Va1]EL0S?:1j84SYA?:O]D1
+S1
+R4
+w1779267378
+8C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/spi_pkg.svh
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/spi_pkg.svh
+Z12 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+Z13 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+Z14 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+Z15 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+Z16 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+Z17 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+Z18 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+Z19 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+Z20 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+Z21 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+Z22 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+Z23 FC:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction/spi_transaction.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/spi_driver.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/spi_monitor.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Agent/spi_agent.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/spi_scoreboard.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/spi_coverage.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/spi_sequence.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env/spi_env.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test/spi_test.sv
+L0 1
+R5
+r1
+31
+R9
+R10
+!s100 QJCdAf<GV_7`ZdW[BVSX^2
+!s108 1779267397.514000
+!s107 C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test/spi_test.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env/spi_env.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence/spi_sequence.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/spi_coverage.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/spi_scoreboard.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Agent/spi_agent.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/spi_monitor.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver/spi_driver.sv|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction/spi_transaction.sv|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/spi_pkg.svh|
+!s90 -sv|+acc|-cover|bcst|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Agent|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence|+incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/spi_pkg.svh|
+!s92 -sv +acc -cover bcst +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Agent +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s85 0
+!i111 0
+vspi_sva
+R1
+R2
+I@h;Q[5k8nTTUlkm]5U1>60
+R3
+S1
+R4
+w1779262761
+8C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/SVA/spi_sva.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/SVA/spi_sva.sv
+L0 1
+R5
+r1
+31
+R9
+R10
+!s100 3?b379NOS>oUTEI4J<MX;1
+!s105 spi_sva_sv_unit
+!s108 1779267397.424000
+!s107 C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/SVA/spi_sva.sv|
+!s90 -sv|+acc|-cover|bcst|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/SVA/spi_sva.sv|
+!i10b 1
+!s85 0
+!i111 0
+vspi_top_tb
+R1
+R11
+DXx4 work 7 spi_pkg 0 22 a1]EL0S?:1j84SYA?:O]D1
+I0L0TT:A^4dbicU`N<XG^f3
+R3
+S1
+R4
+w1779266894
+8C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/spi_top_tb.sv
+FC:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/spi_top_tb.sv
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+L0 1
+R5
+r1
+31
+R9
+R10
+Z24 !s110 1779267398
+!i10b 1
+!s100 zP_2:iVck:H=_OPWO0MT_0
+!s105 spi_top_tb_sv_unit
+!s85 0
+!s108 1779267397.863000
+!s107 C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/spi_top_tb.sv|
+!s90 -sv|+acc|-cover|bcst|C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/spi_top_tb.sv|
+!i111 0
+Tspi_vopt
+R24
+V3VUgW4WEMDFzKUKTCfTeB3
+04 10 4 work spi_top_tb fast 0
+!s102 +cover
+o+acc +cover
+nspi_vopt
+OL;O;10.2c;57

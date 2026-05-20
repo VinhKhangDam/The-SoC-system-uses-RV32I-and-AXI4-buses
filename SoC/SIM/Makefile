@@ -87,14 +87,18 @@ TIMER_TESTS = \
 UART_TESTS = \
 	uart_test
 
+# --- SPI standalone tests ---
+SPI_TESTS = \
+  spi_test
+
 # --- ALL TEST ---
-ALL_TESTS := $(UVM_TESTS) $(CPU_TESTS) $(TIMER_TESTS) $(UART_TESTS)
+ALL_TESTS := $(UVM_TESTS) $(CPU_TESTS) $(TIMER_TESTS) $(UART_TESTS) $(SPI_TESTS)
 
 #==========================================================================================
 # MAIN TARGET (SINGLE TEST ONLY)
 #==========================================================================================
 
-.PHONY: all compile sim gui clean gen_mem help list timer_all timer_compile timer_sim timer_gui uart_all uart_compile uart_sim uart_gui
+.PHONY: all compile sim gui clean gen_mem help list timer_all timer_compile timer_sim timer_gui uart_all uart_compile uart_sim uart_gui spi_all spi_compile spi_sim spi_gui
 
 all: gen_mem compile
 ifndef test_name
@@ -138,6 +142,8 @@ ifeq ($(test_name),timer_test)
 compile: timer_compile
 else ifeq ($(test_name),uart_test)
 compile: uart_compile
+else ifeq ($(test_name), spi_test)
+compile: spi_compile
 else
 compile: gen_mem
 	@echo "--- ROOT: $(ROOT_DIR) ---"
@@ -181,6 +187,8 @@ ifeq ($(test_name),timer_test)
 sim: timer_sim
 else ifeq ($(test_name),uart_test)
 sim: uart_sim
+else ifeq ($(test_name), spi_test)
+sim: spi_sim
 else
 sim:
 ifndef test_name
@@ -215,6 +223,8 @@ ifeq ($(test_name),timer_test)
 gui: timer_gui
 else ifeq ($(test_name),uart_test)
 gui: uart_gui
+else ifeq ($(test_name), spi_test)
+gui: spi_gui
 else
 gui:
 ifndef test_name
@@ -246,7 +256,7 @@ endif
 #==========================================================================================
 
 clean:
-	rm -rf work transcript *.wlf vopt_top timer_vopt *.ucdb \
+	rm -rf work transcript *.wlf vopt_top timer_vopt spi_vopt *.ucdb \
 		 expected.mem $(SEED_FILE)
 	@echo "--- CLEAN DONE ---"
 
@@ -408,3 +418,57 @@ uart_gui:
 	vsim -i $(UART_VOPT) \
 		+UVM_TESTNAME=uart_test \
 		-do "add wave -recursive uart_top_tb/*"
+
+#==========================================================================================
+# SIM STANDALONE TEST
+#==========================================================================================
+SPI_PKG       = $(VERIF_DIR_WIN)/Package/spi_pkg.svh
+SPI_TOP_TB    = $(VERIF_DIR_WIN)/spi_top_tb.sv
+SPI_SVA       = $(SVA_DIR_WIN)/spi_sva.sv
+SPI_VOPT      = spi_vopt
+SPI_INC_DIRS  = +incdir+$(VERIF_DIR_WIN)/Transaction \
+                  +incdir+$(VERIF_DIR_WIN)/Driver \
+                  +incdir+$(VERIF_DIR_WIN)/Monitor \
+									+incdir+$(VERIF_DIR_WIN)/Agent \
+                  +incdir+$(VERIF_DIR_WIN)/Coverage \
+                  +incdir+$(VERIF_DIR_WIN)/Env \
+                  +incdir+$(VERIF_DIR_WIN)/Scoreboard \
+                  +incdir+$(VERIF_DIR_WIN)/Sequence \
+                  +incdir+$(VERIF_DIR_WIN)/Test
+
+spi_all: spi_compile spi_sim
+
+spi_compile:
+	@echo "--- [SPI] Compile Interfaces ---"
+	rm -rf work
+	vlib work
+	$(VLOG_CMD) $(INF_DIR_WIN)/*.sv
+
+	@echo "--- [SPI] Compile DUT ---"
+	$(VLOG_CMD) $(DUT_DIR_WIN)/Slaves/SPI.sv
+
+	@echo "--- [SPI] Compile SVA ---"
+	$(VLOG_CMD) $(SPI_SVA)
+
+	@echo "--- [SPI] Compile UVM Package ---"
+	$(VLOG_CMD) $(SPI_INC_DIRS) $(SPI_PKG)
+
+	@echo "--- [SPI] Compile Top TB ---"
+	$(VLOG_CMD) $(SPI_TOP_TB)
+
+	@echo "--- [SPI] Optimize ---"
+	vopt +acc +cover spi_top_tb -o $(SPI_VOPT)
+
+spi_sim:
+	@echo "--- [SPI] Sim ---"
+	$(VSIM_CMD) $(SPI_VOPT) \
+		+UVM_TESTNAME=spi_test \
+		-do "coverage save -onexit spi_coverage.ucdb; run -all; quit"
+
+spi_gui:
+	@echo "--- [CPI] GUI ---"
+	vsim -i $(SPI_VOPT) \
+		+UVM_TESTNAME=spi_test \
+		-do "add wave -recursive spi_top_tb/*"
+
+

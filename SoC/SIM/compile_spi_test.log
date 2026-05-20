@@ -1,0 +1,71 @@
+--- [SPI] Compile Interfaces ---
+rm -rf work
+vlib work
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/INF/*.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling interface clk_rst_inf
+-- Compiling interface cpu_monitor_inf
+-- Compiling interface soc_inf
+
+Top level modules:
+	--none--
+--- [SPI] Compile DUT ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/DUT/Slaves/SPI.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module SPI
+
+Top level modules:
+	SPI
+--- [SPI] Compile SVA ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/SVA/spi_sva.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module spi_sva
+
+Top level modules:
+	spi_sva
+--- [SPI] Compile UVM Package ---
+vlog -sv +acc -cover bcst +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Agent +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/spi_pkg.svh
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling package spi_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+--- [SPI] Compile Top TB ---
+vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/spi_top_tb.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module spi_top_tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package spi_pkg
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	spi_top_tb
+--- [SPI] Optimize ---
+vopt +acc +cover spi_top_tb -o spi_vopt
+QuestaSim-64 vopt 10.2c Compiler 2013.07 Jul 19 2013
+
+Top level modules:
+	spi_top_tb
+
+Analyzing design...
+-- Loading module spi_top_tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package spi_pkg
+-- Loading package mtiUvm.questa_uvm_pkg
+-- Loading interface clk_rst_inf
+-- Loading interface soc_inf
+-- Loading module SPI
+-- Loading module spi_sva
+Optimizing 8 design-units (inlining 0 instances):
+-- Optimizing interface soc_inf(fast)
+-- Optimizing module SPI(fast)
+** Note: (vopt-143) Recognized 1 FSM in module "SPI(fast)".
+-- Optimizing module spi_sva(fast)
+-- Optimizing module spi_top_tb(fast)
+-- Optimizing interface clk_rst_inf(fast)
+-- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+-- Optimizing package spi_pkg(fast)
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+Optimized design name is spi_vopt
