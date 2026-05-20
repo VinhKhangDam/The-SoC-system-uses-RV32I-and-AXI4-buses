@@ -22,26 +22,25 @@ module EX_MEM (
 
     input logic stall
 );
-    always_ff @(posedge clk or negedge rstn) begin
-        if (~rstn) begin
-            RegWriteM  <= 1'b0;
-            ResultSrcM <= '0;
-            MemWriteM  <= 1'b0;
-            ALUResultM <= 32'd0;
-            WriteDataM <= 32'd0;
-            rdM        <= 5'd0;
-            pcPlus4M   <= 32'd0;
-            Funct3M    <= '0;
-        end
-        else if (!stall) begin
-            RegWriteM  <= RegWriteE;
-            ResultSrcM <= ResultSrcE;
-            MemWriteM  <= MemWriteE;
-            ALUResultM <= ALUResultE;
-            WriteDataM <= WriteDataE;
-            rdM        <= rdE;
-            pcPlus4M   <= pcPlus4E;
-            Funct3M    <= Funct3E;
-        end
+  always_ff @(posedge clk or negedge rstn) begin
+    if (~rstn) begin
+      RegWriteM  <= 1'b0;
+      ResultSrcM <= '0;
+      MemWriteM  <= 1'b0;
+      ALUResultM <= 32'd0;
+      WriteDataM <= 32'd0;
+      rdM        <= 5'd0;
+      pcPlus4M   <= 32'd0;
+      Funct3M    <= '0;
+    end else if (!stall) begin
+      RegWriteM  <= RegWriteE;
+      ResultSrcM <= ResultSrcE;
+      MemWriteM  <= MemWriteE;
+      ALUResultM <= ALUResultE;
+      WriteDataM <= WriteDataE;
+      rdM        <= rdE;
+      pcPlus4M   <= pcPlus4E;
+      Funct3M    <= Funct3E;
     end
+  end
 endmodule
