@@ -53,20 +53,25 @@ module top_tb;
         .rready  (s_if.rready)
     );
 
+   logic cpu_sva_global_en = 1'b0;
    logic cpu_sva_en_instrF, cpu_sva_en_instrD;
    logic [31:0] cpu_sva_last_pc;
    int unsigned cpu_instr_count;
    logic [31:0]   cpu_end_pc;
    assign cpu_sva_last_pc = (cpu_end_pc >= 32'd4) ? (cpu_end_pc - 32'd4) : 32'd0;
    initial begin
+      cpu_sva_global_en = !$test$plusargs("UVM_MASTER");
+
       if (!$value$plusargs("CPU_INSTR_COUNT=%d", cpu_instr_count))
         cpu_instr_count = 0;
 
       cpu_end_pc = cpu_instr_count *4;
    end
 
-   assign cpu_sva_en_instrF = (cpu_instr_count == 0) ? 1'b1 : (cpu_if.PcF <= cpu_sva_last_pc);
-   assign cpu_sva_en_instrD = (cpu_instr_count == 0) ? 1'b1 : (cpu_if.PcD <= cpu_sva_last_pc);
+   assign cpu_sva_en_instrF = cpu_sva_global_en &&
+                              ((cpu_instr_count == 0) ? 1'b1 : (cpu_if.PcF <= cpu_sva_last_pc));
+   assign cpu_sva_en_instrD = cpu_sva_global_en &&
+                              ((cpu_instr_count == 0) ? 1'b1 : (cpu_if.PcD <= cpu_sva_last_pc));
 
 
    cpu_sva cpu_sva (

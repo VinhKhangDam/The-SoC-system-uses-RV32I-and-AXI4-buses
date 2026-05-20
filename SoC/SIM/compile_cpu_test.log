@@ -1,9 +1,9 @@
 --- [GEN_MEM] Generate memory + golden reference ---
->>> Using SEED: 1073936890 (Saved to .last_seed)
-python3 gen_mem.py 1073936890
-[gen_mem] MEM_SEED = 1073936890
-Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (200 instructions, seed=1073936890)
-python3 sim_expected.py 1073936890
+>>> Using SEED: 212350255 (Saved to .last_seed)
+python3 gen_mem.py 212350255
+[gen_mem] MEM_SEED = 212350255
+Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (200 instructions, seed=212350255)
+python3 sim_expected.py 212350255
 Loaded  : 200 instructions from instr.mem
 Written : /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/expected.mem
 --- Done: instr.mem + expected.mem ready ---
@@ -66,7 +66,7 @@ vlog -sv +acc -cover bcst +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VER
 QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 -- Compiling package soc_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
 
 Top level modules:
 	--none--
@@ -75,17 +75,23 @@ vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATIO
 QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 -- Compiling module axi4_lite_sva
 -- Compiling module cpu_sva
+-- Compiling module spi_sva
+-- Compiling module timer_sva
+-- Compiling module uart_sva
 
 Top level modules:
 	axi4_lite_sva
 	cpu_sva
+	spi_sva
+	timer_sva
+	uart_sva
 --- [4/4] Compile Top TB ---
 vlog -sv +acc -cover bcst C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/top_tb.sv
 QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 -- Compiling module top_tb
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 -- Importing package soc_pkg
-** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+** Note: (vlog-2286) Using implicit +incdir+C:/app/QuestaSim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
 
 Top level modules:
 	top_tb
@@ -129,18 +135,18 @@ Analyzing design...
 -- Loading module axi4_lite_sva
 -- Loading module cpu_sva
 Optimizing 31 design-units (inlining 0 instances):
--- Optimizing module LSU(fast)
-** Note: (vopt-143) Recognized 1 FSM in module "LSU(fast)".
 -- Optimizing interface soc_inf(fast)
+-- Optimizing module LSU(fast)
+** Note: (vopt-143) Recognized 1 FSM in module "LSU(fast)".
 -- Optimizing module axi4_lite_sva(fast)
 -- Optimizing module AXI4_Lite_Interconnect(fast)
 -- Optimizing module top_tb(fast)
+-- Optimizing module SPI(fast)
+** Note: (vopt-143) Recognized 1 FSM in module "SPI(fast)".
 -- Optimizing interface cpu_monitor_inf(fast)
 -- Optimizing module CPU(fast)
 -- Optimizing module UART(fast)
-** Note: (vopt-143) Recognized 2 FSMs in module "UART(fast)".
--- Optimizing module SPI(fast)
-** Note: (vopt-143) Recognized 1 FSM in module "SPI(fast)".
+** Note: (vopt-143) Recognized 2 FSMs in module "UART(fast)".
 -- Optimizing module Timer(fast)
 -- Optimizing module DRAM(fast)
 -- Optimizing module TOP(fast)

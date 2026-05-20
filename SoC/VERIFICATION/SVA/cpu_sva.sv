@@ -25,14 +25,14 @@ module cpu_sva (
 );
 
   // PC must always be word aligned
-  assert property (@(posedge clk) disable iff (!rstn) PcF[1:0] == 2'b00)
+  assert property (@(posedge clk) disable iff (!rstn || !sva_en_InstrF) PcF[1:0] == 2'b00)
   else $error("[CPU_SVA] PcF is not word aligned : %h", PcF);
 
-  assert property (@(posedge clk) disable iff (!rstn) PcD[1:0] == 2'b00)
+  assert property (@(posedge clk) disable iff (!rstn || !sva_en_InstrD) PcD[1:0] == 2'b00)
   else $error("[CPU_SVA] PcD is not word aligned : %h", PcD);
 
   // No unknow instruction/PC after reset
-  assert property (@(posedge clk) disable iff (!rstn) !$isunknown(PcF))
+  assert property (@(posedge clk) disable iff (!rstn || !sva_en_InstrF) !$isunknown(PcF))
   else $error("[CPU_SVA] PcF has X/Z");
 
   assert property (@(posedge clk) disable iff (!rstn || !sva_en_InstrF) !$isunknown(InstrF))

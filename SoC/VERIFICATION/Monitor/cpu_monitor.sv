@@ -258,7 +258,7 @@ class cpu_monitor extends uvm_monitor;
       if (cpu_vif.mon_cb.RegWriteW && cpu_vif.mon_cb.RdW !== '0
                 && !cpu_vif.mon_cb.mem_stall_i) begin
         cpu_transaction tr;
-        tr              = cpu_transaction::type_id::create("wb_tr");
+        tr              = cpu_transaction::type_id::create("tr");
         tr.rd           = cpu_vif.mon_cb.RdW;
         tr.result       = cpu_vif.mon_cb.ResultW;  // WB stage result
         // alu_result / mem_write are M-stage signals — only valid when

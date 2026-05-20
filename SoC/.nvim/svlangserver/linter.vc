@@ -1,0 +1,40 @@
+-v c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Package\soc_pkg.svh
+-v c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Package\spi_pkg.svh
+-v c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Package\timer_pkg.svh
+-v c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Package\uart_pkg.svh
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT\CPU
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT\Master
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT\Slaves
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\INF
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Agent
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Coverage
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Driver
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Env
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Monitor
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Package
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Scoreboard
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Sequence
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Sequencer
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\SVA
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Test
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Transaction
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT\CPU
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT\Master
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\DUT\Slaves
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\INF
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Agent
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Coverage
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Driver
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Env
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Monitor
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Package
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Scoreboard
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Sequence
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Sequencer
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\SVA
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Test
++incdir+c:\Documents\DoAnThietKeViMach\Project\SoC\VERIFICATION\Transaction

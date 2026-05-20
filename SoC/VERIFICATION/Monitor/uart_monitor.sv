@@ -35,7 +35,7 @@ class uart_monitor extends uvm_monitor;
       end
 
       if (vif.mon_cb.wvalid && vif.mon_cb.wready) begin
-        tr        = uart_transaction::type_id::create("wr_tr");
+        tr        = uart_transaction::type_id::create("tr");
         tr.op     = UART_AXI_WRITE;
         tr.addr   = awaddr_q;
         tr.awprot = awprot_q;
@@ -47,7 +47,7 @@ class uart_monitor extends uvm_monitor;
       end
 
       if (vif.mon_cb.rvalid && vif.mon_cb.rready) begin
-        tr        = uart_transaction::type_id::create("rd_tr");
+        tr        = uart_transaction::type_id::create("tr");
         tr.op     = UART_AXI_READ;
         tr.addr   = araddr_q;
         tr.arprot = arprot_q;

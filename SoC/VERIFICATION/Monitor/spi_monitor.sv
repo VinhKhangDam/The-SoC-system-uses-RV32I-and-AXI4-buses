@@ -44,7 +44,7 @@ class spi_monitor extends uvm_monitor;
       end
 
       if (vif.mon_cb.wvalid && vif.mon_cb.wready) begin
-        tr                   = spi_transaction::type_id::create("spi_wr_tr");
+        tr                   = spi_transaction::type_id::create("tr");
         tr.op                = SPI_AXI_WRITE;
         tr.addr              = awaddr_q;
         tr.awprot            = awprot_q;
@@ -60,7 +60,7 @@ class spi_monitor extends uvm_monitor;
       end
 
       if (vif.mon_cb.rvalid && vif.mon_cb.rready) begin
-        tr        = spi_transaction::type_id::create("spi_rd_tr");
+        tr        = spi_transaction::type_id::create("tr");
         tr.op     = SPI_AXI_READ;
         tr.addr   = araddr_q;
         tr.arprot = arprot_q;
@@ -95,7 +95,7 @@ class spi_monitor extends uvm_monitor;
 
       wait (vif.spi_cs_n === 1'b1);
 
-      tr             = spi_transaction::type_id::create("spi_pin_tr");
+      tr             = spi_transaction::type_id::create("tr");
       tr.op          = SPI_PIN_TRANSFER;
       tr.addr        = 32'h4000_0004;
       tr.data        = 32'h0000_0001;
