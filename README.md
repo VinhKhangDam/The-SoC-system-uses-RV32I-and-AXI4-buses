@@ -80,92 +80,130 @@ The CPU and LSU together form the **AXI Master** component:
 
 ## Project Structure
 
+
 ```
 .
 ├── DUT
-│   ├── AXI4_Lite_Interconnect.sv
-│   ├── AXI_Master.sv
-│   ├── CPU
-│   │   ├── ALU.sv
-│   │   ├── ALUControl.sv
-│   │   ├── ControlUnit.sv
-│   │   ├── EX_MEM.sv
-│   │   ├── HazardUnit.sv
-│   │   ├── ID_EX.sv
-│   │   ├── IF_ID.sv
-│   │   ├── MEM_WB.sv
-│   │   ├── MainDecoder.sv
-│   │   ├── RegFile.sv
-│   │   ├── data_mem.sv
-│   │   ├── instr_mem.sv
-│   │   ├── pc.sv
-│   │   └── signExtend.sv
-│   ├── Master
-│   │   ├── CPU.sv
-│   │   └── LSU.sv
-│   ├── Slaves
-│   │   ├── DRAM.sv
-│   │   ├── IRAM.sv
-│   │   ├── SPI.sv
-│   │   ├── Timer.sv
-│   │   └── UART.sv
-│   └── TOP.sv
+│   ├── AXI4_Lite_Interconnect.sv
+│   ├── AXI_Master.sv
+│   ├── CPU
+│   │   ├── ALU.sv
+│   │   ├── ALUControl.sv
+│   │   ├── ControlUnit.sv
+│   │   ├── EX_MEM.sv
+│   │   ├── HazardUnit.sv
+│   │   ├── ID_EX.sv
+│   │   ├── IF_ID.sv
+│   │   ├── MEM_WB.sv
+│   │   ├── MainDecoder.sv
+│   │   ├── RegFile.sv
+│   │   ├── data_mem.sv
+│   │   ├── instr_mem.sv
+│   │   ├── pc.sv
+│   │   └── signExtend.sv
+│   ├── Master
+│   │   ├── CPU.sv
+│   │   └── LSU.sv
+│   ├── Slaves
+│   │   ├── DRAM.sv
+│   │   ├── IRAM.sv
+│   │   ├── SPI.sv
+│   │   ├── Timer.sv
+│   │   └── UART.sv
+│   └── TOP.sv
 ├── INF
-│   ├── clk_rst_inf.sv
-│   ├── cpu_monitor_inf.sv
-│   └── soc_inf.sv
+│   ├── clk_rst_inf.sv
+│   ├── cpu_monitor_inf.sv
+│   └── soc_inf.sv
 ├── SIM
-│   ├── Makefile
-│   ├── compile_axi_multi_slaves_test.log
-│   ├── compile_axi_random_wr_rd_test.log
-│   ├── compile_axi_read_test.log
-│   ├── compile_axi_write_test.log
-│   ├── compile_cpu_test.log
-│   ├── gen_mem.py
-│   ├── instr.mem
-│   ├── sim_axi_multi_slaves_test.log
-│   ├── sim_axi_random_wr_rd_test.log
-│   ├── sim_axi_read_test.log
-│   ├── sim_axi_write_test.log
-│   ├── sim_cpu_test.log
-│   └── sim_expected.py
+│   ├── Makefile
+│   ├── compile_axi_multi_slaves_test.log
+│   ├── compile_axi_random_wr_rd_test.log
+│   ├── compile_cpu_test.log
+│   ├── compile_spi_test.log
+│   ├── compile_timer_test.log
+│   ├── compile_uart_test.log
+│   ├── gen_mem.py
+│   ├── instr.mem
+│   ├── sim_axi_multi_slaves_test.log
+│   ├── sim_axi_random_wr_rd_test.log
+│   ├── sim_cpu_test.log
+│   ├── sim_expected.py
+│   ├── sim_spi_test.log
+│   ├── sim_timer_test.log
+│   └── sim_uart_test.log
 ├── VERIFICATION
-│   ├── Agent
-│   │   ├── axi_agent.sv
-│   │   └── cpu_agent.sv
-│   ├── Coverage
-│   │   └── axi_coverage.sv
-│   ├── Driver
-│   │   └── axi_driver.sv
-│   ├── Env
-│   │   ├── axi_env.sv
-│   │   └── cpu_env.sv
-│   ├── Monitor
-│   │   ├── axi_monitor.sv
-│   │   └── cpu_monitor.sv
-│   ├── Package
-│   │   └── soc_pkg.svh
-│   ├── Scoreboard
-│   │   ├── axi_scoreboard.sv
-│   │   └── cpu_scoreboard.sv
-│   ├── Sequence
-│   │   ├── axi_multi_slaves_sequence.sv
-│   │   ├── axi_random_wr_rd.sv
-│   │   ├── axi_read_sequence.sv
-│   │   └── axi_write_sequence.sv
-│   ├── Sequencer
-│   │   └── axi_sequencer.sv
-│   ├── Test
-│   │   ├── axi_multi_slaves_test.sv
-│   │   ├── axi_random_wr_rd_test.sv
-│   │   ├── axi_read_test.sv
-│   │   ├── axi_write_test.sv
-│   │   └── cpu_test.sv
-│   ├── Transaction
-│   │   ├── axi_transaction.sv
-│   │   └── cpu_transaction.sv
-│   └── top_tb.sv
-├── env.sh
+│   ├── Agent
+│   │   ├── axi_agent.sv
+│   │   ├── cpu_agent.sv
+│   │   └── spi_agent.sv
+│   ├── Coverage
+│   │   ├── axi_coverage.sv
+│   │   ├── cpu_coverage.sv
+│   │   ├── spi_coverage.sv
+│   │   ├── timer_coverage.sv
+│   │   └── uart_coverage.sv
+│   ├── Driver
+│   │   ├── axi_driver.sv
+│   │   ├── spi_driver.sv
+│   │   ├── timer_driver.sv
+│   │   └── uart_driver.sv
+│   ├── Env
+│   │   ├── axi_env.sv
+│   │   ├── cpu_env.sv
+│   │   ├── spi_env.sv
+│   │   ├── timer_env.sv
+│   │   └── uart_env.sv
+│   ├── Monitor
+│   │   ├── axi_monitor.sv
+│   │   ├── cpu_monitor.sv
+│   │   ├── spi_monitor.sv
+│   │   ├── timer_monitor.sv
+│   │   └── uart_monitor.sv
+│   ├── Package
+│   │   ├── soc_pkg.svh
+│   │   ├── spi_pkg.svh
+│   │   ├── timer_pkg.svh
+│   │   └── uart_pkg.svh
+│   ├── SVA
+│   │   ├── axi4-lite_sva.sv
+│   │   ├── cpu_sva.sv
+│   │   ├── spi_sva.sv
+│   │   ├── timer_sva.sv
+│   │   └── uart_sva.sv
+│   ├── Scoreboard
+│   │   ├── axi_scoreboard.sv
+│   │   ├── cpu_scoreboard.sv
+│   │   ├── spi_scoreboard.sv
+│   │   ├── timer_scoreboard.sv
+│   │   └── uart_scoreboard.sv
+│   ├── Sequence
+│   │   ├── axi_multi_slaves_sequence.sv
+│   │   ├── axi_random_wr_rd.sv
+│   │   ├── spi_sequence.sv
+│   │   ├── timer_sequence.sv
+│   │   └── uart_sequence.sv
+│   ├── Sequencer
+│   │   └── axi_sequencer.sv
+│   ├── Test
+│   │   ├── axi_multi_slaves_test.sv
+│   │   ├── axi_random_wr_rd_test.sv
+│   │   ├── cpu_test.sv
+│   │   ├── spi_test.sv
+│   │   ├── timer_test.sv
+│   │   └── uart_test.sv
+│   ├── Transaction
+│   │   ├── axi_transaction.sv
+│   │   ├── cpu_transaction.sv
+│   │   ├── spi_transaction.sv
+│   │   ├── timer_transaction.sv
+│   │   └── uart_transaction.sv
+│   ├── spi_top_tb.sv
+│   ├── timer_top_tb.sv
+│   ├── top_tb.sv
+│   └── uart_top_tb.sv
+└── env.sh
+
 ```
 
 ## Prerequisites
