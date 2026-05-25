@@ -113,6 +113,7 @@ def execute(d, regs, mem, pc):
         elif f3 == 0b101 and f7 == 0b000_0000: result = ua >> sh
         elif f3 == 0b101 and f7 == 0b010_0000: result = a  >> sh
         elif f3 == 0b010 and f7 == 0b000_0000: result = 1 if a < b else 0
+        elif f3 == 0b011 and f7 == 0b000_0000: result = 1 if ua < ub else 0
         else:
             print(f"[WARN] Unknown R-type f3={f3:03b} f7={f7:07b} @ PC={pc:#010x}")
 
@@ -121,18 +122,27 @@ def execute(d, regs, mem, pc):
         a   = to_signed32(regs[rs1])
         ua  = to_u32(regs[rs1])
         imm = d['imm_i']
+        sh  = (d['imm_i'] & 0x1F)
 
         if   f3 == 0b000: result = a  + imm
         elif f3 == 0b010: result = 1 if a < imm else 0
+        elif f3 == 0b011: result = 1 if ua < to_u32(imm) else 0
         elif f3 == 0b111: result = ua & to_u32(imm)
         elif f3 == 0b110: result = ua | to_u32(imm)
         elif f3 == 0b100: result = ua ^ to_u32(imm)
+        elif f3 == 0b001 and f7 == 0b000_0000: result = ua << sh
+        elif f3 == 0b101 and f7 == 0b000_0000: result = ua >> sh
+        elif f3 == 0b101 and f7 == 0b010_0000: result = a >> sh
         else:
             print(f"[WARN] Unknown I-ALU f3={f3:03b} @ PC={pc:#010x}")
 
     # ── LUI ──────────────────────────────────────────────────────────────────
     elif op == 0b011_0111:
         result = to_u32(d['imm_u'] << 12)
+
+    # ── AUIPC ────────────────────────────────────────────────────────────────
+    elif op == 0b001_0111:
+        result = to_u32(pc + (d['imm_u'] << 12))
 
     # ── LOAD ─────────────────────────────────────────────────────────────────
     elif op == 0b000_0011:
@@ -173,6 +183,14 @@ def execute(d, regs, mem, pc):
         result  = next_pc
         next_pc = to_u32(pc + d['imm_j'])
 
+    # ── JALR ─────────────────────────────────────────────────────────────────
+    elif op == 0b110_0111:
+        if f3 == 0b000:
+            result  = next_pc
+            next_pc = to_u32((to_signed32(regs[rs1]) + d['imm_i']) & ~1)
+        else:
+            print(f"[WARN] Unsupported JALR f3={f3:03b} @ PC={pc:#010x}")
+
     else:
         print(f"[WARN] Unknown opcode={op:#09b} @ PC={pc:#010x}")
 
@@ -191,7 +209,7 @@ def simulate(instructions):
     mem      = dict(PERIPH_RESET)
     pc       = 0
     pc_limit = len(instructions) * 4
-    max_steps = len(instructions) * 4
+    max_steps = max(len(instructions) * 16, 64)
     steps     = 0
 
     while steps < max_steps:

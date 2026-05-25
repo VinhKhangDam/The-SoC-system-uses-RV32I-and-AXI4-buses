@@ -38,6 +38,13 @@ class cpu_scoreboard extends uvm_scoreboard;
   bit [31:0] dram_shadow[bit [31:0]];
   bit [31:0] periph_shadow[bit [31:0]];
 
+  // Soc Software signature 
+  localparam logic [31:0] SOC_SIG_ADDR = 32'h1000_03F0;
+  localparam logic [31:0] SOC_PASS_SIG = 32'h0000_005A;
+  localparam logic [31:0] SOC_FAIL_SIG = 32'h0000_00A5;
+  bit soc_signature_seen;
+  bit soc_signature_pass;
+
   function new(string name, uvm_component parent);
     super.new(name, parent);
     wb_export  = new("wb_export", this);
@@ -255,6 +262,24 @@ class cpu_scoreboard extends uvm_scoreboard;
                   "[%s] READ Addr=%h Data=%h (no expected value)", pname, addr, data), UVM_LOW)
       end
     end
+
+    if (addr == SOC_SIG_ADDR) begin
+      soc_signature_seen = 1'b1;
+
+      if (data == SOC_PASS_SIG) begin
+        soc_signature_pass = 1'b1;
+        `uvm_info("SOC_SW", $sformatf("SOC_SOFTWARE PASS signature detected: Addr = %h Data = %h",
+                                      addr, data), UVM_LOW)
+      end else if (addr == SOC_FAIL_SIG) begin
+        soc_signature_pass = 1'b0;
+        `uvm_error("SOC_SW", $sformatf("SOC_SOFTWARE FAIL signature detected: Addr = %h Data = %h",
+                                       addr, data))
+      end else begin
+        soc_signature_pass = 1'b0;
+        `uvm_error("SOC_SW", $sformatf(
+                   "SOC_SOFTWARE UNKNOWN signature : Addr = %h Data = %h", addr, data))
+      end
+    end
   endfunction
 
   virtual function void check_phase(uvm_phase phase);
@@ -351,5 +376,13 @@ class cpu_scoreboard extends uvm_scoreboard;
                  ))
     else if (pass_count > 0)
       `uvm_info("SCB", "SIMULATION PASSED: all registers and AXI reads match expected", UVM_LOW)
+
+    if (!soc_signature_seen) begin
+      `uvm_warning("SOC_SW", "SOC_SOFTWARE SIGNATURE WAS NOT WRITTEN")
+    end else if (soc_signature_pass) begin
+      `uvm_info("SOC_SW", "SOC_SOFTWARE SELF CHECK PASS", UVM_LOW)
+    end else begin
+      `uvm_error("SOC_SW", "SOC_SOFTWARE SELF CHECK FAILED")
+    end
   endfunction
 endclass

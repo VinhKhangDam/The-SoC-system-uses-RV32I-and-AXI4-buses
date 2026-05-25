@@ -1,12 +1,13 @@
---- [GEN_MEM] Generate memory + golden reference ---
->>> Using SEED: 2645886198 (Saved to .last_seed)
-python3 gen_mem.py 2645886198
-[gen_mem] MEM_SEED = 2645886198
-Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (208 instructions, seed=2645886198)
-python3 sim_expected.py 2645886198
-Loaded  : 208 instructions from instr.mem
+--- [ASM] Build PROGRAM/rv32i_load_store_all.S -> instr.mem ---
+riscv64-elf-gcc -march=rv32i -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding \
+	-T link.ld -o asm_prog.elf PROGRAM/rv32i_load_store_all.S
+riscv64-elf-objcopy -O binary asm_prog.elf asm_prog.bin
+od -An -tx4 -v asm_prog.bin | awk '{for (i = 1; i <= NF; i++) print $i}' > instr.mem
+python3 sim_expected.py 0
+Loaded  : 23 instructions from instr.mem
 Written : /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/expected.mem
---- Done: instr.mem + expected.mem ready ---
+--- [ASM] Done: instr.mem ready ---
+>>> CPU_INSTR_COUNT = 40
 --- ROOT: /mnt/c/Documents/DoAnThietKeViMach/Project/SoC ---
 rm -rf work
 vlib work
@@ -52,17 +53,7 @@ Top level modules:
 	instr_mem
 	TOP
 --- [3/4] Compile UVM ---
-vlog -sv +acc -cover bcst +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequencer \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Agent \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence \
-            +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test \
-            C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/soc_pkg.svh
+vlog -sv +acc -cover bcst +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Transaction +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequencer +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Driver +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Agent +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Env +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Sequence +incdir+C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Package/soc_pkg.svh
 QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 -- Compiling package soc_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)

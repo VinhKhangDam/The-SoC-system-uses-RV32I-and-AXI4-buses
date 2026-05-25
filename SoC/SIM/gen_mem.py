@@ -123,6 +123,32 @@ def lw(rd, base, imm):
 def sw(rs2, base, imm):
     return s_type(imm, rs2, base, 0b010)
 
+def make_soc_signature_test():
+    return [
+        (i_type(0x5A, 0, 0b000, 5, 0b0010011),
+         "addi x5, x0, 0x5A"),
+
+        (sw(5, DRAM_BASE_REG, 0x300),
+         "sw x5, 0x300(x1) // self-checking write"),
+
+        (lw(6, DRAM_BASE_REG, 0x300),
+         "lw x6, 0x300(x1) // self-checking readback"),
+
+        (b_type(8, 6, 5, 0b001),
+         "bne x5, x6, fail_signature"),
+
+        (i_type(0x5A, 0, 0b000, 7, 0b0010011),
+         "addi x7, x0, 0x5A // PASS signature"),
+
+        (j_type(8, 0),
+         "jal x0, write_signature"),
+
+        (i_type(0xA5, 0, 0b000, 7, 0b0010011),
+         "addi x7, x0, 0xA5 // FAIL signature"),
+
+        (sw(7, DRAM_BASE_REG, 0x3F0),
+         "sw x7, 0x3F0(x1) // SOC software signature"),
+    ]
 
 def generate_cpu_random_instr():
     rd = random.choice(SCRATCH_REGS)
@@ -340,8 +366,9 @@ def generate_file(filepath, header, seed):
     random.seed(seed)
 
     prologue = make_prologue()
+    soc_signature = make_soc_signature_test()
     cases = make_random_cases()
-    instr_count = len(prologue) + len(cases)
+    instr_count = len(prologue) + len(soc_signature) + len(cases)
 
     with open(filepath, "w") as f:
         f.write(f"// --- {header} ({instr_count} instructions, seed={seed}) ---\n")
@@ -353,6 +380,9 @@ def generate_file(filepath, header, seed):
 
         for instr, asm in prologue:
             f.write(f"{instr:08x}  // {asm}\n")
+        
+        for instr, asm in soc_signature:
+            f.write(f"{instr:08x} // {asm}\n")
 
         for kind, detail in cases:
             instr, asm = generate_case(kind, detail)
