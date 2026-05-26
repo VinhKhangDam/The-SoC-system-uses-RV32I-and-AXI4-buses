@@ -18,6 +18,8 @@ module ID_EX (
     input logic [31:0] pcPlus4D,
     input logic [31:0] ExtImmD,
     input logic [ 2:0] Funct3D,
+    input logic        AUIPCD,
+    input logic        JALRD,
 
     // Output
     output logic        RegWriteE,
@@ -36,6 +38,8 @@ module ID_EX (
     output logic [31:0] pcPlus4E,
     output logic [31:0] ExtImmE,
     output logic [ 2:0] Funct3E,
+    output logic        AUIPCE,
+    output logic        JALRE,
 
     // Harvard Unit
     input logic flush,
@@ -60,6 +64,8 @@ module ID_EX (
       pcPlus4E    <= 32'd0;
       ExtImmE     <= 32'd0;
       Funct3E     <= '0;
+      AUIPCE      <= 1'b0;
+      JALRE       <= 1'b0;
     end else begin
       if (flush) begin
         RegWriteE   <= 0;
@@ -76,6 +82,8 @@ module ID_EX (
         rdE         <= 5'd0;
         ExtImmE     <= 32'd0;
         Funct3E     <= '0;
+        AUIPCE      <= 1'b0;
+        JALRE       <= 1'b0;
       end else if (!stall) begin
         RegWriteE   <= RegWriteD;
         MemWriteE   <= MemWriteD;
@@ -93,6 +101,8 @@ module ID_EX (
         pcPlus4E    <= pcPlus4D;
         ExtImmE     <= ExtImmD;
         Funct3E     <= Funct3D;
+        AUIPCE      <= AUIPCD;
+        JALRE       <= JALRD;
       end
     end
   end

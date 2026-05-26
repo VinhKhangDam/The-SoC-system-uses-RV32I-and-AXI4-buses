@@ -1,12 +1,13 @@
---- [GEN_MEM] Generate memory + golden reference ---
->>> Using SEED: 2620073240 (Saved to .last_seed)
-python3 gen_mem.py 2620073240
-[gen_mem] MEM_SEED = 2620073240
-Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (208 instructions, seed=2620073240)
-python3 sim_expected.py 2620073240
-Loaded  : 208 instructions from instr.mem
+--- [ASM] Build PROGRAM/rv32i_add.S -> instr.mem ---
+riscv64-elf-gcc -march=rv32i -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding \
+	-T link.ld -o asm_prog.elf PROGRAM/rv32i_add.S
+riscv64-elf-objcopy -O binary asm_prog.elf asm_prog.bin
+od -An -tx4 -v asm_prog.bin | awk '{for (i = 1; i <= NF; i++) print $i}' > instr.mem
+python3 sim_expected.py 0
+Loaded  : 19 instructions from instr.mem
 Written : /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/expected.mem
---- Done: instr.mem + expected.mem ready ---
+--- [ASM] Done: instr.mem ready ---
+>>> CPU_INSTR_COUNT = 208
 --- ROOT: /mnt/c/Documents/DoAnThietKeViMach/Project/SoC ---
 rm -rf work
 vlib work

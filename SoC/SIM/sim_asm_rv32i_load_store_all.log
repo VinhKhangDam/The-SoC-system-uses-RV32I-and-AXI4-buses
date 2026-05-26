@@ -5,7 +5,7 @@ Reading C:/app/QuestaSim/tcl/vsim/pref.tcl
 
 # 10.2c
 
-# vsim +UVM_TESTNAME=cpu_test +CPU_MASTER +MEM_SEED=2744218947 +CPU_INSTR_COUNT=23 -coverage -do {run -all; quit} -c -sv_seed 2744218947 vopt_top 
+# vsim +UVM_TESTNAME=cpu_test +CPU_MASTER +MEM_SEED=1585377908 +CPU_INSTR_COUNT=23 -coverage -do {run -all; quit} -c -sv_seed 1585377908 vopt_top 
 # //  Questa Sim-64
 # //  Version 10.2c Unknown Platform Jul 19 2013
 # //

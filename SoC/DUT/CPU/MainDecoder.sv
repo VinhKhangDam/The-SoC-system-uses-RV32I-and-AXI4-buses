@@ -7,7 +7,9 @@ module MainDecoder (
     output logic       Jump,
     output logic       Branch,
     output logic [1:0] ALUOp,
-    output logic [2:0] ImmSrc
+    output logic [2:0] ImmSrc,
+    output logic       AUIPC,
+    output logic       JALR
 );
 
   always_comb begin
@@ -20,6 +22,8 @@ module MainDecoder (
     Branch    = 0;
     ALUOp     = 2'b00;
     ImmSrc    = 3'b000;
+    AUIPC     = 1'b0;
+    JALR      = 1'b0;
 
     case (opcode)
       7'b0000011: begin  // lw (Load Word)
@@ -73,6 +77,24 @@ module MainDecoder (
         ImmSrc    = 3'b011;  // U-type
       end
 
+      7'b0010111: begin  // AUIPC
+        RegWrite  = 1'b1;
+        ALUSrc    = 1'b1;
+        ResultSrc = 2'b00;
+        ALUOp     = 2'b00;  // ADD 
+        ImmSrc    = 3'b011;  // U-Type
+        AUIPC     = 1'b1;
+      end
+
+      7'b1100111: begin  // JALR
+        RegWrite  = 1'b1;
+        ImmSrc    = 3'b000;  // I-type
+        ALUSrc    = 1'b1;
+        ResultSrc = 2'b10;  // rd = PC + 4
+        Jump      = 1'b1;
+        ALUOp     = 2'b00;  // ADD sr1 + Imm 
+        JALR      = 1'b1;
+      end
       default: ;
     endcase
   end

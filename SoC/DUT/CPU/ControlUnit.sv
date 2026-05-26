@@ -9,7 +9,9 @@ module ControlUnit (
     output logic       Branch,
     output logic [3:0] ALUControl,
     output logic       ALUSrc,
-    output logic [2:0] ImmSrc
+    output logic [2:0] ImmSrc,
+    output logic       AUIPC,
+    output logic       JALR
 );
   logic [1:0] ALUOp_wire;
 
@@ -23,7 +25,9 @@ module ControlUnit (
       .Branch(Branch),
       .ALUOp(ALUOp_wire),
       .ALUSrc(ALUSrc),
-      .ImmSrc(ImmSrc)
+      .ImmSrc(ImmSrc),
+      .AUIPC(AUIPC),
+      .JALR(JALR)
   );
 
   // ALU Control

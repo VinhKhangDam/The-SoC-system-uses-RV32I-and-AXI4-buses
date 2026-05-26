@@ -22,6 +22,8 @@ module ALUControl (
 
           3'b010: ALUControl = 4'b0111;  // SLT, SLTI (So sánh bé hơn)
 
+          3'b011: ALUControl = 4'b1010;  // SLTU, SLTIU
+
           3'b100: ALUControl = 4'b0011;  // XOR, XORI
 
           3'b101:

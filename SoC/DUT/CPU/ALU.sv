@@ -14,6 +14,7 @@ module ALU (
   localparam ADD = 4'b0010;
   localparam SUB = 4'b0110;
   localparam SLT = 4'b0111;  // Set Less Than
+  localparam SLTU = 4'b1010;  // Set less Than Unsigned
 
   // Shift Group
   localparam SLL = 4'b0100;  // Shift Left Logical
@@ -31,6 +32,7 @@ module ALU (
       ADD:     ALUResult = OpA + OpB;
       SUB:     ALUResult = OpA - OpB;
       SLT:     ALUResult = ($signed(OpA) < $signed(OpB)) ? 32'd1 : 32'd0;
+      SLTU:    ALUResult = (OpA < OpB) ? 32'd1 : 32'd0;
       SLL:     ALUResult = OpA << OpB[4:0];
       SRL:     ALUResult = OpA >> (OpB[4:0]);
       SRA:     ALUResult = $signed(OpA) >>> (OpB[4:0]);

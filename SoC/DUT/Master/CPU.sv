@@ -37,6 +37,9 @@ module CPU (
 
   // Branch logic signal
   logic BranchTaken;
+  logic JALRD, JALRE;
+  logic [31:0] BranchTargetE;
+  logic [31:0] JalrTargetE;
 
   // Execute stage
   logic RegWriteE, MemWriteE, JumpE, BranchE, ALUSrcE;
@@ -47,6 +50,8 @@ module CPU (
   logic PCSrc, Zero;
   logic [1:0] ForwardA, ForwardB;
   logic [31:0] SrcA, SrcB, WriteDataE, ALUResultE, PC_ExtImm;
+  logic AUIPCD, AUIPCE;
+  logic [31:0] RegSrcA;
 
   // Memory stage
   logic RegWriteM, MemWriteM;
@@ -124,7 +129,9 @@ module CPU (
       .Branch(BranchD),
       .ALUControl(ALUControlD),
       .ALUSrc(ALUSrcD),
-      .ImmSrc(ImmSrc)
+      .ImmSrc(ImmSrc),
+      .AUIPC(AUIPCD),
+      .JALR(JALRD)
   );
 
   RegFile rf (
@@ -165,6 +172,8 @@ module CPU (
       .pcPlus4D(PcPlus4D),
       .Funct3D(Funct3),
       .ExtImmD(ExtImmD),
+      .AUIPCD(AUIPCD),
+      .JALRD(JALRD),
       .RegWriteE(RegWriteE),
       .MemWriteE(MemWriteE),
       .ResultSrcE(ResultSrcE),
@@ -181,6 +190,8 @@ module CPU (
       .pcPlus4E(PcPlus4E),
       .ExtImmE(ExtImmE),
       .Funct3E(Funct3E),
+      .AUIPCE(AUIPCE),
+      .JALRE(JALRE),
       .flush(FlushE),
       .stall(StallD)
   );
@@ -188,10 +199,12 @@ module CPU (
   // ----------------------------------------------------------------
   // EXECUTE STAGE
   // ----------------------------------------------------------------
-  assign SrcA       = (ForwardA == 2'b10) ? ALUResultM : (ForwardA == 2'b01) ? ResultW : Rd1E;
+  // assign SrcA       = (ForwardA == 2'b10) ? ALUResultM : (ForwardA == 2'b01) ? ResultW : Rd1E;
+  assign RegSrcA    = (ForwardA == 2'b10) ? ALUResultM : (ForwardB == 2'b01) ? ResultW : Rd1E;
+  assign SrcA       = AUIPCE ? PcE : RegSrcA;
   assign WriteDataE = (ForwardB == 2'b10) ? ALUResultM : (ForwardB == 2'b01) ? ResultW : Rd2E;
   assign SrcB       = ALUSrcE ? ExtImmE : WriteDataE;
-  assign PC_ExtImm  = PcE + ExtImmE;
+  // assign PC_ExtImm  = PcE + ExtImmE;
 
   ALU alu (
       .OpA(SrcA),
@@ -237,6 +250,9 @@ module CPU (
     endcase  // case (Funct3E)
   end  // always_comb
 
+  assign BranchTargetE = PcE + ExtImmE;
+  assign JalrTargetE = (RegSrcA + ExtImmE) & 32'hFFFF_FFFE;
+  assign PC_ExtImm = JALRE ? JalrTargetE : BranchTargetE;
   assign PCSrc = JumpE | (BranchE & BranchTaken);
 
   // ----------------------------------------------------------------

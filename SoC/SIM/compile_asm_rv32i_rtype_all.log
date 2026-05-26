@@ -1,13 +1,12 @@
---- [ASM] Build PROGRAM/rv32i_rtype_all.S -> instr.mem ---
-riscv64-elf-gcc -march=rv32i -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding \
-	-T link.ld -o asm_prog.elf PROGRAM/rv32i_rtype_all.S
-riscv64-elf-objcopy -O binary asm_prog.elf asm_prog.bin
-od -An -tx4 -v asm_prog.bin | awk '{for (i = 1; i <= NF; i++) print $i}' > instr.mem
-python3 sim_expected.py 0
-Loaded  : 40 instructions from instr.mem
+--- [GEN_MEM] Generate memory + golden reference ---
+>>> Using SEED: 154100159 (Saved to .last_seed)
+python3 gen_mem.py 154100159
+[gen_mem] MEM_SEED = 154100159
+Generated /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/instr.mem  (208 instructions, seed=154100159)
+python3 sim_expected.py 154100159
+Loaded  : 208 instructions from instr.mem
 Written : /mnt/c/Documents/DoAnThietKeViMach/Project/SoC/SIM/expected.mem
---- [ASM] Done: instr.mem ready ---
->>> CPU_INSTR_COUNT = 40
+--- Done: instr.mem + expected.mem ready ---
 --- ROOT: /mnt/c/Documents/DoAnThietKeViMach/Project/SoC ---
 rm -rf work
 vlib work
