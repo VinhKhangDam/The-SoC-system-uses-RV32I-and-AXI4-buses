@@ -35,6 +35,11 @@ module CPU (
   logic [24:0] Immediate;
   logic [31:0] Rd1D, Rd2D, ExtImmD;
 
+  // ECALL / EBREAK
+  logic EcallD, EbreakD;
+  logic TrapD, TrapE, TrapM, TrapW;
+  logic trap_valid;
+
   // Branch logic signal
   logic BranchTaken;
   logic JALRD, JALRE;
@@ -67,6 +72,8 @@ module CPU (
 
   // Stall/Flush from HazardUnit
   logic StallF, StallD, FlushE, FlushD;
+  logic StallF_hz, StallD_hz;
+  logic FlushD_hz;
 
   logic hz_FlushE;
 
@@ -196,11 +203,24 @@ module CPU (
       .stall(StallD)
   );
 
+  // ECALL / EBREAK
+  assign EcallD     = (InstrD == 32'h0000_0073);
+  assign EbreakD    = (InstrD == 32'h0010_0073);
+  assign TrapD      = EcallD | EbreakD;
+
+  always_ff @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      trap_valid <= 1'b0;
+    end else if (TrapD) begin
+      trap_valid <= 1'b1;
+    end
+  end
+
   // ----------------------------------------------------------------
   // EXECUTE STAGE
   // ----------------------------------------------------------------
   // assign SrcA       = (ForwardA == 2'b10) ? ALUResultM : (ForwardA == 2'b01) ? ResultW : Rd1E;
-  assign RegSrcA    = (ForwardA == 2'b10) ? ALUResultM : (ForwardB == 2'b01) ? ResultW : Rd1E;
+  assign RegSrcA    = (ForwardA == 2'b10) ? ALUResultM : (ForwardA == 2'b01) ? ResultW : Rd1E;
   assign SrcA       = AUIPCE ? PcE : RegSrcA;
   assign WriteDataE = (ForwardB == 2'b10) ? ALUResultM : (ForwardB == 2'b01) ? ResultW : Rd2E;
   assign SrcB       = ALUSrcE ? ExtImmE : WriteDataE;
@@ -308,13 +328,16 @@ module CPU (
       .pcSrcE(PCSrc),
       .forwardAE(ForwardA),
       .forwardBE(ForwardB),
-      .stallF(StallF),  // -> pc_reg, IF_ID.stall
-      .stallD(StallD),  // -> ID_EX.stall
+      .stallF(StallF_hz),  // -> pc_reg, IF_ID.stall
+      .stallD(StallD_hz),  // -> ID_EX.stall
       .flushE(hz_FlushE),  // -> ID_EX.flush
-      .flushD(FlushD),  // -> IF_ID.flush
+      .flushD(FlushD_hz),  // -> IF_ID.flush
       .lsu_stall(front_stall)
   );
 
+  assign StallF = StallF_hz | trap_valid;
+  assign StallD = StallD_hz;
   assign FlushE = hz_FlushE && !front_stall;
+  assign FlushD = FlushD_hz | TrapD | trap_valid;
 
 endmodule

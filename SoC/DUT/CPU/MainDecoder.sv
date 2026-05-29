@@ -95,6 +95,32 @@ module MainDecoder (
         ALUOp     = 2'b00;  // ADD sr1 + Imm 
         JALR      = 1'b1;
       end
+
+      7'b0001111: begin  // FENCE
+        RegWrite  = 1'b0;
+        MemWrite  = 1'b0;
+        ResultSrc = 2'b00;
+        Branch    = 1'b0;
+        Jump      = 1'b0;
+        ALUSrc    = 1'b0;
+        ImmSrc    = 3'b000;
+        ALUOp     = 2'b00;
+        AUIPC     = 1'b0;
+        JALR      = 1'b0;
+      end
+
+      7'b1110011: begin  // SYSTEM: ECALL / EBREAK
+        RegWrite  = 1'b0;
+        MemWrite  = 1'b0;
+        ResultSrc = 2'b00;
+        Branch    = 1'b0;
+        Jump      = 1'b0;
+        ALUSrc    = 1'b0;
+        ImmSrc    = 3'b000;
+        ALUOp     = 2'b00;
+        AUIPC     = 1'b0;
+        JALR      = 1'b0;
+      end
       default: ;
     endcase
   end

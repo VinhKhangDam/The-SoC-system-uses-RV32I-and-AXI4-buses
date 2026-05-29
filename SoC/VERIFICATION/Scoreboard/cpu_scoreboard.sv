@@ -92,6 +92,22 @@ class cpu_scoreboard extends uvm_scoreboard;
     endcase
   endfunction
 
+  function bit [31:0] word_addr(bit [31:0] addr);
+    return {addr[31:2], 2'b00};
+  endfunction
+
+  function bit [31:0] merge_wstrb(bit [31:0] old_word, bit [31:0] wdata, bit [3:0] wstrb);
+    bit [31:0] merged;
+
+    merged = old_word;
+    if (wstrb[0]) merged[7:0]   = wdata[7:0];
+    if (wstrb[1]) merged[15:8]  = wdata[15:8];
+    if (wstrb[2]) merged[23:16] = wdata[23:16];
+    if (wstrb[3]) merged[31:24] = wdata[31:24];
+
+    return merged;
+  endfunction
+
   function bit periph_default_expected(bit [31:0] addr, output bit [31:0] exp);
     case (addr)
       32'h2000_0000: begin
@@ -209,11 +225,13 @@ class cpu_scoreboard extends uvm_scoreboard;
 
   virtual function void write_axi(axi_transaction tr);
     bit [31:0] addr;
+    bit [31:0] base_addr;
     bit [31:0] data;
     bit [31:0] expected;
     string pname;
 
     addr = tr.addr;
+    base_addr = word_addr(addr);
     data = tr.data;
 
     if (tr.is_write) begin
@@ -232,12 +250,15 @@ class cpu_scoreboard extends uvm_scoreboard;
 
     if (addr >= 32'h1000_0000 && addr < 32'h2000_0000) begin
       if (tr.is_write) begin
-        dram_shadow[addr] = data;
+        expected = dram_shadow.exists(base_addr) ? dram_shadow[base_addr] : 32'h0000_0000;
+        dram_shadow[base_addr] = merge_wstrb(expected, data, tr.wstrb);
         dram_writes++;
-        `uvm_info("SCB_MEM", $sformatf("[DRAM] WRITE Addr=%h Data=%h", addr, data), UVM_HIGH)
+        `uvm_info("SCB_MEM", $sformatf(
+                  "[DRAM] WRITE Addr=%h Base=%h Data=%h Strb=%b Shadow=%h",
+                  addr, base_addr, data, tr.wstrb, dram_shadow[base_addr]), UVM_HIGH)
       end else begin
         dram_reads++;
-        expected = dram_shadow.exists(addr) ? dram_shadow[addr] : 32'h0000_0000;
+        expected = dram_shadow.exists(base_addr) ? dram_shadow[base_addr] : 32'h0000_0000;
         report_axi_read_compare("DRAM", addr, expected, data);
       end
     end else if (is_periph(addr)) begin
@@ -270,7 +291,7 @@ class cpu_scoreboard extends uvm_scoreboard;
         soc_signature_pass = 1'b1;
         `uvm_info("SOC_SW", $sformatf("SOC_SOFTWARE PASS signature detected: Addr = %h Data = %h",
                                       addr, data), UVM_LOW)
-      end else if (addr == SOC_FAIL_SIG) begin
+      end else if (data == SOC_FAIL_SIG) begin
         soc_signature_pass = 1'b0;
         `uvm_error("SOC_SW", $sformatf("SOC_SOFTWARE FAIL signature detected: Addr = %h Data = %h",
                                        addr, data))

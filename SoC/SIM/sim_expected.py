@@ -51,6 +51,40 @@ def sign_ext(val, bits):
         val -= (1 << bits)
     return val
 
+def word_base(addr):
+    return addr & ~0x3
+
+def load_word(mem, addr):
+    return mem.get(word_base(addr), 0)
+
+def store_word(mem, addr, data):
+    mem[word_base(addr)] = to_u32(data)
+
+def load_byte(mem, addr):
+    word = load_word(mem, addr)
+    shift = (addr & 0x3) * 8
+    return (word >> shift) & 0xFF
+
+def store_byte(mem, addr, data):
+    base = word_base(addr)
+    shift = (addr & 0x3) * 8
+    word = mem.get(base, 0)
+    word &= ~(0xFF << shift)
+    word |= (data & 0xFF) << shift
+    mem[base] = to_u32(word)
+
+def load_half(mem, addr):
+    word = load_word(mem, addr)
+    shift = 16 if (addr & 0x2) else 0
+    return (word >> shift) & 0xFFFF
+
+def store_half(mem, addr, data):
+    base = word_base(addr)
+    shift = 16 if (addr & 0x2) else 0
+    word = mem.get(base, 0)
+    word &= ~(0xFFFF << shift)
+    word |= (data & 0xFFFF) << shift
+    mem[base] = to_u32(word)
 # ──────────────────────────────────────────────────────────────────────────────
 # Decode
 # ──────────────────────────────────────────────────────────────────────────────
@@ -147,16 +181,29 @@ def execute(d, regs, mem, pc):
     # ── LOAD ─────────────────────────────────────────────────────────────────
     elif op == 0b000_0011:
         addr = to_u32(to_signed32(regs[rs1]) + d['imm_i'])
-        if f3 == 0b010:
-            result = mem.get(addr, 0)
+
+        if f3 == 0b000:      # LB
+            result = sign_ext(load_byte(mem, addr), 8)
+        elif f3 == 0b001:    # LH
+            result = sign_ext(load_half(mem, addr), 16)
+        elif f3 == 0b010:    # LW
+            result = load_word(mem, addr)
+        elif f3 == 0b100:    # LBU
+            result = load_byte(mem, addr)
+        elif f3 == 0b101:    # LHU
+            result = load_half(mem, addr)
         else:
             print(f"[WARN] Unsupported load f3={f3:03b} @ PC={pc:#010x}")
 
     # ── STORE ────────────────────────────────────────────────────────────────
     elif op == 0b010_0011:
         addr = to_u32(to_signed32(regs[rs1]) + d['imm_s'])
-        if f3 == 0b010:
-            mem[addr] = to_u32(regs[rs2])
+        if f3 == 0b000:      # SB
+            store_byte(mem, addr, regs[rs2])
+        elif f3 == 0b001:    # SH
+            store_half(mem, addr, regs[rs2])
+        elif f3 == 0b010:    # SW
+            store_word(mem, addr, regs[rs2])
         else:
             print(f"[WARN] Unsupported store f3={f3:03b} @ PC={pc:#010x}")
 
@@ -191,6 +238,10 @@ def execute(d, regs, mem, pc):
         else:
             print(f"[WARN] Unsupported JALR f3={f3:03b} @ PC={pc:#010x}")
 
+    # ── FENCE ─────────────────────────────────────────────────────────────────
+    elif op == 0b000_1111:
+        pass
+
     else:
         print(f"[WARN] Unknown opcode={op:#09b} @ PC={pc:#010x}")
 
@@ -217,6 +268,11 @@ def simulate(instructions):
             break
 
         instr = instructions[pc >> 2]
+
+        # ECALL / EBREAK halt this simple CPU model.
+        if instr in (0x00000073, 0x00100073):
+            break
+
         d     = decode(instr)
 
         next_pc, rd, result = execute(d, regs, mem, pc)
