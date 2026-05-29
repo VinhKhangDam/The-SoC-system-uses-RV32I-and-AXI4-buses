@@ -106,7 +106,7 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param general.usePosixSpawnForFork 1
   set_param chipscope.maxJobs 4
-  set_param runs.launchOptions { -jobs 8  }
+  set_param runs.launchOptions { -jobs 6  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xczu7ev-ffvc1156-2-e
   set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]

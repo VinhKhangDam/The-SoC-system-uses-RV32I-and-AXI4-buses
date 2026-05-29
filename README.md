@@ -23,9 +23,10 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 ### CPU Core
 
 - **5-Stage Pipeline**: Instruction Fetch, Decode, Execute, Memory, Writeback
-- **RV32I ISA Subset Support**: Core integer instructions for ALU, branch, jump, load/store, and U-type testing
+- **RV32I Base ISA Support**: Integer ALU, immediate, branch, jump, load/store, U-type, FENCE, ECALL, and EBREAK instructions
 - **Hazard Handling**: Forwarding unit and stall logic for data hazards
-- **ALU Operations**: ADD, SUB, AND, OR, XOR, SLT, SLL, SRL, SRA
+- **ALU Operations**: ADD, SUB, AND, OR, XOR, SLT, SLTU, SLL, SRL, SRA and immediate variants
+- **System Instructions**: FENCE is treated as a NOP; ECALL and EBREAK are implemented as simple halt/trap instructions for verification
 
 ### Interconnect & Peripherals
 
@@ -40,7 +41,9 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 
 - **UVM Framework**: Complete Universal Verification Methodology implementation
 - **Coverage Analysis**: Branch, condition, and statement coverage
-- **Randomized Testing**: Automated stimulus generation and scoreboard checking
+- **Randomized Testing**: Automated CPU/SoC stimulus generation and scoreboard checking
+- **Assembly ISA Tests**: Directed RISC-V assembly programs for full RV32I instruction verification
+- **SVA Checks**: AXI4-Lite, CPU, Timer, UART, and SPI assertions
 
 ### Synthesis
 
@@ -89,6 +92,15 @@ The CPU and LSU together form the **AXI Master** component:
 - **Slave 3**: UART Peripheral
 - **Slave 4**: SPI Peripheral
 
+Address regions used by the verification environment:
+
+- **IRAM**: `0x0000_0000`
+- **DRAM**: `0x1000_0000`
+- **Timer**: `0x2000_0000`
+- **UART**: `0x3000_0000`
+- **SPI**: `0x4000_0000`
+- **SoC software signature**: `0x1000_03F0`
+
 ## Project Structure
 
 ```
@@ -127,20 +139,6 @@ The CPU and LSU together form the **AXI Master** component:
 │   ├── cpu_monitor_inf.sv
 │   └── soc_inf.sv
 ├── SIM
-│   ├── compile_asm_rv32i_add.log
-│   ├── compile_asm_rv32i_all.log
-│   ├── compile_asm_rv32i_branch_all
-│   ├── compile_asm_rv32i_itype_all.log
-│   ├── compile_asm_rv32i_jump_u_all.log
-│   ├── compile_asm_rv32i_load_store_all.log
-│   ├── compile_asm_rv32i_rtype_all.log
-│   ├── compile_axi_multi_slaves_test.log
-│   ├── compile_axi_random_wr_rd_test.log
-│   ├── compile_cpu_test.log
-│   ├── compile_spi_test.log
-│   ├── compile_timer_test
-│   ├── compile_timer_test.log
-│   ├── compile_uart_test.log
 │   ├── gen_mem.py
 │   ├── instr.mem
 │   ├── link.ld
@@ -148,25 +146,54 @@ The CPU and LSU together form the **AXI Master** component:
 │   ├── PROGRAM
 │   │   ├── rv32i_add.S
 │   │   ├── rv32i_all.S
+│   │   ├── rv32i_auipc.S
+│   │   ├── rv32i_beq_bne.S
+│   │   ├── rv32i_blt_bge.S
+│   │   ├── rv32i_bltu_bgeu.S
 │   │   ├── rv32i_branch_all.S
+│   │   ├── rv32i_byte_half_load_store.S
+│   │   ├── rv32i_ebreak.S
+│   │   ├── rv32i_ecall.S
 │   │   ├── rv32i_itype_all.S
+│   │   ├── rv32i_jal_jalr.S
+│   │   ├── rv32i_jalr.S
 │   │   ├── rv32i_jump_u_all.S
 │   │   ├── rv32i_load_store_all.S
-│   │   └── rv32i_rtype_all.S
-│   ├── sim_asm_rv32i_add.log
-│   ├── sim_asm_rv32i_all.log
-│   ├── sim_asm_rv32i_branch_all.log
-│   ├── sim_asm_rv32i_itype_all.log
-│   ├── sim_asm_rv32i_jump_u_all.log
-│   ├── sim_asm_rv32i_load_store_all.log
-│   ├── sim_asm_rv32i_rtype_all.log
-│   ├── sim_axi_multi_slaves_test.log
-│   ├── sim_axi_random_wr_rd_test.log
-│   ├── sim_cpu_test.log
+│   │   ├── rv32i_load_store_offset.S
+│   │   ├── rv32i_rtype_all.S
+│   │   ├── rv32i_shift_imm.S
+│   │   ├── rv32i_sltiu.S
+│   │   ├── rv32i_sltu.S
+│   │   └── rv32i_x0.S
 │   ├── sim_expected.py
-│   ├── sim_spi_test.log
-│   ├── sim_timer_test.log
-│   └── sim_uart_test.log
+│   └── SimResult_Log
+│       ├── sim_asm_rv32i_add.log
+│       ├── sim_asm_rv32i_all.log
+│       ├── sim_asm_rv32i_auipc.log
+│       ├── sim_asm_rv32i_beq_bne.log
+│       ├── sim_asm_rv32i_blt_bge.log
+│       ├── sim_asm_rv32i_bltu_bgeu.log
+│       ├── sim_asm_rv32i_branch_all.log
+│       ├── sim_asm_rv32i_byte_half_load_store.log
+│       ├── sim_asm_rv32i_ebreak.log
+│       ├── sim_asm_rv32i_ecall.log
+│       ├── sim_asm_rv32i_itype_all.log
+│       ├── sim_asm_rv32i_jal_jalr.log
+│       ├── sim_asm_rv32i_jalr.log
+│       ├── sim_asm_rv32i_jump_u_all.log
+│       ├── sim_asm_rv32i_load_store_all.log
+│       ├── sim_asm_rv32i_load_store_offset.log
+│       ├── sim_asm_rv32i_rtype_all.log
+│       ├── sim_asm_rv32i_shift_imm.log
+│       ├── sim_asm_rv32i_sltiu.log
+│       ├── sim_asm_rv32i_sltu.log
+│       ├── sim_asm_rv32i_x0.log
+│       ├── sim_axi_multi_slaves_test.log
+│       ├── sim_axi_random_wr_rd_test.log
+│       ├── sim_cpu_test.log
+│       ├── sim_spi_test.log
+│       ├── sim_timer_test.log
+│       └── sim_uart_test.log
 └── VERIFICATION
     ├── Agent
     │   ├── axi_agent.sv
@@ -347,15 +374,32 @@ addi x31, x0, 0xa5
 sw   x31, 0(x30)
 ```
 
-Current directed assembly tests focus on the instruction subset implemented in the CPU:
+Current directed assembly tests cover the RV32I base integer instruction set implemented in the CPU:
 
 - R-type: `ADD`, `SUB`, `SLL`, `SLT`, `XOR`, `SRL`, `SRA`, `OR`, `AND`
-- I-type: `ADDI`, `SLTI`, `XORI`, `ORI`, `ANDI`, `SLLI`, `SRLI`, `SRAI`
+- Unsigned compare: `SLTU`, `SLTIU`
+- I-type: `ADDI`, `SLTI`, `SLTIU`, `XORI`, `ORI`, `ANDI`, `SLLI`, `SRLI`, `SRAI`
 - Branch: `BEQ`, `BNE`, `BLT`, `BGE`, `BLTU`, `BGEU`
-- Jump/U-type: `JAL`, `LUI`
-- Memory: `LW`, `SW`
+- Jump/U-type: `JAL`, `JALR`, `LUI`, `AUIPC`
+- Memory: `LB`, `LH`, `LW`, `LBU`, `LHU`, `SB`, `SH`, `SW`
+- System/fence: `FENCE`, `ECALL`, `EBREAK`
 
-Do not use `AUIPC`, `JALR`, `SLTU`, `SLTIU`, byte/halfword load-store, `FENCE`, `ECALL`, or `EBREAK` until the CPU decode/control path is extended for them.
+The combined smoke test is:
+
+```bash
+make compile test_name=asm_test ASM=rv32i_all
+make sim test_name=asm_test ASM=rv32i_all
+```
+
+`rv32i_all.S` intentionally does not include ECALL/EBREAK because those instructions halt the CPU. They are tested separately with:
+
+```bash
+make compile test_name=asm_test ASM=rv32i_ecall
+make sim test_name=asm_test ASM=rv32i_ecall
+
+make compile test_name=asm_test ASM=rv32i_ebreak
+make sim test_name=asm_test ASM=rv32i_ebreak
+```
 
 ### Makefile Workflow
 
@@ -400,6 +444,56 @@ The project includes a comprehensive UVM verification environment:
 - **`cpu_test`**: CPU executes generated instructions from `instr.mem`
 - **`asm_test`**: CPU executes a selected hand-written assembly program from `PROGRAM/*.S`
 - **`timer_test` / `uart_test` / `spi_test`**: Standalone peripheral verification environments
+
+### Scoreboards and Self-Checking
+
+The verification environment checks correctness at several levels:
+
+- CPU register scoreboard compares final architectural register values against `expected.mem`
+- AXI scoreboards check write/read response correctness and stable readback data
+- DRAM shadow memory tracks writes using `WSTRB`, so byte, halfword, and word accesses are checked correctly
+- Timer, UART, and SPI scoreboards check peripheral register behavior
+- SoC software self-check uses the signature address `0x1000_03F0`
+
+Software signature values:
+
+- `0x0000_005A`: PASS
+- `0x0000_00A5`: FAIL
+
+### Final Regression
+
+Before considering the project complete, run the main regression:
+
+```bash
+cd SoC/SIM
+
+make compile test_name=axi_random_wr_rd_test
+make sim test_name=axi_random_wr_rd_test
+
+make compile test_name=axi_multi_slaves_test
+make sim test_name=axi_multi_slaves_test
+
+make compile test_name=timer_test
+make sim test_name=timer_test
+
+make compile test_name=uart_test
+make sim test_name=uart_test
+
+make compile test_name=spi_test
+make sim test_name=spi_test
+
+make compile test_name=cpu_test
+make sim test_name=cpu_test
+
+make compile test_name=asm_test ASM=rv32i_all
+make sim test_name=asm_test ASM=rv32i_all
+
+make compile test_name=asm_test ASM=rv32i_ecall
+make sim test_name=asm_test ASM=rv32i_ecall
+
+make compile test_name=asm_test ASM=rv32i_ebreak
+make sim test_name=asm_test ASM=rv32i_ebreak
+```
 
 ### Coverage Metrics
 
@@ -457,20 +551,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 To run this project, follow these steps:
 
 1. Clone the repository from GitHub to your local machine:
-   
+
    ```bash
    git clone https://github.com/VinhKhangDam/The-SoC-system-uses-RV32I-and-AXI4-buses.git
    cd The-SoC-system-uses-RV32I-and-AXI4-buses
    ```
 
 2. Source the environment script to set up the necessary environment variables:
-   
+
    ```bash
    source SoC/env.sh
    ```
 
 3. Run the desired test by (looking in the Makefile to see which tests are available)
-   
+
    ```bash
    cd SoC/SIM
    make compile test_name=TEST_NAME | tee compile_TEST_NAME.log
@@ -478,35 +572,39 @@ To run this project, follow these steps:
    ```
 
 4. Open gui
-   
+
    ```bash
    make gui test_name=TEST_NAME
    ```
 
 5. Delete work and generated files, only keep log files (optional), Makefile, and Python files (Make sure run 'make clean' before run simulation)
-   
+
    ```bash
    make clean
    ```
 
 6. Want to see instructions for making
-   
+
    ```bash
    make help
    ```
 
 7. Want to see the list of test
-   
+
    ```bash
    make list
    ```
 
 8. Want to run a hand-written assembly test
-   
+
    ```bash
    make list_asm
    make compile test_name=asm_test ASM=ASM_TEST_NAME(see in list_asm) | tee compile_asm_rv32i_(based on test you want to test).log
    make sim test_name=asm_test ASM=ASM_TEST_NAME| tee sim_asm_rv32i_ .log
    ```
+
 - The design is modular and separates the processor datapath from the interconnect and peripheral wrappers.
 - Pipeline forwarding and hazard handling are implemented to maintain instruction throughput and avoid data hazards.
+- The CPU supports the RV32I base integer instruction set used by the directed assembly regression.
+- FENCE is implemented as a NOP. ECALL and EBREAK are implemented as simple halt/trap instructions, not a full privilege/CSR exception system.
+- The project includes UVM environments, SVA checks, coverage collection, scoreboards, random tests, directed assembly tests, and SoC software self-check signatures.

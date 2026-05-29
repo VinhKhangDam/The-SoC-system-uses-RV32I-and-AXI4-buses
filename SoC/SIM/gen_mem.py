@@ -93,6 +93,7 @@ UART_BASE_VAL = 0x30000000
 SPI_BASE_VAL = 0x40000000
 
 SCRATCH_REGS = list(range(5, 32))
+SOC_SIG_OFFSET = 0x3F0
 
 CPU_RANDOM_CASES = 54
 ALU_DIRECTED_CASES = 14
@@ -122,6 +123,13 @@ def lw(rd, base, imm):
 
 def sw(rs2, base, imm):
     return s_type(imm, rs2, base, 0b010)
+
+
+def random_dram_word_offset():
+    imm = SOC_SIG_OFFSET
+    while imm == SOC_SIG_OFFSET:
+        imm = random.randint(0, 511) * 4
+    return imm
 
 def make_soc_signature_test():
     return [
@@ -191,10 +199,10 @@ def generate_cpu_random_instr():
         return i_type(imm, rs1, ops[name], rd, 0b0010011), f"[CPU] {name} x{rd}, x{rs1}, {imm}"
 
     if instr_type == "LW":
-        imm = random.randint(0, 511) * 4
+        imm = random_dram_word_offset()
         return lw(rd, DRAM_BASE_REG, imm), f"[DRAM] lw x{rd}, {imm}(x{DRAM_BASE_REG})"
 
-    imm = random.randint(0, 511) * 4
+    imm = random_dram_word_offset()
     return sw(rs2, DRAM_BASE_REG, imm), f"[DRAM] sw x{rs2}, {imm}(x{DRAM_BASE_REG})"
 
 
@@ -368,7 +376,7 @@ def generate_file(filepath, header, seed):
     prologue = make_prologue()
     soc_signature = make_soc_signature_test()
     cases = make_random_cases()
-    instr_count = len(prologue) + len(soc_signature) + len(cases)
+    instr_count = len(prologue) + len(cases) + len(soc_signature)
 
     with open(filepath, "w") as f:
         f.write(f"// --- {header} ({instr_count} instructions, seed={seed}) ---\n")
@@ -380,13 +388,13 @@ def generate_file(filepath, header, seed):
 
         for instr, asm in prologue:
             f.write(f"{instr:08x}  // {asm}\n")
-        
-        for instr, asm in soc_signature:
-            f.write(f"{instr:08x} // {asm}\n")
 
         for kind, detail in cases:
             instr, asm = generate_case(kind, detail)
             f.write(f"{instr:08x}  // {asm}\n")
+
+        for instr, asm in soc_signature:
+            f.write(f"{instr:08x} // {asm}\n")
 
     print(f"Generated {filepath}  ({instr_count} instructions, seed={seed})")
 

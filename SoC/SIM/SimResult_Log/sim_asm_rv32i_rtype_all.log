@@ -1,0 +1,625 @@
+--- [SIM ONLY] asm_test ---
+MODE = CPU_MASTER
+UVM_TESTNAME = cpu_test
+Reading C:/app/QuestaSim/tcl/vsim/pref.tcl 
+
+# 10.2c
+
+# vsim +UVM_TESTNAME=cpu_test +CPU_MASTER +MEM_SEED=2512903827 +CPU_INSTR_COUNT=40 -coverage -do {run -all; quit} -c -sv_seed 2512903827 vopt_top 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.soc_pkg(fast)
+# Loading work.top_tb(fast)
+# Loading work.clk_rst_inf(fast)
+# Loading work.soc_inf(fast)
+# Loading work.cpu_monitor_inf(fast)
+# Loading work.TOP(fast)
+# Loading work.AXI_Master(fast)
+# Loading work.CPU(fast)
+# Loading work.pc_reg(fast)
+# Loading work.IF_ID(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.MainDecoder(fast)
+# Loading work.ALUControl(fast)
+# Loading work.RegFile(fast)
+# Loading work.signExtend(fast)
+# Loading work.ID_EX(fast)
+# Loading work.ALU(fast)
+# Loading work.EX_MEM(fast)
+# Loading work.MEM_WB(fast)
+# Loading work.HazardUnit(fast)
+# Loading work.LSU(fast)
+# Loading work.AXI4_Lite_Interconnect(fast)
+# Loading work.IRAM(fast)
+# Loading work.DRAM(fast)
+# Loading work.Timer(fast)
+# Loading work.UART(fast)
+# Loading work.SPI(fast)
+# Loading work.axi4_lite_sva(fast)
+# Loading work.cpu_sva(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/app/QuestaSim/uvm-1.1d\win64\uvm_dpi.dll
+# run -all 
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# [IRAM] Loading file: instr.mem
+# [IRAM] mem[0] = 01400093
+# [IRAM] mem[1] = 00700113
+# [IRAM] mem[2] = 002081b3
+# [IRAM] mem[3] = 01b00213
+# [IRAM] mem[4] = 06419e63
+# [IRAM] mem[5] = 402082b3
+# [IRAM] mem[6] = 00d00313
+# [IRAM] mem[7] = 06629863
+# [IRAM] mem[8] = 00100393
+# [IRAM] mem[9] = 00239433
+# [IRAM] mem[10] = 08000493
+# [IRAM] mem[11] = 06941063
+# [IRAM] mem[12] = 00112533
+# [IRAM] mem[13] = 00100593
+# [IRAM] mem[14] = 04b51a63
+# [IRAM] mem[15] = 0020c633
+# [IRAM] mem[16] = 01300693
+# [IRAM] mem[17] = 04d61463
+# [IRAM] mem[18] = 00245733
+# [IRAM] mem[19] = 04771063
+# [IRAM] mem[20] = ff800793
+# [IRAM] mem[21] = 4077d833
+# [IRAM] mem[22] = ffc00893
+# [IRAM] mem[23] = 03181863
+# [IRAM] mem[24] = 0020e933
+# [IRAM] mem[25] = 01700993
+# [IRAM] mem[26] = 03391263
+# [IRAM] mem[27] = 0020fa33
+# [IRAM] mem[28] = 00400a93
+# [IRAM] mem[29] = 015a1c63
+# [IRAM] mem[30] = 10000f37
+# [IRAM] mem[31] = 3f0f0f13
+# [IRAM] mem[32] = 05a00f93
+# [IRAM] mem[33] = 01ff2023
+# [IRAM] mem[34] = 00000a63
+# [IRAM] mem[35] = 10000f37
+# [IRAM] mem[36] = 3f0f0f13
+# [IRAM] mem[37] = 0a500f93
+# [IRAM] mem[38] = 01ff2023
+# [IRAM] mem[39] = 00000013
+# [IRAM] mem[40] = 00000013
+# [IRAM] mem[41] = 00000013
+# [IRAM] mem[42] = 00000013
+# [IRAM] mem[43] = 00000013
+# [IRAM] mem[44] = 00000013
+# [IRAM] mem[45] = 00000013
+# [IRAM] mem[46] = 00000013
+# [IRAM] mem[47] = 00000013
+# [IRAM] mem[48] = 00000013
+# [IRAM] mem[49] = 00000013
+# [IRAM] mem[50] = 00000013
+# [IRAM] mem[51] = 00000013
+# [IRAM] mem[52] = 00000013
+# [IRAM] mem[53] = 00000013
+# [IRAM] mem[54] = 00000013
+# [IRAM] mem[55] = 00000013
+# [IRAM] mem[56] = 00000013
+# [IRAM] mem[57] = 00000013
+# [IRAM] mem[58] = 00000013
+# [IRAM] mem[59] = 00000013
+# [IRAM] mem[60] = 00000013
+# [IRAM] mem[61] = 00000013
+# [IRAM] mem[62] = 00000013
+# [IRAM] mem[63] = 00000013
+# [IRAM] mem[64] = 00000013
+# [IRAM] mem[65] = 00000013
+# [IRAM] mem[66] = 00000013
+# [IRAM] mem[67] = 00000013
+# [IRAM] mem[68] = 00000013
+# [IRAM] mem[69] = 00000013
+# [IRAM] mem[70] = 00000013
+# [IRAM] mem[71] = 00000013
+# [IRAM] mem[72] = 00000013
+# [IRAM] mem[73] = 00000013
+# [IRAM] mem[74] = 00000013
+# [IRAM] mem[75] = 00000013
+# [IRAM] mem[76] = 00000013
+# [IRAM] mem[77] = 00000013
+# [IRAM] mem[78] = 00000013
+# [IRAM] mem[79] = 00000013
+# [IRAM] mem[80] = 00000013
+# [IRAM] mem[81] = 00000013
+# [IRAM] mem[82] = 00000013
+# [IRAM] mem[83] = 00000013
+# [IRAM] mem[84] = 00000013
+# [IRAM] mem[85] = 00000013
+# [IRAM] mem[86] = 00000013
+# [IRAM] mem[87] = 00000013
+# [IRAM] mem[88] = 00000013
+# [IRAM] mem[89] = 00000013
+# [IRAM] mem[90] = 00000013
+# [IRAM] mem[91] = 00000013
+# [IRAM] mem[92] = 00000013
+# [IRAM] mem[93] = 00000013
+# [IRAM] mem[94] = 00000013
+# [IRAM] mem[95] = 00000013
+# [IRAM] mem[96] = 00000013
+# [IRAM] mem[97] = 00000013
+# [IRAM] mem[98] = 00000013
+# [IRAM] mem[99] = 00000013
+# [IRAM] mem[100] = 00000013
+# [IRAM] mem[101] = 00000013
+# [IRAM] mem[102] = 00000013
+# [IRAM] mem[103] = 00000013
+# [IRAM] mem[104] = 00000013
+# [IRAM] mem[105] = 00000013
+# [IRAM] mem[106] = 00000013
+# [IRAM] mem[107] = 00000013
+# [IRAM] mem[108] = 00000013
+# [IRAM] mem[109] = 00000013
+# [IRAM] mem[110] = 00000013
+# [IRAM] mem[111] = 00000013
+# [IRAM] mem[112] = 00000013
+# [IRAM] mem[113] = 00000013
+# [IRAM] mem[114] = 00000013
+# [IRAM] mem[115] = 00000013
+# [IRAM] mem[116] = 00000013
+# [IRAM] mem[117] = 00000013
+# [IRAM] mem[118] = 00000013
+# [IRAM] mem[119] = 00000013
+# [IRAM] mem[120] = 00000013
+# [IRAM] mem[121] = 00000013
+# [IRAM] mem[122] = 00000013
+# [IRAM] mem[123] = 00000013
+# [IRAM] mem[124] = 00000013
+# [IRAM] mem[125] = 00000013
+# [IRAM] mem[126] = 00000013
+# [IRAM] mem[127] = 00000013
+# [IRAM] mem[128] = 00000013
+# [IRAM] mem[129] = 00000013
+# [IRAM] mem[130] = 00000013
+# [IRAM] mem[131] = 00000013
+# [IRAM] mem[132] = 00000013
+# [IRAM] mem[133] = 00000013
+# [IRAM] mem[134] = 00000013
+# [IRAM] mem[135] = 00000013
+# [IRAM] mem[136] = 00000013
+# [IRAM] mem[137] = 00000013
+# [IRAM] mem[138] = 00000013
+# [IRAM] mem[139] = 00000013
+# [IRAM] mem[140] = 00000013
+# [IRAM] mem[141] = 00000013
+# [IRAM] mem[142] = 00000013
+# [IRAM] mem[143] = 00000013
+# [IRAM] mem[144] = 00000013
+# [IRAM] mem[145] = 00000013
+# [IRAM] mem[146] = 00000013
+# [IRAM] mem[147] = 00000013
+# [IRAM] mem[148] = 00000013
+# [IRAM] mem[149] = 00000013
+# [IRAM] mem[150] = 00000013
+# [IRAM] mem[151] = 00000013
+# [IRAM] mem[152] = 00000013
+# [IRAM] mem[153] = 00000013
+# [IRAM] mem[154] = 00000013
+# [IRAM] mem[155] = 00000013
+# [IRAM] mem[156] = 00000013
+# [IRAM] mem[157] = 00000013
+# [IRAM] mem[158] = 00000013
+# [IRAM] mem[159] = 00000013
+# [IRAM] mem[160] = 00000013
+# [IRAM] mem[161] = 00000013
+# [IRAM] mem[162] = 00000013
+# [IRAM] mem[163] = 00000013
+# [IRAM] mem[164] = 00000013
+# [IRAM] mem[165] = 00000013
+# [IRAM] mem[166] = 00000013
+# [IRAM] mem[167] = 00000013
+# [IRAM] mem[168] = 00000013
+# [IRAM] mem[169] = 00000013
+# [IRAM] mem[170] = 00000013
+# [IRAM] mem[171] = 00000013
+# [IRAM] mem[172] = 00000013
+# [IRAM] mem[173] = 00000013
+# [IRAM] mem[174] = 00000013
+# [IRAM] mem[175] = 00000013
+# [IRAM] mem[176] = 00000013
+# [IRAM] mem[177] = 00000013
+# [IRAM] mem[178] = 00000013
+# [IRAM] mem[179] = 00000013
+# [IRAM] mem[180] = 00000013
+# [IRAM] mem[181] = 00000013
+# [IRAM] mem[182] = 00000013
+# [IRAM] mem[183] = 00000013
+# [IRAM] mem[184] = 00000013
+# [IRAM] mem[185] = 00000013
+# [IRAM] mem[186] = 00000013
+# [IRAM] mem[187] = 00000013
+# [IRAM] mem[188] = 00000013
+# [IRAM] mem[189] = 00000013
+# [IRAM] mem[190] = 00000013
+# [IRAM] mem[191] = 00000013
+# [IRAM] mem[192] = 00000013
+# [IRAM] mem[193] = 00000013
+# [IRAM] mem[194] = 00000013
+# [IRAM] mem[195] = 00000013
+# [IRAM] mem[196] = 00000013
+# [IRAM] mem[197] = 00000013
+# [IRAM] mem[198] = 00000013
+# [IRAM] mem[199] = 00000013
+# [IRAM] mem[200] = 00000013
+# [IRAM] mem[201] = 00000013
+# [IRAM] mem[202] = 00000013
+# [IRAM] mem[203] = 00000013
+# [IRAM] mem[204] = 00000013
+# [IRAM] mem[205] = 00000013
+# [IRAM] mem[206] = 00000013
+# [IRAM] mem[207] = 00000013
+# [IRAM] mem[208] = 00000013
+# [IRAM] mem[209] = 00000013
+# [IRAM] mem[210] = 00000013
+# [IRAM] mem[211] = 00000013
+# [IRAM] mem[212] = 00000013
+# [IRAM] mem[213] = 00000013
+# [IRAM] mem[214] = 00000013
+# [IRAM] mem[215] = 00000013
+# [IRAM] mem[216] = 00000013
+# [IRAM] mem[217] = 00000013
+# [IRAM] mem[218] = 00000013
+# [IRAM] mem[219] = 00000013
+# [IRAM] mem[220] = 00000013
+# [IRAM] mem[221] = 00000013
+# [IRAM] mem[222] = 00000013
+# [IRAM] mem[223] = 00000013
+# [IRAM] mem[224] = 00000013
+# [IRAM] mem[225] = 00000013
+# [IRAM] mem[226] = 00000013
+# [IRAM] mem[227] = 00000013
+# [IRAM] mem[228] = 00000013
+# [IRAM] mem[229] = 00000013
+# [IRAM] mem[230] = 00000013
+# [IRAM] mem[231] = 00000013
+# [IRAM] mem[232] = 00000013
+# [IRAM] mem[233] = 00000013
+# [IRAM] mem[234] = 00000013
+# [IRAM] mem[235] = 00000013
+# [IRAM] mem[236] = 00000013
+# [IRAM] mem[237] = 00000013
+# [IRAM] mem[238] = 00000013
+# [IRAM] mem[239] = 00000013
+# [IRAM] mem[240] = 00000013
+# [IRAM] mem[241] = 00000013
+# [IRAM] mem[242] = 00000013
+# [IRAM] mem[243] = 00000013
+# [IRAM] mem[244] = 00000013
+# [IRAM] mem[245] = 00000013
+# [IRAM] mem[246] = 00000013
+# [IRAM] mem[247] = 00000013
+# [IRAM] mem[248] = 00000013
+# [IRAM] mem[249] = 00000013
+# [IRAM] mem[250] = 00000013
+# [IRAM] mem[251] = 00000013
+# [IRAM] mem[252] = 00000013
+# [IRAM] mem[253] = 00000013
+# [IRAM] mem[254] = 00000013
+# [IRAM] mem[255] = 00000013
+# [IRAM] Loaded 16384 instruction words
+# [TB] Mode: CPU MASTER => CPU drives AXI, UVM observes
+# UVM_INFO @ 0: reporter [RNTST] Running test cpu_test...
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(190) @ 0: uvm_test_top.env.scoreboard [SCB] Loaded expected registers from: expected.mem
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test/cpu_test.sv(55) @ 0: uvm_test_top [TEST] Program has 40 instructions, end PC = 000000a0
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(201) @ 35000: uvm_test_top.env.agent.monitor [CPU_MON] === CPU Monitor started == watching pipeline ===
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(202) @ 35000: uvm_test_top.env.agent.monitor [CPU_MON] ============================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test/cpu_test.sv(61) @ 55000: uvm_test_top [TEST] Reset released - CPU executing from IRAM
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 55000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000000 Data=01400093 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 95000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000004 Data=00700113 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 95000: uvm_test_top.env.agent.monitor [IF] PC=00000004  INSTR=00700113  [ADDI x2, x0, 7]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 135000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000008 Data=002081b3 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 135000: uvm_test_top.env.agent.monitor [IF] PC=00000008  INSTR=002081b3  [ADD  x3, x1, x2]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 175000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000000c Data=01b00213 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 175000: uvm_test_top.env.agent.monitor [IF] PC=0000000c  INSTR=01b00213  [ADDI x4, x0, 27]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 185000: uvm_test_top.env.agent.monitor [WB] x01 <= 00000014  (PC~0000000c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 195000: uvm_test_top.env.agent.monitor [WB] x01 <= 00000014  (PC~0000000c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 205000: uvm_test_top.env.agent.monitor [WB] x01 <= 00000014  (PC~0000000c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 215000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000010 Data=06419e63 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 215000: uvm_test_top.env.agent.monitor [IF] PC=00000010  INSTR=06419e63  [BNE  x3, x4, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 215000: uvm_test_top.env.agent.monitor [WB] x01 <= 00000014  (PC~00000010)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 225000: uvm_test_top.env.agent.monitor [WB] x02 <= 00000007  (PC~00000010)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 235000: uvm_test_top.env.agent.monitor [WB] x02 <= 00000007  (PC~00000010)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 245000: uvm_test_top.env.agent.monitor [WB] x02 <= 00000007  (PC~00000010)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 255000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000014 Data=402082b3 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 255000: uvm_test_top.env.agent.monitor [IF] PC=00000014  INSTR=402082b3  [SUB  x5, x1, x2]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 255000: uvm_test_top.env.agent.monitor [WB] x02 <= 00000007  (PC~00000014)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 265000: uvm_test_top.env.agent.monitor [WB] x03 <= 0000001b  (PC~00000014)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 275000: uvm_test_top.env.agent.monitor [WB] x03 <= 0000001b  (PC~00000014)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 285000: uvm_test_top.env.agent.monitor [WB] x03 <= 0000001b  (PC~00000014)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 295000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000018 Data=00d00313 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 295000: uvm_test_top.env.agent.monitor [IF] PC=00000018  INSTR=00d00313  [ADDI x6, x0, 13]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 295000: uvm_test_top.env.agent.monitor [WB] x03 <= 0000001b  (PC~00000018)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 305000: uvm_test_top.env.agent.monitor [WB] x04 <= 0000001b  (PC~00000018)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 315000: uvm_test_top.env.agent.monitor [WB] x04 <= 0000001b  (PC~00000018)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 325000: uvm_test_top.env.agent.monitor [WB] x04 <= 0000001b  (PC~00000018)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 335000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000001c Data=06629863 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 335000: uvm_test_top.env.agent.monitor [IF] PC=0000001c  INSTR=06629863  [BNE  x5, x6, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 335000: uvm_test_top.env.agent.monitor [WB] x04 <= 0000001b  (PC~0000001c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 375000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000020 Data=00100393 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 375000: uvm_test_top.env.agent.monitor [IF] PC=00000020  INSTR=00100393  [ADDI x7, x0, 1]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 385000: uvm_test_top.env.agent.monitor [WB] x05 <= 0000000d  (PC~00000020)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 395000: uvm_test_top.env.agent.monitor [WB] x05 <= 0000000d  (PC~00000020)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 405000: uvm_test_top.env.agent.monitor [WB] x05 <= 0000000d  (PC~00000020)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 415000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000024 Data=00239433 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 415000: uvm_test_top.env.agent.monitor [IF] PC=00000024  INSTR=00239433  [SLL  x8, x7, x2]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 415000: uvm_test_top.env.agent.monitor [WB] x05 <= 0000000d  (PC~00000024)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 425000: uvm_test_top.env.agent.monitor [WB] x06 <= 0000000d  (PC~00000024)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 435000: uvm_test_top.env.agent.monitor [WB] x06 <= 0000000d  (PC~00000024)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 445000: uvm_test_top.env.agent.monitor [WB] x06 <= 0000000d  (PC~00000024)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 455000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000028 Data=08000493 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 455000: uvm_test_top.env.agent.monitor [IF] PC=00000028  INSTR=08000493  [ADDI x9, x0, 128]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 455000: uvm_test_top.env.agent.monitor [WB] x06 <= 0000000d  (PC~00000028)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 495000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000002c Data=06941063 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 495000: uvm_test_top.env.agent.monitor [IF] PC=0000002c  INSTR=06941063  [BNE  x8, x9, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 505000: uvm_test_top.env.agent.monitor [WB] x07 <= 00000001  (PC~0000002c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 515000: uvm_test_top.env.agent.monitor [WB] x07 <= 00000001  (PC~0000002c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 525000: uvm_test_top.env.agent.monitor [WB] x07 <= 00000001  (PC~0000002c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 535000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000030 Data=00112533 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 535000: uvm_test_top.env.agent.monitor [IF] PC=00000030  INSTR=00112533  [SLT  x10, x2, x1]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 535000: uvm_test_top.env.agent.monitor [WB] x07 <= 00000001  (PC~00000030)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 545000: uvm_test_top.env.agent.monitor [WB] x08 <= 00000080  (PC~00000030)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 555000: uvm_test_top.env.agent.monitor [WB] x08 <= 00000080  (PC~00000030)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 565000: uvm_test_top.env.agent.monitor [WB] x08 <= 00000080  (PC~00000030)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 575000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000034 Data=00100593 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 575000: uvm_test_top.env.agent.monitor [IF] PC=00000034  INSTR=00100593  [ADDI x11, x0, 1]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 575000: uvm_test_top.env.agent.monitor [WB] x08 <= 00000080  (PC~00000034)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 585000: uvm_test_top.env.agent.monitor [WB] x09 <= 00000080  (PC~00000034)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 595000: uvm_test_top.env.agent.monitor [WB] x09 <= 00000080  (PC~00000034)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 605000: uvm_test_top.env.agent.monitor [WB] x09 <= 00000080  (PC~00000034)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 615000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000038 Data=04b51a63 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 615000: uvm_test_top.env.agent.monitor [IF] PC=00000038  INSTR=04b51a63  [BNE  x10, x11, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 615000: uvm_test_top.env.agent.monitor [WB] x09 <= 00000080  (PC~00000038)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 655000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000003c Data=0020c633 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 655000: uvm_test_top.env.agent.monitor [IF] PC=0000003c  INSTR=0020c633  [XOR  x12, x1, x2]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 665000: uvm_test_top.env.agent.monitor [WB] x10 <= 00000001  (PC~0000003c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 675000: uvm_test_top.env.agent.monitor [WB] x10 <= 00000001  (PC~0000003c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 685000: uvm_test_top.env.agent.monitor [WB] x10 <= 00000001  (PC~0000003c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 695000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000040 Data=01300693 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 695000: uvm_test_top.env.agent.monitor [IF] PC=00000040  INSTR=01300693  [ADDI x13, x0, 19]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 695000: uvm_test_top.env.agent.monitor [WB] x10 <= 00000001  (PC~00000040)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 705000: uvm_test_top.env.agent.monitor [WB] x11 <= 00000001  (PC~00000040)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 715000: uvm_test_top.env.agent.monitor [WB] x11 <= 00000001  (PC~00000040)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 725000: uvm_test_top.env.agent.monitor [WB] x11 <= 00000001  (PC~00000040)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 735000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000044 Data=04d61463 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 735000: uvm_test_top.env.agent.monitor [IF] PC=00000044  INSTR=04d61463  [BNE  x12, x13, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 735000: uvm_test_top.env.agent.monitor [WB] x11 <= 00000001  (PC~00000044)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 775000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000048 Data=00245733 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 775000: uvm_test_top.env.agent.monitor [IF] PC=00000048  INSTR=00245733  [SRL  x14, x8, x2]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 785000: uvm_test_top.env.agent.monitor [WB] x12 <= 00000013  (PC~00000048)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 795000: uvm_test_top.env.agent.monitor [WB] x12 <= 00000013  (PC~00000048)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 805000: uvm_test_top.env.agent.monitor [WB] x12 <= 00000013  (PC~00000048)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 815000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000004c Data=04771063 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 815000: uvm_test_top.env.agent.monitor [IF] PC=0000004c  INSTR=04771063  [BNE  x14, x7, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 815000: uvm_test_top.env.agent.monitor [WB] x12 <= 00000013  (PC~0000004c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 825000: uvm_test_top.env.agent.monitor [WB] x13 <= 00000013  (PC~0000004c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 835000: uvm_test_top.env.agent.monitor [WB] x13 <= 00000013  (PC~0000004c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 845000: uvm_test_top.env.agent.monitor [WB] x13 <= 00000013  (PC~0000004c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 855000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000050 Data=ff800793 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 855000: uvm_test_top.env.agent.monitor [IF] PC=00000050  INSTR=ff800793  [ADDI x15, x0, -8]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 855000: uvm_test_top.env.agent.monitor [WB] x13 <= 00000013  (PC~00000050)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 895000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000054 Data=4077d833 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 895000: uvm_test_top.env.agent.monitor [IF] PC=00000054  INSTR=4077d833  [SRA  x16, x15, x7]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 905000: uvm_test_top.env.agent.monitor [WB] x14 <= 00000001  (PC~00000054)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 915000: uvm_test_top.env.agent.monitor [WB] x14 <= 00000001  (PC~00000054)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 925000: uvm_test_top.env.agent.monitor [WB] x14 <= 00000001  (PC~00000054)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 935000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000058 Data=ffc00893 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 935000: uvm_test_top.env.agent.monitor [IF] PC=00000058  INSTR=ffc00893  [ADDI x17, x0, -4]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 935000: uvm_test_top.env.agent.monitor [WB] x14 <= 00000001  (PC~00000058)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 975000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000005c Data=03181863 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 975000: uvm_test_top.env.agent.monitor [IF] PC=0000005c  INSTR=03181863  [BNE  x16, x17, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 985000: uvm_test_top.env.agent.monitor [WB] x15 <= fffffff8  (PC~0000005c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 995000: uvm_test_top.env.agent.monitor [WB] x15 <= fffffff8  (PC~0000005c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1005000: uvm_test_top.env.agent.monitor [WB] x15 <= fffffff8  (PC~0000005c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1015000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000060 Data=0020e933 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1015000: uvm_test_top.env.agent.monitor [IF] PC=00000060  INSTR=0020e933  [OR   x18, x1, x2]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1015000: uvm_test_top.env.agent.monitor [WB] x15 <= fffffff8  (PC~00000060)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1025000: uvm_test_top.env.agent.monitor [WB] x16 <= fffffffc  (PC~00000060)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1035000: uvm_test_top.env.agent.monitor [WB] x16 <= fffffffc  (PC~00000060)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1045000: uvm_test_top.env.agent.monitor [WB] x16 <= fffffffc  (PC~00000060)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1055000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000064 Data=01700993 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1055000: uvm_test_top.env.agent.monitor [IF] PC=00000064  INSTR=01700993  [ADDI x19, x0, 23]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1055000: uvm_test_top.env.agent.monitor [WB] x16 <= fffffffc  (PC~00000064)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1065000: uvm_test_top.env.agent.monitor [WB] x17 <= fffffffc  (PC~00000064)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1075000: uvm_test_top.env.agent.monitor [WB] x17 <= fffffffc  (PC~00000064)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1085000: uvm_test_top.env.agent.monitor [WB] x17 <= fffffffc  (PC~00000064)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1095000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000068 Data=03391263 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1095000: uvm_test_top.env.agent.monitor [IF] PC=00000068  INSTR=03391263  [BNE  x18, x19, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1095000: uvm_test_top.env.agent.monitor [WB] x17 <= fffffffc  (PC~00000068)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1135000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000006c Data=0020fa33 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1135000: uvm_test_top.env.agent.monitor [IF] PC=0000006c  INSTR=0020fa33  [AND  x20, x1, x2]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1145000: uvm_test_top.env.agent.monitor [WB] x18 <= 00000017  (PC~0000006c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1155000: uvm_test_top.env.agent.monitor [WB] x18 <= 00000017  (PC~0000006c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1165000: uvm_test_top.env.agent.monitor [WB] x18 <= 00000017  (PC~0000006c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1175000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000070 Data=00400a93 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1175000: uvm_test_top.env.agent.monitor [IF] PC=00000070  INSTR=00400a93  [ADDI x21, x0, 4]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1175000: uvm_test_top.env.agent.monitor [WB] x18 <= 00000017  (PC~00000070)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1185000: uvm_test_top.env.agent.monitor [WB] x19 <= 00000017  (PC~00000070)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1195000: uvm_test_top.env.agent.monitor [WB] x19 <= 00000017  (PC~00000070)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1205000: uvm_test_top.env.agent.monitor [WB] x19 <= 00000017  (PC~00000070)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1215000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000074 Data=015a1c63 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1215000: uvm_test_top.env.agent.monitor [IF] PC=00000074  INSTR=015a1c63  [BNE  x20, x21, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1215000: uvm_test_top.env.agent.monitor [WB] x19 <= 00000017  (PC~00000074)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1255000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000078 Data=10000f37 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1255000: uvm_test_top.env.agent.monitor [IF] PC=00000078  INSTR=10000f37  [LUI  x30, 0x10000]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1265000: uvm_test_top.env.agent.monitor [WB] x20 <= 00000004  (PC~00000078)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1275000: uvm_test_top.env.agent.monitor [WB] x20 <= 00000004  (PC~00000078)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1285000: uvm_test_top.env.agent.monitor [WB] x20 <= 00000004  (PC~00000078)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1295000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000007c Data=3f0f0f13 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1295000: uvm_test_top.env.agent.monitor [IF] PC=0000007c  INSTR=3f0f0f13  [ADDI x30, x30, 1008]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1295000: uvm_test_top.env.agent.monitor [WB] x20 <= 00000004  (PC~0000007c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1305000: uvm_test_top.env.agent.monitor [WB] x21 <= 00000004  (PC~0000007c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1315000: uvm_test_top.env.agent.monitor [WB] x21 <= 00000004  (PC~0000007c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1325000: uvm_test_top.env.agent.monitor [WB] x21 <= 00000004  (PC~0000007c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1335000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000080 Data=05a00f93 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1335000: uvm_test_top.env.agent.monitor [IF] PC=00000080  INSTR=05a00f93  [ADDI x31, x0, 90]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1335000: uvm_test_top.env.agent.monitor [WB] x21 <= 00000004  (PC~00000080)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1375000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000084 Data=01ff2023 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1375000: uvm_test_top.env.agent.monitor [IF] PC=00000084  INSTR=01ff2023  [SW   x31, 31(x30)]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1385000: uvm_test_top.env.agent.monitor [WB] x30 <= 10000000  (PC~00000084)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1395000: uvm_test_top.env.agent.monitor [WB] x30 <= 10000000  (PC~00000084)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1405000: uvm_test_top.env.agent.monitor [WB] x30 <= 10000000  (PC~00000084)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1415000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000088 Data=00000a63 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1415000: uvm_test_top.env.agent.monitor [IF] PC=00000088  INSTR=00000a63  [BEQ  x0, x0, ...]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1415000: uvm_test_top.env.agent.monitor [WB] x30 <= 10000000  (PC~00000088)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1425000: uvm_test_top.env.agent.monitor [WB] x30 <= 100003f0  (PC~00000088)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1435000: uvm_test_top.env.agent.monitor [WB] x30 <= 100003f0  (PC~00000088)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1445000: uvm_test_top.env.agent.monitor [WB] x30 <= 100003f0  (PC~00000088)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1455000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000008c Data=10000f37 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1455000: uvm_test_top.env.agent.monitor [IF] PC=0000008c  INSTR=10000f37  [LUI  x30, 0x10000]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1455000: uvm_test_top.env.agent.monitor [WB] x30 <= 100003f0  (PC~0000008c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1465000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1475000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# [DRAM WRITE] addr=100003f0 data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1485000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(310) @ 1495000: uvm_test_top.env.agent.monitor [AXI_WR] CPU -> DRAM  Addr=100003f0 Data=0000005a Strb=1111 BRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(272) @ 1495000: uvm_test_top.env.scoreboard [SOC_SW] SOC_SOFTWARE PASS signature detected: Addr = 100003f0 Data = 0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1495000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1495000: uvm_test_top.env.agent.monitor [WB] x31 <= 0000005a  (PC~0000008c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1505000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1505000: uvm_test_top.env.agent.monitor [WB] x31 <= 0000005a  (PC~0000008c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1515000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1515000: uvm_test_top.env.agent.monitor [WB] x31 <= 0000005a  (PC~0000008c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1525000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1525000: uvm_test_top.env.agent.monitor [WB] x31 <= 0000005a  (PC~0000008c)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1535000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=00000090 Data=3f0f0f13 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1535000: uvm_test_top.env.agent.monitor [IF] PC=00000090  INSTR=3f0f0f13  [ADDI x30, x30, 1008]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(251) @ 1535000: uvm_test_top.env.agent.monitor [MEM] STORE Addr=100003f0 Data=0000005a
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(276) @ 1535000: uvm_test_top.env.agent.monitor [WB] x31 <= 0000005a  (PC~00000090)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1575000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=0000009c Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1575000: uvm_test_top.env.agent.monitor [IF] PC=0000009c  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Test/cpu_test.sv(70) @ 1595000: uvm_test_top [TEST] PC=000000a0 reached first address past loaded program - ending
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1615000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=000000a0 Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1615000: uvm_test_top.env.agent.monitor [IF] PC=000000a0  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1655000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=000000a4 Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1655000: uvm_test_top.env.agent.monitor [IF] PC=000000a4  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1695000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=000000a8 Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1695000: uvm_test_top.env.agent.monitor [IF] PC=000000a8  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1735000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=000000ac Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1735000: uvm_test_top.env.agent.monitor [IF] PC=000000ac  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1775000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=000000b0 Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1775000: uvm_test_top.env.agent.monitor [IF] PC=000000b0  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1815000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=000000b4 Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1815000: uvm_test_top.env.agent.monitor [IF] PC=000000b4  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(336) @ 1855000: uvm_test_top.env.agent.monitor [AXI_RD] CPU <- IRAM  Addr=000000b8 Data=00000013 RRESP=00
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Monitor/cpu_monitor.sv(230) @ 1855000: uvm_test_top.env.agent.monitor [IF] PC=000000b8  INSTR=00000013  [ADDI x0, x0, 0]            
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1895000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(293) @ 1895000: uvm_test_top.env.scoreboard [SCB] 
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(294) @ 1895000: uvm_test_top.env.scoreboard [SCB] ==============================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(295) @ 1895000: uvm_test_top.env.scoreboard [SCB]             CPU REGISTER FILE - FINAL RESULT                  
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(296) @ 1895000: uvm_test_top.env.scoreboard [SCB] ==============================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(297) @ 1895000: uvm_test_top.env.scoreboard [SCB]  REG   |   EXPECTED   |    ACTUAL    | MATCH |    STATUS    
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(298) @ 1895000: uvm_test_top.env.scoreboard [SCB] --------------------------------------------------------------
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x00 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x01 |  00000014  |  00000014  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x02 |  00000007  |  00000007  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x03 |  0000001b  |  0000001b  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x04 |  0000001b  |  0000001b  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x05 |  0000000d  |  0000000d  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x06 |  0000000d  |  0000000d  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x07 |  00000001  |  00000001  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x08 |  00000080  |  00000080  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x09 |  00000080  |  00000080  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x10 |  00000001  |  00000001  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x11 |  00000001  |  00000001  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x12 |  00000013  |  00000013  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x13 |  00000013  |  00000013  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x14 |  00000001  |  00000001  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x15 |  fffffff8  |  fffffff8  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x16 |  fffffffc  |  fffffffc  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x17 |  fffffffc  |  fffffffc  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x18 |  00000017  |  00000017  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x19 |  00000017  |  00000017  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x20 |  00000004  |  00000004  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x21 |  00000004  |  00000004  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x22 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x23 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x24 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x25 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x26 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x27 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x28 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x29 |  00000000  |  00000000  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x30 |  100003f0  |  100003f0  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(336) @ 1895000: uvm_test_top.env.scoreboard [SCB] | x31 |  0000005a  |  0000005a  |  PASS  | PASS                 |
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(339) @ 1895000: uvm_test_top.env.scoreboard [SCB] --------------------------------------------------------------
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(346) @ 1895000: uvm_test_top.env.scoreboard [SCB]  Total WB events : 97      PASS : 32    FAIL : 0     SKIP : 0  
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(349) @ 1895000: uvm_test_top.env.scoreboard [SCB]  AXI Write Errors : 0     AXI Read Errors : 0  
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(358) @ 1895000: uvm_test_top.env.scoreboard [SCB]  AXI Data Errors  : 0     DRAM W/R : 1/0   TIMER:0 UART:0 SPI:0
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(364) @ 1895000: uvm_test_top.env.scoreboard [SCB]  AXI Read Checks  : PASS:0 FAIL:0 SKIP:0
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(365) @ 1895000: uvm_test_top.env.scoreboard [SCB] ==============================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(366) @ 1895000: uvm_test_top.env.scoreboard [SCB] 
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(378) @ 1895000: uvm_test_top.env.scoreboard [SCB] SIMULATION PASSED: all registers and AXI reads match expected
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Scoreboard/cpu_scoreboard.sv(383) @ 1895000: uvm_test_top.env.scoreboard [SOC_SW] SOC_SOFTWARE SELF CHECK PASS
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(141) @ 1895000: uvm_test_top.env.coverage [CPU_COV] 
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(142) @ 1895000: uvm_test_top.env.coverage [CPU_COV] ======================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(143) @ 1895000: uvm_test_top.env.coverage [CPU_COV]               CPU FUNCTIONAL COVERAGE REPORT          
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(144) @ 1895000: uvm_test_top.env.coverage [CPU_COV] ======================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(146) @ 1895000: uvm_test_top.env.coverage [CPU_COV]  Opcode Coverage         :  71.43%  (target >90%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(147) @ 1895000: uvm_test_top.env.coverage [CPU_COV]  ALU Instruction Coverage:  60.00%  (target >85%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(148) @ 1895000: uvm_test_top.env.coverage [CPU_COV]  Branch Coverage         :  33.33%  (target >80%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(149) @ 1895000: uvm_test_top.env.coverage [CPU_COV]  Register Operand Cover  :  88.75%  (target >85%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(150) @ 1895000: uvm_test_top.env.coverage [CPU_COV]  PC Alignment Coverage   : 100.00%  (target 100%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(152) @ 1895000: uvm_test_top.env.coverage [CPU_COV] ------------------------------------------------------
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(153) @ 1895000: uvm_test_top.env.coverage [CPU_COV]  TOTAL (avg)             :  70.70%  (target >90%)
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(154) @ 1895000: uvm_test_top.env.coverage [CPU_COV] ======================================================
+# UVM_INFO C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(155) @ 1895000: uvm_test_top.env.coverage [CPU_COV] 
+# UVM_WARNING C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(157) @ 1895000: uvm_test_top.env.coverage [CPU_COV] Opcode coverage 71.4% < 90% target
+# UVM_WARNING C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(158) @ 1895000: uvm_test_top.env.coverage [CPU_COV] ALU coverage 60.0% < 85% target
+# UVM_WARNING C:/Documents/DoAnThietKeViMach/Project/SoC/VERIFICATION/Coverage/cpu_coverage.sv(159) @ 1895000: uvm_test_top.env.coverage [CPU_COV] Branch coverage 33.3% < 80% target
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  266
+# UVM_WARNING :    3
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [AXI_RD]    45
+# [AXI_WR]     1
+# [CPU_COV]    16
+# [CPU_MON]     2
+# [IF]    44
+# [MEM]     8
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCB]    47
+# [SOC_SW]     2
+# [TEST]     3
+# [TEST_DONE]     1
+# [WB]    97
+# ** Note: $finish    : C:/app/QuestaSim/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1895 ns  Iteration: 57  Instance: /top_tb
