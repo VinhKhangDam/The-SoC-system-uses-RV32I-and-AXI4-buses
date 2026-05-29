@@ -21,12 +21,14 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
 ## Features
 
 ### CPU Core
+
 - **5-Stage Pipeline**: Instruction Fetch, Decode, Execute, Memory, Writeback
 - **RV32I ISA Subset Support**: Core integer instructions for ALU, branch, jump, load/store, and U-type testing
 - **Hazard Handling**: Forwarding unit and stall logic for data hazards
 - **ALU Operations**: ADD, SUB, AND, OR, XOR, SLT, SLL, SRL, SRA
 
 ### Interconnect & Peripherals
+
 - **AXI4-Lite Bus**: Industry-standard on-chip interconnect
 - **Memory Subsystem**: Separate instruction and data RAM
 - **Integrated Peripherals**:
@@ -35,23 +37,28 @@ A complete System-on-Chip (SoC) implementation featuring a pipelined RISC-V RV32
   - SPI for peripheral interface
 
 ### Verification
+
 - **UVM Framework**: Complete Universal Verification Methodology implementation
 - **Coverage Analysis**: Branch, condition, and statement coverage
 - **Randomized Testing**: Automated stimulus generation and scoreboard checking
 
 ### Synthesis
+
 - **FPGA Ready**: Vivado project for Xilinx FPGA implementation
 - **Timing Constraints**: 100MHz virtual clock configuration
 
 ## Architecture Overview
 
 ### TOP Block Diagram
+
 ![TOP Architecture](Architecture/TOP.png)
 
 ### MASTER Block Diagram
+
 ![MASTER Architecture](Architecture/MASTER.png)
 
 ### CPU Pipeline
+
 ```
 Instruction Fetch → Instruction Decode → Execute → Memory Access → Writeback
        ↓                ↓              ↓          ↓            ↓
@@ -59,6 +66,7 @@ Instruction Fetch → Instruction Decode → Execute → Memory Access → Write
 ```
 
 The CPU implements a classic five-stage pipeline where:
+
 - **IF**: Fetches instruction from memory using program counter
 - **ID**: Decodes instruction, reads registers, generates control signals
 - **EX**: Performs ALU operations with forwarding for data hazards
@@ -66,12 +74,15 @@ The CPU implements a classic five-stage pipeline where:
 - **WB**: Writes results back to register file
 
 ### Master Interface Architecture
+
 The CPU and LSU together form the **AXI Master** component:
+
 - **CPU Core**: Generates memory access requests (address, data, control signals)
 - **Load-Store Unit (LSU)**: Translates CPU requests into AXI4-Lite protocol transactions
 - **AXI Master Wrapper**: Combines CPU and LSU, providing the AXI interface to the interconnect
 
 ### Memory Map
+
 - **Slave 0**: Instruction RAM (IRAM)
 - **Slave 1**: Data RAM (DRAM)
 - **Slave 2**: Timer Peripheral
@@ -79,7 +90,6 @@ The CPU and LSU together form the **AXI Master** component:
 - **Slave 4**: SPI Peripheral
 
 ## Project Structure
-
 
 ```
 .
@@ -227,7 +237,6 @@ The CPU and LSU together form the **AXI Master** component:
     │   ├── timer_transaction.sv
     │   └── uart_transaction.sv
     └── uart_top_tb.sv
-
 ```
 
 ## Prerequisites
@@ -241,18 +250,21 @@ The CPU and LSU together form the **AXI Master** component:
 ## Getting Started
 
 ### Clone the Repository
+
 ```bash
 git clone https://github.com/VinhKhangDam/The-SoC-system-uses-RV32I-and-AXI4-buses.git
 cd DoAnThietKeViMach/Project
 ```
 
 ### Environment Setup
+
 ```bash
 # Set environment variables
 source SoC/env.sh
 ```
 
 ### Simulation
+
 ```bash
 cd SoC/SIM
 
@@ -345,8 +357,8 @@ Current directed assembly tests focus on the instruction subset implemented in t
 
 Do not use `AUIPC`, `JALR`, `SLTU`, `SLTIU`, byte/halfword load-store, `FENCE`, `ECALL`, or `EBREAK` until the CPU decode/control path is extended for them.
 
-
 ### Makefile Workflow
+
 The `SoC/SIM/Makefile` is designed to run the full verification flow for a given test. When you execute:
 
 ```bash
@@ -375,12 +387,14 @@ Furthermore, when running make all with random tests, different seeds will be ge
 The project includes a comprehensive UVM verification environment:
 
 ### Test Structure
+
 - **Transaction Layer**: AXI4-Lite protocol transactions
 - **Driver/Monitor**: Bus-level stimulus and observation
 - **Scoreboard**: Expected vs. actual result comparison
 - **Coverage**: Functional coverage collection
 
 ### Main Test Types
+
 - **`axi_random_wr_rd_test`**: Random AXI4-Lite write/read accesses to DRAM
 - **`axi_multi_slaves_test`**: AXI accesses across DRAM, Timer, UART, and SPI address regions
 - **`cpu_test`**: CPU executes generated instructions from `instr.mem`
@@ -388,6 +402,7 @@ The project includes a comprehensive UVM verification environment:
 - **`timer_test` / `uart_test` / `spi_test`**: Standalone peripheral verification environments
 
 ### Coverage Metrics
+
 - **Statement Coverage**: RTL code execution coverage
 - **Branch Coverage**: Conditional branch testing
 - **Functional Coverage**: Protocol and design feature coverage
@@ -395,12 +410,14 @@ The project includes a comprehensive UVM verification environment:
 ## Synthesis
 
 ### Vivado Project Setup
+
 1. Open `Vivado/rv32i.xpr`
 2. Set top module to `TOP`
 3. Add `Constraint.xdc` timing constraints
 4. Run synthesis and implementation
 
 ### Key Synthesis Parameters
+
 - **Target Frequency**: 100 MHz
 - **Device**: Configurable for various Xilinx FPGAs
 - **Optimization**: Area/timing trade-off analysis
@@ -414,6 +431,7 @@ The project includes a comprehensive UVM verification environment:
 5. Open a Pull Request
 
 ### Development Guidelines
+
 - Follow Verilog coding standards
 - Add UVM test cases for new features
 - Update documentation for architectural changes
@@ -439,17 +457,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 To run this project, follow these steps:
 
 1. Clone the repository from GitHub to your local machine:
+   
    ```bash
    git clone https://github.com/VinhKhangDam/The-SoC-system-uses-RV32I-and-AXI4-buses.git
    cd The-SoC-system-uses-RV32I-and-AXI4-buses
    ```
 
 2. Source the environment script to set up the necessary environment variables:
+   
    ```bash
    source SoC/env.sh
    ```
 
 3. Run the desired test by (looking in the Makefile to see which tests are available)
+   
    ```bash
    cd SoC/SIM
    make compile test_name=TEST_NAME | tee compile_TEST_NAME.log
@@ -457,26 +478,31 @@ To run this project, follow these steps:
    ```
 
 4. Open gui
+   
    ```bash
    make gui test_name=TEST_NAME
    ```
 
 5. Delete work and generated files, only keep log files (optional), Makefile, and Python files (Make sure run 'make clean' before run simulation)
+   
    ```bash
    make clean
    ```
 
 6. Want to see instructions for making
+   
    ```bash
    make help
    ```
 
 7. Want to see the list of test
-    ```bash
-    make list
-    ```
+   
+   ```bash
+   make list
+   ```
 
 8. Want to run a hand-written assembly test
+   
    ```bash
    make list_asm
    make compile test_name=asm_test ASM=ASM_TEST_NAME(see in list_asm) | tee compile_asm_rv32i_(based on test you want to test).log
