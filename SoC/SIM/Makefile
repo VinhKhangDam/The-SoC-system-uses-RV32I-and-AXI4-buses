@@ -1,4 +1,3 @@
-
 #==========================================================================================
 # SoC RISC-V Verification Makefile - SINGLE TEST FLOW
 # Project: SoC-RV32I
@@ -11,13 +10,7 @@ DUT_DIR      = $(ROOT_DIR)/DUT
 INF_DIR      = $(ROOT_DIR)/INF
 VERIF_DIR    = $(ROOT_DIR)/VERIFICATION
 SIM_DIR      = $(ROOT_DIR)/SIM
-
-# --- Windows path conversion for WSL + Questa Windows ---
-ROOT_DIR_WIN := $(shell wslpath -m $(ROOT_DIR))
-DUT_DIR_WIN  := $(ROOT_DIR_WIN)/DUT
-INF_DIR_WIN  := $(ROOT_DIR_WIN)/INF
-VERIF_DIR_WIN:= $(ROOT_DIR_WIN)/VERIFICATION
-SVA_DIR_WIN  := $(VERIF_DIR_WIN)/SVA
+SVA_DIR      = $(VERIF_DIR)/SVA
 
 # --- Tools ---
 VLOG_CMD     = vlog -sv +acc -cover bcst
@@ -59,48 +52,39 @@ test_name := asm_test
 endif
 
 # Count loaded instructions from instr.mem at run time.
-# Use recursive '=' so this is evaluated after gen_mem creates instr.mem.
 CPU_INSTR_COUNT = $(shell if [ -f instr.mem ]; then awk 'NF && $$1 !~ /^\/\// {count++} END {print count+0}' instr.mem; else echo 0; fi)
 
 # --- RNG seed ---
-# := evaluates ONCE at parse time → gen_mem.py and sim_expected.py always share the same seed.
-# Override from CLI: make gen_mem MEM_SEED=1234
-# 1. Định nghĩa file lưu seed tạm thời
 SEED_FILE = .last_seed
 
-# 2. Logic xác định MEM_SEED:
-#    Ưu tiên 1: Lấy từ dòng lệnh nếu ông gõ 'make all MEM_SEED=123'
-#    Ưu tiên 2: Nếu không có dòng lệnh, thử đọc từ file .last_seed (dùng cho make gui, make sim)
-#    Ưu tiên 3: Nếu vẫn không có (lần đầu chạy), sinh số ngẫu nhiên mới.
 ifeq ($(origin MEM_SEED), undefined)
     MEM_SEED := $(shell if [ -f $(SEED_FILE) ]; then cat $(SEED_FILE); else python3 -c "import struct,os; print(struct.unpack('I',os.urandom(4))[0])"; fi)
 endif
 
-# 3. Ép biến 'seed' của Questasim chạy theo MEM_SEED để đồng bộ 100%
 seed = $(MEM_SEED)
 
 # --- FILE LIST ---
-INF_FILES    = $(INF_DIR_WIN)/*.sv
-DUT_FILES    = $(DUT_DIR_WIN)/Slaves/*.sv \
-               $(DUT_DIR_WIN)/CPU/*.sv \
-               $(DUT_DIR_WIN)/Master/*.sv \
-               $(DUT_DIR_WIN)/AXI_Master.sv \
-               $(DUT_DIR_WIN)/AXI4_Lite_Interconnect.sv \
-               $(DUT_DIR_WIN)/TOP.sv
+INF_FILES    = $(INF_DIR)/*.sv
+DUT_FILES    = $(DUT_DIR)/Slaves/*.sv \
+               $(DUT_DIR)/CPU/*.sv \
+               $(DUT_DIR)/Master/*.sv \
+               $(DUT_DIR)/AXI_Master.sv \
+               $(DUT_DIR)/AXI4_Lite_Interconnect.sv \
+               $(DUT_DIR)/TOP.sv
 
-UVM_PKG      = $(VERIF_DIR_WIN)/Package/soc_pkg.svh
-TOP_TB       = $(VERIF_DIR_WIN)/top_tb.sv
-SVA_FILES    = $(SVA_DIR_WIN)/*.sv
-UVM_INC_DIRS = +incdir+$(VERIF_DIR_WIN)/Transaction \
-               +incdir+$(VERIF_DIR_WIN)/Sequencer \
-               +incdir+$(VERIF_DIR_WIN)/Monitor \
-               +incdir+$(VERIF_DIR_WIN)/Driver \
-               +incdir+$(VERIF_DIR_WIN)/Agent \
-               +incdir+$(VERIF_DIR_WIN)/Coverage \
-               +incdir+$(VERIF_DIR_WIN)/Env \
-               +incdir+$(VERIF_DIR_WIN)/Scoreboard \
-               +incdir+$(VERIF_DIR_WIN)/Sequence \
-               +incdir+$(VERIF_DIR_WIN)/Test
+UVM_PKG      = $(VERIF_DIR)/Package/soc_pkg.svh
+TOP_TB       = $(VERIF_DIR)/top_tb.sv
+SVA_FILES    = $(SVA_DIR)/*.sv
+UVM_INC_DIRS = +incdir+$(VERIF_DIR)/Transaction \
+               +incdir+$(VERIF_DIR)/Sequencer \
+               +incdir+$(VERIF_DIR)/Monitor \
+               +incdir+$(VERIF_DIR)/Driver \
+               +incdir+$(VERIF_DIR)/Agent \
+               +incdir+$(VERIF_DIR)/Coverage \
+               +incdir+$(VERIF_DIR)/Env \
+               +incdir+$(VERIF_DIR)/Scoreboard \
+               +incdir+$(VERIF_DIR)/Sequence \
+               +incdir+$(VERIF_DIR)/Test
 
 #==========================================================================================
 # AVAILABLE TESTS
@@ -228,7 +212,7 @@ soc_compile:
 	$(VLOG_CMD) $(INF_FILES)
 	
 	@echo "--- [2/4] Compile DUT ---"
-	$(VLOG_CMD) +incdir+$(DUT_DIR_WIN)/CPU $(DUT_FILES)
+	$(VLOG_CMD) +incdir+$(DUT_DIR)/CPU $(DUT_FILES)
 	
 	@echo "--- [3/4] Compile UVM ---"
 	$(VLOG_CMD) $(UVM_INC_DIRS) $(UVM_PKG)
@@ -396,18 +380,18 @@ list_asm:
 # TIMER STANDALONE TEST
 #==========================================================================================
 
-TIMER_PKG       = $(VERIF_DIR_WIN)/Package/timer_pkg.svh
-TIMER_TOP_TB    = $(VERIF_DIR_WIN)/timer_top_tb.sv
-TIMER_SVA       = $(SVA_DIR_WIN)/timer_sva.sv
+TIMER_PKG       = $(VERIF_DIR)/Package/timer_pkg.svh
+TIMER_TOP_TB    = $(VERIF_DIR)/timer_top_tb.sv
+TIMER_SVA       = $(SVA_DIR)/timer_sva.sv
 TIMER_VOPT      = timer_vopt
-TIMER_INC_DIRS  = +incdir+$(VERIF_DIR_WIN)/Transaction \
-                  +incdir+$(VERIF_DIR_WIN)/Driver \
-                  +incdir+$(VERIF_DIR_WIN)/Monitor \
-                  +incdir+$(VERIF_DIR_WIN)/Coverage \
-                  +incdir+$(VERIF_DIR_WIN)/Env \
-                  +incdir+$(VERIF_DIR_WIN)/Scoreboard \
-                  +incdir+$(VERIF_DIR_WIN)/Sequence \
-                  +incdir+$(VERIF_DIR_WIN)/Test
+TIMER_INC_DIRS  = +incdir+$(VERIF_DIR)/Transaction \
+                  +incdir+$(VERIF_DIR)/Driver \
+                  +incdir+$(VERIF_DIR)/Monitor \
+                  +incdir+$(VERIF_DIR)/Coverage \
+                  +incdir+$(VERIF_DIR)/Env \
+                  +incdir+$(VERIF_DIR)/Scoreboard \
+                  +incdir+$(VERIF_DIR)/Sequence \
+                  +incdir+$(VERIF_DIR)/Test
 
 timer_all: timer_compile timer_sim
 
@@ -415,10 +399,10 @@ timer_compile:
 	@echo "--- [TIMER] Compile Interfaces ---"
 	rm -rf work
 	vlib work
-	$(VLOG_CMD) $(INF_DIR_WIN)/*.sv
+	$(VLOG_CMD) $(INF_DIR)/*.sv
 
 	@echo "--- [TIMER] Compile DUT ---"
-	$(VLOG_CMD) $(DUT_DIR_WIN)/Slaves/Timer.sv
+	$(VLOG_CMD) $(DUT_DIR)/Slaves/Timer.sv
 
 	@echo "--- [TIMER] Compile SVA ---"
 	$(VLOG_CMD) $(TIMER_SVA)
@@ -447,18 +431,18 @@ timer_gui:
 #==========================================================================================
 # UART STANDALONE TEST
 #==========================================================================================
-UART_PKG       = $(VERIF_DIR_WIN)/Package/uart_pkg.svh
-UART_TOP_TB    = $(VERIF_DIR_WIN)/uart_top_tb.sv
-UART_SVA       = $(SVA_DIR_WIN)/uart_sva.sv
+UART_PKG       = $(VERIF_DIR)/Package/uart_pkg.svh
+UART_TOP_TB    = $(VERIF_DIR)/uart_top_tb.sv
+UART_SVA       = $(SVA_DIR)/uart_sva.sv
 UART_VOPT      = uart_vopt
-UART_INC_DIRS  = +incdir+$(VERIF_DIR_WIN)/Transaction \
-                  +incdir+$(VERIF_DIR_WIN)/Driver \
-                  +incdir+$(VERIF_DIR_WIN)/Monitor \
-                  +incdir+$(VERIF_DIR_WIN)/Coverage \
-                  +incdir+$(VERIF_DIR_WIN)/Env \
-                  +incdir+$(VERIF_DIR_WIN)/Scoreboard \
-                  +incdir+$(VERIF_DIR_WIN)/Sequence \
-                  +incdir+$(VERIF_DIR_WIN)/Test
+UART_INC_DIRS  = +incdir+$(VERIF_DIR)/Transaction \
+                  +incdir+$(VERIF_DIR)/Driver \
+                  +incdir+$(VERIF_DIR)/Monitor \
+                  +incdir+$(VERIF_DIR)/Coverage \
+                  +incdir+$(VERIF_DIR)/Env \
+                  +incdir+$(VERIF_DIR)/Scoreboard \
+                  +incdir+$(VERIF_DIR)/Sequence \
+                  +incdir+$(VERIF_DIR)/Test
 
 uart_all: uart_compile uart_sim
 
@@ -466,10 +450,10 @@ uart_compile:
 	@echo "--- [UART] Compile Interfaces ---"
 	rm -rf work
 	vlib work
-	$(VLOG_CMD) $(INF_DIR_WIN)/*.sv
+	$(VLOG_CMD) $(INF_DIR)/*.sv
 
 	@echo "--- [UART] Compile DUT ---"
-	$(VLOG_CMD) $(DUT_DIR_WIN)/Slaves/UART.sv
+	$(VLOG_CMD) $(DUT_DIR)/Slaves/UART.sv
 
 	@echo "--- [UART] Compile SVA ---"
 	$(VLOG_CMD) $(UART_SVA)
@@ -498,19 +482,19 @@ uart_gui:
 #==========================================================================================
 # SPI STANDALONE TEST
 #==========================================================================================
-SPI_PKG       = $(VERIF_DIR_WIN)/Package/spi_pkg.svh
-SPI_TOP_TB    = $(VERIF_DIR_WIN)/spi_top_tb.sv
-SPI_SVA       = $(SVA_DIR_WIN)/spi_sva.sv
+SPI_PKG       = $(VERIF_DIR)/Package/spi_pkg.svh
+SPI_TOP_TB    = $(VERIF_DIR)/spi_top_tb.sv
+SPI_SVA       = $(SVA_DIR)/spi_sva.sv
 SPI_VOPT      = spi_vopt
-SPI_INC_DIRS  = +incdir+$(VERIF_DIR_WIN)/Transaction \
-                  +incdir+$(VERIF_DIR_WIN)/Driver \
-                  +incdir+$(VERIF_DIR_WIN)/Monitor \
-                  +incdir+$(VERIF_DIR_WIN)/Agent \
-                  +incdir+$(VERIF_DIR_WIN)/Coverage \
-                  +incdir+$(VERIF_DIR_WIN)/Env \
-                  +incdir+$(VERIF_DIR_WIN)/Scoreboard \
-                  +incdir+$(VERIF_DIR_WIN)/Sequence \
-                  +incdir+$(VERIF_DIR_WIN)/Test
+SPI_INC_DIRS  = +incdir+$(VERIF_DIR)/Transaction \
+                  +incdir+$(VERIF_DIR)/Driver \
+                  +incdir+$(VERIF_DIR)/Monitor \
+                  +incdir+$(VERIF_DIR)/Agent \
+                  +incdir+$(VERIF_DIR)/Coverage \
+                  +incdir+$(VERIF_DIR)/Env \
+                  +incdir+$(VERIF_DIR)/Scoreboard \
+                  +incdir+$(VERIF_DIR)/Sequence \
+                  +incdir+$(VERIF_DIR)/Test
 
 spi_all: spi_compile spi_sim
 
@@ -518,10 +502,10 @@ spi_compile:
 	@echo "--- [SPI] Compile Interfaces ---"
 	rm -rf work
 	vlib work
-	$(VLOG_CMD) $(INF_DIR_WIN)/*.sv
+	$(VLOG_CMD) $(INF_DIR)/*.sv
 
 	@echo "--- [SPI] Compile DUT ---"
-	$(VLOG_CMD) $(DUT_DIR_WIN)/Slaves/SPI.sv
+	$(VLOG_CMD) $(DUT_DIR)/Slaves/SPI.sv
 
 	@echo "--- [SPI] Compile SVA ---"
 	$(VLOG_CMD) $(SPI_SVA)
