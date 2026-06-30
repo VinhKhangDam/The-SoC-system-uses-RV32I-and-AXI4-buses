@@ -16,10 +16,6 @@ module cpu_sva (
     input logic [1:0] ForwardA,
     input logic [1:0] ForwardB,
 
-    input logic        RegWriteW,
-    input logic [ 4:0] RdW,
-    input logic [31:0] ResultW,
-
     input logic sva_en_InstrF,
     input logic sva_en_InstrD
 );

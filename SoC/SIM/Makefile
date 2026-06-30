@@ -285,7 +285,7 @@ endif
 		+UVM_TESTNAME=$(UVM_TEST_FOR_SIM) +$$MODE \
 		+MEM_SEED=$(MEM_SEED) \
 		+CPU_INSTR_COUNT=$(CPU_INSTR_COUNT) \
-		-do "$(WAVE_DO) vopt_top/*"
+		-do "$(WAVE_DO) sim:/top_tb/*"
 endif
 
 #==========================================================================================
