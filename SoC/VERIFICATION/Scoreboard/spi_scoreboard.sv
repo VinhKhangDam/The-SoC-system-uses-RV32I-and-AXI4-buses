@@ -3,24 +3,24 @@
 class spi_scoreboard extends uvm_scoreboard;
   `uvm_component_utils(spi_scoreboard)
 
-  uvm_analysis_imp_spi #(spi_transaction, spi_scoreboard)       imp;
+  uvm_analysis_imp_spi #(spi_transaction, spi_scoreboard)        imp;
 
-  bit                                                     [7:0] exp_tx_byte;
-  bit                                                     [7:0] exp_rx_byte;
-  bit                                                           exp_rx_valid;
-  bit                                                           exp_busy;
+  bit                                                     [ 7:0] exp_tx_byte;
+  bit                                                     [ 7:0] exp_rx_byte;
+  bit                                                            exp_rx_valid;
+  bit                                                            exp_busy;
   bit                                                     [31:0] exp_ctrl_reg;
   bit                                                     [31:0] exp_baud_reg;
 
-  int                                                           pass_count;
-  int                                                           fail_count;
-  int                                                           write_count;
-  int                                                           read_count;
-  int                                                           start_count;
-  int                                                           pin_transfer_count;
-  int                                                           rx_read_count;
-  int                                                           status_read_count;
-  int                                                           ignored_write_count;
+  int                                                            pass_count;
+  int                                                            fail_count;
+  int                                                            write_count;
+  int                                                            read_count;
+  int                                                            start_count;
+  int                                                            pin_transfer_count;
+  int                                                            rx_read_count;
+  int                                                            status_read_count;
+  int                                                            ignored_write_count;
 
   function new(string name, uvm_component parent);
     super.new(name, parent);
@@ -77,8 +77,7 @@ class spi_scoreboard extends uvm_scoreboard;
           pass_count++;
           if (tr.data[0] || tr.is_start_transfer)
             `uvm_info("SPI_SCB", $sformatf("CTRL START WRITE data=%h", tr.data), UVM_LOW)
-          else
-            `uvm_info("SPI_SCB", $sformatf("CTRL WRITE PASS data=%h", tr.data), UVM_LOW)
+          else `uvm_info("SPI_SCB", $sformatf("CTRL WRITE PASS data=%h", tr.data), UVM_LOW)
         end
 
         4'h8: begin
